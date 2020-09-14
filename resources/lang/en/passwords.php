@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have emailed your password reset link!',
-    'throttled' => 'Please wait before retrying.',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that email address.",
+    'reset' => 'Tu contraseña ha sido restablecida!',
+    'sent' => 'Hemos enviado un link al correo para restablecer tu contraseña!',
+    'throttled' => 'Espera unos segundos para reintentar',
+    'token' => 'This password reset token is invalid. El token de restablecimiento de contraseña es inválido',
+    'user' => "No podemos encontrar un usuario con esa dirección de correo electrónico",
 
 ];
