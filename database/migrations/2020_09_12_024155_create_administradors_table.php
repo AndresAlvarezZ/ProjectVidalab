@@ -19,11 +19,13 @@ class CreateAdministradorsTable extends Migration
             $table->string('primerApellidoAdministrador');
             $table->string('segundoApellidoAdministrador');
             $table->integer('dniDelUsuarioAdministrador');
-            $table->string('correoDelUsuarioAdministrador');
+            $table->string('email');
             $table->integer('telefonoDelUsuarioAdministrador');
-            $table->string('contrasenaDelUsuarioAdministrador');
+            $table->string('password');
             $table->string('rol');
             $table->string('estadoDelUsuarioAdministrador');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

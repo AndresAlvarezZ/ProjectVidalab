@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Inicio de sesion') }}</div>
+                <div class="card-header">{{ __('Inicio de sesion de administradores') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('loginAdmins') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -56,7 +56,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Iniciar Sesion') }}
                                 </button>
-                                  <a href="{{ route('loginAdmins') }}"> Ingresar como Administrador</a>
+                                  <a href="{{route('login')}}"> Ingresar como cliente</a>
                                   <br>
                                   <br>
                                 @if (Route::has('password.request'))
