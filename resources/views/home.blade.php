@@ -15,7 +15,7 @@
                     @endif
 
 
-                  <a href="" target="_blank">Afiliarme</a>
+                  <a href="" target="_blank">Prueba de nuevo proyecto</a>
                 </div>
             </div>
         </div>
