@@ -69,12 +69,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="correoDelUsuarioAdministrador" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="correoDelUsuarioAdministrador" type="email" class="form-control @error('correoDelUsuarioAdministrador') is-invalid @enderror" name="correoDelUsuarioAdministrador" value="{{ old('correoDelUsuarioAdministrador') }}" required autocomplete="correoDelUsuarioAdministrador" autofocus>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                    @error('correoDelUsuarioAdministrador')
+                                    @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -108,12 +108,25 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="contrasenaDelUsuarioAdministrador" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                                <label for="estadoDelUsuarioAdministrador" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="contrasenaDelUsuarioAdministrador" required autocomplete="new-password">
+                                    <input id="rol" type="combak" class="form-control @error('estadoDelUsuarioAdministrador') is-invalid @enderror" name="estadoDelUsuarioAdministrador" value="{{ old('estadoDelUsuarioAdministrador') }}" required autocomplete="estadoDelUsuarioAdministrador" autofocus>
 
-                                    @error('contrasenaDelUsuarioAdministrador')
+                                    @error('estadoDelUsuarioAdministrador')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                    @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

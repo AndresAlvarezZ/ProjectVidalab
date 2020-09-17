@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
+Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
