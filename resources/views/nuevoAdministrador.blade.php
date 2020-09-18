@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    @extends('layouts.app')
+    @extends('layouts.appAdmin')
 
     @section('content')
     <div class="container">

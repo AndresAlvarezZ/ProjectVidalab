@@ -5,9 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Administrador;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AdministradorController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth:admins');
+  }
+
+  /**
+   * Show the application dashboard.
+   *
+   * @return \Illuminate\Contracts\Support\Renderable
+   */
+  public function index()
+  {
+      return view('homeAdmins');
+  }
+
   public function nuevoAdministrador()
   {
       return view('nuevoAdministrador');
@@ -40,8 +61,14 @@ class AdministradorController extends Controller
       'estadoDelUsuarioAdministrador' =>  $data['estadoDelUsuarioAdministrador']
     ]);
 
-    return redirect('/home');
+    $name = Administrador::all();
+    $request = auth()->administrador()->email;
+    return view('homeAdmins',compact('name','request'));
 
 
+}
+protected function guard()
+{
+  return Auth::guard('admins');
 }
 }
