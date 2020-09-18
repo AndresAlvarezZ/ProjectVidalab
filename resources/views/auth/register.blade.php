@@ -12,12 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="nombreDelUsuario" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nombreDelUsuario" type="text" class="form-control @error('nombreDelUsuario') is-invalid @enderror" name="nombreDelUsuario" value="{{ old('nombreDelUsuario') }}" required autocomplete="nombreDelUsuario" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('nombreDelUsuario')
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -80,7 +80,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Registrarme') }}
                                 </button>
-                                <a href=""> Registrar Administrador</a>
 
                             </div>
                         </div>
