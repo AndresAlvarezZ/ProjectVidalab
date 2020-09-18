@@ -26,12 +26,16 @@ class AdministradorController extends Controller
    */
   public function index()
   {
-      return view('homeAdmins');
+    $acceso = false;
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view('homeAdmins',compact('acceso','name'));
   }
 
   public function nuevoAdministrador()
   {
-      return view('nuevoAdministrador');
+    $acceso = false;
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view('nuevoAdministrador',compact('acceso','name'));
   }
   public function nuevoAdministradorCreate()
 {
@@ -42,7 +46,7 @@ class AdministradorController extends Controller
       'primerApellidoAdministrador' => 'required',
       'segundoApellidoAdministrador' => 'required',
       'dniDelUsuarioAdministrador' => 'required',
-      'email' => 'required',
+      'email' => ['required','email','unique:administradors'],
       'telefonoDelUsuarioAdministrador' => 'required',
       'password' => 'required',
       'rol' => 'required',
@@ -60,10 +64,9 @@ class AdministradorController extends Controller
       'rol' =>  $data['rol'],
       'estadoDelUsuarioAdministrador' =>  $data['estadoDelUsuarioAdministrador']
     ]);
-
-    $name = Administrador::all();
-    $request = auth()->administrador()->email;
-    return view('homeAdmins',compact('name','request'));
+    $acceso = false;
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('homeAdmins',compact('acceso','name'));
 
 
 }
