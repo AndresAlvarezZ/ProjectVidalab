@@ -59,8 +59,8 @@
                                   <a href="{{route('login')}}"> Ingresar como cliente</a>
                                   <br>
                                   <br>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                @if (Route::has('password.requestAdmins'))
+                                    <a class="btn btn-link" href="{{ route('password.requestAdmins') }}">
                                         {{ __('olvidó su Contraseña?') }}
                                     </a>
                                 @endif

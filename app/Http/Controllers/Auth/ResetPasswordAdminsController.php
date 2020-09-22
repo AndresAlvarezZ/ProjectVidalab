@@ -8,8 +8,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Auth;
 
-
-class ResetPasswordController extends Controller
+class ResetPasswordAdminsController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -29,14 +28,24 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::HOMEADMIN;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest:admins')->except('logout');
+    }
 
     public function broker()
     {
-        return Password::broker();
+        return Password::broker('admins');
     }
     protected function guard()
     {
-      return Auth::guard();
+      return Auth::guard('admins');
     }
 }

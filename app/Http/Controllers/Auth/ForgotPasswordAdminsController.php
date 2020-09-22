@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmailAdmins;
 use Illuminate\Support\Facades\Password;
 
-class ForgotPasswordController extends Controller
+class ForgotPasswordAdminsController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -19,10 +19,19 @@ class ForgotPasswordController extends Controller
     |
     */
 
-    use SendsPasswordResetEmails;
+    use SendsPasswordResetEmailAdmins;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest:admins')->except('logout');
+    }
 
     public function broker()
     {
-        return Password::broker();
+        return Password::broker('admins');
     }
 }
