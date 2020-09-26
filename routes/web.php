@@ -18,10 +18,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//controlador de homes
 Route::get('/homeAdmins', 'AdministradorController@index')->name('homeAdmins');
 Route::get('/home', 'HomeController@index')->name('home');
-
+//controlador de administrador
 Route::get('/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
 Route::get('/nuevoAdministrador/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
 Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
+//controlador de Clientes
+Route::get('/afiliarme','ClientesController@IngresarCliente');
+Route::Post('/afiliarme','ClientesController@CrearCliente');
