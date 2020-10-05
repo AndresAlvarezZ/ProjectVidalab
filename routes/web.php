@@ -25,6 +25,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
 Route::get('/nuevoAdministrador/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
 Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
+//controlador de notificaciones
+Route::get('/nuevaNotificacion', 'NotificacionesController@Notificacion');
+Route::get('/notificacionEspecifica','NotificacionesController@NotificacionEspecifica');
+Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
+Route::post('/notificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
+Route::post('/notificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
 //controlador de Clientes
 Route::get('/afiliarme','ClientesController@IngresarCliente');
 Route::Post('/afiliarme','ClientesController@CrearCliente');

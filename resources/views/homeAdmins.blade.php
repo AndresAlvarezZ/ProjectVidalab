@@ -16,6 +16,8 @@
 
                   <h1>Lo has logrado superman ♥ </h1>
                 <a href="nuevoAdministrador">Agregar un nuevo Administrador </a>
+                <br>
+                <a href="/nuevaNotificacion">Enviar una nueva notificación </a>
                 </div>
             </div>
         </div>

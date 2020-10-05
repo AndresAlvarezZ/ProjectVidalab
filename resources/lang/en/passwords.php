@@ -18,5 +18,6 @@ return [
     'throttled' => 'Espera unos segundos para reintentar',
     'token' => 'This password reset token is invalid. El token de restablecimiento de contraseña es inválido',
     'user' => "No podemos encontrar un usuario con esa dirección de correo electrónico",
+    'notificacion' => "Notificación enviada exitosamente"
 
 ];

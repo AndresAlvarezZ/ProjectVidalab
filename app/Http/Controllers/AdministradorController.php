@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Administrador;
+use App\Clientes;
+use App\Notificaciones;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AdministradorController extends Controller
 {
@@ -66,7 +69,7 @@ class AdministradorController extends Controller
     ]);
     $acceso = false;
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-    return view('homeAdmins',compact('acceso','name'));
+    return view('homeAdmins',compact('acceso','name'))->with('status','Administrador Agregado exitosamente');
 
 
 }
