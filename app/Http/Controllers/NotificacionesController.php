@@ -24,14 +24,14 @@ class NotificacionesController extends Controller
   public function Notificacion()
   {
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-    return view('Notificaciones',compact('name'));
+    return view('Notificaciones.Notificaciones',compact('name'));
   }
    public function NotificacionEspecifica()
   {
     // code...
     $clientes = Clientes::all();
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-  return view('NotificacionEspecifica',compact('name','clientes'));
+  return view('Notificaciones.NotificacionEspecifica',compact('name','clientes'));
   }
   public function envioDeNotificacionEspecifica()
   {
@@ -59,7 +59,7 @@ class NotificacionesController extends Controller
   {
    // code...
    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-  return view('NotificacionMasiva',compact('name'));
+  return view('Notificaciones.NotificacionMasiva',compact('name'));
   }
   public function envioDeNotificacionMasiva()
   {
