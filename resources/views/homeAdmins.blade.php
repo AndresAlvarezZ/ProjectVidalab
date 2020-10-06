@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                  <h1>Lo has logrado superman ♥ </h1>
+                  <h1>Los superHer@s lo van logrando ♥ </h1>
                     <a href="nuevoAdministrador">Agregar un nuevo Administrador </a>
                     <br>
                     <a href="/nuevaNotificacion">Enviar una nueva notificación </a>
@@ -28,16 +28,6 @@
                     <a href="/paquetes">Registro de paqutes de análisis </a>
                     <br>
                     <a href="/catalogos">Catálogos </a>
-                    <br>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Cerrar Sesión') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
                 </div>
             </div>
         </div>
