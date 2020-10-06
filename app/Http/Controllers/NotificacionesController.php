@@ -11,7 +11,15 @@ use App\Mail\envioDeNotificaciones;
 
 class NotificacionesController extends Controller
 {
-  
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth:admins');
+  }
 
   public function Notificacion()
   {
