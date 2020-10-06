@@ -16,6 +16,8 @@
 
 
                   <a href="" target="_blank">Prueba de nuevo proyecto</a>
+                  <br>
+                  <a href="/catalogod">Catálogos </a>
                 </div>
             </div>
         </div>
