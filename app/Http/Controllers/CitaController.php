@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class CitaController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth:admins');
+  }
 
 //LISTAR REGISTROS
     public function index()
@@ -102,4 +111,3 @@ class CitaController extends Controller
     }
 
 }
-

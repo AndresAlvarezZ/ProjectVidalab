@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class PaqueteController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth:admins');
+  }
     //LISTAR REGISTROS
     public function index()
     {
@@ -29,7 +38,7 @@ class PaqueteController extends Controller
             'nombreDelPaquete' => 'required',
             'descripcionDelPaquete' => 'required',
             'costoDelPaquete' => 'required',
-            
+
         ]);
         Paquete::create(
         [
@@ -37,7 +46,7 @@ class PaqueteController extends Controller
             'nombreDelPaquete' => request('nombreDelPaquete'),
             'descripcionDelPaquete' => request('descripcionDelPaquete'),
             'costoDelPaquete' => request('costoDelPaquete'),
-           
+
         ]
         );
 

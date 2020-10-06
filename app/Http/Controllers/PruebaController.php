@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 use App\Prueba;
 class PruebaController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth:admins');
+  }
 
 //LISTAR REGISTROS
     public function index()
@@ -29,7 +38,7 @@ class PruebaController extends Controller
             'nombreDelAnalisis' => 'required',
             'descripcionDelAnalisis' => 'required',
             'costoDelAnalisis' => 'required',
-            'numeroDeMaquina' => 'required',            
+            'numeroDeMaquina' => 'required',
         ]);
 
         Prueba::create(

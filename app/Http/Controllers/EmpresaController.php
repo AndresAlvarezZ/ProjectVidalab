@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth:admins');
+  }
 
 //LISTAR REGISTROS
     public function index()
@@ -40,7 +49,7 @@ class EmpresaController extends Controller
             'direccionDeLaEmpresa' => request('direccionDeLaEmpresa'),
         ]
         );
-        
+
         return redirect('/empresas');
     }
 
@@ -75,7 +84,7 @@ class EmpresaController extends Controller
         return redirect ('/empresas');
     }
 
-    
+
 //ELIMINAR REGISTRO
     public function eliminar(Empresa $empresa)
     {

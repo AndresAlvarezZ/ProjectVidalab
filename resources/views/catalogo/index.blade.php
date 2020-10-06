@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @extends('pop_up.modal')
 @section('content')
-    
+
 
 
 	<div class="container">
@@ -20,11 +20,11 @@
                 <h5><b>{{$prueba->nombreDelAnalisis}}</b></h5>
                 <p>Costo: ₡ {{$prueba->costoDelAnalisis}}</p>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LeerMasDelAnalisis">Leer más</button>
-            
+
             </div>
         @endforeach
 
-        
+
         <div class="card-header">
            <h3><b><center>Catálogo de Ofertas de Paquetes de Análisis</center></b></h3>
         </div>
