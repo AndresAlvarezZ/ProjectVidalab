@@ -7,14 +7,15 @@
     @section('content')
     <div class="container">
     <div class="row justify-content-center">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <button id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ 'Enviar una notificacion' }}
-                </a>
+                </button>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/notificacionEspecifica">
-                        <strong>{{ __('Notificación específica') }}</strong>
-                    </a>
+                  <li role="presentation"><a class="dropdown-item" href="/notificacionEspecifica">
+                      <strong>{{ __('Notificación específica') }}</strong>
+                  </a></li>
+                  <li role="presentation" class="divider"></li>
                     <a class='dropdown-item' href="notificacionMasiva">
                                       <strong>  {{'Notificación masiva'}}</strong>
                     </a>

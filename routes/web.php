@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Prueba;
+use App\Paquete;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*Route::get('/', function () {
+  $pruebas = Prueba::all();
+  $paquetes = Paquete::all();
+    return view('catalogo.index', compact('pruebas', 'paquetes'));
+});*/
+Route::get('/', function(){
+  return view('welcome');
 });
 
 Auth::routes();
@@ -38,7 +45,9 @@ Route::Post('/afiliarme','ClientesController@CrearCliente');
 
 
 //RUTAS DEL CATALOGO
-Route::get('/catalogos', 'CatalogoController@index');
+
+  Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
+
 
 //RUTAS DE SUBMÓDULO PAQUETES
 Route::get('/paquetes/agregar', 'PaqueteController@agregar');
@@ -60,6 +69,14 @@ Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');
 Route::get('/pruebas/{prueba}/eliminar', 'PruebaController@eliminar');
 Route::delete('/pruebas/{prueba}', 'PruebaController@destruir');
 
+// controlador de catalogo
+Route::get('/catalogo/{prueba}', 'CatalogoController@mostrar');
+
+//controlador de compras
+Route::get('/compras/carrito','CatalogoController@carrito');
+Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');
+Route::get('/compras/validarCompra','ComprasController@validarCompra');
+
 //RUTAS DE SUBMODULO EMPRESAS
 Route::get('/empresas/agregar', 'EmpresaController@agregar');
 Route::post('/empresas', 'EmpresaController@guardar');
@@ -79,3 +96,5 @@ Route::get('/citas/{cita}/editar', 'CitaController@editar');
 Route::put('/citas/{cita}', 'CitaController@actualizar');
 Route::get('/citas/{cita}/eliminar', 'CitaController@eliminar');
 Route::delete('/citas/{cita}', 'CitaController@destruir');
+// Pruebas del sistema
+Route::get('/prueba{codigo}','ComprasController@FinalizarCompra');

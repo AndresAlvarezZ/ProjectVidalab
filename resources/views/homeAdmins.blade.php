@@ -1,6 +1,17 @@
 @extends('layouts.appAdmin')
 
 @section('content')
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-md-8">
+        <div class="card">
+          <h1>Los superHer@s lo van logrando ♥ </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,7 +25,6 @@
                         </div>
                     @endif
 
-                  <h1>Los superHer@s lo van logrando ♥ </h1>
                     <a href="nuevoAdministrador">Agregar un nuevo Administrador </a>
                     <br>
                     <a href="/nuevaNotificacion">Enviar una nueva notificación </a>

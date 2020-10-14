@@ -20,14 +20,16 @@ class PruebaController extends Controller
     public function index()
     {
         $pruebas = Prueba::all();
-        return view('pruebas.index', compact('pruebas'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('pruebas.index', compact('pruebas','name'));
     }
 
 
 //AGREGAR
     public function agregar(Prueba $prueba)
     {
-        return view ('pruebas.agregar', compact('prueba'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view ('pruebas.agregar', compact('prueba','name'));
     }
 
     public function guardar(Prueba $prueba)
@@ -58,14 +60,16 @@ class PruebaController extends Controller
 //MOSTRAR UNICO REGISTRO
     public function mostrar(Prueba $prueba)
     {
-        return view('pruebas.mostrar', compact('prueba'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('pruebas.mostrar', compact('prueba','name'));
     }
 
 
 //EDITAR REGISTRO
     public function editar (Prueba $prueba)
     {
-        return view('pruebas.editar', compact('prueba'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('pruebas.editar', compact('prueba','name'));
     }
 
 
@@ -88,7 +92,8 @@ class PruebaController extends Controller
 //ELIMINAR REGISTRO
     public function eliminar(Prueba $prueba)
     {
-        return view('pruebas.eliminar', compact('prueba'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('pruebas.eliminar', compact('prueba','name'));
     }
 
 

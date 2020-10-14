@@ -22,14 +22,16 @@ class EmpresaController extends Controller
     public function index()
     {
         $empresas = Empresa::all();
-        return view('empresas.index', compact('empresas'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('empresas.index', compact('empresas','name'));
     }
 
 
 //AGREGAR REGISTRO
     public function agregar()
     {
-        return view('empresas.agregar');
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('empresas.agregar',compact('name'));
     }
 
 
@@ -59,14 +61,16 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::all();
         $citas = Cita::orderBy('created_at', 'desc')->get();
-        return view('empresas.mostrar', compact('empresa', 'citas'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('empresas.mostrar', compact('empresa', 'citas','name'));
     }
 
 
 //EDITAR REGISTRO
     public function editar(Empresa $empresa)
     {
-        return view('empresas.editar', compact('empresa'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('empresas.editar', compact('empresa','name'));
     }
 
 
@@ -88,7 +92,8 @@ class EmpresaController extends Controller
 //ELIMINAR REGISTRO
     public function eliminar(Empresa $empresa)
     {
-        return view('empresas.eliminar', compact('empresa'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('empresas.eliminar', compact('empresa','compact'));
     }
 
 

@@ -14,8 +14,7 @@ class CreatePruebasTable extends Migration
     public function up()
     {
         Schema::create('pruebas', function (Blueprint $table) {
-            $table->id('idDelAnalisis');
-            $table->string('codigoDelAnalisis');
+            $table->string('codigoDelAnalisis')->primary();
             $table->string('nombreDelAnalisis');
             $table->text('descripcionDelAnalisis');
             $table->decimal('costoDelAnalisis', 16, 1);

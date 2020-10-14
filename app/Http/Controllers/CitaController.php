@@ -22,14 +22,16 @@ class CitaController extends Controller
     public function index()
     {
         $citas = Cita::orderBy('created_at', 'desc')->get();
-        return view('citas.index', compact('citas'));
+          $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('citas.index', compact('citas','name'));
     }
 
 
 //AGREGAR
     public function agregar(Empresa $empresa)
     {
-        return view ('citas.agregar', compact('empresa'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view ('citas.agregar', compact('empresa','name'));
     }
 
     public function guardar(Empresa $empresa)
@@ -67,14 +69,16 @@ class CitaController extends Controller
 //MOSTRAR ÚNICO REGISTRO
     public function mostrar(Cita $cita)
     {
-        return view('citas.mostrar', compact('cita'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('citas.mostrar', compact('cita','  $name = auth()->administrador()->nombreDelUsuarioAdministrador;'));
     }
 
 
 //EDITAR REGISTRO
     public function editar (Cita $cita)
     {
-        return view('citas.editar', compact('cita'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('citas.editar', compact('cita','name'));
     }
 
 
@@ -99,7 +103,8 @@ class CitaController extends Controller
 //ELIMINAR REGISTRO
     public function eliminar(Cita $cita)
     {
-        return view('citas.eliminar', compact('cita'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('citas.eliminar', compact('cita','name'));
     }
 
 

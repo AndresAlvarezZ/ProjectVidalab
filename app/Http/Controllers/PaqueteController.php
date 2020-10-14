@@ -20,14 +20,16 @@ class PaqueteController extends Controller
     public function index()
     {
         $paquetes = Paquete::all();
-        return view('paquetes.index', compact('paquetes'));
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('paquetes.index', compact('paquetes','name'));
     }
 
 
 //AGREGAR
     public function agregar(Paquete $paquete)
     {
-        return view ('paquetes.agregar', compact('paquete'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view ('paquetes.agregar', compact('paquete','name'));
     }
 
     public function guardar(Paquete $paquete)
@@ -57,14 +59,16 @@ class PaqueteController extends Controller
 //MOSTRAR UNICO REGISTRO
     public function mostrar(Paquete $paquete)
     {
-        return view('paquetes.mostrar', compact('paquete'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('paquetes.mostrar', compact('paquete','name'));
     }
 
 
 //EDITAR REGISTRO
     public function editar (Paquete $paquete)
     {
-        return view('paquetes.editar', compact('paquete'));
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        return view('paquetes.editar', compact('paquete','name'));
     }
 
 
@@ -86,7 +90,7 @@ class PaqueteController extends Controller
 //ELIMINAR REGISTRO
     public function eliminar(Paquete $paquete)
     {
-        return view('paquetes.eliminar', compact('paquete'));
+        return view('paquetes.eliminar', compact('paquete','name'));
     }
 
 

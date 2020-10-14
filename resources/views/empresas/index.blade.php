@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
@@ -7,7 +7,7 @@
         <div class="col-md-40">
             <div class="card">
                 <div class="card-header"><h4><b><center>Registro de todas las empresas</center></b></h4></div>
-                    <div class="card-body"> 
+                    <div class="card-body">
                         <ul class="list-group">
                             <table class="table">
                                 <thead class="thead-dark">
@@ -24,14 +24,14 @@
                                         <th scope="row"><center>{{$empresa->idDeLaEmpresa}}</center></th>
                                         <td><center>{{ $empresa->nombreDeLaEmpresa}}</center></td>
                                         <td><center>{{$empresa->numeroDeTelefonoDeLaEmpresa}}</center></td>
-                                        <td><center><a href="/empresas/{{$empresa->idDeLaEmpresa}}" class="btn btn-primary">Consultar datos</a> |  
+                                        <td><center><a href="/empresas/{{$empresa->idDeLaEmpresa}}" class="btn btn-primary">Consultar datos</a> |
                                         <a href="/empresas/{{$empresa->idDeLaEmpresa}}/editar" class="btn btn-success">Editar datos</a> |
-                                        <a href="/citas/{{$empresa->idDeLaEmpresa}}/agregar" class="btn btn-info">Agregar cita</a> |  
+                                        <a href="/citas/{{$empresa->idDeLaEmpresa}}/agregar" class="btn btn-info">Agregar cita</a> |
                                         <a href="/empresas/{{$empresa->idDeLaEmpresa}}/eliminar" class="btn btn-danger">Eliminar datos</a></center></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
-                            </table>                         
+                            </table>
                         </ul>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
-<div class="container"> 
+<div class="container">
 
     <div class="card">
         <div class="card-header">
@@ -21,14 +21,14 @@
                         <input type="text" class="form-control" placeholder="Escriba el nombre del solicitante de la cita" name="nombreDelSolicitante" value="{{$cita->nombreDelSolicitante}}" /> <br>
                         @error('nombreDelSolicitante')
                             <div class="alert alert-danger">{{$message}}</div>
-                        @enderror                    
+                        @enderror
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Primer apellido</label>
                         <input type="text" class="form-control" placeholder="Escriba el primer apellido del solicitante" name="primerApellidoDelSolicitante" value="{{$cita->primerApellidoDelSolicitante}}"/> <br>
                         @error('primerApellidoDelSolicitante')
                             <div class="alert alert-danger">{{$message}}</div>
-                        @enderror                   
+                        @enderror
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Segundo apellido</label>
@@ -45,14 +45,14 @@
                         <input type="text" class="form-control" placeholder="Escriba el total de cliente que serán atendidos" name="numeroDeClientesPorAtender" value="{{$cita->numeroDeClientesPorAtender}}"/> <br>
                         @error('numeroDeClientesPorAtender')
                             <div class="alert alert-danger">{{$message}}</div>
-                        @enderror                    
+                        @enderror
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Fecha de cita</label>
                         <input type="date" class="form-control" placeholder="Seleccione la fecha de cita" name="fechaDeCita" value="{{$cita->fechaDeCita}}"/> <br>
                         @error('fechaDeCita')
                             <div class="alert alert-danger">{{$message}}</div>
-                        @enderror                  
+                        @enderror
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Seleccione la hora de cita</label>
@@ -70,10 +70,10 @@
 
                 <div class="row">
                     <div class="col">
-                        <center><button type="submit" class="btn btn-success">Actualizar datos</button></center>   
+                        <center><button type="submit" class="btn btn-success">Actualizar datos</button></center>
                     </div>
                     <div class="col">
-                        <center><a href="javascript: history.go(-1)" class="btn btn-primary">Cancelar y Volver</a></center>                
+                        <center><a href="javascript: history.go(-1)" class="btn btn-primary">Cancelar y Volver</a></center>
                     </div>
                 </div>
 
@@ -81,4 +81,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

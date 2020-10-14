@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
@@ -7,11 +7,11 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header"><h4><b><center>Registro de Citas de todas las Empresas</center></b></h4></div>
-                    <div class="card-body"> 
+                    <div class="card-body">
                         <div class="alert alert-info" role="alert">
                             <center>¡Lista de citas ordenada de forma <i>descendente, según fecha de regristro</i> en el sistema!</center>
                         </div>
-                        <ul class="list-group">      
+                        <ul class="list-group">
                             <table class="table">
                             <thead class="thead-dark">
                                     <tr>
@@ -36,7 +36,7 @@
                                             <td><center>{{$cita->nombreDelSolicitante}} {{$cita->primerApellidoDelSolicitante}} {{$cita->segundoApellidoDelSolicitante}}</center></td>
                                             <td></td>
                                             <td><a href="/empresas/{{$cita->idDeLaEmpresa}}" class="btn btn-primary">Ir al Registro</a> </center></td>
-                                        </tr>   
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <br>
         <center><a href="/homeAdmins" class="btn btn-danger">Ir al menú principal</a></center>
     </div>

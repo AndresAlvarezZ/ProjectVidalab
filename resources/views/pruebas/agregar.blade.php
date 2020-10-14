@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
@@ -14,14 +14,14 @@
                 <div class="row">
                     <div class="col">
                         <label for="exampleFormControlSelect1">Código</label>
-                        <input type="text" class="form-control" placeholder="Escriba el código del análisis" name="codigoDelAnalisis" value="{{old('codigoDelAnalisis')}}" /> <br> 
+                        <input type="text" class="form-control" placeholder="Escriba el código del análisis" name="codigoDelAnalisis" value="{{old('codigoDelAnalisis')}}" /> <br>
                         @error('codigoDelAnalisis')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Escriba el nombre del análisis" name="nombreDelAnalisis" value="{{old('nombreDelAnalisis')}}"/> <br> 
+                        <input type="text" class="form-control" placeholder="Escriba el nombre del análisis" name="nombreDelAnalisis" value="{{old('nombreDelAnalisis')}}"/> <br>
                         @error('nombreDelAnalisis')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
@@ -31,14 +31,14 @@
                 <div class="row">
                     <div class="col">
                         <label for="exampleFormControlSelect1">Costo</label>
-                        <input type="text" class="form-control" placeholder="Escriba el costo del análisis" name="costoDelAnalisis" value="{{old('costoDelAnalisis')}}"/> <br> 
+                        <input type="text" class="form-control" placeholder="Escriba el costo del análisis" name="costoDelAnalisis" value="{{old('costoDelAnalisis')}}"/> <br>
                         @error('costoDelAnalisis')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Número de máquina</label>
-                        <input type="text" class="form-control" placeholder="Escriba el número de máquina" name="numeroDeMaquina" value="{{old('numeroDeMaquina')}}"/> <br> 
+                        <input type="text" class="form-control" placeholder="Escriba el número de máquina" name="numeroDeMaquina" value="{{old('numeroDeMaquina')}}"/> <br>
                         @error('numeroDeMaquina')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
@@ -46,7 +46,7 @@
                 </div>
 
                 <label for="exampleFormControlSelect1">Descripción</label>
-                <textarea name="descripcionDelAnalisis" class="form-control" cols="30" rows="5" placeholder="Escriba la descripción del análisis">{{old('descripcionDelAnalisis')}}</textarea> <br> 
+                <textarea name="descripcionDelAnalisis" class="form-control" cols="30" rows="5" placeholder="Escriba la descripción del análisis">{{old('descripcionDelAnalisis')}}</textarea> <br>
                 @error('descripcionDelAnalisis')
                     <div class="alert alert-danger">{{$message}}</div>
                 @enderror
@@ -63,4 +63,4 @@
         </div>
     </div>
 </div>
-@endsection  
+@endsection

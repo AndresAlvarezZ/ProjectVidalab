@@ -31,10 +31,10 @@ body
 .container .card
 {
 	width: 200;
-	height: 300px;
+	height: 325px;
 	border-radius: 8px;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-	overflow: hidden;
+	overflow: visible;
 	margin: 10px;
 	text-align: center;
 	transition: all 0.25s;
@@ -60,11 +60,12 @@ body
 	font-weight: 300;
 }
 
-.container .card a 
+.container .card button
 {
 	font-weight: 500;
 	text-decoration: none;
-	color: #6ECBD5;
+	color: white;
+	margin-top: 3.5px;
 }
 
 .container .card-header
@@ -82,4 +83,77 @@ body
 	width: 110px;
  	margin-left: 50%;
   	transform: translateX(-50%);
+}
+h1
+{
+	text-align: center;
+	background: lightgreen;
+}
+
+button
+{
+	font-weight: bold;
+}
+
+.btnAgregar:hover
+{
+	background: #95EE95;
+	cursor: pointer;
+}
+
+button:hover
+{
+	background: #FF2121;
+	cursor: pointer;
+}
+
+input, .btnAgregar
+{
+	box-shadow: 0px 0px 8px lightgreen;
+}
+
+
+
+table
+{
+}
+
+td
+{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: solid;
+}
+#mod
+{
+	padding-left: 15px;
+	padding-top: 3px;
+	border-right: solid;
+	padding-right: 5px;
+}
+.flotante
+{
+    display:scroll;
+        position:fixed;
+        bottom:100px;
+        right:50px;
+
+
+}
+.flotante img
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 20px;
+	box-shadow: 0px 9px 12px darkblue;
+	position: relative;
+	animation: mymove 5s infinite;
+}
+@keyframes mymove {
+  from {bottom: 0px;}
+  to {bottom: 50px;}
+}
+td button
+{
+	background: linear-gradient(to left,red,yellow);
 }

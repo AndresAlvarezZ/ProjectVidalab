@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 
@@ -14,7 +14,7 @@
             <form action="/pruebas/{{$prueba->idDelAnalisis}}" method="POST">
                 @csrf
                 @method ('PUT')
-                
+
                 <div class="row">
                     <div class="col">
                         <label for="exampleFormControlSelect1">Código</label>
@@ -57,7 +57,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <center><button type="submit" class="btn btn-success">Actualizar datos</button></center> 
+                        <center><button type="submit" class="btn btn-success">Actualizar datos</button></center>
                     </div>
                     <div class="col">
                         <center><a href="/pruebas" class="btn btn-primary">Cancelar y Volver</a></center>

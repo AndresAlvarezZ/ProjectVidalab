@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Prueba extends Model
 {
 //ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
-    protected $primaryKey = 'idDelAnalisis';
+    protected $primaryKey = 'codigoDelAnalisis';
+    protected $keyType = 'string';
+
+//RELACIÓN
 
 
-//RELACIÓN 
-  
-    
-    
+
 //ATRIBUTOS DE INGRESO MANUAL
     protected $fillable =
     [
