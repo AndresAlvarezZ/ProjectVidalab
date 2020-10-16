@@ -22,8 +22,9 @@ class CreateAdministradorsTable extends Migration
             $table->string('email');
             $table->integer('telefonoDelUsuarioAdministrador');
             $table->string('password');
-            $table->string('rol');
-            $table->string('estadoDelUsuarioAdministrador');
+            $table->boolean('rol');
+            $table->boolean('estadoDelUsuarioAdministrador');
+            $table->string('motivoDeEstadoDelUsuarioAdministrador')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

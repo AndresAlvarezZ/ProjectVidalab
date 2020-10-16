@@ -6,7 +6,7 @@
     <div class="row justify-center">
       <div class="col-md-8">
         <div class="card">
-          <h1>Los superHer@s lo van logrando ♥ </h1>
+          <h1>Si el plan no funciona...cambia el plan pero nunca cambies la meta 💙 <br> Soon=> ✨</h1>
         </div>
       </div>
     </div>
@@ -26,6 +26,12 @@
                     @endif
 
                     <a href="nuevoAdministrador">Agregar un nuevo Administrador </a>
+                    <br>
+                    <a href="/administradores">Registro de Administradores </a>
+                    <br>
+                    <a href="/administradores/activos">Lista de administradores activos </a>
+                    <br>
+                    <a href="/administradores/inactivos">Lista de administradores inactivos</a>
                     <br>
                     <a href="/nuevaNotificacion">Enviar una nueva notificación </a>
                     <br>

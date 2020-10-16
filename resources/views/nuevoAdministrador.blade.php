@@ -20,13 +20,7 @@
                                 <label for="nombreDelUsuarioAdministrador" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="nombreDelUsuarioAdministrador" type="text" class="form-control @error('nombreDelUsuarioAdministrador') is-invalid @enderror" name="nombreDelUsuarioAdministrador" value="{{ old('nombreDelUsuarioAdministrador') }}" required autocomplete="nombreDelUsuarioAdministrador" autofocus>
-
-                                    @error('nombreDelUsuarioAdministrador')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <input type="text" class="form-control" name="rol" readonly="rol" value="Administrador"/>                                
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -111,13 +105,7 @@
                                 <label for="estadoDelUsuarioAdministrador" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="rol" type="combak" class="form-control @error('estadoDelUsuarioAdministrador') is-invalid @enderror" name="estadoDelUsuarioAdministrador" value="{{ old('estadoDelUsuarioAdministrador') }}" required autocomplete="estadoDelUsuarioAdministrador" autofocus>
-
-                                    @error('estadoDelUsuarioAdministrador')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <input type="text" class="form-control" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value="Activo"/>
                                 </div>
                             </div>
                             <div class="form-group row">

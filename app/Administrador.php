@@ -29,6 +29,7 @@ class Administrador extends Authenticatable
   'password',
   'rol',
   'estadoDelUsuarioAdministrador'
+  'motivoDeEstadoDelUsuarioAdministrador',
 ];
 
 /**

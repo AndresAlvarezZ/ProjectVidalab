@@ -25,28 +25,41 @@ Route::get('/', function(){
 });
 
 Auth::routes();
-//controlador de homes
+
+//RUTAS DE BIENVENIDA
 Route::get('/homeAdmins', 'AdministradorController@index')->name('homeAdmins');
 Route::get('/home', 'HomeController@index')->name('home');
-//controlador de administrador
+
+
+//RUTAS DE SUBMÓDULO ADMINISTRADOR
 Route::get('/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
 Route::get('/nuevoAdministrador/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
 Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
-//controlador de notificaciones
+
+Route::get('/administradores', 'AdministradorController@listar');
+Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
+Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');
+Route::get('/administradores/{administrador}', 'AdministradorController@mostrar');
+Route::get('/administradores/{administrador}/editar', 'AdministradorController@editar');
+Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
+Route::get('/administradores/{administrador}/editarEstado', 'AdministradorController@editarEstado');
+Route::put('/administradores/estado/{administrador}', 'AdministradorController@actualizarEstado');
+
+
+//RUTAS DE SUBMÓDULO NOTIFICACIONES
 Route::get('/nuevaNotificacion', 'NotificacionesController@Notificacion');
 Route::get('/notificacionEspecifica','NotificacionesController@NotificacionEspecifica');
 Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
 Route::post('/notificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
 Route::post('/notificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
-//controlador de Clientes
+
+//RUTAS DE SUBMÓDULO CLIENTES
 Route::get('/afiliarme','ClientesController@IngresarCliente');
 Route::Post('/afiliarme','ClientesController@CrearCliente');
 
 
-
-//RUTAS DEL CATALOGO
-
-  Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
+//RUTAS DE SUBMÓDULO CATALOGO
+Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
 
 
 //RUTAS DE SUBMÓDULO PAQUETES
@@ -59,6 +72,7 @@ Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');
 Route::get('/paquetes/{paquete}/eliminar', 'PaqueteController@eliminar');
 Route::delete('/paquetes/{paquete}', 'PaqueteController@destruir');
 
+
 //RUTAS DE SUBMÓDULO PRUEBAS
 Route::get('/pruebas/agregar', 'PruebaController@agregar');
 Route::post('/pruebas', 'PruebaController@guardar');
@@ -69,13 +83,16 @@ Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');
 Route::get('/pruebas/{prueba}/eliminar', 'PruebaController@eliminar');
 Route::delete('/pruebas/{prueba}', 'PruebaController@destruir');
 
-// controlador de catalogo
+
+//RUTAS DE SUBMÓDULO CATALOGO
 Route::get('/catalogo/{prueba}', 'CatalogoController@mostrar');
 
-//controlador de compras
+
+//RUTAS DE SUBMÓDULO COMPRAS
 Route::get('/compras/carrito','CatalogoController@carrito');
 Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');
 Route::get('/compras/validarCompra','ComprasController@validarCompra');
+
 
 //RUTAS DE SUBMODULO EMPRESAS
 Route::get('/empresas/agregar', 'EmpresaController@agregar');
@@ -87,6 +104,7 @@ Route::put('/empresas/{empresa}', 'EmpresaController@actualizar');
 Route::get('/empresas/{empresa}/eliminar', 'EmpresaController@eliminar');
 Route::delete('/empresas/{empresa}', 'EmpresaController@destruir');
 
+
 //RUTAS DE SUBMÓDULO CITAS
 Route::get('/citas/{empresa}/agregar', 'CitaController@agregar');
 Route::post('/citas', 'CitaController@guardar');
@@ -96,5 +114,7 @@ Route::get('/citas/{cita}/editar', 'CitaController@editar');
 Route::put('/citas/{cita}', 'CitaController@actualizar');
 Route::get('/citas/{cita}/eliminar', 'CitaController@eliminar');
 Route::delete('/citas/{cita}', 'CitaController@destruir');
-// Pruebas del sistema
+
+
+//RUTAS DE PRUEBA DE SISTEMA
 Route::get('/prueba{codigo}','ComprasController@FinalizarCompra');

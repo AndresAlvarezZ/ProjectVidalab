@@ -31,17 +31,17 @@ class AdministradorController extends Controller
   {
     $acceso = false;
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('homeAdmins',compact('acceso','name'));
+    return view('homeAdmins',compact('acceso','name'));
   }
 
   public function nuevoAdministrador()
   {
     $acceso = false;
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('nuevoAdministrador',compact('acceso','name'));
+    return view('nuevoAdministrador',compact('acceso','name'));
   }
   public function nuevoAdministradorCreate()
-{
+  {
 
     $data = $this->validate(request(),
     [
@@ -52,8 +52,8 @@ class AdministradorController extends Controller
       'email' => ['required','email','unique:administradors'],
       'telefonoDelUsuarioAdministrador' => 'required',
       'password' => 'required',
-      'rol' => 'required',
-      'estadoDelUsuarioAdministrador' => 'required'
+      'rol' =>  false, //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
+      'estadoDelUsuarioAdministrador' =>  true, //POR DEFECTO ES ACTIVO
     ]);
 
     Administrador::create([
@@ -70,11 +70,90 @@ class AdministradorController extends Controller
     $acceso = false;
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
     return view('homeAdmins',compact('acceso','name'))->with('status','Administrador Agregado exitosamente');
+  }
 
 
-}
-protected function guard()
-{
-  return Auth::guard('admins');
-}
+  protected function guard()
+  {
+    return Auth::guard('admins');
+  }
+
+  //LISTAR REGISTROS
+  public function listar()
+  {
+    $superAdministradores = Administrador::where('rol', true)->first();
+    $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
+                                      ->where('rol', '!=', true)->get();
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
+  }
+
+
+  //LISTAR REGISTROS CON ESTADO ACTIVO
+  public function listarAdministradoresActivos()
+  {
+    $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
+                                      ->where([
+                                        ['estadoDelUsuarioAdministrador', '=', true], 
+                                        ['rol', '!=', true]])->get();
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
+  }
+
+    //LISTAR REGISTROS CON ESTADO INACTIVO
+    public function listarAdministradoresInactivos()
+    {
+      $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
+                                      ->where([
+                                        ['estadoDelUsuarioAdministrador', '=', false], 
+                                        ['rol', '!=', true]])->get();
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
+    }
+
+  //MOSTRAR ÚNICO REGISTRO
+  public function mostrar(Administrador $administrador)
+  {
+    $administradores = Administrador::all();
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('administrador.mostrar', compact('administrador', 'acceso', 'name'));
+  }
+
+  //EDITAR REGISTRO
+  public function editar(Administrador $administrador)
+  {
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('administrador.editar', compact('administrador', 'acceso', 'name'));
+  }
+
+  public function actualizar (Administrador $administrador)
+  {
+    $this->validate(request(),
+    [
+      'email' => ['required','email'],
+      'telefonoDelUsuarioAdministrador' => 'required',
+    ]);
+    $administrador->update(request()->all());
+
+    return redirect ('/administradores');
+  }
+
+
+  //EDITAR ESTADO REGISTRO
+  public function editarEstado(Administrador $administrador)
+  {
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('administrador.editarEstado', compact('administrador', 'acceso', 'name'));
+  }
+
+  public function actualizarEstado (Administrador $administrador)
+  {
+    $this->validate(request(),
+    [
+      'estadoDelUsuarioAdministrador' => 'required',
+      'motivoDeEstadoDelUsuarioAdministrador' => 'required'
+    ]);
+    $administrador->update(request()->all());
+    return redirect ('/administradores');
+  }
 }
