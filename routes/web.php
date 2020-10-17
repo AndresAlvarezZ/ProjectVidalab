@@ -94,6 +94,9 @@ Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');
 Route::get('/compras/validarCompra','ComprasController@validarCompra');
 
 
+//Rutas de SUBMODULO de Facturas
+Route::get('/facturas','FacturasController@miExpediente');
+
 //RUTAS DE SUBMODULO EMPRESAS
 Route::get('/empresas/agregar', 'EmpresaController@agregar');
 Route::post('/empresas', 'EmpresaController@guardar');

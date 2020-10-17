@@ -52,8 +52,8 @@ class AdministradorController extends Controller
       'email' => ['required','email','unique:administradors'],
       'telefonoDelUsuarioAdministrador' => 'required',
       'password' => 'required',
-      'rol' =>  false, //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
-      'estadoDelUsuarioAdministrador' =>  true, //POR DEFECTO ES ACTIVO
+      'rol' =>  'required', //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
+      'estadoDelUsuarioAdministrador' =>  'required', //POR DEFECTO ES ACTIVO
     ]);
 
     Administrador::create([
@@ -64,8 +64,8 @@ class AdministradorController extends Controller
       'email' =>  $data['email'],
       'telefonoDelUsuarioAdministrador' =>  $data['telefonoDelUsuarioAdministrador'],
       'password' =>  Hash::make($data['password']),
-      'rol' =>  $data['rol'],
-      'estadoDelUsuarioAdministrador' =>  $data['estadoDelUsuarioAdministrador']
+      'rol' =>  false, //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
+     'estadoDelUsuarioAdministrador' =>  true //POR DEFECTO ES ACTIVO
     ]);
     $acceso = false;
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
@@ -94,7 +94,7 @@ class AdministradorController extends Controller
   {
     $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
                                       ->where([
-                                        ['estadoDelUsuarioAdministrador', '=', true], 
+                                        ['estadoDelUsuarioAdministrador', '=', true],
                                         ['rol', '!=', true]])->get();
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
     return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
@@ -105,7 +105,7 @@ class AdministradorController extends Controller
     {
       $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
                                       ->where([
-                                        ['estadoDelUsuarioAdministrador', '=', false], 
+                                        ['estadoDelUsuarioAdministrador', '=', false],
                                         ['rol', '!=', true]])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));

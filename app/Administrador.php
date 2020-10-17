@@ -28,7 +28,7 @@ class Administrador extends Authenticatable
   'telefonoDelUsuarioAdministrador',
   'password',
   'rol',
-  'estadoDelUsuarioAdministrador'
+  'estadoDelUsuarioAdministrador',
   'motivoDeEstadoDelUsuarioAdministrador',
 ];
 

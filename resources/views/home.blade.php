@@ -18,7 +18,8 @@
                   <a href="" target="_blank">Prueba de nuevo proyecto</a>
                   <br>
                   <a href="/catalogos">Catálogos </a>
-                
+                  <br>
+                  <a href="/facturas">Mi expediente </a>
                 </div>
             </div>
         </div>

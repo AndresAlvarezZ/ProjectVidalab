@@ -18,7 +18,7 @@ function cargarCarrito()
 
         var div = document.createElement("input"),
         articulo = document.createElement('tr'),
-        tdArticulo = document.createElement('td');
+        tdArticulo = document.createElement('td'),
         tdPrecio = document.createElement('td');
 
         div.id = "codigo"+contador;
@@ -36,6 +36,13 @@ function cargarCarrito()
         finalizarInter.appendChild(div);
 
     });
+    var date = new Date(),
+    txtFecha = document.createElement("input");
+    txtFecha.id = 'fecha';
+    txtFecha.name = 'fecha';
+    txtFecha.value = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes();
+    txtFecha.hidden = true;
+    finalizarInter.appendChild(txtFecha);
     var brArticulos = document.createElement('br');
     var lbltotal = document.createElement('label');
     var txtTotal = document.createElement('label');
@@ -49,11 +56,15 @@ function cargarCarrito()
     finalizarInter.appendChild(txtTotal);
     finalizarInter.appendChild(br);
     var  btnFinalizar = document.createElement('button');
+    var btnSpan = document.createElement('span');
+    btnSpan.innerHTML = 'una vez finalizada la compra, no hay vuelta atrás';
+    btnSpan.className = 'tooltiptext';
     btnFinalizar.type = 'submit';
     btnFinalizar.name = 'FinalizarCompra';
     btnFinalizar.textContent = 'Finalizar Compra';
     btnFinalizar.id = 'borrarCarrito';
       finalizarInter.appendChild(btnFinalizar);
+          btnFinalizar.appendChild(btnSpan);
 }
 document.querySelector("#borrarCarrito").addEventListener('click', function()
 {

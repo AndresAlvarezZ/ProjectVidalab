@@ -14,11 +14,11 @@
             <form action="/administradores/estado/{{$administrador->id}}" method="POST">
                 @csrf
                 @method ('PUT')
-                
+
                 <div class="row">
                     <div class="col">
                         <label for="exampleFormControlSelect1">Identificación</label>
-                        <input type="text" class="form-control" readonly="dniDelUsuarioAdministrador" value="{{$administrador->dniDelUsuarioAdministrador}}"/> <br> 
+                        <input type="text" class="form-control" readonly="dniDelUsuarioAdministrador" value="{{$administrador->dniDelUsuarioAdministrador}}"/> <br>
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Nombre</label>
@@ -26,43 +26,48 @@
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Primer apellido</label>
-                        <input type="text" class="form-control" readonly="primerApellidoAdministrador" value="{{$administrador->primerApellidoAdministrador}}"/> <br> 
+                        <input type="text" class="form-control" readonly="primerApellidoAdministrador" value="{{$administrador->primerApellidoAdministrador}}"/> <br>
                     </div>
                     <div class="col">
                         <label for="exampleFormControlSelect1">Segundo apellido</label>
                         <input type="text" class="form-control" readonly="segundoApellidoAdministrador" value="{{$administrador->segundoApellidoAdministrador}}"/> <br>
                     </div>
-                </div> 
+                </div>
 
                 <div class="row">
-                    
-                    <div class="col"> 
+
+                    <div class="col">
                         <label for="exampleFormControlSelect1">Estado Actual</label>
-                        <input type="text" class="form-control" readonly="actualEstadoDelUsuarioAdministrador" value="{{$administrador->estadoDelUsuarioAdministrador}}"/> 
-                    </div> 
-                    <div class="col"> 
+                        <br>
+                        @if ($administrador->estadoDelUsuarioAdministrador == true)
+                            <input type="text" class="alert alert-success" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value="Activo"/> <br>
+                        @else
+                            <input type="text" class="alert alert-danger" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value= "Inactivo"/> <br>
+                        @endif
+                    </div>
+                    <div class="col">
                         <label for="exampleFormControlSelect1">Motivo</label>
-                        <input type="text" class="form-control" readonly="motivoDeEstadoDelUsuarioAdministrador" value="{{$administrador->motivoDeEstadoDelUsuarioAdministrador}}"/> 
-                    </div>   
+                        <input type="text" class="form-control" readonly="motivoDeEstadoDelUsuarioAdministrador" value="{{$administrador->motivoDeEstadoDelUsuarioAdministrador}}"/>
+                    </div>
                 </div>
 
                 <br>
 
                 <div class="row">
-                    <div class="col"> 
+                    <div class="col">
                         <label for="exampleFormControlSelect1">Estado a asignar</label> <br>
-                        @if ($administrador->estadoDelUsuarioAdministrador == 'true')
-                            
+                        @if ($administrador->estadoDelUsuarioAdministrador == true)
+
                             <input type="text" class="alert alert-danger" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value="false"/> <br>
                             <label for="exampleFormControlSelect1">Motivo de inactividad</label>
                         @else
                             <input type="text" class="alert alert-success" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value= "true"/> <br>
                             <label for="exampleFormControlSelect1">Motivo de actividad</label>
-                        @endif    
-                    </div>    
+                        @endif
+                    </div>
                 </div>
 
-                
+
                 <input type="text" class="form-control" placeholder="Escriba el motivo de cambio de estado" name="motivoDeEstadoDelUsuarioAdministrador" value="{{old('motivoDeEstadoDelUsuarioAdministrador')}}" />
                 @error('motivoDeEstadoDelUsuarioAdministrador')
                     <div class="alert alert-danger">{{$message}}</div>
@@ -73,7 +78,7 @@
                 <div class="row">
                     <div class="col">
                         <center>
-                            @if ($administrador->estadoDelUsuarioAdministrador == 'true')
+                            @if ($administrador->estadoDelUsuarioAdministrador == true)
                                 <button type="submit" class="btn btn-danger">Desactivar</button>
                             @else
                                 <button type="submit" class="btn btn-success">Activar</button>
@@ -85,7 +90,7 @@
                     </div>
                 </div>
             </form>
-        </div> 
+        </div>
     </div>
 </div>
 @endsection

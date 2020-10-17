@@ -14,12 +14,13 @@ class CreateComprasTable extends Migration
     public function up()
     {
         Schema::create('compras', function (Blueprint $table) {
-            $table->id('idCompras');
             $table->integer('dniDelCliente')->unsigned();
+            $table->primary('dniDelCliente');
             $table->string('codigoDelAnalisis')->nullable();
             $table->string('codigoDelPaquete')->nullable();
             $table->string('nombre');
             $table->decimal('costoDelServicio');
+            $table->DateTime('Fecha');
             $table->timestamps();
             //relaciones
             $table->foreign('dniDelCliente')->references('dniDelCliente')->on('clientes')

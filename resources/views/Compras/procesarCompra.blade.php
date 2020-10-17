@@ -35,6 +35,9 @@
                  @csrf
               </form>
             </div>
+            <div class="card-foot">
+              <a type="button" class="btn btn-primary" href="/catalogos">Volver al catalogo</a>
+            </div>
           </div>
         </div>
       </div>

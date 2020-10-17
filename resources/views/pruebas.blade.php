@@ -1,5 +1,11 @@
- <script src="{{ asset('js/finalizarCompra.js') }}?v=<?php echo(rand()); ?>"defer></script>
-se esta haciendo pruebas {{$probar}}
-<form class="" id="tabla" action="/compras/validarCompra" method="get">
-    @csrf
-</form>
+
+<br>
+este es el dato {{$dato}}
+<br>
+mas {{$facturas}}
+
+<?php foreach ($facturas as $factura): ?>
+  <?php if ($factura->condicionDeCompra == 'Pendiente'): ?>
+      <h1>esta factura esta pendiente {{$factura}}</h1>
+  <?php endif; ?>
+<?php endforeach; ?>

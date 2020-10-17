@@ -14,6 +14,8 @@ h1
 	align-items: center;
 }
 .card-foot a{
+	margin-bottom: 5px;
+	margin-top: 5px;
 	background: linear-gradient(to left,#41f497,#41dff4);
 }
 
@@ -73,6 +75,33 @@ td
 	font-weight: bold;
 }
 #tdArticulos{
+}
+.tooltiptext {
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+	position: absolute;
+ z-index: 1;
+ top: 63%;
+ left: 75%;
+ margin-left: -60px;
+}
+.tooltiptext::after {
+	content: "";
+ position: absolute;
+ top: 50%;
+ right: 100%;
+ margin-top: -5px;
+ border-width: 5px;
+ border-style: solid;
+ border-color: transparent black transparent transparent;
+}
+#borrarCarrito:hover .tooltiptext{
+display: inline-block;
 }
 /*#tdDescripcion
 {
