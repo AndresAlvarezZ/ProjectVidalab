@@ -52,8 +52,8 @@ class AdministradorController extends Controller
       'email' => ['required','email','unique:administradors'],
       'telefonoDelUsuarioAdministrador' => 'required',
       'password' => 'required',
-      'rol' =>  'required', //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
-      'estadoDelUsuarioAdministrador' =>  'required', //POR DEFECTO ES ACTIVO
+      'rol' =>  'required', 
+      'estadoDelUsuarioAdministrador' =>  'required', 
     ]);
 
     Administrador::create([
@@ -64,8 +64,8 @@ class AdministradorController extends Controller
       'email' =>  $data['email'],
       'telefonoDelUsuarioAdministrador' =>  $data['telefonoDelUsuarioAdministrador'],
       'password' =>  Hash::make($data['password']),
-      'rol' =>  false, //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
-     'estadoDelUsuarioAdministrador' =>  true //POR DEFECTO ES ACTIVO
+      'rol' =>  0, //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
+     'estadoDelUsuarioAdministrador' =>  1 //POR DEFECTO ES ACTIVO
     ]);
     $acceso = false;
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
@@ -81,9 +81,9 @@ class AdministradorController extends Controller
   //LISTAR REGISTROS
   public function listar()
   {
-    $superAdministradores = Administrador::where('rol', true)->first();
+    $superAdministradores = Administrador::where('rol', 1)->first();
     $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
-                                      ->where('rol', '!=', true)->get();
+                                      ->where('rol', '!=', 1)->get();
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
     return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
   }
@@ -94,8 +94,8 @@ class AdministradorController extends Controller
   {
     $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
                                       ->where([
-                                        ['estadoDelUsuarioAdministrador', '=', true],
-                                        ['rol', '!=', true]])->get();
+                                        ['estadoDelUsuarioAdministrador', '=', 1],
+                                        ['rol', '!=', 1]])->get();
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
     return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
   }
@@ -105,7 +105,7 @@ class AdministradorController extends Controller
     {
       $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
                                       ->where([
-                                        ['estadoDelUsuarioAdministrador', '=', false],
+                                        ['estadoDelUsuarioAdministrador', '=', 0],
                                         ['rol', '!=', true]])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
@@ -148,12 +148,17 @@ class AdministradorController extends Controller
 
   public function actualizarEstado (Administrador $administrador)
   {
+    $nuevoEstado = false;
+    if($administrador->estadoDelUsuarioAdministrador == false)
+    {
+      $nuevoEstado = true; 
+    }    
+    $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;
     $this->validate(request(),
     [
-      'estadoDelUsuarioAdministrador' => 'required',
-      'motivoDeEstadoDelUsuarioAdministrador' => 'required'
-    ]);
+      'motivoDeEstadoDelUsuarioAdministrador' => 'required',
+    ]); 
     $administrador->update(request()->all());
     return redirect ('/administradores');
-  }
+}
 }

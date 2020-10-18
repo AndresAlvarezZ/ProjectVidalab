@@ -40,33 +40,29 @@
                         <label for="exampleFormControlSelect1">Estado Actual</label>
                         <br>
                         @if ($administrador->estadoDelUsuarioAdministrador == true)
-                            <input type="text" class="alert alert-success" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value="Activo"/> <br>
+                            <input type="text" class="alert alert-success" readonly="" value="Activo"/> <br>
                         @else
-                            <input type="text" class="alert alert-danger" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value= "Inactivo"/> <br>
+                            <input type="text" class="alert alert-danger" readonly="" value= "Inactivo"/> <br>
                         @endif
                     </div>
                     <div class="col">
-                        <label for="exampleFormControlSelect1">Motivo</label>
+                        <label for="exampleFormControlSelect1">Estado a asignar</label> <br>
+                        @if ($administrador->estadoDelUsuarioAdministrador == true)
+
+                            <input type="text" class="alert alert-danger" name="nuevoEstadoDelUsuarioAdministrador" readonly="nuevoEstadoDelUsuarioAdministrador" value="false"/> <br>
+                            <label for="exampleFormControlSelect1">Motivo de inactividad</label>
+                        @else
+                            <input type="text" class="alert alert-success" name="nuevoEstadoDelUsuarioAdministrador" readonly="nuevoEstadoDelUsuarioAdministrador" value= "true"/> <br>
+                            <label for="exampleFormControlSelect1">Motivo de actividad</label>
+                        @endif
+                    </div>
+                    <div class="col">
+                        <label for="exampleFormControlSelect1">Motivo de actual estado</label>
                         <input type="text" class="form-control" readonly="motivoDeEstadoDelUsuarioAdministrador" value="{{$administrador->motivoDeEstadoDelUsuarioAdministrador}}"/>
                     </div>
                 </div>
 
                 <br>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="exampleFormControlSelect1">Estado a asignar</label> <br>
-                        @if ($administrador->estadoDelUsuarioAdministrador == true)
-
-                            <input type="text" class="alert alert-danger" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value="false"/> <br>
-                            <label for="exampleFormControlSelect1">Motivo de inactividad</label>
-                        @else
-                            <input type="text" class="alert alert-success" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value= "true"/> <br>
-                            <label for="exampleFormControlSelect1">Motivo de actividad</label>
-                        @endif
-                    </div>
-                </div>
-
 
                 <input type="text" class="form-control" placeholder="Escriba el motivo de cambio de estado" name="motivoDeEstadoDelUsuarioAdministrador" value="{{old('motivoDeEstadoDelUsuarioAdministrador')}}" />
                 @error('motivoDeEstadoDelUsuarioAdministrador')
