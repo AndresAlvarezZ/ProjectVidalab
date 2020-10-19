@@ -20,9 +20,6 @@ class CreateFacturasTable extends Migration
             $table->decimal('total',16,2);
             $table->string('condicionDeCompra');
             $table->DateTime('fecha');
-            $table->foreign('idCliente')->references('dniDelCliente')->on('compras')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
             $table->timestamps();
         });
     }

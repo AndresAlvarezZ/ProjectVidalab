@@ -43,6 +43,8 @@
                     <br>
                     <a href="/paquetes">Registro de paqutes de análisis </a>
                     <br>
+                    <a href="/verCompras">Ver compras</a>
+                    <br>
                     <a href="/catalogos">Catálogos </a>
                 </div>
             </div>

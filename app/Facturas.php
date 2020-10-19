@@ -7,6 +7,7 @@ use App\Compras;
 
 class Facturas extends Model
 {
+    protected $primaryKey = 'idFactura';
     protected $fillable = [
       'idCliente',
       'descuento',

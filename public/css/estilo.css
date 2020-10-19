@@ -103,6 +103,30 @@ td
 #borrarCarrito:hover .tooltiptext{
 display: inline-block;
 }
+#sinRaya{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-top: none;
+	border-color: none;
+	text-align: left;
+}
+#articulos{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-top: none;
+	border-color: none;
+	text-align: center;
+}
+#factura{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	margin-top: 5px;
+	border-top: dashed;
+	border-color: brown;
+	text-align: right;
+}
+
 /*#tdDescripcion
 {
 	border-right: dashed;

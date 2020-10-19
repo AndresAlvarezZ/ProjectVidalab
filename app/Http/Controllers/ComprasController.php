@@ -34,7 +34,8 @@ class ComprasController extends Controller
             'codigoDelAnalisis' => $datos->codigoDelAnalisis,
             'codigoDelPaquete' =>null,
             'nombre' => $datos->nombreDelAnalisis,
-            'costoDelServicio' =>$datos->costoDelAnalisis
+            'costoDelServicio' =>$datos->costoDelAnalisis,
+            'Fecha' =>  $fecha
           ]);
         }
         $datos = Paquete::find($dato);
@@ -52,17 +53,17 @@ class ComprasController extends Controller
         $dato = Auth()->user()->dniDelUsuario;
         $subtotal = 0;
         $descuento = 0.05;
-    $facturas = Compras::whereIn('dniDelCliente',[$dato])->get();
+    $facturas = Compras::whereIn('fecha',[$fecha])->get();
     $contador = 1;
     $total = 0;
     foreach ($facturas as $factura) {
       $subtotal = $subtotal+$factura->costoDelServicio;
       $total = $total+$factura->costoDelServicio;
-      $descuentos = $subtotal*$descuento;
+      $descuento = $subtotal*$descuento;
       // numero x el descuento mantiene
       if($contador >= 4){ $descuento = $descuento;}
       else{
-      $descuento = $descuento+0.025;
+      $descuento = $descuento+0.05;
       $contador++;
     }
     }
