@@ -45,6 +45,14 @@
                     <br>
                     <a href="/verCompras">Ver compras</a>
                     <br>
+                    <a href="/solicitudes/enEspera">Solicitudes En Espera</a>
+                    <br>
+                    <a href="/solicitudes/confirmadas">Solicitudes Confirmadas</a>
+                    <br>
+                    <a href="/solicitudes/finalizadas">Solicitudes Finalizadas</a>
+                    <br>
+                    <a href="/solicitudes/canceladas">Solicitudes Canceladas</a>
+                    <br>
                     <a href="/catalogos">Catálogos </a>
                 </div>
             </div>

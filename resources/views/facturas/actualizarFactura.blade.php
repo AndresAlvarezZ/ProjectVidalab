@@ -53,8 +53,8 @@
                 <div class="row">
                     <div class="col">
                         <label for="exampleFormControlSelect1">Subtotal</label>
-                        <input type="text" class="form-control" readonly name="Subtotal" value="{{$factura->total}}"/> <br>
-                        @error('Subtotal')
+                        <input type="text" class="form-control" readonly name="total" value="{{$factura->total}}"/> <br>
+                        @error('total')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>
@@ -68,8 +68,8 @@
                     <div class="col">
                         <label for="exampleFormControlSelect1">Total</label>
                         <?php $total = $factura->total-$factura->descuento ?>
-                        <input type="text" class="form-control" readonly name="total" value="{{$total}}"/> <br>
-                        @error('total')
+                        <input type="text" class="form-control" readonly name="subtotal" value="{{$total}}"/> <br>
+                        @error('subtotal')
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>

@@ -92,6 +92,8 @@ Route::get('/catalogo/{prueba}', 'CatalogoController@mostrar');
 Route::get('/compras/carrito','CatalogoController@carrito');
 Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');
 Route::get('/compras/validarCompra','ComprasController@validarCompra');
+Route::get('/compras/domicilio','ComprasController@pedidoDomicilio');
+Route::get('/compras/domicilioFactura','ComprasController@pedidoDomicilioFactura');
 
 
 //Rutas de SUBMODULO de Facturas
@@ -99,6 +101,16 @@ Route::get('/facturas','FacturasController@miExpediente');
 Route::get('/verCompras','FacturasController@verCompras');
 Route::get('/procesarFactura/{factura}','FacturasController@procesarCompra');
 Route::put('/procesarFactura/{factura}','FacturasController@actualizarFactura');
+
+//Rutas de solicitudes
+Route::get('/solicitudes/enEspera','SolicitudesEnEsperaController@SolicitudesEnEspera');
+Route::get('/solicitudes/confirmadas','SolicitudesConfirmadasController@SolicitudesConfirmadas');
+Route::get('/solicitudes/finalizadas','SolicitudesFinalizadasController@SolicitudesFinalizadas');
+Route::get('/solicitudes/canceladas','SolicitudesCanceladasController@SolicitudesCanceladas');
+Route::get('/solicitudes/cambioDeEstado/{solicitud}','SolicitudesEnEsperaController@cambioDeEstado');
+Route::delete('/solicitudes/procesarCambio/{solicitud}','SolicitudesEnEsperaController@procesarCambio');
+Route::get('/solicitudesConfirmadas/cambioDeEstado/{solicitud}','SolicitudesConfirmadasController@cambioDeEstado');
+Route::delete('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesConfirmadasController@procesarCambio');
 
 //RUTAS DE SUBMODULO EMPRESAS
 Route::get('/empresas/agregar', 'EmpresaController@agregar');

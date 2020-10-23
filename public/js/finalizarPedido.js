@@ -46,6 +46,31 @@ function cargarCarrito()
     var brArticulos = document.createElement('br');
     var lbltotal = document.createElement('label');
     var txtTotal = document.createElement('label');
+    var nombreDelCiente = document.createElement('label');
+    var txtnombreDelCliente = document.createElement('input');
+    nombreDelCiente.textContent ='Nombre';
+    txtnombreDelCliente.name = 'nombreDelCiente';
+    txtnombreDelCliente.required = true;
+    txtnombreDelCliente.className = 'form form-control';
+    var domicilioDelCliente = document.createElement('label');
+    var txtdomicilioDelCliente = document.createElement('input');
+    domicilioDelCliente.textContent ='Domicilio actual';
+    txtdomicilioDelCliente.name = 'domicilioDelCiente';
+    txtdomicilioDelCliente.required = true;
+    txtdomicilioDelCliente.className = 'form form-control';
+    var telefonoDelCliente = document.createElement('label');
+    var txttelefonoDelCliente = document.createElement('input');
+    telefonoDelCliente.textContent ='Teléfono';
+    txttelefonoDelCliente.name = 'telefonoDelCliente';
+    txttelefonoDelCliente.required = true;
+    txttelefonoDelCliente.type = 'number';
+    txttelefonoDelCliente.className = 'form form-control';
+    finalizarInter.appendChild(nombreDelCiente);
+    finalizarInter.appendChild(txtnombreDelCliente);
+    finalizarInter.appendChild(domicilioDelCliente);
+    finalizarInter.appendChild(txtdomicilioDelCliente);
+    finalizarInter.appendChild(telefonoDelCliente);
+    finalizarInter.appendChild(txttelefonoDelCliente);
     var br = document.createElement('br');
     var br1 = document.createElement('br');
     var br2 = document.createElement('br');
@@ -58,7 +83,6 @@ function cargarCarrito()
     finalizarInter.appendChild(br);
     var  btnFinalizar = document.createElement('button');
     var btnSpan = document.createElement('span');
-    var link = document.createElement('a');
     btnSpan.innerHTML = 'una vez finalizada la compra, no hay vuelta atrás';
     btnSpan.className = 'tooltiptext';
     btnFinalizar.type = 'submit';
@@ -66,12 +90,7 @@ function cargarCarrito()
     btnFinalizar.textContent = 'Finalizar Compra';
     btnFinalizar.id = 'borrarCarrito';
     btnFinalizar.className = 'btn btn-primary';
-    link.textContent = 'Solicitar a domicilio';
-    link.href = '/compras/domicilio';
-    link.className = 'btn btn-primary';
       finalizarInter.appendChild(btnFinalizar);
-      finalizarInter.appendChild(br2);
-      finalizarInter.appendChild(link);
           btnFinalizar.appendChild(btnSpan);
 }
 document.querySelector("#borrarCarrito").addEventListener('click', function()
