@@ -1,4 +1,4 @@
 
-este es el modulo de domicilio {{$solicitud}}
+este es el modulo de pruebas
 <br>
-este es el estado {{$estado}}
+se esta probando esto {{$prueba}}

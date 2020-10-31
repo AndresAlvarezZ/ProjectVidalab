@@ -8,7 +8,7 @@ use App\Paquete;
 use App\Compras;
 use App\Clientes;
 use App\Facturas;
-use App\SolicitudesEnEspera;
+use App\Solicitudes;
 use Illuminate\Support\Str;
 
 class ComprasController extends Controller
@@ -145,7 +145,7 @@ class ComprasController extends Controller
     foreach ($facturas as $idAsignar) {
       $idFactura = $idAsignar->idFactura;
     }
-    SolicitudesEnEspera::create([
+    Solicitudes::create([
       'idFactura'=>$idFactura,
       'nombreDelCiente' => $request['nombreDelCiente'],
       'domicilioDelCiente' => $request['domicilioDelCiente'],

@@ -38,7 +38,7 @@
                                             <th scope="row"><center>{{ $solicitud->telefonoDelCliente}}</center></th>
                                             <th scope="row"><center>{{ $solicitud->analisisSolicitados}}</center></th>
                                             <th scope="row"><center>{{ $solicitud->costoDelServicio}}</center></th>
-                                            <td scope="row"><center><a href="/solicitudes/cambioDeEstado/{{$solicitud->idDeSolicitudEnEspera}}" class="btn btn-primary">Procesar Solicitud</a> </center></td>
+                                            <td scope="row"><center><a href="/solicitudes/cambioDeEstado/{{$solicitud->idDeSolicitud}}" class="btn btn-primary">Procesar Solicitud</a> </center></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

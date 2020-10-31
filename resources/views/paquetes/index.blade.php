@@ -24,9 +24,9 @@
                                             <th scope="row"><center>{{ $paquete->codigoDelPaquete}}</center></th>
                                             <th scope="row"><center>{{ $paquete->nombreDelPaquete}}</center></th>
                                             <td><center>₡ {{$paquete->costoDelPaquete}}</center></td>
-                                            <td><center><a href="/paquetes/{{$paquete->idDelPaquete}}" class="btn btn-primary">Consultar datos</a> |
-                                            <a href="/paquetes/{{$paquete->idDelPaquete}}/editar" class="btn btn-success">Editar datos</a> |
-                                            <a href="/paquetes/{{$paquete->idDelPaquete}}/eliminar" class="btn btn-danger">Eliminar datos</a> </center></td>
+                                            <td><center><a href="/paquetes/{{$paquete->codigoDelPaquete}}" class="btn btn-primary">Consultar datos</a> |
+                                            <a href="/paquetes/{{$paquete->codigoDelPaquete}}/editar" class="btn btn-success">Editar datos</a> |
+                                            <a href="/paquetes/{{$paquete->codigoDelPaquete}}/eliminar" class="btn btn-danger">Eliminar datos</a> </center></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

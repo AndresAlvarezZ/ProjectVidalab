@@ -83,9 +83,10 @@ class PruebaController extends Controller
             'costoDelAnalisis' => 'required',
             'numeroDeMaquina' => 'required',
         ]);
-        $prueba->update(request()->all());
 
-        return redirect ('/pruebas'.'/'. $prueba->idAnalisis);
+      $prueba->update(request()->all());
+
+      return redirect('/pruebas');
     }
 
 

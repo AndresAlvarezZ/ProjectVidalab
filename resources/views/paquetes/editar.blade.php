@@ -11,7 +11,7 @@
 
         <div class="card-body">
 
-            <form action="/paquetes/{{$paquete->idDelPaquete}}" method="POST">
+            <form action="/paquetes/{{$paquete->codigoDelPaquete}}" method="POST">
                 @csrf
                 @method ('PUT')
 

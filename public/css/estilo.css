@@ -1,4 +1,6 @@
-
+body{
+background-image: url("/imagenes/espacio.jpg");
+}
 h1
 {
 	text-align: center;
@@ -126,6 +128,71 @@ display: inline-block;
 	border-color: brown;
 	text-align: right;
 }
+.desplegable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+	text-align: center;
+}
+
+@media screen and (max-width:700px) {
+	.desplegable .liDesplegable {
+	  float: none;
+	}
+}
+.liDesplegable {
+  float: left;
+}
+
+.desplegable1, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.desplegable1:hover, .lista:hover .dropbtn {
+  background: linear-gradient(to left,#41f497,#41dff4);
+	background-color: #555;
+ color:black;
+ text-decoration: inherit;
+}
+
+.lista {
+  display: inline-block;
+	float: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+	background: linear-gradient(to left,brown,blue);
+	color: yellow;
+}
+
+.lista:hover .dropdown-content {
+  display: block;
+	position: absolute;
+}
+
 
 /*#tdDescripcion
 {

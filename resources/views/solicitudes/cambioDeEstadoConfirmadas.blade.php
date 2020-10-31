@@ -11,9 +11,9 @@
 
         <div class="card-body">
 
-            <form action="/solicitudesConfirmadas/procesarCambio/{{$solicitud->idDeSolicitudEnEspera}}" method="POST">
+            <form action="/solicitudesConfirmadas/procesarCambio/{{$solicitud->idDeSolicitud}}" method="POST">
                 @csrf
-                @method ('delete')
+                @method ('put')
 
                 <div class="row ">
                     <div class="col">

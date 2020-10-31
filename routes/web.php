@@ -60,6 +60,7 @@ Route::Post('/afiliarme','ClientesController@CrearCliente');
 
 //RUTAS DE SUBMÓDULO CATALOGO
 Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
+Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');
 
 
 //RUTAS DE SUBMÓDULO PAQUETES
@@ -103,14 +104,14 @@ Route::get('/procesarFactura/{factura}','FacturasController@procesarCompra');
 Route::put('/procesarFactura/{factura}','FacturasController@actualizarFactura');
 
 //Rutas de solicitudes
-Route::get('/solicitudes/enEspera','SolicitudesEnEsperaController@SolicitudesEnEspera');
-Route::get('/solicitudes/confirmadas','SolicitudesConfirmadasController@SolicitudesConfirmadas');
-Route::get('/solicitudes/finalizadas','SolicitudesFinalizadasController@SolicitudesFinalizadas');
-Route::get('/solicitudes/canceladas','SolicitudesCanceladasController@SolicitudesCanceladas');
-Route::get('/solicitudes/cambioDeEstado/{solicitud}','SolicitudesEnEsperaController@cambioDeEstado');
-Route::delete('/solicitudes/procesarCambio/{solicitud}','SolicitudesEnEsperaController@procesarCambio');
-Route::get('/solicitudesConfirmadas/cambioDeEstado/{solicitud}','SolicitudesConfirmadasController@cambioDeEstado');
-Route::delete('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesConfirmadasController@procesarCambio');
+Route::get('/solicitudes/enEspera','SolicitudesController@SolicitudesEnEspera');
+Route::get('/solicitudes/confirmadas','SolicitudesController@SolicitudesConfirmadas');
+Route::get('/solicitudes/finalizadas','SolicitudesController@SolicitudesFinalizadas');
+Route::get('/solicitudes/canceladas','SolicitudesController@SolicitudesCanceladas');
+Route::get('/solicitudes/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstado');
+Route::put('/solicitudes/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
+Route::get('/solicitudesConfirmadas/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstadoConfirmadas');
+Route::put('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
 
 //RUTAS DE SUBMODULO EMPRESAS
 Route::get('/empresas/agregar', 'EmpresaController@agregar');
