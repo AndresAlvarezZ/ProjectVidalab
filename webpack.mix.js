@@ -19,3 +19,4 @@ mix.js('resources/js/app.js', 'public/js')
     {
         mix.version();
     };
+    require_once "vendor/autoload.php";
