@@ -16,7 +16,7 @@ class CreateNotificacionesTable extends Migration
         Schema::create('notificaciones', function (Blueprint $table) {
           //Atributos del modelo
             $table->id();
-            $table->integer('idUsuarioAdministrador');
+            $table->integer('idUsuarioAdministrador')->unsigned();
             $table->string('mensajeDeNotificacion');
             $table->integer('telefono');
             $table->string('correoElectronico');

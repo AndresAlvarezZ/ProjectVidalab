@@ -137,7 +137,7 @@
                                 <label for="aceptacionDeTerminos" class="col-md-4 col-form-label text-md-right">{{ __('Aceptar Términos') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="aceptacionDeTerminos" type="checkbox" class="form-control @error('aceptacionDeTerminos') is-invalid @enderror" name="aceptacionDeTerminos" value="true" required autocomplete="aceptacionDeTerminos" autofocus>
+                                    <input id="aceptacionDeTerminos" type="checkbox" class="form-control @error('aceptacionDeTerminos') is-invalid @enderror" name="aceptacionDeTerminos" value=1 required autocomplete="aceptacionDeTerminos" autofocus>
                                     @error('aceptacionDeTerminos')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
