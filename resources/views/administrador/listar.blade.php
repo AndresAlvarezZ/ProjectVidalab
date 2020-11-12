@@ -70,8 +70,7 @@
                                                                 </center></td>
                                                 <td><center>Activo</center></td>
                                                 <td><center>
-                                                    <a href="#" class="btn btn-success btnEditar">Editar</a> | 
-                                                    <a href="#" class="btn btn-danger btnEliminar">Eliminar</a>
+                                                    <a href="#" class="btn btn-success btnEditar">Editar</a>
                                                 </center></td>
                                             </tr>
 
@@ -98,7 +97,7 @@
                                                 </center></td>
                                                 <td><center>
                                                     <a href="#" class="btn btn-success btnEditar">Editar</a> | 
-                                                    <a href="#" class="btn btn-danger btnEliminar">Eliminar</a>
+                                                    <a href="#" class="btn btn-danger btnEstado">Cambiar Estado</a>
                                                 </center></td>
                                             </tr>
                                             @endforeach   
@@ -110,7 +109,7 @@
                     </div>
                 </div>
                 <br>
-                <a href="/administradores/activos" class="btn btn-dark">Administradores Activos</a>    |   <a href="/administradores/inactivos" class="btn btn-dark">Administradores Inactivos</a>    |   <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
+                <center>                    <a href="/administradores/activos" class="btn btn-dark">Administradores Activos</a>    |   <a href="/administradores/inactivos" class="btn btn-dark">Administradores Inactivos</a>    |   <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center></center>
             </div>
         </div> 
     </body>  
