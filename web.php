@@ -31,17 +31,30 @@ Route::get('/homeAdmins', 'AdministradorController@index')->name('homeAdmins');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//RUTAS DE SUBMÓDULO ADMINISTRADOR
-Route::get('/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
-Route::get('/nuevoAdministrador/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
-Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
+//RUTAS CON MODAL POR SUBMÓDULOS
 
-Route::get('/administradores', 'AdministradorController@listar');
+  //ADMINISTRADORES
+    Route::get('/administradores', 'AdministradorController@listar');
+    Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
+    Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
+  //ADMINISTRADORES
+
+//RUTAS CON MODAL POR SUBMÓDULOS
+
+
+
+
+
+
+
+
+//RUTAS DE SUBMÓDULO ADMINISTRADOR
+//Route::get('/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
+Route::get('/nuevoAdministrador/nuevoAdministrador', 'AdministradorController@nuevoAdministrador');
+
 Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
 Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');
-Route::get('/administradores/{administrador}', 'AdministradorController@mostrar');
-Route::get('/administradores/{administrador}/editar', 'AdministradorController@editar');
-Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
+
 Route::get('/administradores/{administrador}/editarEstado', 'AdministradorController@editarEstado');
 Route::put('/administradores/estado/{administrador}', 'AdministradorController@actualizarEstado');
 

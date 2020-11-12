@@ -18,6 +18,9 @@ class Administrador extends Authenticatable
    * @var array
    */
 
+//ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
+  protected $primaryKey = 'id';
+
     // datos que necesitan llenarse en un formulario
     protected $fillable =
   ['nombreDelUsuarioAdministrador',
@@ -49,4 +52,6 @@ protected $hidden = [
 protected $casts = [
     'email_verified_at' => 'datetime',
 ];
+
+
 }

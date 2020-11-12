@@ -11,7 +11,6 @@
       <li class="lista">
         <a href="javascript:void(0)" class="dropbtn">Administradores</a>
         <div class="dropdown-content">
-          <a href="/nuevoAdministrador">Nuevo Administrador</a>
           <a  href="/administradores">Registro de Administradores</a>
           <a  href="/administradores/activos">Administradores Activos</a>
           <a  href="/administradores/inactivos">Administradores Inactivos</a>
