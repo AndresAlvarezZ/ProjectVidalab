@@ -64,7 +64,7 @@ modal-dialog modal-dialog-scrollable
                                 @enderror
                                 <br></br>
 
-                                <label for="cedula1">Númedo de identificación</label>
+                                <label for="cedula1">Número de identificación</label>
                                 <input id="dniDelUsuarioAdministrador" type="number" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus>
                                 @error('dniDelUsuarioAdministrador')
                                     <span class="invalid-feedback" role="alert">
@@ -160,4 +160,5 @@ modal-dialog modal-dialog-scrollable
                 </div>
             </div>
     <!--FIN MODAL EDITAR-->
+
 

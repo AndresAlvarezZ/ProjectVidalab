@@ -26,84 +26,45 @@ $(document).ready(function ()
         });
     //FIN DE AGREGAR
 
-  //ACTUALIZAR
-    $('.btnEditar').on('click', function()
-    {
-        $('#editarAdministrador').modal('show');
-        $tr = $(this).closest('tr');
-        var data = $tr.children("td").map(function()
+    //ACTUALIZAR
+        $('.btnEditar').on('click', function()
         {
-            return $(this).text();
-        }).get();
-        console.log(data);
-        $('#idEditar').val(data[0]);
-        $('#nombreCompleto3').val(data[1]);
-        $('#telefonoDelUsuarioAdministrador3').val(data[3]);
-        $('#email3').val(data[4]);
-    });
-
-    $('#editarAdministrador').on('submit', function(e)
-    { 
-        e.preventDefault();
-        var id = $('#idEditar').val();
-        $.ajax
-        ({
-            type: "PUT",
-            url: "/administradores/"+id,
-            data: $('#editarForm').serialize(),
-            success: function (response)
-            {
-                console.log(response)
-                $('#editarAdministrador').modal('hide')
-                alert("¡Actualización de datos exitosa!");
-                location.reload();
-            },
-            error: function(error)
-            {
-                console.log(error)
-                alert("¡Error de actualización, inténtelo nuevamente!");
-            }
-        });
-    });
-//FIN DE EDITAR
-
-
-    //ELIMINAR
-        $('.btnEliminar').on('click', function()
-        {
-            $('#eliminarAdministrador').modal('show');
+            $('#editarAdministrador').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
             {
                 return $(this).text();
             }).get();
             console.log(data);
-            $('#idEliminar').val(data[0]);
-           
+            $('#idEditar').val(data[0]);
+            $('#nombreCompleto3').val(data[1]);
+            $('#telefonoDelUsuarioAdministrador3').val(data[3]);
+            $('#email3').val(data[4]);
         });
-        $('#eliminarForm').on('submit', function(e)
-        {
-            e.preventDefault();
-            var id = $('#idEliminar').val();
 
+        $('#editarAdministrador').on('submit', function(e)
+        { 
+            e.preventDefault();
+            var id = $('#idEditar').val();
             $.ajax
             ({
-                type: "DELETE",
+                type: "PUT",
                 url: "/administradores/"+id,
-                data: $('#eliminarForm').serialize(),
+                data: $('#editarForm').serialize(),
                 success: function (response)
                 {
-                    console.log(response);
-                    $('#eliminarAdministrador').modal('hide');
-                    alert('Registro eliminado correctamente!');
+                    console.log(response)
+                    $('#editarAdministrador').modal('hide')
+                    alert("¡Actualización de datos exitosa!");
                     location.reload();
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("Error, inténtelo nuevamente!");
+                    alert("¡Error de actualización, inténtelo nuevamente!");
                 }
-            });     
+            });
         });
-    //FIN DE ELIMINAR
+    //FIN DE EDITAR
+
 });
