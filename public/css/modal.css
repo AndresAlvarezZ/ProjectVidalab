@@ -1,0 +1,27 @@
+.modal-content
+{
+    box-shadow: 6px 10px 0px rgba(0, 0, 0, 0.2);    
+}
+
+
+.modal-header 
+{
+    background-color: #00cc99;
+}
+
+label
+{
+	font-weight:bold;
+	display:inline-block;
+}
+
+h5
+{ 
+    color: black;
+    text-shadow: 5px 6px 5px #217762;   
+    font-size: x-large;
+    font-family: fantasy;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+}

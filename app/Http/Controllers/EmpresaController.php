@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {
+
   /**
    * Create a new controller instance.
    *
@@ -19,88 +20,65 @@ class EmpresaController extends Controller
   }
 
 //LISTAR REGISTROS
-    public function index()
-    {
-        $empresas = Empresa::all();
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('empresas.index', compact('empresas','name'));
-    }
-
-
-//AGREGAR REGISTRO
-    public function agregar()
-    {
+  public function index ()
+  {
+      $empresas = Empresa::all();
+      $citas = Cita::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('empresas.agregar',compact('name'));
-    }
+      return view('empresas.index',compact('empresas', 'citas', 'name'));
+  }
 
-
-    public function guardar()
-    {
-        $this->validate(request(), [
-            'nombreDeLaEmpresa' => 'required',
-            'numeroDeTelefonoDeLaEmpresa' => 'required',
-            'correoElectronicoDeLaEmpresa' => 'required',
-            'direccionDeLaEmpresa' => 'required'
-        ]);
-        Empresa::create(
-        [
-            'nombreDeLaEmpresa' => request('nombreDeLaEmpresa'),
-            'numeroDeTelefonoDeLaEmpresa' => request('numeroDeTelefonoDeLaEmpresa'),
-            'correoElectronicoDeLaEmpresa' => request('correoElectronicoDeLaEmpresa'),
-            'direccionDeLaEmpresa' => request('direccionDeLaEmpresa'),
-        ]
-        );
-
-        return redirect('/empresas');
-    }
+  public function listados ()
+  {
+      $empresas = Empresa::all();
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view('empresas.listados',compact('empresas', 'name'));
+  }
 
 
 //MOSTRAR ÚNICO REGISTRO
-    public function mostrar(Empresa $empresa)
-    {
-        $empresas = Empresa::all();
-        $citas = Cita::orderBy('created_at', 'desc')->get();
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('empresas.mostrar', compact('empresa', 'citas','name'));
-    }
-
-
-//EDITAR REGISTRO
-    public function editar(Empresa $empresa)
-    {
+  public function mostrar(Empresa $empresa)
+  {
+      $empresas = Empresa::all();
+      $citas = Cita::orderBy('created_at', 'desc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('empresas.editar', compact('empresa','name'));
-    }
+      return view('empresas.mostrar', compact('empresa', 'citas','name'));
+  }
 
 
-    public function actualizar (Empresa $empresa)
-    {
-        $this->validate(request(),
-        [
-            'nombreDeLaEmpresa' => 'required',
-            'numeroDeTelefonoDeLaEmpresa' => 'required',
-            'correoElectronicoDeLaEmpresa' => 'required',
-            'direccionDeLaEmpresa' => 'required'
-        ]);
-        $empresa->update(request()->all());
+//GUARDAR REGISTROS
+  public function guardar (Request $request)
+  {
+      $empresa = new Empresa;
 
-        return redirect ('/empresas');
-    }
+      $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa1');        
+      $empresa->numeroDeTelefonoDeLaEmpresa = $request->input('numeroDeTelefonoDeLaEmpresa1');
+      $empresa->correoElectronicoDeLaEmpresa = $request->input('correoElectronicoDeLaEmpresa1');
+      $empresa->direccionDeLaEmpresa = $request->input('direccionDeLaEmpresa1');
+      $empresa->save();
+  }
 
 
-//ELIMINAR REGISTRO
-    public function eliminar(Empresa $empresa)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('empresas.eliminar', compact('empresa','compact'));
-    }
+//ACTUALIZAR REGISTROS
+  public function editar (Request $request, $id)
+  {
+      $empresa = Empresa::find($id);
+
+      $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa3');        
+      $empresa->numeroDeTelefonoDeLaEmpresa = $request->input('numeroDeTelefonoDeLaEmpresa3');
+      $empresa->correoElectronicoDeLaEmpresa = $request->input('correoElectronicoDeLaEmpresa3');
+      $empresa->direccionDeLaEmpresa = $request->input('direccionDeLaEmpresa3');
+      $empresa->save();
+  }
 
 
-    public function destruir (Empresa $empresa)
-    {
-        $empresa->delete();
+//ELIMINAR REGISTROS
+  public function eliminar ($id)
+  {
+      $empresa = Empresa::find($id);
+      $empresa->delete();
+      return $empresa;
+  }
 
-        return redirect('/empresas');
-    }
+
 }

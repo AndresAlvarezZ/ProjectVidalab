@@ -38,12 +38,43 @@ Route::get('/administradores/inactivos', 'AdministradorController@listarAdminist
 Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
 Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
 Route::put('/administradores/estado/{administrador}', 'AdministradorController@actualizarEstado');
-
-
-
 //Route::get('/administradores/{administrador}/editarEstado', 'AdministradorController@editarEstado');
 
+//RUTAS DE SUBMÓDULO EMPRESAS
+Route::post('/empresas/registrar', 'EmpresaController@guardar');
+Route::get('/empresas/{empresa}', 'EmpresaController@mostrar');
+Route::get('/empresas', 'EmpresaController@index');
+Route::get('/empresas/listados', 'EmpresaController@listados');//
+Route::put('/empresas/{empresa}', 'EmpresaController@editar');
+Route::delete('/empresas/{empresa}', 'EmpresaController@eliminar');
+//
 
+//RUTAS DE SUBMÓDULO CITAS
+Route::post('/citas/registrar', 'CitaController@guardar');
+//Route::get('/citas/{empresa}', 'CitaController@mostrar');
+Route::get('/citas', 'CitaController@index');
+Route::put('/citas/{empresa}', 'CitaController@editar');
+Route::delete('/citas/{empresa}', 'CitaController@eliminar');
+//
+
+
+//RUTAS DE SUBMÓDULO PRUEBAS
+Route::post('/pruebas/registrar', 'PruebaController@guardar');
+Route::get('/pruebas', 'PruebaController@index');
+Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');
+Route::delete('/pruebas/{prueba}', 'PruebaController@eliminar');
+//
+
+
+//RUTAS DE SUBMÓDULO PAQUETES
+Route::post('/paquetes/registrar', 'PaqueteController@guardar');
+Route::get('/paquetes', 'PaqueteController@index');
+Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');
+Route::delete('/paquetes/{paquete}', 'PaqueteController@eliminar');
+//
+
+
+//********************************** */
 
 //RUTAS DE SUBMÓDULO NOTIFICACIONES
 Route::get('/nuevaNotificacion', 'NotificacionesController@Notificacion');
@@ -60,28 +91,6 @@ Route::Post('/afiliarme','ClientesController@CrearCliente');
 //RUTAS DE SUBMÓDULO CATALOGO
 Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
 Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');
-
-
-//RUTAS DE SUBMÓDULO PAQUETES
-Route::get('/paquetes/agregar', 'PaqueteController@agregar');
-Route::post('/paquetes', 'PaqueteController@guardar');
-Route::get('/paquetes', 'PaqueteController@index');
-Route::get('/paquetes/{paquete}', 'PaqueteController@mostrar');
-Route::get('/paquetes/{paquete}/editar', 'PaqueteController@editar');
-Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');
-Route::get('/paquetes/{paquete}/eliminar', 'PaqueteController@eliminar');
-Route::delete('/paquetes/{paquete}', 'PaqueteController@destruir');
-
-
-//RUTAS DE SUBMÓDULO PRUEBAS
-Route::get('/pruebas/agregar', 'PruebaController@agregar');
-Route::post('/pruebas', 'PruebaController@guardar');
-Route::get('/pruebas', 'PruebaController@index');
-Route::get('/pruebas/{prueba}', 'PruebaController@mostrar');
-Route::get('/pruebas/{prueba}/editar', 'PruebaController@editar');
-Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');
-Route::get('/pruebas/{prueba}/eliminar', 'PruebaController@eliminar');
-Route::delete('/pruebas/{prueba}', 'PruebaController@destruir');
 
 
 //RUTAS DE SUBMÓDULO CATALOGO
@@ -111,16 +120,6 @@ Route::get('/solicitudes/cambioDeEstado/{solicitud}','SolicitudesController@camb
 Route::put('/solicitudes/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
 Route::get('/solicitudesConfirmadas/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstadoConfirmadas');
 Route::put('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
-
-//RUTAS DE SUBMODULO EMPRESAS
-Route::get('/empresas/agregar', 'EmpresaController@agregar');
-Route::post('/empresas', 'EmpresaController@guardar');
-Route::get('/empresas', 'EmpresaController@index');
-Route::get('/empresas/{empresa}', 'EmpresaController@mostrar');
-Route::get('/empresas/{empresa}/editar', 'EmpresaController@editar');
-Route::put('/empresas/{empresa}', 'EmpresaController@actualizar');
-Route::get('/empresas/{empresa}/eliminar', 'EmpresaController@eliminar');
-Route::delete('/empresas/{empresa}', 'EmpresaController@destruir');
 
 
 //RUTAS DE SUBMÓDULO CITAS
