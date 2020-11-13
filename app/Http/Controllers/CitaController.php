@@ -8,111 +8,66 @@ use Illuminate\Http\Request;
 
 class CitaController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-      $this->middleware('auth:admins');
-  }
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admins');
+    }
 
 //LISTAR REGISTROS
     public function index()
     {
         $citas = Cita::orderBy('created_at', 'desc')->get();
-          $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
         return view('citas.index', compact('citas','name'));
     }
 
 
-//AGREGAR
-    public function agregar(Empresa $empresa)
+//GUARDAR REGISTROS
+    public function guardar (Request $request)
     {
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view ('citas.agregar', compact('empresa','name'));
-    }
+        $cita = new Cita;
 
-    public function guardar(Empresa $empresa)
-    {
-        $id = $empresa->idDeLaEmpresa;
-
-        $this->validate(request(),
-        [
-            'idDeLaEmpresa' => 'required',
-            'nombreDelSolicitante' => 'required',
-            'primerApellidoDelSolicitante' => 'required',
-            'segundoApellidoDelSolicitante' => 'required',
-            'numeroDeClientesPorAtender' => 'required',
-            'fechaDeCita' => 'required',
-            'horaDeCita' => 'required',
-            'tiposDeAnalisisRequeridos' => 'required',
-        ]);
-        Cita::create(
-        [
-            'idDeLaEmpresa' => request('idDeLaEmpresa'),
-            'nombreDelSolicitante' => request('nombreDelSolicitante'),
-            'primerApellidoDelSolicitante' => request('primerApellidoDelSolicitante'),
-            'segundoApellidoDelSolicitante' => request('segundoApellidoDelSolicitante'),
-            'numeroDeClientesPorAtender' => request('numeroDeClientesPorAtender'),
-            'fechaDeCita' => request('fechaDeCita'),
-            'horaDeCita' => request('horaDeCita'),
-            'tiposDeAnalisisRequeridos' => request('tiposDeAnalisisRequeridos'),
-        ]
-        );
-
-        return redirect ('/empresas');
+        $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa0');        
+        $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
+        $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
+        $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
+        $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');        
+        $cita->fechaDeCita = $request->input('fechaDeCita1');
+        $cita->horaDeCita = $request->input('horaDeCita1');
+        $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos1');
+        $cita->save();
     }
 
 
-//MOSTRAR ÚNICO REGISTRO
-    public function mostrar(Cita $cita)
+//ACTUALIZAR REGISTROS
+    public function editar (Request $request, $id)
     {
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('citas.mostrar', compact('cita','  $name = auth()->administrador()->nombreDelUsuarioAdministrador;'));
+        $cita = Cita::find($id);
+
+        $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa0');        
+        $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
+        $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
+        $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
+        $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');        
+        $cita->fechaDeCita = $request->input('fechaDeCita1');
+        $cita->horaDeCita = $request->input('horaDeCita1');
+        $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos1');
+        $cita->save();
     }
 
 
-//EDITAR REGISTRO
-    public function editar (Cita $cita)
+//ELIMINAR REGISTROS
+    public function eliminar ($id)
     {
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('citas.editar', compact('cita','name'));
-    }
-
-
-    public function actualizar (Cita $cita)
-    {
-        $this->validate(request(),
-        [
-            'nombreDelSolicitante' => 'required',
-            'primerApellidoDelSolicitante' => 'required',
-            'segundoApellidoDelSolicitante' => 'required',
-            'numeroDeClientesPorAtender' => 'required',
-            'fechaDeCita' => 'required',
-            'horaDeCita' => 'required',
-            'tiposDeAnalisisRequeridos' => 'required',
-        ]);
-        $cita->update(request()->all());
-
-        return redirect ('/empresas'.'/'. $cita->idDeLaEmpresa);
-    }
-
-
-//ELIMINAR REGISTRO
-    public function eliminar(Cita $cita)
-    {
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('citas.eliminar', compact('cita','name'));
-    }
-
-
-    public function destruir (Cita $cita)
-    {
+        $cita = Cita::find($id);
         $cita->delete();
-
-        return redirect('/empresas'.'/'. $cita->idDeLaEmpresa);
+        return $cita;
     }
+
 
 }

@@ -12,93 +12,57 @@ class PaqueteController extends Controller
    *
    * @return void
    */
-  public function __construct()
-  {
-      $this->middleware('auth:admins');
-  }
-    //LISTAR REGISTROS
-    public function index()
+    public function __construct()
+    {
+        $this->middleware('auth:admins');
+    }
+  //
+    
+  //LISTAR REGISTROS
+    public function index ()
     {
         $paquetes = Paquete::all();
         $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('paquetes.index', compact('paquetes','name'));
+        return view('paquetes.index',compact('paquetes', 'name'));
     }
+  //
 
-
-//AGREGAR
-    public function agregar(Paquete $paquete)
+  //GUARDAR REGISTROS
+    public function guardar (Request $request)
     {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view ('paquetes.agregar', compact('paquete','name'));
+        $paquete = new Paquete;
+
+        $paquete->codigoDelPaquete = $request->input('codigoDelPaquete1');        
+        $paquete->nombreDelPaquete = $request->input('nombreDelPaquete1');
+        $paquete->costoDelPaquete = $request->input('costoDelPaquete1');
+        $paquete->descripcionDelPaquete = $request->input('descripcionDelPaquete1');
+        $paquete->save();
     }
+  //
 
-    public function guardar(Paquete $paquete)
+
+  //ACTUALIZAR REGISTROS
+    public function actualizar (Request $request, $id)
     {
-        $this->validate(request(),
-        [
-            'codigoDelPaquete' => 'required',
-            'nombreDelPaquete' => 'required',
-            'descripcionDelPaquete' => 'required',
-            'costoDelPaquete' => 'required',
+        $paquete = Paquete::find($id);
 
-        ]);
-        Paquete::create(
-        [
-            'codigoDelPaquete' => request('codigoDelPaquete'),
-            'nombreDelPaquete' => request('nombreDelPaquete'),
-            'descripcionDelPaquete' => request('descripcionDelPaquete'),
-            'costoDelPaquete' => request('costoDelPaquete'),
-
-        ]
-        );
-
-        return redirect ('/paquetes');
+        $paquete->codigoDelPaquete = $request->input('codigoDelPaquete3');        
+        $paquete->nombreDelPaquete = $request->input('nombreDelPaquete3');
+        $paquete->costoDelPaquete = $request->input('costoDelPaquete3');
+        $paquete->descripcionDelPaquete = $request->input('descripcionDelPaquete3');
+        $paquete->save();
     }
+  //
 
 
-//MOSTRAR UNICO REGISTRO
-    public function mostrar(Paquete $paquete)
+  //ELIMINAR REGISTROS
+    public function eliminar ($id)
     {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('paquetes.mostrar', compact('paquete','name'));
-    }
-
-
-//EDITAR REGISTRO
-    public function editar (Paquete $paquete)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('paquetes.editar', compact('paquete','name'));
-    }
-
-
-    public function actualizar (Paquete $paquete)
-    {
-        $this->validate(request(),
-        [
-            'codigoDelPaquete' => 'required',
-            'nombreDelPaquete' => 'required',
-            'descripcionDelPaquete' => 'required',
-            'costoDelPaquete' => 'required',
-        ]);
-        $paquete->update(request()->all());
-
-        return redirect ('/paquetes'.'/'. $paquete->idDelPaquete);
-    }
-
-
-//ELIMINAR REGISTRO
-    public function eliminar(Paquete $paquete)
-    {
-        return view('paquetes.eliminar', compact('paquete','name'));
-    }
-
-
-    public function destruir (Paquete $paquete)
-    {
+        $paquete = Paquete::find($id);
         $paquete->delete();
-
-        return redirect('/paquetes');
+        return $paquete;
     }
+  //
 
 }
+

@@ -6,103 +6,64 @@ use Illuminate\Http\Request;
 use App\Prueba;
 class PruebaController extends Controller
 {
-  /**
+ /**
    * Create a new controller instance.
    *
    * @return void
    */
-  public function __construct()
-  {
-      $this->middleware('auth:admins');
-  }
+        public function __construct()
+        {
+            $this->middleware('auth:admins');
+        }
 
-//LISTAR REGISTROS
-    public function index()
-    {
-        $pruebas = Prueba::all();
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('pruebas.index', compact('pruebas','name'));
-    }
-
-
-//AGREGAR
-    public function agregar(Prueba $prueba)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view ('pruebas.agregar', compact('prueba','name'));
-    }
-
-    public function guardar(Prueba $prueba)
-    {
-        $this->validate(request(),
-        [
-            'codigoDelAnalisis' => 'required',
-            'nombreDelAnalisis' => 'required',
-            'descripcionDelAnalisis' => 'required',
-            'costoDelAnalisis' => 'required',
-            'numeroDeMaquina' => 'required',
-        ]);
-
-        Prueba::create(
-        [
-            'codigoDelAnalisis' => request('codigoDelAnalisis'),
-            'nombreDelAnalisis' => request('nombreDelAnalisis'),
-            'descripcionDelAnalisis' => request('descripcionDelAnalisis'),
-            'costoDelAnalisis' => request('costoDelAnalisis'),
-            'numeroDeMaquina' => request('numeroDeMaquina'),
-        ]
-        );
-
-        return redirect ('/pruebas');
-    }
+    //LISTAR REGISTROS
+        public function index ()
+        {
+            $pruebas = Prueba::all();
+            $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+            return view('pruebas.index',compact('pruebas', 'name'));
+        }
+    //
 
 
-//MOSTRAR UNICO REGISTRO
-    public function mostrar(Prueba $prueba)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('pruebas.mostrar', compact('prueba','name'));
-    }
+    //GUARDAR REGISTROS
+        public function guardar (Request $request)
+        {
+            $prueba = new Prueba;
+
+            $prueba->codigoDelAnalisis = $request->input('codigoDelAnalisis1');        
+            $prueba->nombreDelAnalisis = $request->input('nombreDelAnalisis1');
+            $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis1');
+            $prueba->costoDelAnalisis = $request->input('costoDelAnalisis1');
+            $prueba->numeroDeMaquina = $request->input('numeroDeMaquina1');
+            $prueba->save();
+        }
+    //
 
 
-//EDITAR REGISTRO
-    public function editar (Prueba $prueba)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('pruebas.editar', compact('prueba','name'));
-    }
+    //ACTUALIZAR REGISTROS
+        public function actualizar (Request $request, $id)
+        {
+            $prueba = Prueba::find($id);
+
+            $prueba->codigoDelAnalisis = $request->input('codigoDelAnalisis3');        
+            $prueba->nombreDelAnalisis = $request->input('nombreDelAnalisis3');
+            $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis3');
+            $prueba->costoDelAnalisis = $request->input('costoDelAnalisis3');
+            $prueba->numeroDeMaquina = $request->input('numeroDeMaquina3');
+            $prueba->save();
+        }
+    //
 
 
-    public function actualizar (Prueba $prueba)
-    {
-        $this->validate(request(),
-        [
-            'codigoDelAnalisis' => 'required',
-            'nombreDelAnalisis' => 'required',
-            'descripcionDelAnalisis' => 'required',
-            'costoDelAnalisis' => 'required',
-            'numeroDeMaquina' => 'required',
-        ]);
+    //ELIMINAR REGISTROS
+        public function eliminar ($id)
+        {
+            $prueba = Prueba::find($id);
+            $prueba->delete();
+            return $prueba;
+        }
+    //
 
-      $prueba->update(request()->all());
-
-      return redirect('/pruebas');
-    }
-
-
-//ELIMINAR REGISTRO
-    public function eliminar(Prueba $prueba)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('pruebas.eliminar', compact('prueba','name'));
-    }
-
-
-    public function destruir (Prueba $prueba)
-    {
-        $prueba->delete();
-
-        return redirect('/pruebas'.'/'. $prueba->idAnalisis);
-    }
 
 }
