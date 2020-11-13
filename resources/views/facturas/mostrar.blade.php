@@ -66,7 +66,7 @@
                 @php
                 $total = $factura->total-$factura->descuento
                 @endphp
-                <td id="sinRaya">{{$total}}</td>
+                <td id="sinRaya">{{$factura->total}}</td>
               </tr>
               <?php $indiceFactura++; ?>
             <?php endforeach; ?>

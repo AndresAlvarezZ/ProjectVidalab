@@ -60,19 +60,19 @@ class ComprasController extends Controller
     $total = 0;
     foreach ($facturas as $factura) {
       $subtotal = $subtotal+$factura->costoDelServicio;
-      $total = $total+$factura->costoDelServicio;
-      $descuento = $subtotal*$descuento;
+      $descuento = $subtotal*0.05;
       // numero x el descuento mantiene
       if($contador >= 4){ $descuento = $descuento;}
       else{
-      $descuento = $descuento+0.05;
+      $descuento = $descuento;
       $contador++;
     }
     }
+    $totalAjustado = $total-$descuento;
     Facturas::create([
       'idCliente' =>$dato,
       'descuento'=>$descuento,
-      'total'=>$total,
+      'total'=>$totalAjustado,
       'fecha'=> $fecha,
       'condicionDeCompra' =>'Pendiente'
     ]);
@@ -133,10 +133,11 @@ class ComprasController extends Controller
       $contador++;
     }
     }
+    $totalAjustado = $total-$descuento;
     Facturas::create([
       'idCliente' =>$dato,
       'descuento'=>$descuento,
-      'total'=>$total,
+      'total'=>$totalAjustado,
       'fecha'=> $fecha,
       'condicionDeCompra' =>'Pendiente'
     ]);
