@@ -68,7 +68,7 @@
                             </div>
                         </div>
                 <br>
-                <center><a href="/paquetes" class="btn btn-dark">Desplegar paquetes de análisis</a>    |    <a href="/catalogos" class="btn btn-dark">Ir al catálogo</a>    |    <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
+                <center><a href="/paquetes" class="btn btn-dark">Desplegar paquetes de análisis</a>    |    <a href="/catalogosAdmins" class="btn btn-dark">Ir al catálogo</a>    |    <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div>
     </body>
 @endsection
