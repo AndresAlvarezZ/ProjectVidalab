@@ -49,9 +49,9 @@
                                         <tbody>
                                             @foreach($paquetes as $paquete)
                                             <tr>
-                                                <td><center>{{ $paquete->codigoDelPaquete}}</center></td>
-                                                <td><center>{{ $paquete->nombreDelPaquete}}</center></td>
-                                                <td><center>{{ $paquete->descripcionDelPaquete}}</center></td>
+                                                <td><center>{{$paquete->codigoDelPaquete}}</center></td>
+                                                <td><center>{{$paquete->nombreDelPaquete}}</center></td>
+                                                <td><center>{{$paquete->descripcionDelPaquete}}</center></td>
                                                 <td><center>{{$paquete->costoDelPaquete}}</center></td>
                                                 <td><center>
                                                     <a href="#" class="btn btn-success btnEditar">Editar</a> <br></br>

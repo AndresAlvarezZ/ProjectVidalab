@@ -53,8 +53,8 @@
                             <tbody>
                                 @foreach($citas as $cita)
                                 <tr>
-                                    <td><center>{{ $cita->idDeLaEmpresa}}</center></td>
-                                    <td><center>{{ $cita->fechaDeCita}}</center></td>
+                                    <td><center>{{$cita->idDeLaEmpresa}}</center></td>
+                                    <td><center>{{$cita->fechaDeCita}}</center></td>
                                     <td><center>{{$cita->horaDeCita}}</center></td>
                                     <td><center>{{$cita->numeroDeClientesPorAtender}}</center></td>
                                     <td><center>{{$cita->tiposDeAnalisisRequeridos}}</center></td>

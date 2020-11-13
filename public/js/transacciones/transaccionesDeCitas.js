@@ -1,20 +1,8 @@
 $(document).ready(function ()
 {
-    //AGREGAR CITA
-        $('.btnCita').on('click', function()
+    //AGREGAR EMPRESA
+        $('#agregarForm').on('submit', function(e)
         {
-            $('#agregarCita').modal('show');
-            $tr = $(this).closest('tr');
-            var data = $tr.children("td").map(function()
-            {
-                return $(this).text();
-            }).get();
-            console.log(data);
-            $('#idAgregar').val(data[0]);        
-        });
-
-        $('#agregarCita').on('submit', function(e)
-        { 
             e.preventDefault();
             $.ajax
             ({
@@ -24,10 +12,10 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarCita').modal('hide')
+                    $('#agregarEmpresa').modal('hide')
                     alert("¡Datos de la cita registrados exitosamente!");
                     location.reload();
-                    $('#agregarCita')[0].reset()
+                    $('#agregarForm')[0].reset()
                 },
                 error: function(error)
                 {
@@ -36,6 +24,7 @@ $(document).ready(function ()
                 }
             });
         });
+    //
 
 
 

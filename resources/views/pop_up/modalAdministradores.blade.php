@@ -121,44 +121,44 @@ modal-dialog modal-dialog-scrollable
 
 
     <!-- MODAL EDITAR-->
-    <div class="modal fade" id="editarAdministrador" tabindex="-1" aria-labelledby="labelEditarAdministrador" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title col-11 text-center" id="labelEditarAdministrador">Editar Registro</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form id="editarForm">
-                            <div class="modal-body">
-                                {{ csrf_field() }}
-                                {{method_field('PUT')}}
-                                <div class="form-row">
-                                    <input type="hidden" name="id" id="idEditar">
-
-                                    <label for="nombre3">Nombre</label>
-                                    <input type="text" class="form-control" name="nombreCompleto3" readonly="nombreCompleto3" id="nombreCompleto3" />
-                                    </br></br>
-
-                                    <label for="telefono3">Número telefónico</label>
-                                    <input type="text" class="form-control" placeholder="Escriba un número telefónico para contactar" name="telefonoDelUsuarioAdministrador3" id="telefonoDelUsuarioAdministrador3"/>
-                                    </br></br>
-
-                                    <label for="correo3">Correo electrónico</label>
-                                    <input type="email" class="form-control" placeholder="Escriba un correo electrónico para contactar" name="email3" id="email3"/>
-                                    </br></br>
-
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-success">Actualizar registro</button>
-                            </div>
-                        </form>
+        <div class="modal fade" id="editarEstado" tabindex="-1" aria-labelledby="labelEditarEstado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="labelEditarEstado">Editar Registro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <form id="editarForm">
+                        <div class="modal-body">
+                            {{ csrf_field() }}
+                            {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="idEditarEstado">
+
+                                <label for="nombre3">Nombre</label>
+                                <input type="text" class="form-control" name="nombreCompleto3" readonly="nombreCompleto3" id="nombreCompleto3" />
+                                </br></br>
+
+                                <label for="telefono3">Número telefónico</label>
+                                <input type="text" class="form-control" placeholder="Escriba un número telefónico para contactar" name="telefonoDelUsuarioAdministrador3" id="telefonoDelUsuarioAdministrador3"/>
+                                </br></br>
+
+                                <label for="correo3">Correo electrónico</label>
+                                <input type="email" class="form-control" placeholder="Escriba un correo electrónico para contactar" name="email3" id="email3"/>
+                                </br></br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Actualizar registro</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
     <!--FIN MODAL EDITAR-->
 
 

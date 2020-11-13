@@ -14,7 +14,6 @@
     </head>
 
     <body>
-
         <div class="container-xl">
             <div class="row">
                 <div class="col">
@@ -51,7 +50,7 @@
 
                             <div class="row">
                                 <div class="col-lg-12 margin-tb">
-                                <a href="#" class="btn btn-success btnCita">Nueva Cita</a> <br></br>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarCita">Registrar</button></p>
                                 </div>
                             </div>
                             <br></br>
@@ -85,8 +84,8 @@
                                         @foreach($citas as $cita)
                                         @if($empresa->idDeLaEmpresa === $cita->idDeLaEmpresa)
                                             <tr>
-                                                <td><center>{{ $cita->idDeLaEmpresa}}</center></td>
-                                                <td><center>{{ $cita->fechaDeCita}}</center></td>
+                                                <td><center>{{$cita->idDeLaEmpresa}}</center></td>
+                                                <td><center>{{$cita->fechaDeCita}}</center></td>
                                                 <td><center>{{$cita->horaDeCita}}</center></td>
                                                 <td><center>{{$cita->numeroDeClientesPorAtender}}</center></td>
                                                 <td><center>{{$cita->tiposDeAnalisisRequeridos}}</center></td>

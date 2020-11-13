@@ -123,6 +123,7 @@ Route::put('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesCont
 
 
 //RUTAS DE SUBMÓDULO CITAS
+/*
 Route::get('/citas/{empresa}/agregar', 'CitaController@agregar');
 Route::post('/citas', 'CitaController@guardar');
 Route::get('/citas', 'CitaController@index');
@@ -131,7 +132,7 @@ Route::get('/citas/{cita}/editar', 'CitaController@editar');
 Route::put('/citas/{cita}', 'CitaController@actualizar');
 Route::get('/citas/{cita}/eliminar', 'CitaController@eliminar');
 Route::delete('/citas/{cita}', 'CitaController@destruir');
-
+*/
 
 //RUTAS DE PRUEBA DE SISTEMA
 Route::get('/prueba{codigo}','ComprasController@FinalizarCompra');

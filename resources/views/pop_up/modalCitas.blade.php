@@ -1,5 +1,3 @@
-
-
 <!--TAMAÑOS
 modal-dialog modal-xl
 modal-dialog modal-lg
@@ -27,7 +25,7 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             <div class="form-row">
 
-                                <input type="text" name="id" id="idAgregar">
+                                <input type="hidden" name="id" id="idAgregar">
                                 
                                 <label for="nombre1">Solicitante de cita: nombre</label>
                                 <input type="text" class="form-control" placeholder="Escriba el nombre del solicitante de la cita" name="nombreDelSolicitante1" value="{{old('nombreDelSolicitante1')}}" /> <br>
