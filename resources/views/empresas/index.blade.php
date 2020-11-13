@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-40">
             <div class="card">
-                <div class="card-header"><h4><b><center>Registro de todas las empresas</center></b></h4></div>
+                <div class="card-header"><h4><b><center>Registro de todas las Empresas</center></b></h4></div>
                     <div class="card-body">
                         <ul class="list-group">
                             <table class="table">
