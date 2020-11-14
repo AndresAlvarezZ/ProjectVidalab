@@ -7,8 +7,8 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/transacciones/transaccionesDePruebas.js') }}?v=<?php echo(rand()); ?>"defer></script>
-        <script src="{{ asset('js/buscadores/buscadorDePruebas.js') }}?v=<?php echo(rand()); ?>"defer></script>
+        <script src="{{ asset('js/transacciones/transaccionesDeEmpresas.js') }}?v=<?php echo(rand()); ?>"defer></script>
+        <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
     </head>
@@ -25,7 +25,7 @@
                     </div>
 
                     <ul class="list-group">
-                        <table id="TablaEmpresas" class="table table-hover">
+                        <table id="registros" class="table table-hover">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col"><center>Código</center></th>

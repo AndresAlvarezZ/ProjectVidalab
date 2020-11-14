@@ -71,32 +71,30 @@ $(document).ready(function ()
     //ACTUALIZAR
         $('.btnEstado').on('click', function()
         {
-            $('#editarAdministrador').modal('show');
+            $('#editarEstado').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
             {
                 return $(this).text();
             }).get();
             console.log(data);
-            $('#idEditar').val(data[0]);
-            $('#nombreCompleto3').val(data[1]);
-            $('#telefonoDelUsuarioAdministrador3').val(data[3]);
-            $('#email3').val(data[4]);
+            $('#idEditarEstado').val(data[0]);
+            $('#nombreCompleto4').val(data[1]);
         });
 
-        $('#editarAdministrador').on('submit', function(e)
+        $('#editarEstado').on('submit', function(e)
         { 
             e.preventDefault();
-            var id = $('#idEditar').val();
+            var id = $('#idEditarEstado').val();
             $.ajax
             ({
                 type: "PUT",
                 url: "/administradores/"+id,
-                data: $('#editarForm').serialize(),
+                data: $('#editarEstadoForm').serialize(),
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarAdministrador').modal('hide')
+                    $('#editarEstado').modal('hide')
                     alert("¡Actualización de datos exitosa!");
                     location.reload();
                 },
