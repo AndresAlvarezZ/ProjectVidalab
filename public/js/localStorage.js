@@ -58,7 +58,7 @@ function cargarCarrito()
     {
         carrito = JSON.parse(datoStorage);
     }
-    carritoInter.innerHTML = '';
+
 
     carrito.forEach(function (x, i)
     {

@@ -21,6 +21,7 @@ class Prueba extends Model
         'nombreDelAnalisis',
         'descripcionDelAnalisis',
         'costoDelAnalisis',
+        'descuentoDelAnalisis',
         'numeroDeMaquina',
     ];
 }

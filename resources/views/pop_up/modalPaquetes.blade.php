@@ -84,7 +84,7 @@ modal-dialog modal-dialog-scrollable
                                 {{method_field('PUT')}}
                                 <div class="form-row">
                                     <input type="hidden" name="id" id="idEditar">
-                                    
+
                                     <label for="codigo3">Código</label>
                                     <input type="text" class="form-control" placeholder="Escriba el código del paquete" name="codigoDelPaquete3" id="codigoDelPaquete3" /> <br>
                                     </br></br>
@@ -143,7 +143,7 @@ modal-dialog modal-dialog-scrollable
                                     </p>
                                 </div>
 
-                                
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

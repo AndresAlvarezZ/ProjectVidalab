@@ -20,6 +20,7 @@ class CreateComprasTable extends Migration
             $table->string('codigoDelPaquete')->nullable();
             $table->string('nombre');
             $table->decimal('costoDelServicio');
+            $table->decimal('descuento');
             $table->DateTime('fecha');
             $table->timestamps();
             //relaciones
