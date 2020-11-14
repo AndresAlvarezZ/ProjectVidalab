@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/modal.css">
+<link rel="stylesheet" type="text/css" href="css/estiloDePopUp.css">
 
 
 <!--TAMAÑOS
@@ -121,11 +121,11 @@ modal-dialog modal-dialog-scrollable
 
 
     <!-- MODAL EDITAR-->
-        <div class="modal fade" id="editarEstado" tabindex="-1" aria-labelledby="labelEditarEstado" aria-hidden="true">
+        <div class="modal fade" id="editarAdministrador" tabindex="-1" aria-labelledby="labelEditarAdministrador" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title col-11 text-center" id="labelEditarEstado">Editar Registro</h5>
+                        <h5 class="modal-title col-11 text-center" id="labelEditarAdministrador">Editar Registro</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -135,7 +135,7 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             {{method_field('PUT')}}
                             <div class="form-row">
-                                <input type="hidden" name="id" id="idEditarEstado">
+                                <input type="hidden" name="id" id="idEditar">
 
                                 <label for="nombre3">Nombre</label>
                                 <input type="text" class="form-control" name="nombreCompleto3" readonly="nombreCompleto3" id="nombreCompleto3" />
@@ -154,6 +154,40 @@ modal-dialog modal-dialog-scrollable
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-success">Actualizar registro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL EDITAR-->
+
+
+    <!-- MODAL EDITAR ESTADO-->
+    <div class="modal fade" id="editarEstado" tabindex="-1" aria-labelledby="labelEditarEstado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="labelEditarEstado">Editar Registro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="editarEstadoForm">
+                        <div class="modal-body">
+                            {{ csrf_field() }}
+                            {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="idEditarEstado">
+
+                                <label for="nombre3">Nombre</label>
+                                <input type="text" class="form-control" name="nombreCompleto4" readonly="nombreCompleto4" id="nombreCompleto4" />
+                                </br></br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Actualizar Estado</button>
                         </div>
                     </form>
                 </div>

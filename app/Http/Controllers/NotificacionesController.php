@@ -55,24 +55,27 @@ class NotificacionesController extends Controller
       ]);
       return redirect('homeAdmins')->with('status','Notificación enviada exitosamente');
   }
-  public function NotificacionMasiva()
-  {
-   // code...
-   $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-  return view('Notificaciones.NotificacionMasiva',compact('name'));
-  }
-  public function envioDeNotificacionMasiva()
-  {
-    $data = $this->validate(request(),[
-      'asunto'=>'required',
-      'mensaje'=>'required',
-      'file'=>'nullable'
-    ]);
-    $todosLosClientes = Clientes::all();
-    foreach ($todosLosClientes as $cliente) {
-      // envio de correo de uno a uno
-      Mail::to($cliente->correoDelCliente)->send(new envioDeNotificaciones($data));
+  //ENVIO MASIVO DE CORREOS
+    public function NotificacionMasiva()
+    {
+    // code...
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view('Notificaciones.NotificacionMasiva',compact('name'));
     }
-      return redirect('homeAdmins')->with('status','Notificación enviada exitosamente');
-  }
+    
+    public function envioDeNotificacionMasiva()
+    {
+      $data = $this->validate(request(),[
+        'asunto'=>'required',
+        'mensaje'=>'required',
+        'file'=>'nullable'
+      ]);
+      $todosLosClientes = Clientes::all();
+      foreach ($todosLosClientes as $cliente) {
+        // envio de correo de uno a uno
+        Mail::to($cliente->correoDelCliente)->send(new envioDeNotificaciones($data));
+      }
+        return redirect('homeAdmins')->with('status','Notificación enviada exitosamente');
+    }
+  //
 }

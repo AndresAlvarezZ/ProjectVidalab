@@ -19,7 +19,7 @@ class AdministradorController extends Controller
    */
   public function __construct()
   {
-      $this->middleware('auth:admins');
+    $this->middleware('auth:admins');
   }
 
   /**
@@ -28,7 +28,7 @@ class AdministradorController extends Controller
    * @return \Illuminate\Contracts\Support\Renderable
    */
 
- //PERMISO DE ACCESO
+  //PERMISO DE ACCESO
     public function index()
     {
       $acceso = false;
@@ -36,11 +36,11 @@ class AdministradorController extends Controller
       return view('homeAdmins',compact('acceso','name'));
     }
 
-
     protected function guard()
     {
       return Auth::guard('admins');
     }
+  //
 
 
   //LISTAR REGISTROS
@@ -52,8 +52,9 @@ class AdministradorController extends Controller
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
     }
+  //
 
-  
+
   //LISTAR REGISTROS CON ESTADO ACTIVO
     public function listarAdministradoresActivos()
     {
@@ -64,7 +65,7 @@ class AdministradorController extends Controller
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
     }
-
+  //
 
   //LISTAR REGISTROS CON ESTADO INACTIVO
     public function listarAdministradoresInactivos()
@@ -76,9 +77,9 @@ class AdministradorController extends Controller
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
     }
+  //
 
-
-  //AGREGAR
+  //AGREGAR REGISTRO
     public function nuevoAdministradorCreate(Request $request)
     {
       $data = $this->validate(request(),
@@ -111,9 +112,10 @@ class AdministradorController extends Controller
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('homeAdmins',compact('acceso','name'))->with('status','Administrador Agregado exitosamente');
     }
+  //
 
 
-  //EDITAR REGISTRO
+  //ACTUALIZAR REGISTRO
     public function actualizar (Request $request, $id)
     {
       $administrador = Administrador::find($id);
@@ -121,6 +123,7 @@ class AdministradorController extends Controller
       $administrador->email = $request->input('email3');
       $administrador->save();
     }
+  //
 
 
   //EDITAR ESTADO DE REGISTRO
@@ -139,21 +142,18 @@ class AdministradorController extends Controller
       $administrador->update(request()->all());
       return redirect ('/administradores');
     }
+  //
 
- 
 
- 
-/*
+
+  /*
   //EDITAR ESTADO REGISTRO
   public function editarEstado(Administrador $administrador)
   {
-    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-    return view('administrador.editarEstado', compact('administrador', 'acceso', 'name'));
+  $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+  return view('administrador.editarEstado', compact('administrador', 'acceso', 'name'));
   }
-*/
+  */
   
-
-
-
 
 }

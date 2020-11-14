@@ -9,10 +9,41 @@ use App\Compras;
 
 class FacturasController extends Controller
 {
-  public function __construct(){
-    $this->middleware('auth:web')->only('miExpediente');
-    $this->middleware('auth:admins')->only('verCompras','procesarCompra','actualizarFactura');
-  }
+
+  //CONSTRUCTOR
+    public function __construct(){
+      $this->middleware('auth:web')->only('miExpediente');
+      $this->middleware('auth:admins')->only('verCompras','procesarCompra','actualizarFactura');
+    }
+  //
+
+  //LISTAR RESGISTROS
+    public function verCompras()
+    {
+      $fecha = date('d-m-Y');
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      $facturas = Facturas::orderBy('created_at','asc')->get();
+      return view('facturas.mostrarFacturas',compact('name','facturas','fecha'));
+    }
+  //
+
+
+  //LIMPIAR CARRITO DE COMPRAS
+    public function procesarCompra(Facturas $factura)
+    {
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      $total = 0;
+      return view('facturas.actualizarFactura',compact('factura','name','total'));
+    }
+
+    public function actualizarFactura(Facturas $factura)
+    {
+      $factura->update(request()->all());
+      return redirect('/verCompras');
+    }
+  //
+
+
     public function miExpediente()
     {
         $this->middleware('auth:web');
@@ -25,24 +56,7 @@ class FacturasController extends Controller
       $indiceFactura = 0;
 
       return view('facturas.mostrar',compact('facturas','compras','indice','indiceFactura','fecha','total'));
+    }
 
-    }
-    public function verCompras()
-    {
-      $fecha = date('d-m-Y');
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      $facturas = Facturas::orderBy('created_at','asc')->get();
-      return view('facturas.mostrarFacturas',compact('name','facturas','fecha'));
-    }
-    public function procesarCompra(Facturas $factura)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      $total = 0;
-      return view('facturas.actualizarFactura',compact('factura','name','total'));
-    }
-    public function actualizarFactura(Facturas $factura)
-    {
-      $factura->update(request()->all());
-      return redirect('/verCompras');
-    }
+ 
 }
