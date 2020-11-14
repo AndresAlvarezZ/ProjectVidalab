@@ -13,12 +13,12 @@ class SolicitudesController extends Controller
       $this->middleware('auth:admins');
     }
   //
-  
-  
+
+
   //LISTAR REGISTROS EN ESTADO DE ESPERA
     public function SolicitudesEnEspera()
     {
-      $enEspera = Solicitudes::whereIn('estado',['enEspera'])->get();
+      $enEspera = Solicitudes::whereIn('estado',['Espera'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view ('solicitudes.enEspera',compact('enEspera','name'));
     }
@@ -55,7 +55,7 @@ class SolicitudesController extends Controller
   //
 
 
-  //CAMBIAR ESTADO 
+  //CAMBIAR ESTADO
     public function cambioDeEstado(Solicitudes $solicitud)
     {
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
