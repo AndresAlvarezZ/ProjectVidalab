@@ -14,29 +14,29 @@ class PaqueteController extends Controller
    */
     public function __construct()
     {
-        $this->middleware('auth:admins');
+      $this->middleware('auth:admins');
     }
   //
     
   //LISTAR REGISTROS
     public function index ()
     {
-        $paquetes = Paquete::all();
-        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-        return view('paquetes.index',compact('paquetes', 'name'));
+      $paquetes = Paquete::all();
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view('paquetes.index',compact('paquetes', 'name'));
     }
   //
 
   //GUARDAR REGISTROS
     public function guardar (Request $request)
     {
-        $paquete = new Paquete;
+      $paquete = new Paquete;
 
-        $paquete->codigoDelPaquete = $request->input('codigoDelPaquete1');        
-        $paquete->nombreDelPaquete = $request->input('nombreDelPaquete1');
-        $paquete->costoDelPaquete = $request->input('costoDelPaquete1');
-        $paquete->descripcionDelPaquete = $request->input('descripcionDelPaquete1');
-        $paquete->save();
+      $paquete->codigoDelPaquete = $request->input('codigoDelPaquete1');        
+      $paquete->nombreDelPaquete = $request->input('nombreDelPaquete1');
+      $paquete->costoDelPaquete = $request->input('costoDelPaquete1');
+      $paquete->descripcionDelPaquete = $request->input('descripcionDelPaquete1');
+      $paquete->save();
     }
   //
 
@@ -44,13 +44,13 @@ class PaqueteController extends Controller
   //ACTUALIZAR REGISTROS
     public function actualizar (Request $request, $id)
     {
-        $paquete = Paquete::find($id);
+      $paquete = Paquete::find($id);
 
-        $paquete->codigoDelPaquete = $request->input('codigoDelPaquete3');        
-        $paquete->nombreDelPaquete = $request->input('nombreDelPaquete3');
-        $paquete->costoDelPaquete = $request->input('costoDelPaquete3');
-        $paquete->descripcionDelPaquete = $request->input('descripcionDelPaquete3');
-        $paquete->save();
+      $paquete->codigoDelPaquete = $request->input('codigoDelPaquete3');        
+      $paquete->nombreDelPaquete = $request->input('nombreDelPaquete3');
+      $paquete->costoDelPaquete = $request->input('costoDelPaquete3');
+      $paquete->descripcionDelPaquete = $request->input('descripcionDelPaquete3');
+      $paquete->save();
     }
   //
 
@@ -58,9 +58,9 @@ class PaqueteController extends Controller
   //ELIMINAR REGISTROS
     public function eliminar ($id)
     {
-        $paquete = Paquete::find($id);
-        $paquete->delete();
-        return $paquete;
+      $paquete = Paquete::find($id);
+      $paquete->delete();
+      return $paquete;
     }
   //
 

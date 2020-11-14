@@ -14,41 +14,37 @@ class EmpresaController extends Controller
    *
    * @return void
    */
-  public function __construct()
-  {
-      $this->middleware('auth:admins');
-  }
+      public function __construct()
+      {
+        $this->middleware('auth:admins');
+      }
+    //
 
-//LISTAR REGISTROS
-  public function index ()
-  {
+  //LISTAR REGISTROS
+    public function index ()
+    {
       $empresas = Empresa::all();
       $citas = Cita::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('empresas.index',compact('empresas', 'citas', 'name'));
-  }
-
-  public function listados ()
-  {
-      $empresas = Empresa::all();
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('empresas.listados',compact('empresas', 'name'));
-  }
+    }
+  //
 
 
-//MOSTRAR ÚNICO REGISTRO
-  public function mostrar(Empresa $empresa)
-  {
+  //MOSTRAR ÚNICO REGISTRO
+    public function mostrar(Empresa $empresa)
+    {
       $empresas = Empresa::all();
       $citas = Cita::orderBy('created_at', 'desc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       return view('empresas.mostrar', compact('empresa', 'citas','name'));
-  }
+    }
+  //
 
 
-//GUARDAR REGISTROS
-  public function guardar (Request $request)
-  {
+  //GUARDAR REGISTROS
+    public function guardar (Request $request)
+    {
       $empresa = new Empresa;
 
       $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa1');        
@@ -56,12 +52,13 @@ class EmpresaController extends Controller
       $empresa->correoElectronicoDeLaEmpresa = $request->input('correoElectronicoDeLaEmpresa1');
       $empresa->direccionDeLaEmpresa = $request->input('direccionDeLaEmpresa1');
       $empresa->save();
-  }
+    }
+  //
 
 
-//ACTUALIZAR REGISTROS
-  public function editar (Request $request, $id)
-  {
+  //ACTUALIZAR REGISTROS
+    public function editar (Request $request, $id)
+    {
       $empresa = Empresa::find($id);
 
       $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa3');        
@@ -69,16 +66,17 @@ class EmpresaController extends Controller
       $empresa->correoElectronicoDeLaEmpresa = $request->input('correoElectronicoDeLaEmpresa3');
       $empresa->direccionDeLaEmpresa = $request->input('direccionDeLaEmpresa3');
       $empresa->save();
-  }
+    }
+  //
 
 
-//ELIMINAR REGISTROS
-  public function eliminar ($id)
-  {
+  //ELIMINAR REGISTROS
+    public function eliminar ($id)
+    {
       $empresa = Empresa::find($id);
       $empresa->delete();
       return $empresa;
-  }
-
+    }
+  //
 
 }

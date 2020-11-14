@@ -1,6 +1,6 @@
 $(document).ready(function ()
 {
-    var table = $('#tablaAdministradores').DataTable();
+    var table = $('#registros').DataTable();
 
     table.on('click', '.edit', function()
     {

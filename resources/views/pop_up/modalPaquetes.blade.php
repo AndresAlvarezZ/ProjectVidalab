@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/modal.css">
+<link rel="stylesheet" type="text/css" href="css/estiloDePopUp.css">
 
 
 <!--TAMAÑOS
