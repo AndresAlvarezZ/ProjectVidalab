@@ -51,6 +51,9 @@ Auth::routes();
   Route::delete('/empresas/{empresa}', 'EmpresaController@eliminar');
 //
 
+//RUTAS DE SUBMÓDULO CITAS
+  Route::get('/citas', 'CitaController@index');
+//
 
 //RUTAS DE SUBMÓDULO PRUEBAS
   Route::post('/pruebas/registrar', 'PruebaController@guardar');
@@ -66,6 +69,7 @@ Auth::routes();
   Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');
   Route::delete('/paquetes/{paquete}', 'PaqueteController@eliminar');
 //
+
 
 //RUTAS DE SUBMÓDULO CATALOGO
   Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
