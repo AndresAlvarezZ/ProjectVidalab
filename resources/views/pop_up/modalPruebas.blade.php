@@ -61,6 +61,12 @@ modal-dialog modal-dialog-scrollable
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
+                                <label for="costo1">Descuento</label>
+                                <input type="text" class="form-control" placeholder="Escriba el descuento del paquete" name="descuentoDelAnalisis1" value="{{old('descuentoDelAnalisis1')}}"/> <br>
+                                @error('descuentoDelAnalisis1')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                </br></br>
 
                             </div>
                         </div>
@@ -91,7 +97,7 @@ modal-dialog modal-dialog-scrollable
                                 {{method_field('PUT')}}
                                 <div class="form-row">
                                     <input type="hidden" name="id" id="idEditar">
-                                    
+
                                     <label for="codigo3">Código</label>
                                     <input type="text" class="form-control" placeholder="Escriba el código del análisis" name="codigoDelAnalisis3" id="codigoDelAnalisis3" />
                                     <br></br>
@@ -154,7 +160,7 @@ modal-dialog modal-dialog-scrollable
                                     </p>
                                 </div>
 
-                                
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

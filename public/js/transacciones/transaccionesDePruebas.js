@@ -1,3 +1,4 @@
+var hayError;
 $(document).ready(function ()
 {
     //AGREGAR
@@ -12,20 +13,37 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarPrueba').modal('hide')
-                    alert("¡Datos de análisis registrados exitosamente!");
-                    location.reload();
                     $('#agregarForm')[0].reset()
+                    recargar()
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de registro, inténtelo nuevamente! Asegurese que los campos solicitados estén rellenos.");
+                    swal({
+                      title: "¡Error de registro!",
+                      text: "Asegurese que los campos solicitados estén rellenos. o si el codigo ingresado ya existe!",
+                      type: "warning",
+                    });
+
                 }
+
             });
+
         });
-
-
+function recargar(){
+  setTimeout(function () {
+swal({
+  title: "Analisis Agregado Exitosamente!",
+  text: "HUMACHECK",
+  type: "success",
+  confirmButtonText: "OK"
+},
+function(isConfirm){
+  if (isConfirm) {
+    window.location.href = "/pruebas";
+  }
+}); }, 000);
+}
 
     //EDITAR
         $('.btnEditar').on('click', function()
@@ -46,7 +64,7 @@ $(document).ready(function ()
         });
 
         $('#editarPrueba').on('submit', function(e)
-        { 
+        {
             e.preventDefault();
             var id = $('#idEditar').val();
             $.ajax
@@ -68,7 +86,7 @@ $(document).ready(function ()
                 }
             });
         });
-      
+
 
     //ELIMINAR
         $('.btnEliminar').on('click', function()
@@ -107,6 +125,6 @@ $(document).ready(function ()
                     console.log(error)
                     alert("Error, inténtelo nuevamente!");
                 }
-            });     
+            });
         });
 });

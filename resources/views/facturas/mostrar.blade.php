@@ -55,7 +55,7 @@
               <?php endforeach; ?>
               <tr>
                 <td id="sinRaya"><strong>Subtotal</strong></td>
-                <td id="sinRaya">{{$factura->total}}</td>
+                <td id="sinRaya">{{$factura->total+$factura->descuento}}</td>
               </tr>
               <tr>
                 <td id="sinRaya"><strong>Descuento</strong></td>

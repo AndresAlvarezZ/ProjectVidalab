@@ -31,11 +31,12 @@ class PruebaController extends Controller
         {
             $prueba = new Prueba;
 
-            $prueba->codigoDelAnalisis = $request->input('codigoDelAnalisis1');        
+            $prueba->codigoDelAnalisis = $request->input('codigoDelAnalisis1');
             $prueba->nombreDelAnalisis = $request->input('nombreDelAnalisis1');
             $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis1');
             $prueba->costoDelAnalisis = $request->input('costoDelAnalisis1');
             $prueba->numeroDeMaquina = $request->input('numeroDeMaquina1');
+            $prueba->descuentoDelAnalisis = $request->input('descuentoDelAnalisis1');
             $prueba->save();
         }
     //
@@ -46,7 +47,7 @@ class PruebaController extends Controller
         {
             $prueba = Prueba::find($id);
 
-            $prueba->codigoDelAnalisis = $request->input('codigoDelAnalisis3');        
+            $prueba->codigoDelAnalisis = $request->input('codigoDelAnalisis3');
             $prueba->nombreDelAnalisis = $request->input('nombreDelAnalisis3');
             $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis3');
             $prueba->costoDelAnalisis = $request->input('costoDelAnalisis3');

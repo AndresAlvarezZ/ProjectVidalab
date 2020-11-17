@@ -13,6 +13,7 @@ class Compras extends Model
       'codigoDelPaquete',
       'nombre',
       'costoDelServicio',
+      'descuento',
       'Fecha'
     ];
     public function Facturas()

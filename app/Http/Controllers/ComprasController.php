@@ -37,6 +37,7 @@ class ComprasController extends Controller
             'codigoDelPaquete' =>null,
             'nombre' => $datos->nombreDelAnalisis,
             'costoDelServicio' =>$datos->costoDelAnalisis,
+            'descuento' => $datos->descuentoDelAnalisis,
             'Fecha' =>  $fecha
           ]);
         }
@@ -54,25 +55,38 @@ class ComprasController extends Controller
         }
         $dato = Auth()->user()->dniDelUsuario;
         $subtotal = 0;
-        $descuento = 0.05;
+        $descuento = 0;
     $facturas = Compras::whereIn('fecha',[$fecha])->get();
     $contador = 1;
+    $a=1;
+    $segundoContador = 1;
+    $estaRepetida = 'no';
     $total = 0;
-    foreach ($facturas as $factura) {
-      $subtotal = $subtotal+$factura->costoDelServicio;
-      $descuento = $subtotal*0.05;
-      // numero x el descuento mantiene
-      if($contador >= 4){ $descuento = $descuento;}
-      else{
-      $descuento = $descuento;
+    $facturasAnteriores = [];
+    foreach ($facturas as $facturasAlmacenadas) {
+      $facturasAnteriores[$contador] = $facturasAlmacenadas->nombre;
       $contador++;
     }
+    $contador = 1;
+    foreach ($facturas as $factura) {
+      $subtotal = $subtotal+$factura->costoDelServicio;
+      if ($contador>1) {
+        while ($a <=$contador)  {
+          if ($facturasAnteriores[$a]==$factura->nombre) {
+            if ($segundoContador>1) {
+              $descuento = $descuento + $factura->descuento;
+            }
+            $segundoContador++;
+          }
+          $a++;
+        }
+          }
+      $contador++;
     }
-    $totalAjustado = $total-$descuento;
     Facturas::create([
       'idCliente' =>$dato,
       'descuento'=>$descuento,
-      'total'=>$totalAjustado,
+      'total'=>$subtotal-$descuento,
       'fecha'=> $fecha,
       'condicionDeCompra' =>'Pendiente'
     ]);
@@ -100,6 +114,7 @@ class ComprasController extends Controller
             'codigoDelPaquete' =>null,
             'nombre' => $datos->nombreDelAnalisis,
             'costoDelServicio' =>$datos->costoDelAnalisis,
+            'descuento' => $datos->descuentoDelAnalisis,
             'Fecha' =>  $fecha
           ]);
         }
@@ -118,26 +133,38 @@ class ComprasController extends Controller
         }
         $dato = Auth()->user()->dniDelUsuario;
         $subtotal = 0;
-        $descuento = 0.05;
-    $facturas = Compras::whereIn('fecha',[$fecha])->get();
-    $contador = 1;
-    $total = 0;
-    foreach ($facturas as $factura) {
-      $subtotal = $subtotal+$factura->costoDelServicio;
-      $total = $total+$factura->costoDelServicio;
-      $descuento = $subtotal*$descuento;
-      // numero x el descuento mantiene
-      if($contador >= 4){ $descuento = $descuento;}
-      else{
-      $descuento = $descuento+0.05;
-      $contador++;
-    }
-    }
-    $totalAjustado = $total-$descuento;
+        $descuento = 0;
+        $facturas = Compras::whereIn('fecha',[$fecha])->get();
+        $contador = 1;
+        $a=1;
+        $segundoContador = 1;
+        $estaRepetida = 'no';
+        $total = 0;
+        $facturasAnteriores = [];
+        foreach ($facturas as $facturasAlmacenadas) {
+          $facturasAnteriores[$contador] = $facturasAlmacenadas->nombre;
+          $contador++;
+        }
+        $contador = 1;
+        foreach ($facturas as $factura) {
+          $subtotal = $subtotal+$factura->costoDelServicio;
+          if ($contador>1) {
+            while ($a <=$contador)  {
+              if ($facturasAnteriores[$a]==$factura->nombre) {
+                if ($segundoContador>1) {
+                  $descuento = $descuento + $factura->descuento;
+                }
+                $segundoContador++;
+              }
+              $a++;
+            }
+              }
+          $contador++;
+        }
     Facturas::create([
       'idCliente' =>$dato,
       'descuento'=>$descuento,
-      'total'=>$totalAjustado,
+      'total'=>$subtotal-$descuento,
       'fecha'=> $fecha,
       'condicionDeCompra' =>'Pendiente'
     ]);
@@ -152,7 +179,7 @@ class ComprasController extends Controller
       'domicilioDelCiente' => $request['domicilioDelCiente'],
       'telefonoDelCliente' => $request['telefonoDelCliente'],
       'analisisSolicitados' => $solicitudDeCompra,
-      'costoDelServicio' => $total,
+      'costoDelServicio' => $subtotal-$descuento,
       'estado' => 'Espera'
     ]);
     return  redirect('/home')->with('status', 'la compra ha sido realizada con éxito');

@@ -40,7 +40,7 @@ function cargarCarrito()
     txtFecha = document.createElement("input");
     txtFecha.id = 'fecha';
     txtFecha.name = 'fecha';
-    txtFecha.value = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes();
+    txtFecha.value = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+':'+date.getSeconds();
     txtFecha.hidden = true;
     finalizarInter.appendChild(txtFecha);
     var brArticulos = document.createElement('br');
