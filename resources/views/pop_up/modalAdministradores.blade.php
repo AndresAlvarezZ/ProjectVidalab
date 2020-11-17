@@ -1,5 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/estiloDePopUp.css">
-
+<link href="{{ asset('css/estiloDePopUp.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
 <!--TAMAÑOS
 modal-dialog modal-xl
@@ -162,7 +161,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL EDITAR-->
 
 
-    <!-- MODAL EDITAR ESTADO-->
+    <!-- MODAL EDITAR ESTADO ACTIVO-->
     <div class="modal fade" id="editarEstado" tabindex="-1" aria-labelledby="labelEditarEstado" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -179,8 +178,23 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEditarEstado">
 
-                                <label for="nombre3">Nombre</label>
-                                <input type="text" class="form-control" name="nombreCompleto4" readonly="nombreCompleto4" id="nombreCompleto4" />
+                                <label for="nombre4">Nombre</label>
+                                <input type="text" class="form-control" name="nombreCompleto4" readonly="nombreCompleto4" id="nombreCompleto4"/> <br>
+                                </br></br>
+
+                                <label for="cedula4">Cédula</label>
+                                <input type="text" class="form-control" name="numeroDeCedula4" readonly="numeroDeCedula4" id="numeroDeCedula4"/> <br>
+                                </br></br>
+
+                                <label for="estado4">Estado a asignar</label>
+                                <input type="text" class="form-control" name="nuevoEstadoDelUsuarioAdministrador4" readonly="nuevoEstadoDelUsuarioAdministrador4" value="Inactivar"/> <br>
+                                </br></br>
+
+                                <label for="motivo4">Motivo del nuevo estado</label>
+                                <input type="text" class="form-control" placeholder="Escriba el motivo de cambio de estado" name="motivoDeEstadoDelUsuarioAdministrador4"  />
+                                @error('motivoDeEstadoDelUsuarioAdministrador4')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
                                 </br></br>
 
                             </div>
@@ -193,6 +207,4 @@ modal-dialog modal-dialog-scrollable
                 </div>
             </div>
         </div>
-    <!--FIN MODAL EDITAR-->
-
-
+    <!--FIN MODAL EDITAR ESTADO ACTIVO-->

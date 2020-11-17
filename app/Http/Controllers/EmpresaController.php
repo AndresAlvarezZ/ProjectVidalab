@@ -57,7 +57,7 @@ class EmpresaController extends Controller
 
 
   //ACTUALIZAR REGISTROS
-    public function editar (Request $request, $id)
+    public function actualizar (Request $request, $id)
     {
       $empresa = Empresa::find($id);
 

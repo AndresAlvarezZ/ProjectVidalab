@@ -44,10 +44,10 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO EMPRESAS
+  Route::get('/empresas', 'EmpresaController@index');
   Route::post('/empresas/registrar', 'EmpresaController@guardar');
   Route::get('/empresas/{empresa}', 'EmpresaController@mostrar');
-  Route::get('/empresas', 'EmpresaController@index');
-  Route::put('/empresas/{empresa}', 'EmpresaController@editar');
+  Route::put('/empresas/{empresa}', 'EmpresaController@actualizar');
   Route::delete('/empresas/{empresa}', 'EmpresaController@eliminar');
 //
 
@@ -87,7 +87,7 @@ Auth::routes();
   Route::get('/solicitudes/confirmadas','SolicitudesController@SolicitudesConfirmadas');
   Route::get('/solicitudes/finalizadas','SolicitudesController@SolicitudesFinalizadas');
   Route::get('/solicitudes/canceladas','SolicitudesController@SolicitudesCanceladas');
-//faltan
+//
 
 
 

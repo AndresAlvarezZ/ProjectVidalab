@@ -68,7 +68,7 @@ $(document).ready(function ()
     //FIN DE ACTUALIZAR
 
 
-    //ACTUALIZAR
+    //ACTUALIZAR ESTADO
         $('.btnEstado').on('click', function()
         {
             $('#editarEstado').modal('show');
@@ -80,6 +80,8 @@ $(document).ready(function ()
             console.log(data);
             $('#idEditarEstado').val(data[0]);
             $('#nombreCompleto4').val(data[1]);
+            $('#numeroDeCedula4').val(data[2]);
+
         });
 
         $('#editarEstado').on('submit', function(e)
@@ -89,7 +91,7 @@ $(document).ready(function ()
             $.ajax
             ({
                 type: "PUT",
-                url: "/administradores/"+id,
+                url: "/administradores/estado/"+id,
                 data: $('#editarEstadoForm').serialize(),
                 success: function (response)
                 {
