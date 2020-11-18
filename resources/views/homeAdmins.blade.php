@@ -6,6 +6,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/estiloDeRedesSociales.css">
     <title></title>
     <ul class="desplegable">
       <li class="lista">
@@ -43,11 +46,36 @@
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid">
+    <h1><i><b>Y saber que todo empezó con un: ¡Hola mundo! </b></i><br>💙💙💙</h1>
+    <p></p>
+
+      <div id="siguienteImagen" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="10000">
+            <img src="portadas/Portada 1.png" class="d-block w-100" alt="Nombre del laboratorio">
+          </div>
+          <div class="carousel-item" data-interval="2000">
+            <img src="portadas/Portada 2.jpg" class="d-block w-100" alt="Bienvenida 1">
+          </div>
+          <div class="carousel-item">
+            <img src="portadas/Portada 3.jpg" class="d-block w-100" alt="Bienvanida 2">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#siguienteImagen" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#siguienteImagen" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+
+
       <div class="container">
         <div class="row justify-center">
           <div class="col-md-8">
             <div class="card">
-              <h1>Si el plan no funciona...cambia el plan pero nunca cambies la meta 💙 <br> Soon=> ✨</h1>
               @if (session('status'))
                   <div class="alert alert-success" role="alert">
                       {{ session('status') }}
@@ -60,8 +88,13 @@
     </div>
   </body>
   <footer>
-    <div class="container">
-      <h3>este es el pie de la pagina</h3>
+    <div class="redes-container">
+      <ul>
+        <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+      </ul>
     </div>
   </footer>
 </html>

@@ -1,0 +1,74 @@
+:root
+{
+    --facebook: #4267B2;
+    --instagram: #C13584;
+    --whatsapp: #25d366;
+    --twitter: #1DA1F2;
+
+}
+
+
+.redes-container
+{
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.redes-container ul li
+{
+    display: inline-block;
+    margin: 0 15px;
+    width: 50px;
+    text-align: center;
+}
+
+.redes-container ul li a
+{
+    display: block;
+    padding: 0 10px;
+    background: black;
+    color: white;
+    line-height: 50px;
+    font-size: 25px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    transition: .2s;
+}
+
+
+.redes-container ul:hover a
+{
+    filter: blur(2px);
+}
+
+
+.redes-container ul li a:hover
+{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
+    filter: none;
+}
+
+
+.redes-container ul li .facebook:hover
+{
+    background: var(--facebook);
+}
+
+.redes-container ul li .instagram:hover
+{
+    background: var(--instagram);
+}
+
+.redes-container ul li .whatsapp:hover
+{
+    background: var(--whatsapp);
+}
+
+.redes-container ul li .twitter:hover
+{
+    background: var(--twitter);
+}
