@@ -149,10 +149,10 @@ class AdministradorController extends Controller
     $administrador = Administrador::find($id);    
     $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador5');
     
-    $nuevoEstado = 1;
+    $nuevoEstado = 0;
     if($request->input('motivoDeEstadoDelUsuarioAdministrador5') == "ACTIVAR");  
     {
-      $nuevoEstado = 0; 
+      $nuevoEstado = 1; 
     }    
     $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;      
     $administrador->save();

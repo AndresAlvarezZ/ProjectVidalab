@@ -18,7 +18,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-40">
                     <div class="card">
-                        <div class="card-header"><h4><b><center>Registro de Administradores Activos</center></b></h4></div>
+                        <div class="card-header"><h4><b><center>Registro de Administradores Inactivos</center></b></h4></div>
                             <div class="card-body">
                                 <ul class="list-group">
                                     <table id="registros"  class="table table-hover">
