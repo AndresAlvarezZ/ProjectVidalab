@@ -57,7 +57,7 @@
                                                         @endif
                                                     </center></td>
                                                     <td><center>
-                                                        <a href="#" class="btn btn-danger btnEstado">Denegar Acceso</a>
+                                                        <a href="#" class="btn btn-danger btnInactivar">Denegar Acceso</a>
                                                     </center></td>
                                                 </tr>
                                                 @endif

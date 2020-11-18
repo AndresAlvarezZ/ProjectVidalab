@@ -9,7 +9,7 @@
         <div class="card-header">
            <h3><b><center>Catálogo de Análisis</center></b></h3>
         </div>
-        <link rel="stylesheet" type="text/css" href="css/estiloDelCatalogo.css?v=<?php echo(rand()); ?>">
+                <link rel="stylesheet" type="text/css" href="css/estiloDelCatalogo.css?v=<?php echo(rand()); ?>">
 				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		    <script src="{{ asset('js/localStorage.js') }}?v=<?php echo(rand()); ?>"defer></script>
 

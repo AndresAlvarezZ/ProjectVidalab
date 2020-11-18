@@ -57,7 +57,7 @@
                                                         @endif
                                                     </center></td>
                                                     <td><center>
-                                                        <a href="#" class="btn btn-danger btnEstado">Conceder Acceso</a>
+                                                        <a href="#" class="btn btn-success btnActivar">Conceder Acceso</a>
                                                     </center></td>
                                                 </tr>
                                                 @endif

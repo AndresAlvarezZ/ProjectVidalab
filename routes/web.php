@@ -94,7 +94,8 @@ Auth::routes();
 /*----------------RUTAS A MEDIAS---------------------- */
 
 //RUTAS DE SUBMÓDULO ADMINISTRADOR  faltantes por revisar
-  Route::put('/administradores/estado/{administrador}', 'AdministradorController@actualizarEstado');
+  Route::put('/administradores/inactivar/{administrador}', 'AdministradorController@inactivar');
+  Route::put('/administradores/activar/{administrador}', 'AdministradorController@activar');
   //Route::get('/administradores/{administrador}/editarEstado', 'AdministradorController@editarEstado');
 //
 

@@ -23,7 +23,7 @@
                                     <th scope="col"><center>Cédula</center></th>
                                     <th scope="col"><center>Condición</center></th>
                                     <th scope="col"><center>Total</center></th>
-                                    <th scope="col"><center></center></th>
+                                    <th scope="col"><center>Acción a realizar</center></th>
                                 </tr>
                             </thead>
 
@@ -33,7 +33,7 @@
                                     <th scope="col"><center>Cédula</center></th>
                                     <th scope="col"><center>Condición</center></th>
                                     <th scope="col"><center>Total</center></th>
-                                    <th scope="col"><center></center></th>
+                                    <th scope="col"><center>Acción a realizar</center></th>
                                 </tr>
                             </tfoot>
 

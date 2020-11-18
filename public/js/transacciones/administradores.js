@@ -68,8 +68,8 @@ $(document).ready(function ()
     //FIN DE ACTUALIZAR
 
 
-    //ACTUALIZAR ESTADO
-        $('.btnEstado').on('click', function()
+    //ACTUALIZAR ESTADO A INACTIVAR
+        $('.btnInactivar').on('click', function()
         {
             $('#editarEstado').modal('show');
             $tr = $(this).closest('tr');
@@ -91,12 +91,54 @@ $(document).ready(function ()
             $.ajax
             ({
                 type: "PUT",
-                url: "/administradores/estado/"+id,
+                url: "/administradores/inactivar/"+id,
                 data: $('#editarEstadoForm').serialize(),
                 success: function (response)
                 {
                     console.log(response)
                     $('#editarEstado').modal('hide')
+                    alert("¡Actualización de datos exitosa!");
+                    location.reload();
+                },
+                error: function(error)
+                {
+                    console.log(error)
+                    alert("¡Error de actualización, inténtelo nuevamente!");
+                }
+            });
+        });
+    //FIN DE ACTUALIZAR ESTADO
+
+
+    //ACTUALIZAR ESTADO A ACTIVAR
+        $('.btnActivar').on('click', function()
+        {
+            $('#editarEstadoActivar').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function()
+            {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#idEditarEstadoActivar').val(data[0]);
+            $('#nombreCompleto5').val(data[1]);
+            $('#numeroDeCedula5').val(data[2]);
+
+        });
+
+        $('#editarEstadoActivar').on('submit', function(e)
+        { 
+            e.preventDefault();
+            var id = $('#idEditarEstadoActivar').val();
+            $.ajax
+            ({
+                type: "PUT",
+                url: "/administradores/activar/"+id,
+                data: $('#editarEstadoActivarForm').serialize(),
+                success: function (response)
+                {
+                    console.log(response)
+                    $('#editarEstadoActivar').modal('hide')
                     alert("¡Actualización de datos exitosa!");
                     location.reload();
                 },

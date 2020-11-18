@@ -208,3 +208,54 @@ modal-dialog modal-dialog-scrollable
             </div>
         </div>
     <!--FIN MODAL EDITAR ESTADO ACTIVO-->
+
+
+
+
+        <!-- MODAL EDITAR ESTADO INACTIVO-->
+        <div class="modal fade" id="editarEstadoActivar" tabindex="-1" aria-labelledby="labelEditarEstadoActivar" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="labelEditarEstadoActivar">Editar Registro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="editarEstadoActivarForm">
+                        <div class="modal-body">
+                            {{ csrf_field() }}
+                            {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="idEditarEstadoActivar">
+
+                                <label for="nombre4">Nombre</label>
+                                <input type="text" class="form-control" name="nombreCompleto5" readonly="nombreCompleto5" id="nombreCompleto5"/> <br>
+                                </br></br>
+
+                                <label for="cedula4">Cédula</label>
+                                <input type="text" class="form-control" name="numeroDeCedula5" readonly="numeroDeCedula5" id="numeroDeCedula5"/> <br>
+                                </br></br>
+
+                                <label for="estado4">Estado a asignar</label>
+                                <input type="text" class="form-control" name="nuevoEstadoDelUsuarioAdministrador5" readonly="nuevoEstadoDelUsuarioAdministrador5" value="Activar"/> <br>
+                                </br></br>
+
+                                <label for="motivo4">Motivo del nuevo estado</label>
+                                <input type="text" class="form-control" placeholder="Escriba el motivo de cambio de estado" name="motivoDeEstadoDelUsuarioAdministrador5"  />
+                                @error('motivoDeEstadoDelUsuarioAdministrador5')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                </br></br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Actualizar Estado</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL EDITAR ESTADO INACTIVO-->

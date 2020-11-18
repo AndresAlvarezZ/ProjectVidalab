@@ -126,34 +126,38 @@ class AdministradorController extends Controller
   //
 
 
-  //EDITAR ESTADO DE REGISTRO
-    public function actualizarEstado (Administrador $administrador)
-    {
-      $nuevoEstado = 0;
-      if($administrador->estadoDelUsuarioAdministrador == 0)
-      {
-        $nuevoEstado = 1; 
-      }    
-      $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;
-      $this->validate(request(),
-      [
-        'motivoDeEstadoDelUsuarioAdministrador' => 'required',
-      ]); 
-      $administrador->update(request()->all());
-      return redirect ('/administradores');
-    }
-  //
-
-
-
-  /*
-  //EDITAR ESTADO REGISTRO
-  public function editarEstado(Administrador $administrador)
+  //ACTUALIZAR ESTADO DE ADMINISTRADOR A INACTIVAR
+  public function inactivar (Request $request, $id)
   {
-  $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-  return view('administrador.editarEstado', compact('administrador', 'acceso', 'name'));
+    $administrador = Administrador::find($id);    
+    $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador4');
+    
+    $nuevoEstado = 1;
+    if($request->input('motivoDeEstadoDelUsuarioAdministrador4') == "Inactivar");  
+    {
+      $nuevoEstado = 0; 
+    }    
+    $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;      
+    $administrador->save();
   }
-  */
-  
+//
+
+
+  //ACTUALIZAR DE ADMINISTRADOR A ACTIVAR
+  public function activar (Request $request, $id)
+  {
+    $administrador = Administrador::find($id);    
+    $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador5');
+    
+    $nuevoEstado = 1;
+    if($request->input('motivoDeEstadoDelUsuarioAdministrador5') == "ACTIVAR");  
+    {
+      $nuevoEstado = 0; 
+    }    
+    $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;      
+    $administrador->save();
+  }
+//
+
 
 }
