@@ -46,7 +46,7 @@
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid">
-    <h1><i><b>Y saber que todo empezó con un: ¡Hola mundo! </b></i><br>💙💙💙</h1>
+    <h1><i><b>Y saber que todo empezó con un: ¡Hola mundo! </b></i><br>💙💙💙💙</h1>
     <p></p>
 
       <div id="siguienteImagen" class="carousel slide" data-ride="carousel">
