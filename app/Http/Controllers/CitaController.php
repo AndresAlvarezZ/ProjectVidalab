@@ -34,7 +34,7 @@ class CitaController extends Controller
         {
             $cita = new Cita;
 
-            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa0');        
+            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa1');        
             $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
             $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
             $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
@@ -48,18 +48,14 @@ class CitaController extends Controller
 
 
     //ACTUALIZAR REGISTROS
-        public function editar (Request $request, $id)
+        public function actualizar (Request $request, $id)
         {
             $cita = Cita::find($id);
 
-            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa0');        
-            $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
-            $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
-            $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
-            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');        
-            $cita->fechaDeCita = $request->input('fechaDeCita1');
-            $cita->horaDeCita = $request->input('horaDeCita1');
-            $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos1');
+            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');        
+            $cita->fechaDeCita = $request->input('fechaDeCita3');
+            $cita->horaDeCita = $request->input('horaDeCita3');
+            $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos3');
             $cita->save();
         }
     //

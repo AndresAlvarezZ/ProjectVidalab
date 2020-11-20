@@ -15,14 +15,15 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>Registro  de Empresas</center></b></h4></div>
+            <div class="card-header"><h4><b><center>REGISTRO DE EMPRESAS</center></b></h4></div>
                 <div class="card-body">
 
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarEmpresa">Registrar</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarEmpresa">Registrar nueva Empresa</button>
                         </div>
                     </div>
+                    <br>
 
                     <ul class="list-group">
                         <table id="registros" class="table table-hover">
@@ -57,8 +58,8 @@
                                     <td><center>{{$empresa->correoElectronicoDeLaEmpresa}}</center></td>
                                     <td><center>{{$empresa->direccionDeLaEmpresa}}</center></td>
                                     <td><center>
-                                        <a href="/empresas/{{$empresa->idDeLaEmpresa}}" class="btn btn-warning">Citas</a> <br></br>
-                                        <a href="#" class="btn btn-success btnEditar">Editar</a> <br></br>
+                                        <a href="/empresas/{{$empresa->idDeLaEmpresa}}" class="btn btn-warning">Sus citas</a> <br></br>
+                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
                                         <a href="#" class="btn btn-danger btnEliminar">Eliminar</a> <br></br>
                                     </center></td>
                                 </tr>

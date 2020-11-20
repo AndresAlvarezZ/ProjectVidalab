@@ -26,6 +26,10 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             <div class="form-row">
     
+                                <div class="alert alert-info" role="alert">
+                                    <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
+                                </div>
+
                                 <input type="text" class="form-control" value="* Datos Generales" readonly>
 
                                 <div class="form-group">
@@ -136,6 +140,10 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEditar">
 
+                                <div class="alert alert-warning" role="alert">
+                                    <center><b>¡Por favor, verifique que el regitro a actualizar sea el correcto!</b></center>
+                                </div>
+
                                 <label for="nombre3">Nombre</label>
                                 <input type="text" class="form-control" name="nombreCompleto3" readonly="nombreCompleto3" id="nombreCompleto3" />
                                 </br></br>
@@ -177,6 +185,10 @@ modal-dialog modal-dialog-scrollable
                             {{method_field('PUT')}}
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEditarEstado">
+
+                                <div class="alert alert-warning" role="alert">
+                                    <center><b>¡Por favor, verifique que el Administrador al cual le "Denegará el acceso" sea el correcto!</b></center>
+                                </div>
 
                                 <label for="nombre4">Nombre</label>
                                 <input type="text" class="form-control" name="nombreCompleto4" readonly="nombreCompleto4" id="nombreCompleto4"/> <br>
@@ -228,6 +240,10 @@ modal-dialog modal-dialog-scrollable
                             {{method_field('PUT')}}
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEditarEstadoActivar">
+
+                                <div class="alert alert-warning" role="alert">
+                                    <center><b>¡Por favor, verifique que el Administrador al cual le "Concederá el acceso" sea el correcto!</b></center>
+                                </div>
 
                                 <label for="nombre4">Nombre</label>
                                 <input type="text" class="form-control" name="nombreCompleto5" readonly="nombreCompleto5" id="nombreCompleto5"/> <br>

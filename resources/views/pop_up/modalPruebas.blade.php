@@ -27,6 +27,10 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             <div class="form-row">
 
+                                <div class="alert alert-info" role="alert">
+                                    <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
+                                </div>
+
                                 <label for="codigo1">Código</label>
                                 <input type="text" class="form-control" placeholder="Escriba el código del análisis" name="codigoDelAnalisis1" value="{{old('codigoDelAnalisis1')}}" />
                                 @error('codigoDelAnalisis1')
@@ -98,6 +102,10 @@ modal-dialog modal-dialog-scrollable
                                 <div class="form-row">
                                     <input type="hidden" name="id" id="idEditar">
 
+                                    <div class="alert alert-warning" role="alert">
+                                        <center><b>¡Por favor, verifique que el regitro a actualizar sea el correcto!</b></center>
+                                    </div>
+
                                     <label for="codigo3">Código</label>
                                     <input type="text" class="form-control" placeholder="Escriba el código del análisis" name="codigoDelAnalisis3" id="codigoDelAnalisis3" />
                                     <br></br>
@@ -147,6 +155,11 @@ modal-dialog modal-dialog-scrollable
                                 {{method_field('DELETE')}}
                                 <div class="form-row">
                                     <input type="hidden" name="id" id="idEliminar">
+
+                                    <div class="alert alert-danger" role="alert">
+                                        <center>¡Lea cuidadosamente la información! <b>¿Realmente desea eliminar este registro?</b></center>
+                                    </div>
+
                                     <label for="codigo4"><b>Código</b></label>
                                     <input type="text" class="form-control" name="codigoDelAnalisis4" readonly="codigoDelAnalisis4" id="codigoDelAnalisis4"/>
                                     <br> </br>

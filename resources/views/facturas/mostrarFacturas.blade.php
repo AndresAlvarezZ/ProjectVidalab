@@ -13,7 +13,7 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>Registro  de Compras</center></b></h4></div>
+            <div class="card-header"><h4><b><center>REGISTRO DE COMPRAS EN LÍNEA</center></b></h4></div>
                 <div class="card-body">
                     <ul class="list-group">
                         <table id="registros" class="table table-hover">

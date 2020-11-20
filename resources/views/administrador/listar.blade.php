@@ -14,105 +14,103 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-40">
-                    <div class="card">
-                        <div class="card-header"><h4><b><center>Registro de Administradores</center></b></h4></div>
-                            <div class="card-body">
-                                
-                                <div class="row">
-                                    <div class="col-lg-12 margin-tb">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarAdministrador">Registrar</button></p>
-                                    </div>
-                                </div>
-
-                                <ul class="list-group">
-                                    <table id="registros"  class="table table-hover">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th scope="col"><center>ID</center></th>
-                                                <th scope="col"><center>Nombre</center></th>
-                                                <th scope="col"><center>Cédula</center></th>
-                                                <th scope="col"><center>teléfono</center></th>
-                                                <th scope="col"><center>Correo</center></th>
-                                                <th scope="col"><center>Rol</center></th>
-                                                <th scope="col"><center>Estado</center></th>
-                                                <th scope="col"><center>Acción a Realizar<center></th>
-                                            </tr>
-                                        </thead>
-
-                                        <tfoot class="thead-dark">
-                                            </tr>
-                                                <th scope="col"><center>ID</center></th>
-                                                <th scope="col"><center>Nombre</center></th>
-                                                <th scope="col"><center>Cédula</center></th>
-                                                <th scope="col"><center>teléfono</center></th>
-                                                <th scope="col"><center>Correo</center></th>
-                                                <th scope="col"><center>Rol</center></th>
-                                                <th scope="col"><center>Estado</center></th>
-                                                <th scope="col"><center>Acción a Realizar<center></th>
-                                            </tr>
-                                        </tfoot>
-
-                                        <tbody>
-                                            <tr>
-                                                <td><center>{{$superAdministradores->id}}</center></td>
-                                                <td><center>{{$superAdministradores->primerApellidoAdministrador}} {{$superAdministradores->segundoApellidoAdministrador}} {{$superAdministradores->nombreDelUsuarioAdministrador}}</center></td>
-                                                <td><center>{{$superAdministradores->dniDelUsuarioAdministrador}}</center></td>
-                                                <td><center>{{$superAdministradores->telefonoDelUsuarioAdministrador}}</center></td>
-                                                <td><center>{{$superAdministradores->email}}</center></td>
-                                                <td><center>
-                                                                    @if($superAdministradores->rol == 1)
-                                                                        Super Administrador
-                                                                    @else
-                                                                        Administrador
-                                                                    @endif
-                                                                </center></td>
-                                                <td><center>Activo</center></td>
-                                                <td><center>
-                                                    <a href="#" class="btn btn-success btnEditar">Editar</a>
-                                                </center></td>
-                                            </tr>
-
-                                            @foreach($administradores as $administrador)
-                                            <tr>
-                                                <td><center>{{$administrador->id}}</center></td>
-                                                <td><center>{{$administrador->primerApellidoAdministrador}} {{$administrador->segundoApellidoAdministrador}} {{$administrador->nombreDelUsuarioAdministrador}}</center></td>
-                                                <td><center>{{$administrador->dniDelUsuarioAdministrador}}</center></td>
-                                                <td><center>{{$administrador->telefonoDelUsuarioAdministrador}}</center></td>
-                                                <td><center>{{$administrador->email}}</center></td>
-                                                <td><center>
-                                                    @if($administrador->rol == 1)
-                                                        Super Administrador
-                                                    @else
-                                                        Administrador
-                                                    @endif
-                                                </center></td>
-                                                <td><center>
-                                                    @if($administrador->estadoDelUsuarioAdministrador == 1)
-                                                        Activo
-                                                    @else
-                                                        Inactivo
-                                                    @endif
-                                                </center></td>
-                                                <td><center>
-                                                    <a href="#" class="btn btn-success btnEditar">Editar</a> | 
-                                                    <a href="#" class="btn btn-danger btnEstado">Cambiar Estado</a>
-                                                </center></td>
-                                            </tr>
-                                            @endforeach   
-                                        </tbody>
-                                    </table>
-                                </ul>
-                            </div>
+        <div class="container-fluid">
+            <div class="card-header"><h4><b><center>REGISTRO DE ADMINISTRADORES</center></b></h4></div>
+                <div class="card-body">
+                    
+                    <div class="row">
+                        <div class="col-lg-12 margin-tb">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarAdministrador">Registrar nuevo Administrador</button></p>
                         </div>
                     </div>
+
+                    <ul class="list-group">
+                        <table id="registros"  class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col"><center>ID</center></th>
+                                    <th scope="col"><center>Nombre</center></th>
+                                    <th scope="col"><center>Cédula</center></th>
+                                    <th scope="col"><center>teléfono</center></th>
+                                    <th scope="col"><center>Correo</center></th>
+                                    <th scope="col"><center>Rol</center></th>
+                                    <th scope="col"><center>Estado</center></th>
+                                    <th scope="col"><center>Acción a Realizar<center></th>
+                                </tr>
+                            </thead>
+
+                            <tfoot class="thead-dark">
+                                </tr>
+                                    <th scope="col"><center>ID</center></th>
+                                    <th scope="col"><center>Nombre</center></th>
+                                    <th scope="col"><center>Cédula</center></th>
+                                    <th scope="col"><center>teléfono</center></th>
+                                    <th scope="col"><center>Correo</center></th>
+                                    <th scope="col"><center>Rol</center></th>
+                                    <th scope="col"><center>Estado</center></th>
+                                    <th scope="col"><center>Acción a Realizar<center></th>
+                                </tr>
+                            </tfoot>
+
+                            <tbody>
+                                <tr>
+                                    <td><center>{{$superAdministradores->id}}</center></td>
+                                    <td><center>{{$superAdministradores->primerApellidoAdministrador}} {{$superAdministradores->segundoApellidoAdministrador}} {{$superAdministradores->nombreDelUsuarioAdministrador}}</center></td>
+                                    <td><center>{{$superAdministradores->dniDelUsuarioAdministrador}}</center></td>
+                                    <td><center>{{$superAdministradores->telefonoDelUsuarioAdministrador}}</center></td>
+                                    <td><center>{{$superAdministradores->email}}</center></td>
+                                    <td><center>
+                                        @if($superAdministradores->rol == 1)
+                                            Super Administrador
+                                        @else
+                                            Administrador
+                                        @endif
+                                    </center></td>
+                                    <td><center>Activo</center></td>
+                                    <td><center>
+                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a>
+                                    </center></td>
+                                </tr>
+
+                                @foreach($administradores as $administrador)
+                                <tr>
+                                    <td><center>{{$administrador->id}}</center></td>
+                                    <td><center>{{$administrador->primerApellidoAdministrador}} {{$administrador->segundoApellidoAdministrador}} {{$administrador->nombreDelUsuarioAdministrador}}</center></td>
+                                    <td><center>{{$administrador->dniDelUsuarioAdministrador}}</center></td>
+                                    <td><center>{{$administrador->telefonoDelUsuarioAdministrador}}</center></td>
+                                    <td><center>{{$administrador->email}}</center></td>
+                                    <td><center>
+                                        @if($administrador->rol == 1)
+                                            Super Administrador
+                                        @else
+                                            Administrador
+                                        @endif
+                                    </center></td>
+                                    <td><center>
+                                        @if($administrador->estadoDelUsuarioAdministrador == 1)
+                                            Activo
+                                        @else
+                                            Inactivo
+                                        @endif
+                                    </center></td>
+                                    <td><center>
+                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
+                                        @if($administrador->estadoDelUsuarioAdministrador == 1)
+                                            <a href="#" class="btn btn-danger btnInactivar">Denegar Acceso</a>
+                                        @else
+                                            <a href="#" class="btn btn-success btnActivar">Conceder Acceso</a>
+                                        @endif
+                                    </center></td>
+                                </tr>
+                                @endforeach   
+                            </tbody>
+                        </table>
+                    </ul>
                 </div>
-                <br>
-                <center><a href="/administradores/activos" class="btn btn-dark">Administradores Activos</a>    |   <a href="/administradores/inactivos" class="btn btn-dark">Administradores Inactivos</a>    |   <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center></center>
             </div>
-        </div> 
+            <br>
+            <center><a href="/administradores/activos" class="btn btn-dark">Administradores Activos</a>    |   <a href="/administradores/inactivos" class="btn btn-dark">Administradores Inactivos</a>    |   <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center></center>
+        </div>
     </body>  
 @endsection
 

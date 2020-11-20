@@ -1,3 +1,4 @@
+
 @extends('layouts.especial')
 @extends('pop_up.modalCitas')
 @section('content')
@@ -7,22 +8,36 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/transacciones/transaccionesDeCitas.js') }}"defer></script>
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}"defer></script>
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
     </head>
 
     <body>
-        <div class="container-xl">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h4><b>Empresa</b></h4>
                     <div class="card" style="max-width: 18rem;">
-
+                        <div class="card-header"><center><h4><b>EMPRESA</b></h4></center></div>
+                        
                         <div class="card-body">
-                            <h5 class="card-title">Código: {{$empresa->idDeLaEmpresa}}</h5>
+                            <ul class="list-group">                                
+                                <table class="table table-hover">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col"><center><h4>Código</h4></center></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><center><h4>{{$empresa->idDeLaEmpresa}}</h4></center></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </ul>
+
                             <p class="card-text">
-                                </br>
                                 Empresa: {{$empresa->nombreDeLaEmpresa}}
                             </p>
                         </div>
@@ -34,14 +49,16 @@
                             <li class="list-group-item">Derección: {{$empresa->direccionDeLaEmpresa}}</li>
                         </ul>
                         <div class="card-body">
-                            <a href="/empresas" class="btn btn-danger">Regresar a la lista</a> <br></br>
-                            <a href="/homeAdmins" class="btn btn-danger">Ir al menú principal</a>
+                            <center>
+                                <a href="/empresas" class="btn btn-dark">Regresar a la lista</a> <br></br>
+                                <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a>
+                            </center>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-8">
-                    <div class="card-header"><h4><b><center>Registro de citas<center></b></h4></div>
+                    <div class="card-header"><h4><b><center>REGISTRO DE CITAS POR EMPRESA<center></b></h4></div>
                         <div class="card-body">
                             <div class="alert alert-info" role="alert">
                                 <center>¡Lista de citas ordenada de forma <i>descendente, según fecha de regristro</i> en el sistema!</center>
@@ -49,15 +66,17 @@
 
                             <div class="row">
                                 <div class="col-lg-12 margin-tb">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarCita">Registrar</button></p>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarCita">Registrar nueva Cita</button></p>
                                 </div>
                             </div>
-                            <br></br>
+                            <br>
+                            
+
                             <ul class="list-group">
-                                <table class="table table-hover" id="rgistros">
+                                <table id="registros" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col"><center>Código</center></th>
+                                            <th scope="col"><center>ID</center></th>
                                             <th scope="col"><center>Fecha</center></th>
                                             <th scope="col"><center>Hora</center></th>
                                             <th scope="col"><center>Pacientes</center></th>
@@ -69,7 +88,7 @@
 
                                     <tfoot class="thead-dark">
                                         </tr>
-                                            <th scope="col"><center>Código</center></th>
+                                            <th scope="col"><center>ID</center></th>
                                             <th scope="col"><center>Fecha</center></th>
                                             <th scope="col"><center>Hora</center></th>
                                             <th scope="col"><center>Pacientes</center></th>
@@ -83,14 +102,14 @@
                                         @foreach($citas as $cita)
                                         @if($empresa->idDeLaEmpresa === $cita->idDeLaEmpresa)
                                             <tr>
-                                                <td><center>{{$cita->idDeLaEmpresa}}</center></td>
+                                                <td><center>{{$cita->idDeLaCita}}</center></td>
                                                 <td><center>{{$cita->fechaDeCita}}</center></td>
                                                 <td><center>{{$cita->horaDeCita}}</center></td>
                                                 <td><center>{{$cita->numeroDeClientesPorAtender}}</center></td>
                                                 <td><center>{{$cita->tiposDeAnalisisRequeridos}}</center></td>
                                                 <td><center>{{$cita->nombreDelSolicitante}} {{$cita->primerApellidoDelSolicitante}} {{$cita->segundoApellidoDelSolicitante}}</center></td>
                                                 <td><center>
-                                                    <a href="#" class="btn btn-success btnEditar">Editar</a> <br></br>
+                                                    <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
                                                     <a href="#" class="btn btn-danger btnEliminar">Eliminar</a> <br></br>
                                             </tr>
                                             @endif

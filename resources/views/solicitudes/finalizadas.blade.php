@@ -13,7 +13,7 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>Registro  de Solicitudes en estado: Finalizadas</center></b></h4></div>
+            <div class="card-header"><h4><b><center>REGISTRO DE SOLICITUDES EN ESTADO: FINALIZADAS</center></b></h4></div>
                 <div class="card-body">
 
                     <div class="alert alert-info" role="alert">

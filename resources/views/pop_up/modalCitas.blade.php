@@ -1,3 +1,4 @@
+<link href="{{ asset('css/estiloDePopUp.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 <!--TAMAÑOS
 modal-dialog modal-xl
 modal-dialog modal-lg
@@ -10,7 +11,7 @@ modal-dialog modal-dialog-scrollable
 
 
 <!--MODALS-->
-    <!-- MODAL AGREGAR EMPRESA-->
+    <!-- MODAL AGREGAR-->
         <div class="modal fade" id="agregarCita" tabindex="-1" aria-labelledby="labelAgregarCita" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -25,8 +26,12 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             <div class="form-row">
 
-                                <input type="hidden" name="id" id="idAgregar">
+                                <input type="text" name="id" id="idAgregar"><br>
                                 
+                                <div class="alert alert-info" role="alert">
+                                    <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
+                                </div>
+
                                 <label for="nombre1">Solicitante de cita: nombre</label>
                                 <input type="text" class="form-control" placeholder="Escriba el nombre del solicitante de la cita" name="nombreDelSolicitante1" value="{{old('nombreDelSolicitante1')}}" /> <br>
                                 @error('nombreDelSolicitante1')
@@ -87,7 +92,7 @@ modal-dialog modal-dialog-scrollable
                 </div>
             </div>
         </div>
-    <!--FIN MODAL AGREGAR EMPRESA-->
+    <!--FIN MODAL AGREGAR -->
 
 
     <!-- MODAL EDITAR-->
@@ -107,7 +112,29 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEditar">
                                 
-                                
+                                <div class="alert alert-warning" role="alert">
+                                    <center><b>¡Por favor, verifique que el regitro a actualizar sea el correcto!</b></center>
+                                </div>
+
+                                <label for="nombre3">Solicitante de cita: nombre</label>
+                                <input type="text" class="form-control" name="nombreDelSolicitante3" id="nombreDelSolicitante3" readonly/> <br>
+                                <br></br>
+
+                                <label for="clientes3">Número de clientes por atender</label>
+                                <input type="text" class="form-control" placeholder="Escriba el total de cliente que serán atendidos" name="numeroDeClientesPorAtender3" id="numeroDeClientesPorAtender3"/> <br>
+                                <br></br>
+
+                                <label for="fecha3">Fecha de cita</label>
+                                <input type="date" class="form-control" placeholder="Seleccione la fecha de cita" name="fechaDeCita3" id="fechaDeCita3"/> <br>
+                                <br></br>
+
+                                <label for="hora3">Seleccione la hora de cita</label>
+                                <input type="TIME" class="form-control" placeholder="Seleccione la hora de cita" name="horaDeCita3" id="horaDeCita3"/> <br>
+                                <br></br>
+
+                                <label for="analisis3">Escriba los tipos de análisis requeridos</label>
+                                <input type="text" class="form-control" placeholder="Escriba los tipos de análisis requeridos" name="tiposDeAnalisisRequeridos3" id="tiposDeAnalisisRequeridos3"/> <br>
+                                <br></br>
 
                             </div>
                         </div>
@@ -139,9 +166,15 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEliminar">
                                 
-                                <p>
-                                    ¿Está seguro que desea eliminar este registro?
-                                </p>
+                                <div class="alert alert-danger" role="alert">
+                                    <center>¡Lea cuidadosamente la información! <b>¿Realmente desea eliminar este registro?</b></center>
+                                </div>
+
+                                <label for="fecha4"><b>Fecha de cita</b></label>
+                                <input type="text" class="form-control" name="fechaDeCita4" readonly="fechaDeCita4" id="fechaDeCita4"/>
+                                <br> </br>
+                                <label for="hora4"><b>Hora de cita</b></label>
+                                <input type="text" class="form-control" name="horaDeCita4" readonly="horaDeCita4" id="horaDeCita4"/>
                             </div>
 
                             
