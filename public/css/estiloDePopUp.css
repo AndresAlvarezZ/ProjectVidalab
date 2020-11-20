@@ -6,7 +6,7 @@
 
 .modal-header 
 {
-    background-color: #00cc99;
+    background-color: #17B2BA;
 }
 
 label
@@ -18,7 +18,7 @@ label
 h5
 { 
     color: black;
-    text-shadow: 5px 6px 5px #217762;   
+    text-shadow: 5px 6px 5px #45898d;   
     font-size: x-large;
     font-family: fantasy;
     font-weight: bold;
