@@ -121,7 +121,13 @@ modal-dialog modal-dialog-scrollable
                                     <label for="descripcion3">Descripción</label>
                                     <input type="text" class="form-control" placeholder="Escriba la descripción del análisis" name="descripcionDelAnalisis3" id="descripcionDelAnalisis3"/>
                                     <br></br>
-
+                                    <br></br>
+                                    <label for="costo3">Descuento</label>
+                                    <input type="text" class="form-control" placeholder="Escriba el descuento del análisis" name="descuentoDelAnalisis3" id="descuentoDelAnalisis3"/> <br>
+                                    @error('descuentoDelAnalisis3')
+                                        <div class="alert alert-danger">{{$message}}</div>
+                                    @enderror
+                                    </br></br>
                                     <label for="costo3">Costo</label>
                                     <input type="text" class="form-control" placeholder="Escriba el costo del análisis" name="costoDelAnalisis3" id="costoDelAnalisis3"/>
                                     <br></br>

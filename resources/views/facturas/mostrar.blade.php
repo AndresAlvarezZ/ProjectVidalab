@@ -5,7 +5,7 @@
 
 <head>
     <title>Carrito de compras</title>
-    <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
 
 <body>
 

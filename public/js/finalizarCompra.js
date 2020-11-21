@@ -24,7 +24,8 @@ function cargarCarrito()
         var div = document.createElement("input"),
         articulo = document.createElement('tr'),
         tdArticulo = document.createElement('td'),
-        tdPrecio = document.createElement('td');
+        tdPrecio = document.createElement('td'),
+        tdDescuento = document.createElement('td');
 
         div.id = "codigo"+contador;
         div.name = "codigo"+contador;
@@ -36,11 +37,14 @@ function cargarCarrito()
         descuentos = descuentos + Number(x.descuento)*(cantidad-1)
         }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
-        tdPrecio.innerHTML = '¢'+Number(x.costo-descuento);
+        tdPrecio.innerHTML = '¢'+Number(x.costo);
+        tdDescuento.innerHTML = '¢'+descuento
         tdArticulo.id = 'tdProcesar';
         tdPrecio.id = 'tdProcesar';
+        tdDescuento.id = 'tdProcesar'
         articulo.appendChild(tdArticulo);
         articulo.appendChild(tdPrecio);
+        articulo.appendChild(tdDescuento)
         articulos.appendChild(articulo);
         finalizarInter.appendChild(div);
 

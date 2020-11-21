@@ -51,6 +51,7 @@ class PruebaController extends Controller
             $prueba->nombreDelAnalisis = $request->input('nombreDelAnalisis3');
             $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis3');
             $prueba->costoDelAnalisis = $request->input('costoDelAnalisis3');
+            $prueba->descuentoDelAnalisis = $request->input('descuentoDelAnalisis3');
             $prueba->numeroDeMaquina = $request->input('numeroDeMaquina3');
             $prueba->save();
         }

@@ -90,6 +90,7 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO FACTURAS
   Route::get('/verCompras','FacturasController@verCompras');
+  Route::get('/verComprasCanceladas','FacturasController@verComprasCanceladas');
 //
 
 

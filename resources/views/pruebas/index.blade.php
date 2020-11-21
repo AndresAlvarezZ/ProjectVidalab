@@ -3,7 +3,7 @@
 @section('content')
 
     <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -34,6 +34,7 @@
                                     <th scope="col"><center>Máquina</center></th>
                                     <th scope="col"><center>Descripción</center></th>
                                     <th scope="col"><center>Costo</center></th>
+                                    <th scope="col"><center>Descuento</center></th>
                                     <th scope="col"><center>Acción a realizar</center></th>
                                 </tr>
                             </thead>
@@ -45,6 +46,7 @@
                                     <th scope="col"><center>Máquina</center></th>
                                     <th scope="col"><center>Descripción</center></th>
                                     <th scope="col"><center>Costo</center></th>
+                                    <th scope="col"><center>Descuento</center></th>
                                     <th scope="col"><center>Acción a realizar</center></th>
                                 </tr>
                             </tfoot>
@@ -57,6 +59,7 @@
                                 <td><center>{{$prueba->numeroDeMaquina}}</center></td>
                                 <td><center>{{$prueba->descripcionDelAnalisis}}</center></td>
                                 <td><center>{{$prueba->costoDelAnalisis}}</center></td>
+                                <td><center>{{$prueba->descuentoDelAnalisis}}</center></td>
                                     <td><center>
                                         <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
                                         <a href="#" class="btn btn-danger btnEliminar">Eliminar</a> <br></br>

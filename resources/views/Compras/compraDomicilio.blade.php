@@ -27,6 +27,7 @@
                 <tr>
                   <td><strong>Artículo</strong></td>
                   <td><strong>Precio</strong></td>
+                  <td><strong>Descuento</strong></td>
                 </tr>
 
               </table>

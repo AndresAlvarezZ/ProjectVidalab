@@ -13,17 +13,26 @@ class FacturasController extends Controller
   //CONSTRUCTOR
     public function __construct(){
       $this->middleware('auth:web')->only('miExpediente');
-      $this->middleware('auth:admins')->only('verCompras','procesarCompra','actualizarFactura');
+      $this->middleware('auth:admins')->only('verCompras','verComprasCanceladas','procesarCompra','actualizarFactura');
     }
   //
 
-  //LISTAR RESGISTROS
+  //LISTAR RESGISTROS PENDIENTES
     public function verCompras()
     {
       $fecha = date('d-m-Y');
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       $facturas = Facturas::orderBy('created_at','asc')->get();
       return view('facturas.mostrarFacturas',compact('name','facturas','fecha'));
+    }
+  //
+  //LISTAR RESGISTROS CANCELADOS
+    public function verComprasCanceladas()
+    {
+      $fecha = date('d-m-Y');
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      $facturas = Facturas::orderBy('created_at','asc')->get();
+      return view('facturas.mostrarFacturasCanceladas',compact('name','facturas','fecha'));
     }
   //
 
@@ -58,5 +67,5 @@ class FacturasController extends Controller
       return view('facturas.mostrar',compact('facturas','compras','indice','indiceFactura','fecha','total'));
     }
 
- 
+
 }

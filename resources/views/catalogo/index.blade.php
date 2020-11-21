@@ -9,9 +9,9 @@
         <div class="card-header">
            <h3><b><center>Catálogo de Análisis</center></b></h3>
         </div>
-        <link rel="stylesheet" type="text/css" href="css/estiloDelCatalogo.css?v=<?php echo(rand()); ?>">
+        <link rel="stylesheet" type="text/css" href="css/estiloDelCatalogo.css">
 				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		    <script src="{{ asset('js/localStorage.js') }}?v=<?php echo(rand()); ?>"defer></script>
+		    <script src="{{ asset('js/localStorage.js') }}"defer></script>
 
 
         @foreach($pruebas as $prueba)
@@ -49,7 +49,7 @@
 										'{{$paquete->descripcionDelPaquete}}',
 										'{{$paquete->costoDelPaquete}}',
 										'no-aplica','{{$identificadorDePaqete}}')" name="button">Agregar al carrito</button>
-					  @endforeach
-	</div>
+								</div>
+						@endforeach
 
 @endsection

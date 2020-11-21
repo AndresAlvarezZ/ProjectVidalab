@@ -28,6 +28,7 @@ function cargarCarrito()
         articulo = document.createElement('tr'),
         tdArticulo = document.createElement('td'),
         tdPrecio = document.createElement('td');
+        tdDescuento = document.createElement('td');
         div.id = "codigo"+contador;
         div.name = "codigo"+contador;
         div.value = x.codigo;
@@ -39,10 +40,13 @@ function cargarCarrito()
         }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
         tdPrecio.innerHTML = '¢'+Number(x.costo-descuento);
+        tdDescuento.innerHTML = '¢'+descuento
         tdArticulo.id = 'tdProcesar';
         tdPrecio.id = 'tdProcesar';
+        tdDescuento.id = 'tdProcesar'
         articulo.appendChild(tdArticulo);
         articulo.appendChild(tdPrecio);
+        articulo.appendChild(tdDescuento)
         articulos.appendChild(articulo);
         finalizarInter.appendChild(div);
 

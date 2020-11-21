@@ -1,4 +1,4 @@
-<link href="{{ asset('css/estiloDePopUp.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+<link href="{{ asset('css/estiloDePopUp.css') }}?v=" rel="stylesheet">
 
 <!--TAMAÑOS
 modal-dialog modal-xl
@@ -25,7 +25,7 @@ modal-dialog modal-dialog-scrollable
                         <div class="modal-body">
                             {{ csrf_field() }}
                             <div class="form-row">
-    
+
                                 <div class="alert alert-info" role="alert">
                                     <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
                                 </div>
@@ -48,7 +48,7 @@ modal-dialog modal-dialog-scrollable
                                 <label for="nombre1">Nombre</label>
                                 <input id="nombreDelUsuarioAdministrador" type="text" class="form-control @error('nombreDelUsuarioAdministrador') is-invalid @enderror" name="nombreDelUsuarioAdministrador" value="{{ old('nombreDelUsuarioAdministrador') }}" required autocomplete="nombreDelUsuarioAdministrador" autofocus>
                                 <br></br>
-                                
+
                                 <label for="primerapellido1">Primer Apellido</label>
                                 <input id="primerApellidoAdministrador" type="text" class="form-control @error('primerApellidoAdministrador') is-invalid @enderror" name="primerApellidoAdministrador" value="{{ old('primerApellidoAdministrador') }}" required autocomplete="primerApellidoAdministrador" autofocus>
                                 @error('primerApellidoAdministrador')
@@ -104,11 +104,11 @@ modal-dialog modal-dialog-scrollable
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <br></br>                            
+                                <br></br>
 
                                 <label for="confirmarcontrasena1">Confirmar Contraseña</label>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            
+
 
                             </div>
                         </div>
