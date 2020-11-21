@@ -43,6 +43,14 @@ Auth::routes();
 //
 
 
+//RUTAS DE SUBMÓDULO NOTIFICACIONES
+  Route::get('/notificacionEspecifica','NotificacionesController@NotificacionEspecifica');
+  Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
+  Route::post('/notificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
+  Route::post('/notificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
+//
+
+
 //RUTAS DE SUBMÓDULO EMPRESAS
   Route::get('/empresas', 'EmpresaController@index');
   Route::post('/empresas/registrar', 'EmpresaController@guardar');
@@ -53,6 +61,9 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO CITAS
   Route::get('/citas', 'CitaController@index');
+
+  Route::put('/citas/{cita}', 'CitaController@actualizar');
+  Route::delete('/citas/{cita}', 'CitaController@eliminar');
 //
 
 //RUTAS DE SUBMÓDULO PRUEBAS
@@ -102,18 +113,12 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO CITAS faltantes por revisar
   Route::post('/citas/registrar', 'CitaController@guardar');
-  Route::put('/citas/{empresa}', 'CitaController@editar');
-  Route::delete('/citas/{empresa}', 'CitaController@eliminar');
+
+
 //
 
 
-//RUTAS DE SUBMÓDULO NOTIFICACIONES
-  Route::get('/nuevaNotificacion', 'NotificacionesController@Notificacion');
-  Route::get('/notificacionEspecifica','NotificacionesController@NotificacionEspecifica');
-  Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
-  Route::post('/notificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
-  Route::post('/notificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
-//
+
 
 
 //RUTAS DE SUBMÓDULO CLIENTES
