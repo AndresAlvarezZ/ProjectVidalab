@@ -63,8 +63,11 @@
           <a  href="/verComprasCanceladas">Canceladas</a>
         </div>
       </li>
+      <li class="lista">
+        <a href="/verFacturas" class="dropbtn">FACTURAS</a>
+      </li>
   </ul>
-    <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
   </head>
 
   <body>

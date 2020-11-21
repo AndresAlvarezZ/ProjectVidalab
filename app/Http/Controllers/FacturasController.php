@@ -55,7 +55,6 @@ class FacturasController extends Controller
 
     public function miExpediente()
     {
-        $this->middleware('auth:web');
       $dato = auth()->user()->dniDelUsuario;
       $facturas = Facturas::whereIn('idCliente',[$dato])->get();
       $compras = Compras::all();
