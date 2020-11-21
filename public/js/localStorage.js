@@ -2,12 +2,13 @@
 var carritoDeCompras = 'carrito';
 cargarCarrito();
 
-function AgregarCarrito(codigo,nombre,descripcion,costo,numeroDeMaquina,identificador)
+function AgregarCarrito(codigo,nombre,descripcion,costo,descuento,numeroDeMaquina,identificador)
 {
     var codigo;
     var nombre;
     var descripcion;
-    var costo = costo;
+    var costo;
+    var descuento;
     var numeroDeMaquina;
     if (codigo === 0) return;
     let carrito =
@@ -16,6 +17,7 @@ function AgregarCarrito(codigo,nombre,descripcion,costo,numeroDeMaquina,identifi
       nombre: nombre,
       descripcion: descripcion,
       costo: costo,
+      descuento: descuento,
       numeroDeMaquina: numeroDeMaquina
 
     };
@@ -97,4 +99,5 @@ function eliminarDelCarrito(carrito)
     carritoAlmacenado.splice(carrito, 1);
     localStorage.setItem(carritoDeCompras, JSON.stringify(carritoAlmacenado));
     cargarCarrito();
+    location.reload()
 }

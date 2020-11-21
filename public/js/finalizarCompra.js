@@ -2,7 +2,9 @@ carritoDeCompras = 'carrito';
 cargarCarrito();
 function cargarCarrito()
 {
-    var finalizar = [],
+    var finalizar = [ ],
+        descuento = [ ],
+        nombres = [ ],
         datoStorage = localStorage.getItem(carritoDeCompras),
         finalizarInter = document.querySelector("#tabla ");
         articulos = document.querySelector("#Articulos");
@@ -12,9 +14,25 @@ function cargarCarrito()
     }
     finalizarInter.innerHTML = '';
     var total =0;
+    var descuentos =0;
+    var posicion =0;
+    var base = '';
+    finalizar.forEach(function(x,i){
+      nombres[i] = x.nombre;
+    });
     finalizar.forEach(function (x, i)
     {
-      var contador = i+1;
+      var contador = i;
+      if (base==x.nombre) {
+        descuentos = descuentos+Number(x.descuento)
+        base = x.nombre
+      }
+      if (contador<1) {
+        base = x.nombre
+      }
+      if (base!=x.nombre) {
+        base = base
+      }
 
         var div = document.createElement("input"),
         articulo = document.createElement('tr'),
@@ -26,8 +44,9 @@ function cargarCarrito()
         div.value = x.codigo;
         div.hidden = true;
         total = total + Number(x.costo);
+
         tdArticulo.innerHTML = "◙ "+ x.nombre;
-        tdPrecio.innerHTML = '¢'+x.costo;
+        tdPrecio.innerHTML = '¢'+Number(x.costo);
         tdArticulo.id = 'tdProcesar';
         tdPrecio.id = 'tdProcesar';
         articulo.appendChild(tdArticulo);
@@ -45,14 +64,23 @@ function cargarCarrito()
     finalizarInter.appendChild(txtFecha);
     var brArticulos = document.createElement('br');
     var lbltotal = document.createElement('label');
+    var lblDescuento = document.createElement('label');
     var txtTotal = document.createElement('label');
+    var txtDescuento = document.createElement('label');
     var br = document.createElement('br');
     var br1 = document.createElement('br');
     var br2 = document.createElement('br');
+    var br3 = document.createElement('br');
     lbltotal.textContent = 'Total de la compra: ';
-    txtTotal.textContent = "¢"+total;
+    lblDescuento.textContent = 'Descuento: ';
+    txtTotal.textContent = "¢"+(total-descuentos);
+    txtDescuento.textContent = "¢"+descuentos;
     txtTotal.id = 'txtTotal';
+    txtDescuento.id = 'txtTotal';
     finalizarInter.appendChild(br1);
+    finalizarInter.appendChild(lblDescuento);
+    finalizarInter.appendChild(txtDescuento);
+    finalizarInter.appendChild(br3)
     finalizarInter.appendChild(lbltotal);
     finalizarInter.appendChild(txtTotal);
     finalizarInter.appendChild(br);

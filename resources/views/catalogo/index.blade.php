@@ -26,6 +26,7 @@
 								'{{$prueba->nombreDelAnalisis}}',
 								'{{$prueba->descripcionDelAnalisis}}',
 								'{{$prueba->costoDelAnalisis}}',
+								'{{$prueba->descuentoDelAnalisis}}',
 								'{{$prueba->numeroDeMaquina}}','{{$identificadorDeAnalisis}}')" name="button">Agregar al carrito</button>
 
             </div>

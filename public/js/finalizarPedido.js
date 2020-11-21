@@ -3,6 +3,8 @@ cargarCarrito();
 function cargarCarrito()
 {
     var finalizar = [],
+        descuento = [],
+        nombres = [],
         datoStorage = localStorage.getItem(carritoDeCompras),
         finalizarInter = document.querySelector("#tabla ");
         articulos = document.querySelector("#Articulos");
@@ -12,6 +14,13 @@ function cargarCarrito()
     }
     finalizarInter.innerHTML = '';
     var total =0;
+    var descuentos =0;
+    var acomulador =1;
+    descuento.forEach(function(x,i){
+      nombre[i] = x.nombre;
+      acomulador++;
+    });
+
     finalizar.forEach(function (x, i)
     {
       var contador = i+1;
@@ -26,8 +35,16 @@ function cargarCarrito()
         div.value = x.codigo;
         div.hidden = true;
         total = total + Number(x.costo);
+        alert('por entrar al for')
+        for (let step = 0; step <acomulador; step++) {
+          alert('entre al for')
+          if (nombre[step]==x.nombre) {
+            descuentos = descuentos + x.descuento
+            alert('entre al if')
+          }
+        }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
-        tdPrecio.innerHTML = '¢'+x.costo;
+        tdPrecio.innerHTML = '¢'+x.costo-descuentos;
         tdArticulo.id = 'tdProcesar';
         tdPrecio.id = 'tdProcesar';
         articulo.appendChild(tdArticulo);
