@@ -54,34 +54,17 @@ class ComprasController extends Controller
         }
         }
         $dato = Auth()->user()->dniDelUsuario;
-        $subtotal = 0;
-        $descuento = 0;
     $facturas = Compras::whereIn('fecha',[$fecha])->get();
     $contador = 1;
-    $a=1;
-    $segundoContador = 1;
-    $estaRepetida = 'no';
-    $total = 0;
-    $facturasAnteriores = [];
+    $cantidad = 0;
+    $descuento = 0;
+    $subtotal = 0;
     foreach ($facturas as $facturasAlmacenadas) {
-      $facturasAnteriores[$contador] = $facturasAlmacenadas->nombre;
-      $contador++;
+      $cantidad++;
     }
-    $contador = 1;
     foreach ($facturas as $factura) {
-      $subtotal = $subtotal+$factura->costoDelServicio;
-      if ($contador>1) {
-        while ($a <=$contador)  {
-          if ($facturasAnteriores[$a]==$factura->nombre) {
-            if ($segundoContador>1) {
-              $descuento = $descuento + $factura->descuento;
-            }
-            $segundoContador++;
-          }
-          $a++;
-        }
-          }
-      $contador++;
+      $descuento = $descuento + $factura->descuento * ($cantidad-1);
+      $subtotal = $subtotal + $factura->costoDelServicio;
     }
     Facturas::create([
       'idCliente' =>$dato,
@@ -132,34 +115,17 @@ class ComprasController extends Controller
         }
         }
         $dato = Auth()->user()->dniDelUsuario;
-        $subtotal = 0;
-        $descuento = 0;
         $facturas = Compras::whereIn('fecha',[$fecha])->get();
         $contador = 1;
-        $a=1;
-        $segundoContador = 1;
-        $estaRepetida = 'no';
-        $total = 0;
-        $facturasAnteriores = [];
+        $cantidad = 0;
+        $descuento = 0;
+        $subtotal = 0;
         foreach ($facturas as $facturasAlmacenadas) {
-          $facturasAnteriores[$contador] = $facturasAlmacenadas->nombre;
-          $contador++;
+          $cantidad++;
         }
-        $contador = 1;
         foreach ($facturas as $factura) {
-          $subtotal = $subtotal+$factura->costoDelServicio;
-          if ($contador>1) {
-            while ($a <=$contador)  {
-              if ($facturasAnteriores[$a]==$factura->nombre) {
-                if ($segundoContador>1) {
-                  $descuento = $descuento + $factura->descuento;
-                }
-                $segundoContador++;
-              }
-              $a++;
-            }
-              }
-          $contador++;
+          $descuento = $descuento + $factura->descuento * ($cantidad-1);
+          $subtotal = $subtotal + $factura->costoDelServicio;
         }
     Facturas::create([
       'idCliente' =>$dato,

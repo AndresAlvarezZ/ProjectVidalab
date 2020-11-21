@@ -15,12 +15,11 @@ function cargarCarrito()
     finalizarInter.innerHTML = '';
     var total =0;
     var descuentos =0;
-    var acomulador =1;
-    descuento.forEach(function(x,i){
-      nombre[i] = x.nombre;
-      acomulador++;
+    var descuento =0;
+    var cantidad =0;
+    finalizar.forEach(function(x,i){
+      cantidad++
     });
-
     finalizar.forEach(function (x, i)
     {
       var contador = i+1;
@@ -29,22 +28,17 @@ function cargarCarrito()
         articulo = document.createElement('tr'),
         tdArticulo = document.createElement('td'),
         tdPrecio = document.createElement('td');
-
         div.id = "codigo"+contador;
         div.name = "codigo"+contador;
         div.value = x.codigo;
         div.hidden = true;
         total = total + Number(x.costo);
-        alert('por entrar al for')
-        for (let step = 0; step <acomulador; step++) {
-          alert('entre al for')
-          if (nombre[step]==x.nombre) {
-            descuentos = descuentos + x.descuento
-            alert('entre al if')
-          }
+        descuento = Number(x.descuento)*(cantidad-1)
+        if (cantidad>1) {
+        descuentos = descuentos + Number(x.descuento)*(cantidad-1)
         }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
-        tdPrecio.innerHTML = '¢'+x.costo-descuentos;
+        tdPrecio.innerHTML = '¢'+Number(x.costo-descuento);
         tdArticulo.id = 'tdProcesar';
         tdPrecio.id = 'tdProcesar';
         articulo.appendChild(tdArticulo);
@@ -62,7 +56,9 @@ function cargarCarrito()
     finalizarInter.appendChild(txtFecha);
     var brArticulos = document.createElement('br');
     var lbltotal = document.createElement('label');
+    var lblDescuento = document.createElement('label');
     var txtTotal = document.createElement('label');
+    var txtDescuento = document.createElement('label');
     var nombreDelCiente = document.createElement('label');
     var txtnombreDelCliente = document.createElement('input');
     nombreDelCiente.textContent ='Nombre';
@@ -92,15 +88,21 @@ function cargarCarrito()
     var br1 = document.createElement('br');
     var br2 = document.createElement('br');
     lbltotal.textContent = 'Total de la compra: ';
-    txtTotal.textContent = "¢"+total;
+    lblDescuento.textContent = 'Descuento: ';
+    txtTotal.textContent = "¢"+(total-descuentos);
+    txtDescuento.textContent = "¢"+descuentos;
     txtTotal.id = 'txtTotal';
+    txtDescuento.id = 'txtTotal';
     finalizarInter.appendChild(br1);
+    finalizarInter.appendChild(lblDescuento);
+    finalizarInter.appendChild(txtDescuento);
+    finalizarInter.appendChild(br2);
     finalizarInter.appendChild(lbltotal);
     finalizarInter.appendChild(txtTotal);
     finalizarInter.appendChild(br);
     var  btnFinalizar = document.createElement('button');
     var btnSpan = document.createElement('span');
-    btnSpan.innerHTML = 'una vez finalizada la compra, no hay vuelta atrás';
+    btnSpan.innerHTML = 'una vez finalizada la compra, debe presentarse al laboratorio';
     btnSpan.className = 'tooltiptext';
     btnFinalizar.type = 'submit';
     btnFinalizar.name = 'FinalizarCompra';

@@ -88,10 +88,10 @@ td
   padding: 5px 0;
 	position: absolute;
  z-index: 1;
- top: 57%;
+ top: 77%;
  left: 77%;
  margin-left: -13%;
- margin-bottom:-23%;
+ margin-bottom:20%;
 }
 .tooltiptext::after {
 	content: "";
