@@ -40,7 +40,7 @@
                             <tbody>
                                 @foreach($facturas as $factura)
                                     <?php $fecha = date('d-m-Y',strtotime($factura->fecha)) ?>
-                                    <?php if ($factura->condicionDeCompra=='Pendiente'): ?>
+                                    <?php if ($factura->condicionDeCompra=='Cancelado'): ?>
                                       <tr>
                                           <th scope="row"><center>{{ $fecha}}</center></th>
                                           <th scope="row"><center>{{ $factura->idCliente}}</center></th>

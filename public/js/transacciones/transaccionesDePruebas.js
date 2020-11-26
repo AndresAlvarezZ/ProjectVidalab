@@ -61,6 +61,7 @@ function(isConfirm){
             $('#numeroDeMaquina3').val(data[2]);
             $('#descripcionDelAnalisis3').val(data[3]);
             $('#costoDelAnalisis3').val(data[4]);
+            $('#descuentoDelAnalisis3').val(data[5]);
         });
 
         $('#editarPrueba').on('submit', function(e)

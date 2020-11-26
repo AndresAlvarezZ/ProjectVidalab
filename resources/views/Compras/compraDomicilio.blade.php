@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <script src="{{ asset('js/finalizarPedido.js') }}?v=<?php echo(rand()); ?>"defer></script>
-      <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+      <link href="{{ asset('css/domicilio.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <title>Procesando compra...</title>
   </head>
   <body>
@@ -27,6 +27,7 @@
                 <tr>
                   <td><strong>Artículo</strong></td>
                   <td><strong>Precio</strong></td>
+                  <td><strong>Descuento</strong></td>
                 </tr>
 
               </table>

@@ -100,6 +100,7 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO FACTURAS
   Route::get('/verCompras','FacturasController@verCompras');
+  Route::get('/verComprasCanceladas','FacturasController@verComprasCanceladas');
 //
 
 
@@ -137,6 +138,7 @@ Route::get('/compras/domicilioFactura','ComprasController@pedidoDomicilioFactura
 Route::get('/facturas','FacturasController@miExpediente');
 Route::get('/procesarFactura/{factura}','FacturasController@procesarCompra');
 Route::put('/procesarFactura/{factura}','FacturasController@actualizarFactura');
+Route::get('/verFacturas','AdministradorController@mostrarFacturas');
 
 //Rutas de solicitudes
   Route::get('/solicitudes/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstado');

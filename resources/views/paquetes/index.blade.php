@@ -2,8 +2,8 @@
 @extends('pop_up.modalPaquetes')
 @section('content')
 
-    <head> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="card-header"><h4><b><center>REGISTRO DE PAQUETES</center></b></h4></div>
                 <div class="card-body">
-                    
+
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarPaquete">Registrar nuevo Paquete</button>                                    </p>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <br>
-            <center><a href="/pruebas" class="btn btn-dark">Desplegar lista de análisis</a>    |    <a href="/catalogos" class="btn btn-dark">Ir al catálogo</a>    |    <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
-        </div> 
-    </body>  
+            <center><a href="/pruebas" class="btn btn-dark">Desplegar lista de análisis</a>    |    <a href="/catalogosAdmins" class="btn btn-dark">Ir al catálogo</a>    |    <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
+        </div>
+    </body>
 @endsection

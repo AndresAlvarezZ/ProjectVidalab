@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 @section('content')
 <!DOCTYPE html>
 <html lang="es-ES">
 
 <head>
-    <title>Carrito de compras</title>
-    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
+    <title>Facturas</title>
+    <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
 <body>
 
@@ -14,9 +14,10 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
-          <h1 class=>Estas son tus facturas</h1>
+          <h1 class=>Facturas Generadas</h1>
         </div>
         <div class="card-body">
+          <div class="mostarFacturas">
           <table>
             <?php $indiceFactura = 1; ?>
             <?php foreach ($facturas as $factura): ?>
@@ -71,6 +72,7 @@
               <?php $indiceFactura++; ?>
             <?php endforeach; ?>
           </table>
+        </div>
         <div class="card-foot">
           <div class="">
             <form class="" id="prueba" method="post">

@@ -41,6 +41,7 @@
                                     <th scope="col"><center>Máquina</center></th>
                                     <th scope="col"><center>Descripción</center></th>
                                     <th scope="col"><center>Costo</center></th>
+                                    <th scope="col"><center>Descuento</center></th>
                                     <th scope="col"><center>Acción a realizar</center></th>
                                 </tr>
                             </thead>
@@ -52,6 +53,7 @@
                                     <th scope="col"><center>Máquina</center></th>
                                     <th scope="col"><center>Descripción</center></th>
                                     <th scope="col"><center>Costo</center></th>
+                                    <th scope="col"><center>Descuento</center></th>
                                     <th scope="col"><center>Acción a realizar</center></th>
                                 </tr>
                             </tfoot>
@@ -64,6 +66,7 @@
                                 <td><center>{{$prueba->numeroDeMaquina}}</center></td>
                                 <td><center>{{$prueba->descripcionDelAnalisis}}</center></td>
                                 <td><center>{{$prueba->costoDelAnalisis}}</center></td>
+                                <td><center>{{$prueba->descuentoDelAnalisis}}</center></td>
                                     <td><center>
                                         <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
                                         <a href="#" class="btn btn-danger btnEliminar">Eliminar</a> <br></br>

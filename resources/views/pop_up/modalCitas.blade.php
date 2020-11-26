@@ -1,4 +1,4 @@
-<link href="{{ asset('css/estiloDePopUp.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+<link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
 <!--TAMAÑOS
 modal-dialog modal-xl
 modal-dialog modal-lg
@@ -27,7 +27,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
 
                                 <input type="text" name="id" id="idAgregar"><br>
-                                
+
                                 <div class="alert alert-info" role="alert">
                                     <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
                                 </div>
@@ -111,7 +111,7 @@ modal-dialog modal-dialog-scrollable
                             {{method_field('PUT')}}
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEditar">
-                                
+
                                 <div class="alert alert-warning" role="alert">
                                     <center><b>¡Por favor, verifique que el regitro a actualizar sea el correcto!</b></center>
                                 </div>
@@ -165,7 +165,7 @@ modal-dialog modal-dialog-scrollable
                             {{method_field('DELETE')}}
                             <div class="form-row">
                                 <input type="hidden" name="id" id="idEliminar">
-                                
+
                                 <div class="alert alert-danger" role="alert">
                                     <center>¡Lea cuidadosamente la información! <b>¿Realmente desea eliminar este registro?</b></center>
                                 </div>
@@ -177,7 +177,7 @@ modal-dialog modal-dialog-scrollable
                                 <input type="text" class="form-control" name="horaDeCita4" readonly="horaDeCita4" id="horaDeCita4"/>
                             </div>
 
-                            
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

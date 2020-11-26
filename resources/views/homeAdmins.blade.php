@@ -49,7 +49,7 @@
         </div>
       </li>
 
-      
+
       <li class="lista">
         <a href="javascript:void(0)" class="dropbtn">SOLICITUDES A DOMICILIO</a>
         <div class="dropdown-content">
@@ -59,10 +59,18 @@
           <a href="/solicitudes/canceladas">Solicitudes Canceladas</a>
         </div>
       </li>
-      
-      <li class="liDesplegable"><a class="desplegable1"  href="/verCompras">COMPRAS EN LÍNEA</a></li>
-    </ul>
-    <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+      <li class="lista">
+        <a href="javascript:void(0)" class="dropbtn">COMPRAS EN LÍNEA</a>
+        <div class="dropdown-content">
+          <a  href="/verCompras">Pendientes</a>
+          <a  href="/verComprasCanceladas">Canceladas</a>
+        </div>
+      </li>
+      <li class="lista">
+        <a href="/verFacturas" class="dropbtn">FACTURAS</a>
+      </li>
+  </ul>
+    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
   </head>
 
   <body>
@@ -111,9 +119,9 @@
   <footer>
     <div class="redes-container">
       <ul>
-        <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/Vidalab-Liberia-421241938266820/" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
         <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a target="_blank" href="https://api.whatsapp.com/send?phone=50687333475" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
         <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
       </ul>
     </div>

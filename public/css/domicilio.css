@@ -88,10 +88,10 @@ td
   padding: 5px 0;
 	position: absolute;
  z-index: 1;
- top: 57%;
+ top: 77%;
  left: 77%;
  margin-left: -13%;
- margin-bottom:-23%;
+ margin-bottom:20%;
 }
 .tooltiptext::after {
 	content: "";
@@ -193,13 +193,7 @@ display: inline-block;
   display: block;
 	position: absolute;
 }
-.mostarFacturas{
-	padding-top: 0px;
-	overflow-y: scroll;
-	height: 500px;
-	background-image: url('/imagenes/fondo3.jpg');
-	background-size: cover;
-}
+
 
 /*#tdDescripcion
 {

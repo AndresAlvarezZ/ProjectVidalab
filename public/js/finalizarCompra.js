@@ -3,8 +3,6 @@ cargarCarrito();
 function cargarCarrito()
 {
     var finalizar = [ ],
-        descuento = [ ],
-        nombres = [ ],
         datoStorage = localStorage.getItem(carritoDeCompras),
         finalizarInter = document.querySelector("#tabla ");
         articulos = document.querySelector("#Articulos");
@@ -15,42 +13,38 @@ function cargarCarrito()
     finalizarInter.innerHTML = '';
     var total =0;
     var descuentos =0;
-    var posicion =0;
-    var base = '';
+    var descuento =0;
+    var cantidad =0;
     finalizar.forEach(function(x,i){
-      nombres[i] = x.nombre;
+      cantidad++
     });
     finalizar.forEach(function (x, i)
     {
-      var contador = i;
-      if (base==x.nombre) {
-        descuentos = descuentos+Number(x.descuento)
-        base = x.nombre
-      }
-      if (contador<1) {
-        base = x.nombre
-      }
-      if (base!=x.nombre) {
-        base = base
-      }
-
+      var contador = i+1;
         var div = document.createElement("input"),
         articulo = document.createElement('tr'),
         tdArticulo = document.createElement('td'),
-        tdPrecio = document.createElement('td');
+        tdPrecio = document.createElement('td'),
+        tdDescuento = document.createElement('td');
 
         div.id = "codigo"+contador;
         div.name = "codigo"+contador;
         div.value = x.codigo;
         div.hidden = true;
         total = total + Number(x.costo);
-
+        descuento = Number(x.descuento)*(cantidad-1)
+        if (cantidad>1) {
+        descuentos = descuentos + Number(x.descuento)*(cantidad-1)
+        }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
         tdPrecio.innerHTML = '¢'+Number(x.costo);
+        tdDescuento.innerHTML = '¢'+descuento
         tdArticulo.id = 'tdProcesar';
         tdPrecio.id = 'tdProcesar';
+        tdDescuento.id = 'tdProcesar'
         articulo.appendChild(tdArticulo);
         articulo.appendChild(tdPrecio);
+        articulo.appendChild(tdDescuento)
         articulos.appendChild(articulo);
         finalizarInter.appendChild(div);
 
@@ -87,7 +81,7 @@ function cargarCarrito()
     var  btnFinalizar = document.createElement('button');
     var btnSpan = document.createElement('span');
     var link = document.createElement('a');
-    btnSpan.innerHTML = 'una vez finalizada la compra, no hay vuelta atrás';
+    btnSpan.innerHTML = 'una vez finalizada la compra, debe presentarse al laboratorio';
     btnSpan.className = 'tooltiptext';
     btnFinalizar.type = 'submit';
     btnFinalizar.name = 'FinalizarCompra';
