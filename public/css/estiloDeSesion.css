@@ -1,0 +1,22 @@
+.card
+{
+  opacity: .9;
+  box-shadow: 5px 8px 3px rgba(0, 0, 0, 0.1); 
+}
+
+input
+{
+  text-align: center;
+}
+
+::placeholder
+{
+  text-transform: initial;
+  text-align: center;
+}
+
+
+label
+{
+  font-weight:bold;
+}

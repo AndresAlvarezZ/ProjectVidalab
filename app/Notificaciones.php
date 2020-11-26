@@ -8,8 +8,9 @@ class Notificaciones extends Model
 {
     protected $fillable = [
       'idUsuarioAdministrador',
+      'receptorDeNotificacion',
+      'asuntoDeNotificacion',
       'mensajeDeNotificacion',
-      'telefono',
-      'correoElectronico'
+      'tipoDeNotificacion',
     ];
 }

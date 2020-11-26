@@ -24,8 +24,11 @@
       <li class="lista">
         <a href="javascript:void(0)" class="dropbtn">NOTIFICACIONES</a>
         <div class="dropdown-content">
-          <a href="/notificacionEspecifica">Notificación Específica</a>
-          <a href="/notificacionMasiva">Notificación Masiva</a>
+          <a href="/notificaciones">Todos las Notificaciones</a>
+          <a href="/notificacionEspecifica">Notificación Específica a Cliente</a>
+          <a href="/notificacionMasiva">Notificación Masiva a Clientes</a>
+          <a href="/notificacionEspecificaEmpresarial">Notificación Específica Empresarial</a>
+          <a href="/notificacionMasivaEmpresarial">Notificación Masiva Empresarial</a>
         </div>
       </li>
 
