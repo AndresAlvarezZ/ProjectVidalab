@@ -6,6 +6,12 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
     <link rel="stylesheet" type="text/css" href="css/estiloDeNotificaciones.css">
     <script src="{{ asset('js/scroll.js') }}"defer></script>
     <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}"defer></script>
@@ -14,7 +20,7 @@
   </head>
 
 
-  <body background="wallpapers/PaisajeFloral.jpg">
+  <body background="wallpapers/PaisajeBosqueAmanecer.jpg">
     <div class="container-fluid">
       <div class="row no-gutters">
         
@@ -23,7 +29,7 @@
             <div class="card-header"><center><h4><b>REGISTRO DE CORREOS ENVIADOS</b></h4></center></div>
               <div class="card-body">
                 <div class="alert alert-info" role="alert">
-                    <center>Historial de correos ordenados del más reciente al más antiguo</center>
+                  <center>Historial de correos ordenados del más reciente al más antiguo</center>
                 </div>
                 <br>
                 <center>
@@ -49,18 +55,18 @@
                       </tfoot>
                       <tbody>
                         @foreach($notificaciones as $notificacion)
-                              <tr>
-                                  <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
-                                  <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
-                                  <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
-                                  <td><center>{{$notificacion->created_at}}</center></td>
-                                  <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
-                              </tr>
+                          <tr>
+                              <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                              <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
+                              <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                              <td><center>{{$notificacion->created_at}}</center></td>
+                              <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
+                          </tr>
                         @endforeach
                       </tbody>
                     </table>
-                  </ul>  
-                </center>          
+                  </ul> 
+                </center>           
                 <br></br>
               </div>
             </div>
@@ -70,40 +76,30 @@
           <div class="col col-lg-1">
           </div>
           
-
           <div class="col-lg">
-            <div class="card" style="max-width: 50rem;"> 
-              <div class="card-header"><h4><b><center>CORREO PERSONALIZADO</center><b></h4></div>
+            <div class="card" style="max-width: 50rem;">
+                
+              <div class="card-header"><h4><b><center>CORREO MASIVO PARA EMPRESAS</center><b></h4></div>
+
               <div class="card-body">
-                <form action="envioNotificacionEspecifica" method="post" enctype="multipart/form-data" target="_self">
+                <form action="envioNotificacionMasivaEmpresarial" method="post" enctype="multipart/form-data" target="_self">
                   @csrf
-
-                  <input type="hidden" name="tipoDeNotificacion" value="1">
-
+                  <input type="hidden" name="tipoDeNotificacion" value="4">
                   <label for="asunto"><strong>Asunto:</strong></label><br>
-                  <input type="text" name="asunto" placeholder="Escriba el asunto del correo" value="" class="form-control" required>
+                  <input type="text" name="asunto" value="" placeholder="Escriba el asunto del correo" class="form-control" required ><br>
                   <br></br>
                   <label for=""><strong>Mensaje:</strong></label><br><textarea  rows="6" cols="40" placeholder="Escriba motivo del correo" name="mensaje" class="form-control" required></textarea><br>
-                  <input type="file" name="file" >
-            
-                  <br></br>
-              
-                  <label>Selecionar cliente</label><br>
-                  <select class="form-control" name="clienteOpcion">
-                    @foreach ($clientes as $cliente)
-                      <option value="{{$cliente->correoDelCliente}}">{{$cliente->nombreDelCliente}}</option>
-                    @endforeach
-                  </select>
-                  <br></br>
+                  <input type="file" name="file">
+                  
+                  <br></br><br>    
+
                   <center><button type="submit" class="btn btn-success"> Enviar Correo</button></center>
                 </form>
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
-  </body>
+  </body>    
 @endsection

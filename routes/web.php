@@ -35,19 +35,27 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO ADMINISTRADOR
-  Route::get('/administradores', 'AdministradorController@listar');
+  Route::get('/administradores', 'AdministradorController@listar');  
+  Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
   Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
   Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');
-  Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
   Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
+  Route::put('/administradores/inactivar/{administrador}', 'AdministradorController@inactivar');
+  Route::put('/administradores/activar/{administrador}', 'AdministradorController@activar');
 //
 
 
 //RUTAS DE SUBMÓDULO NOTIFICACIONES
+  Route::get('/notificaciones','NotificacionesController@Notificaciones');
   Route::get('/notificacionEspecifica','NotificacionesController@NotificacionEspecifica');
   Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
-  Route::post('/notificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
-  Route::post('/notificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
+  Route::get('/notificacionEspecificaEmpresarial','NotificacionesController@NotificacionEspecificaEmpresarial');
+  Route::get('/notificacionMasivaEmpresarial','NotificacionesController@NotificacionMasivaEmpresarial');
+
+  Route::post('/envioNotificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
+  Route::post('/envioNotificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
+  Route::post('/envioNotificacionEspecificaEmpresarial','NotificacionesController@envioDeNotificacionEspecificaEmpresarial');
+  Route::post('/envioNotificacionMasivaEmpresarial','NotificacionesController@envioDeNotificacionMasivaEmpresarial');
 //
 
 
@@ -59,12 +67,14 @@ Auth::routes();
   Route::delete('/empresas/{empresa}', 'EmpresaController@eliminar');
 //
 
+
 //RUTAS DE SUBMÓDULO CITAS
   Route::get('/citas', 'CitaController@index');
 
   Route::put('/citas/{cita}', 'CitaController@actualizar');
   Route::delete('/citas/{cita}', 'CitaController@eliminar');
 //
+
 
 //RUTAS DE SUBMÓDULO PRUEBAS
   Route::post('/pruebas/registrar', 'PruebaController@guardar');
@@ -105,30 +115,23 @@ Auth::routes();
 
 /*----------------RUTAS A MEDIAS---------------------- */
 
-//RUTAS DE SUBMÓDULO ADMINISTRADOR  faltantes por revisar
-  Route::put('/administradores/inactivar/{administrador}', 'AdministradorController@inactivar');
-  Route::put('/administradores/activar/{administrador}', 'AdministradorController@activar');
-  //Route::get('/administradores/{administrador}/editarEstado', 'AdministradorController@editarEstado');
-//
-
 
 //RUTAS DE SUBMÓDULO CITAS faltantes por revisar
   Route::post('/citas/registrar', 'CitaController@guardar');
-
-
 //
-
-
-
 
 
 //RUTAS DE SUBMÓDULO CLIENTES
   Route::get('/afiliarme','ClientesController@IngresarCliente');
   Route::Post('/afiliarme','ClientesController@CrearCliente');
+<<<<<<< HEAD
   Route::get('/verPerfil','ClientesController@verPerfil');
   Route::put('/subirImagen','ClientesController@subirImagen');
   Route::put('/editarPerfil','ClientesController@editarPerfil');
 
+=======
+//
+>>>>>>> 630bb23adb1399c461732ad6e63bd8a4be4b7385
 
 //RUTAS DE SUBMÓDULO COMPRAS
 Route::get('/compras/carrito','CatalogoController@carrito');
@@ -149,19 +152,7 @@ Route::get('/verFacturas','AdministradorController@mostrarFacturas');
   Route::put('/solicitudes/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
   Route::get('/solicitudesConfirmadas/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstadoConfirmadas');
   Route::put('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
-
-
-//RUTAS DE SUBMÓDULO CITAS
-/*
-Route::get('/citas/{empresa}/agregar', 'CitaController@agregar');
-Route::post('/citas', 'CitaController@guardar');
-Route::get('/citas', 'CitaController@index');
-Route::get('/citas/{cita}', 'CitaController@mostrar');
-Route::get('/citas/{cita}/editar', 'CitaController@editar');
-Route::put('/citas/{cita}', 'CitaController@actualizar');
-Route::get('/citas/{cita}/eliminar', 'CitaController@eliminar');
-Route::delete('/citas/{cita}', 'CitaController@destruir');
-*/
+//
 
 //RUTAS DE PRUEBA DE SISTEMA
 Route::get('/prueba{codigo}','ComprasController@FinalizarCompra');

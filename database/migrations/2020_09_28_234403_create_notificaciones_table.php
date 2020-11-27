@@ -17,9 +17,10 @@ class CreateNotificacionesTable extends Migration
           //Atributos del modelo
             $table->id();
             $table->integer('idUsuarioAdministrador')->unsigned();
-            $table->string('mensajeDeNotificacion');
-            $table->integer('telefono');
-            $table->string('correoElectronico');
+            $table->text('receptorDeNotificacion');
+            $table->text('asuntoDeNotificacion');
+            $table->text('mensajeDeNotificacion');
+            $table->integer('tipoDeNotificacion');
             $table->timestamps();
           //relaciones del modelo
             $table->foreign('idUsuarioAdministrador')->references('id')->on('administradors')

@@ -1,81 +1,88 @@
 @extends('layouts.app')
 
+<head>
+    <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+</head>
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Inicio de sesion') }}</div>
-                <div class="card-body">
-                      @if (session('status'))
-                      <div class="alert alert-success" role="alert">
-                          {{ session('status') }}
-                      </div>
-                      @endif
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+    <body background={{asset('wallpapers/Globos.jpg')}}>
+        <div class="container-fluid">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label>
+            <div class="row">
+                <div class="col-sm">
+                    <center>
+                        <br></br><br></br>
+                        <div class="card border-primary mb-3" style="width: 30rem;">
+                            <div class="card-header text-white bg-primary mb-3"><h4><b><center>Sesión de Clientes</center></b></h4></div>
+                            
+                                <div class="card-body">
+                                    @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                    @endif
+                                    
 
-                            <div class="col-md-6">
-                                <input id="email" placeholder="Correo" type="email" title="Correo" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                                        <div class="form-group col-md-10">
+                                            <input id="email" placeholder="Mi correo electrónico para acceder al sistema" type="email" title="Correo" onkeyup="this.value = this.value.toLowerCase();" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <br>
+                                        
+                                        <div class="form-group col-md-10">
+                                            <input id="password" placeholder="Mi contraseña para accedar al sistema" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" title="Contra">
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <br>
 
-                            <div class="col-md-6">
-                                <input id="password" placeholder="Contraseña" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" title="Contra">
+                                        <div class="form-group col-md-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="remember">
+                                                    {{ __('Recordar mi contraseña') }}
+                                                </label>
+                                            </div>
+                                        </div>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                                        <div class="form-group col-md-10">
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Iniciar Sesión') }}
+                                            </button>
+                                            <br><br>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                            <a href="{{ route('loginAdmins') }}"> Ingresar como <i>Administrador</i></a>
+                                            <br>
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Recordar Contraseña') }}
-                                    </label>
+                                            @if (Route::has('password.request'))
+                                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                    {{ __('¡Olvidé mi contraseña!') }}
+                                                </a>
+                                            @endif
+                                        </div> 
+
+
+                                    </form>
+
+
                                 </div>
                             </div>
                         </div>
+                    </div>
+                <center>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Iniciar Sesion') }}
-                                </button>
-                                  <a href="{{ route('loginAdmins') }}"> Ingresar como Administrador</a>
-                                  <br>
-                                  <br>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('olvidó su Contraseña?') }}
-                                    </a>
-                                @endif
-
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
-    </div>
-</div>
+    </body>
 @endsection

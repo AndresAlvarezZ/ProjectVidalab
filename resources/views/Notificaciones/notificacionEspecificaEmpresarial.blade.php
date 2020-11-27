@@ -73,13 +73,12 @@
 
           <div class="col-lg">
             <div class="card" style="max-width: 50rem;"> 
-              <div class="card-header"><h4><b><center>CORREO PERSONALIZADO</center><b></h4></div>
+              <div class="card-header"><h4><b><center>CORREO PERSONALIZADO EMPRESARIAL</center><b></h4></div>
               <div class="card-body">
-                <form action="envioNotificacionEspecifica" method="post" enctype="multipart/form-data" target="_self">
+                <form action="envioNotificacionEspecificaEmpresarial" method="post" enctype="multipart/form-data" target="_self">
                   @csrf
 
-                  <input type="hidden" name="tipoDeNotificacion" value="1">
-
+                  <input type="hidden" name="tipoDeNotificacion" value="3">
                   <label for="asunto"><strong>Asunto:</strong></label><br>
                   <input type="text" name="asunto" placeholder="Escriba el asunto del correo" value="" class="form-control" required>
                   <br></br>
@@ -90,8 +89,8 @@
               
                   <label>Selecionar cliente</label><br>
                   <select class="form-control" name="clienteOpcion">
-                    @foreach ($clientes as $cliente)
-                      <option value="{{$cliente->correoDelCliente}}">{{$cliente->nombreDelCliente}}</option>
+                    @foreach ($empresas as $empresa)
+                      <option value="{{$empresa->correoElectronicoDeLaEmpresa}}">{{$empresa->nombreDeLaEmpresa}}</option>
                     @endforeach
                   </select>
                   <br></br>

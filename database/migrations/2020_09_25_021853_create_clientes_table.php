@@ -24,7 +24,7 @@ class CreateClientesTable extends Migration
             $table->integer('edadDelCliente');
             $table->string('correoDelCliente');
             $table->integer('telefonoDelCliente');
-            $table->string('domicilioDelCliente');
+            $table->text('domicilioDelCliente');
             $table->boolean('aceptacionDeTerminos');
             $table->timestamps();
             //relaciones
