@@ -35,7 +35,7 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO ADMINISTRADOR
-  Route::get('/administradores', 'AdministradorController@listar');  
+  Route::get('/administradores', 'AdministradorController@listar');
   Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
   Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
   Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');
@@ -124,14 +124,10 @@ Auth::routes();
 //RUTAS DE SUBMÓDULO CLIENTES
   Route::get('/afiliarme','ClientesController@IngresarCliente');
   Route::Post('/afiliarme','ClientesController@CrearCliente');
-<<<<<<< HEAD
   Route::get('/verPerfil','ClientesController@verPerfil');
   Route::put('/subirImagen','ClientesController@subirImagen');
   Route::put('/editarPerfil','ClientesController@editarPerfil');
 
-=======
-//
->>>>>>> 630bb23adb1399c461732ad6e63bd8a4be4b7385
 
 //RUTAS DE SUBMÓDULO COMPRAS
 Route::get('/compras/carrito','CatalogoController@carrito');
