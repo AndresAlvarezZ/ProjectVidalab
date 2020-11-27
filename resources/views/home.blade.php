@@ -20,6 +20,8 @@
                   <a href="/catalogos">Catálogos </a>
                   <br>
                   <a href="/facturas">Mi expediente </a>
+                  <br>
+                  <a href="/verPerfil">Mi Perfil</a>
                 </div>
             </div>
         </div>

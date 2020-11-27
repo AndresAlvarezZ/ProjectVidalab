@@ -1,0 +1,19 @@
+#lblPerfil{
+	padding-right:10px;
+}
+.imagen{
+  float: left;
+}
+.datosPersonales{
+  float: right;
+}
+#imagenPerfil{
+  margin-left:35px;
+  height:120px;
+  width: 120px;
+  border-radius:150px;
+  padding-bottom:5px;
+}
+#btnModal{
+  margin-left:75px;
+}

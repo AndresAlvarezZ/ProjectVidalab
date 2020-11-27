@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
   <head>
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
   <body>
     <div class="container">
