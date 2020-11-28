@@ -12,5 +12,6 @@ class Notificaciones extends Model
       'asuntoDeNotificacion',
       'mensajeDeNotificacion',
       'tipoDeNotificacion',
+      'archivo',
     ];
 }

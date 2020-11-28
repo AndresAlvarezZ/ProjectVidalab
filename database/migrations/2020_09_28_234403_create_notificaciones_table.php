@@ -21,6 +21,7 @@ class CreateNotificacionesTable extends Migration
             $table->text('asuntoDeNotificacion');
             $table->text('mensajeDeNotificacion');
             $table->integer('tipoDeNotificacion');
+            $table->string('archivo');
             $table->timestamps();
           //relaciones del modelo
             $table->foreign('idUsuarioAdministrador')->references('id')->on('administradors')

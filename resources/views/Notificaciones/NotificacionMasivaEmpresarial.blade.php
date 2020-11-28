@@ -2,11 +2,11 @@
 @section('content')
 
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
@@ -23,9 +23,9 @@
   <body background="wallpapers/PaisajeBosqueAmanecer.jpg">
     <div class="container-fluid">
       <div class="row no-gutters">
-        
+
         <div class="col-sm">
-          <div class="card" style="max-width: 50rem;"> 
+          <div class="card" style="max-width: 50rem;">
             <div class="card-header"><center><h4><b>REGISTRO DE CORREOS ENVIADOS</b></h4></center></div>
               <div class="card-body">
                 <div class="alert alert-info" role="alert">
@@ -54,19 +54,21 @@
                         </tr>
                       </tfoot>
                       <tbody>
+                        <?php $contador = 0; ?>
                         @foreach($notificaciones as $notificacion)
-                          <tr>
-                              <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
-                              <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
-                              <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
-                              <td><center>{{$notificacion->created_at}}</center></td>
-                              <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
-                          </tr>
+                              <tr>
+                                  <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
+                                  <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
+                                  <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                                  <td><center>{{$notificacion->created_at}}</center></td>
+                                  <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
+                              </tr>
+                              <?php $contador++; ?>
                         @endforeach
                       </tbody>
                     </table>
-                  </ul> 
-                </center>           
+                  </ul>
+                </center>
                 <br></br>
               </div>
             </div>
@@ -75,10 +77,10 @@
 
           <div class="col col-lg-1">
           </div>
-          
+
           <div class="col-lg">
             <div class="card" style="max-width: 50rem;">
-                
+
               <div class="card-header"><h4><b><center>CORREO MASIVO PARA EMPRESAS</center><b></h4></div>
 
               <div class="card-body">
@@ -90,8 +92,8 @@
                   <br></br>
                   <label for=""><strong>Mensaje:</strong></label><br><textarea  rows="6" cols="40" placeholder="Escriba motivo del correo" name="mensaje" class="form-control" required></textarea><br>
                   <input type="file" name="file">
-                  
-                  <br></br><br>    
+
+                  <br></br><br>
 
                   <center><button type="submit" class="btn btn-success"> Enviar Correo</button></center>
                 </form>
@@ -101,5 +103,5 @@
         </div>
       </div>
     </div>
-  </body>    
+  </body>
 @endsection
