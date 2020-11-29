@@ -32,6 +32,9 @@ function cargarCarrito()
         div.value = x.codigo;
         div.hidden = true;
         total = total + Number(x.costo);
+        if (x.descuento=='no-aplica') {
+          x.descuento=0;
+        }
         descuento = Number(x.descuento)*(cantidad-1)
         if (cantidad>1) {
         descuentos = descuentos + Number(x.descuento)*(cantidad-1)
