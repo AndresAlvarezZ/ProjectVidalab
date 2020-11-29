@@ -49,6 +49,7 @@ class ComprasController extends Controller
             'codigoDelPaquete' =>$datos->codigoDelPaquete,
             'nombre' => $datos->nombreDelPaquete,
             'costoDelServicio' =>$datos->costoDelPaquete,
+            'descuento' =>0,
             'Fecha' =>  $fecha
           ]);
         }
@@ -110,6 +111,7 @@ class ComprasController extends Controller
             'codigoDelPaquete' =>$datos->codigoDelPaquete,
             'nombre' => $datos->nombreDelPaquete,
             'costoDelServicio' =>$datos->costoDelPaquete,
+            'descuento' =>0,
             'Fecha' =>  $fecha
           ]);
         }
