@@ -14,14 +14,14 @@
                         <br></br><br></br>
                         <div class="card border-primary mb-3" style="width: 30rem;">
                             <div class="card-header text-white bg-primary mb-3"><h4><b><center>Sesión de Clientes</center></b></h4></div>
-                            
+
                                 <div class="card-body">
                                     @if (session('status'))
                                     <div class="alert alert-success" role="alert">
                                         {{ session('status') }}
                                     </div>
                                     @endif
-                                    
+
 
 
                                     <form method="POST" action="{{ route('login') }}">
@@ -36,7 +36,7 @@
                                             @enderror
                                         </div>
                                         <br>
-                                        
+
                                         <div class="form-group col-md-10">
                                             <input id="password" placeholder="Mi contraseña para accedar al sistema" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" title="Contra">
                                             @error('password')
@@ -45,16 +45,7 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                        <br>
-
-                                        <div class="form-group col-md-10">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="remember">
-                                                    {{ __('Recordar mi contraseña') }}
-                                                </label>
-                                            </div>
-                                        </div>
+                                        <br
 
                                         <div class="form-group col-md-10">
                                             <button type="submit" class="btn btn-primary">
@@ -70,7 +61,7 @@
                                                     {{ __('¡Olvidé mi contraseña!') }}
                                                 </a>
                                             @endif
-                                        </div> 
+                                        </div>
 
 
                                     </form>

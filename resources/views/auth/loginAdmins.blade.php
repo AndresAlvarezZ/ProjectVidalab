@@ -14,7 +14,7 @@
                         <br></br><br></br>
                         <div class="card border-dark mb-3" style="width: 30rem;">
                             <div class="card-header text-white bg-dark mb-3"><h4><b><center>Sesión de Administradores</center></b></h4></div>
-                            
+
                             <div class="card-body">
                                 <form method="POST" action="{{ route('loginAdmins') }}">
                                     @csrf
@@ -40,21 +40,11 @@
                                     <br>
 
                                     <div class="form-group col-md-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="remember">
-                                                {{ __('Recordar mi contraseña') }}
-                                            </label>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group col-md-10">
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Iniciar Sesión') }}
                                         </button>
                                         <br><br>
-                                        
+
                                         <a href="{{route('login')}}"> Ingresar como <i>Cliente</i></a>
                                         <br>
 
