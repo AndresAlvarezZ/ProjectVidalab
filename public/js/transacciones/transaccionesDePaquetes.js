@@ -1,3 +1,5 @@
+var hayError;
+
 $(document).ready(function ()
 {
     //AGREGAR
@@ -12,22 +14,21 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarPaquete').modal('hide')
-                    alert("¡Datos de paquete promocional registrados exitosamente!");
-                    location.reload();
                     $('#agregarForm')[0].reset()
+                    Alerta("HUMAcheck", "¡Datos del Paquete registrados exitosamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de registro, inténtelo nuevamente! Asegurese que los campos solicitados estén rellenos.");
+                    Alerta("¡Error al registrar!", "Verifique que: \n\nEl código del paquete NO se encuentre previamente registrado." + "\nO bien, que todos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
+    //FIN DE AGREGAR
 
 
 
-    //EDITAR
+    //ACTUALIZAR
         $('.btnEditar').on('click', function()
         {
             $('#editarPaquete').modal('show');
@@ -57,18 +58,18 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarPaquete').modal('hide')
-                    alert("¡Actualización de datos exitosa!");
-                    location.reload();
+                    $('#agregarForm')[0].reset()
+                    Alerta("HUMAcheck", "¡Datos del Paquete actualizados correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de actualización, inténtelo nuevamente!");
+                    Alerta("¡Error al actualizar registro!", "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
-      
+    //FIN DE ACTUALIZAR
+
 
     //ELIMINAR
         $('.btnEliminar').on('click', function()
@@ -109,4 +110,32 @@ $(document).ready(function ()
                 }
             });     
         });
+    //FIN DE ELIMINAR
+
+
+    //FUNCIONES DE ALERTA
+        function Alerta(titulo, mensaje, tipo, boton)
+        {
+            setTimeout(function () 
+            {
+                swal
+                ({
+                    title: titulo,
+                    text: mensaje,
+                    type: tipo,
+                    confirmButtonText: boton
+                },
+                function(isConfirm)
+                {
+                    if(tipo == "success")
+                    {
+                        if (isConfirm) 
+                        {
+                            window.location.href = "/paquetes";
+                        }
+                    }
+                }); 
+            }, 000);
+        }
+    //FIN DE FUNCIONES DE ALERTA
 });

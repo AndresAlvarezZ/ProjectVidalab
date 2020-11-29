@@ -1,4 +1,6 @@
 <link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
+
+
 <!--TAMAÑOS
 modal-dialog modal-xl
 modal-dialog modal-lg

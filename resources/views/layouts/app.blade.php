@@ -15,8 +15,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <!-- <link href="{{ asset('css/estiloDos.css') }}" rel="stylesheet"> afecta el css de los card -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -31,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <!--aquí puedo poner los botones-->
                     </ul>
 
                     <!-- Right Side Of Navbar -->

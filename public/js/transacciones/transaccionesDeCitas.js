@@ -1,6 +1,8 @@
+var hayError;
+
 $(document).ready(function ()
 {
-    //AGREGAR EMPRESA
+    //AGREGAR
         $('#agregarForm').on('submit', function(e)
         {
             e.preventDefault();
@@ -12,23 +14,21 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarEmpresa').modal('hide')
-                    alert("¡Datos de la cita registrados exitosamente!");
-                    location.reload();
                     $('#agregarForm')[0].reset()
+                    Alerta("HUMAcheck", "¡Datos de la Cita registrados exitosamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de registro, inténtelo nuevamente! Asegurese que los campos solicitados estén rellenos.");
+                    Alerta("¡Error al registrar!", "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
-    //
+    //FIN DE AGREGAR
 
 
 
-    //EDITAR
+    //ACTUALIZAR
         $('.btnEditar').on('click', function()
         {
             $('#editarCita').modal('show');
@@ -57,17 +57,22 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarECita').modal('hide')
-                    alert("¡Actualización de datos exitosa!");
-                    location.reload();
+                    $('#agregarForm')[0].reset()
+                    Alerta("HUMAcheck", "¡Datos de la Cita actualizados correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de actualización, inténtelo nuevamente!");
+                    swal
+                    ({
+                        title: "¡Error al actualizar registro!",
+                        text: "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!",
+                        type: "warning",
+                    });
                 }
             });
         });
+    //FIN DE ACTUALIZAR
 
 
     //ELIMINAR
@@ -108,8 +113,33 @@ $(document).ready(function ()
                 }
             });     
         });
+    //FIN DE ELIMINAR
 
-
+    //FUNCIONES DE ALERTA
+        function Alerta(titulo, mensaje, tipo, boton)
+        {
+            setTimeout(function () 
+            {
+                swal
+                ({
+                    title: titulo,
+                    text: mensaje,
+                    type: tipo,
+                    confirmButtonText: boton
+                },
+                function(isConfirm)
+                {
+                    if(tipo == "success")
+                    {
+                        if (isConfirm) 
+                        {
+                            window.location.href = "/empresas/"+id;
+                        }
+                    }
+                }); 
+            }, 000);
+        }
+    //FIN DE FUNCIONES DE ALERTA
 
 
 });

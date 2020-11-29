@@ -1,3 +1,5 @@
+var hayError;
+
 $(document).ready(function ()
 {
     //AGREGAR 
@@ -7,24 +9,23 @@ $(document).ready(function ()
             $.ajax
             ({
                 type: "POST",
-                url: "/nuevoAdministrador/registro",
+                url: "/nuevoAdministrador/registrar",
                 data: $('#agregarForm').serialize(),
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarAdministrador').modal('hide')
-                    alert("¡Datos del administrador(a) registrados exitosamente!");
-                    location.reload();
                     $('#agregarForm')[0].reset()
+                    Alerta("agregarAdministrador", "HUMAcheck", "¡Datos del Administrador registrados exitosamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de registro, inténtelo nuevamente! Asegurese que los campos solicitados estén rellenos.");
+                    Alerta("agregarAdministrador", "¡Error al registrar!", "Verifique que: \n\nEl administrador no se encuentra previamente registrado." + "\nO bien, que todos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
     //FIN DE AGREGAR
+
 
     //ACTUALIZAR
         $('.btnEditar').on('click', function()
@@ -54,14 +55,13 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarAdministrador').modal('hide')
-                    alert("¡Actualización de datos exitosa!");
-                    location.reload();
+                    $('#agregarForm')[0].reset()
+                    Alerta("editarAdministrador", "HUMAcheck", "¡Datos del/la Administrador(a) actualizados correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de actualización, inténtelo nuevamente!");
+                    Alerta("editarAdministrador", "¡Error al actualizar registro!", "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
@@ -96,14 +96,13 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarEstado').modal('hide')
-                    alert("¡Actualización de datos exitosa!");
-                    location.reload();
+                    $('#agregarForm')[0].reset()
+                    Alerta("inactivarAdministrador", "HUMAcheck", "¡Administrador(a) se le ha DENEGADO el acceso al sistema correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de actualización, inténtelo nuevamente!");
+                    Alerta("inactivarAdministrador","¡Error al actualizar estado inactivar!", "Verifique que: \n\nEl dato solicitado se haya ingresado y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
@@ -138,17 +137,57 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarEstadoActivar').modal('hide')
-                    alert("¡Actualización de datos exitosa!");
-                    location.reload();
+                    $('#agregarForm')[0].reset()
+                    Alerta("activarAdministrador", "HUMAcheck", "¡Administrador(a) se le ha CONCEDIDO el acceso al sistema correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de actualización, inténtelo nuevamente!");
+                    Alerta("activarAdministrador", "¡Error al actualizar estado!", "Verifique que: \n\nEl dato solicitado se haya ingresado y en el formato adecuado. \n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
     //FIN DE ACTUALIZAR ESTADO
+
+
+
+
+    //FUNCIONES DE ALERTA
+        function Alerta(proceso, titulo, mensaje, tipo, boton)
+        {
+            setTimeout(function () 
+            {
+                swal
+                ({
+                    title: titulo,
+                    text: mensaje,
+                    type: tipo,
+                    confirmButtonText: boton
+                },
+                function(isConfirm)
+                {
+                    if(tipo == "success")
+                    {
+                        if (isConfirm) 
+                        {
+                            if(proceso == "activarAdministrador")
+                            {
+                                window.location.href = "/administradores/activos";
+                            }
+                            if(proceso == "inactivarAdministrador")
+                            {
+                                window.location.href = "/administradores/inactivos";
+                            }
+                            else
+                            {
+                                window.location.href = "/administradores";
+
+                            }
+                        }
+                    }
+                }); 
+            }, 000);
+        }
+    //FIN DE FUNCIONES DE ALERTA
 
 });

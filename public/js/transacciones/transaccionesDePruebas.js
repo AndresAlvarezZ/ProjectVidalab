@@ -1,4 +1,5 @@
 var hayError;
+
 $(document).ready(function ()
 {
     //AGREGAR
@@ -14,38 +15,19 @@ $(document).ready(function ()
                 {
                     console.log(response)
                     $('#agregarForm')[0].reset()
-                    recargar()
+                    Alerta("HUMAcheck", "¡Datos del Análisis registrados exitosamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    swal({
-                      title: "¡Error de registro!",
-                      text: "Asegurese que los campos solicitados estén rellenos. o si el codigo ingresado ya existe!",
-                      type: "warning",
-                    });
-
+                    Alerta("¡Error al registrar!", "Verifique que: \n\nEl código del análisis NO se encuentre previamente registrado." + "\nO bien, que todos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
-
             });
-
         });
-function recargar(){
-  setTimeout(function () {
-swal({
-  title: "Analisis Agregado Exitosamente!",
-  text: "HUMACHECK",
-  type: "success",
-  confirmButtonText: "OK"
-},
-function(isConfirm){
-  if (isConfirm) {
-    window.location.href = "/pruebas";
-  }
-}); }, 000);
-}
+    //FIN DE AGREGAR
 
-    //EDITAR
+    
+    //ACTUALIZAR
         $('.btnEditar').on('click', function()
         {
             $('#editarPrueba').modal('show');
@@ -76,17 +58,17 @@ function(isConfirm){
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarPrueba').modal('hide')
-                    alert("¡Actualización de datos exitosa!");
-                    location.reload();
+                    $('#agregarForm')[0].reset()
+                    Alerta("HUMAcheck", "¡Datos del Análisis actualizados correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("¡Error de actualización, inténtelo nuevamente!");
+                    Alerta("¡Error al actualizar registro!", "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
+    //FIN DE ACTUALIZAR
 
 
     //ELIMINAR
@@ -116,16 +98,51 @@ function(isConfirm){
                 data: $('#eliminarForm').serialize(),
                 success: function (response)
                 {
-                    console.log(response);
-                    $('#eliminarPrueba').modal('hide');
-                    alert('Registro eliminado correctamente!');
-                    location.reload();
+                    console.log(response)
+                    $('#agregarForm')[0].reset()
+                    
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("Error, inténtelo nuevamente!");
+                    swal
+                    ({
+                        title: "¡Error al registro!",
+                        text: "Verifique que: \n\nEl código del análisis no se encuentra registrado." + "\nO bien, que todos los campos solicitados esten completos y en el formato adecuado.",
+                        type: "warning",
+                    });
                 }
             });
         });
+    //FIN DE ELIMINAR
+
+
+
+    
+    //FUNCIONES DE Alerta
+        function Alerta(titulo, mensaje, tipo, boton)
+        {
+            setTimeout(function () 
+            {
+                swal
+                ({
+                    title: titulo,
+                    text: mensaje,
+                    type: tipo,
+                    confirmButtonText: boton
+                },
+                function(isConfirm)
+                {
+                    if(tipo == "success")
+                    {
+                        if (isConfirm) 
+                        {
+                            window.location.href = "/pruebas";
+                        }
+                    }
+                }); 
+            }, 000);
+        }
+    //FIN DE FUNCIONES DE Alerta
+    
 });

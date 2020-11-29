@@ -45,7 +45,10 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 80px;
+                position: absolute;
+                right: 50px;
+                top: 150px;
             }
 
             .links > a {
@@ -78,18 +81,12 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title">
-                    Laboratorio Vidalab
-                </div>
+        </div> 
+        
+        <div class="content">
+            <div class="title">
+                Laboratorio VIDAalab
             </div>
-
-
-
-
-
-
         </div>
     </body>
 </html>

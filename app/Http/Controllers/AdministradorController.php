@@ -95,6 +95,7 @@ class AdministradorController extends Controller
         'password' => 'required',
         'rol' =>  'required',
         'estadoDelUsuarioAdministrador' =>  'required',
+        'motivoDeEstadoDelUsuarioAdministrador' =>  'required',
       ]);
 
       Administrador::create(
@@ -108,6 +109,7 @@ class AdministradorController extends Controller
           'password' =>  Hash::make($data['password']),
           'rol' =>  0, //POR DEFECTO ES ADMINISTRADOR = 0, SUPER ADMINISTRADOR = 1;
           'estadoDelUsuarioAdministrador' =>  1, //POR DEFECTO ES ACTIVO
+          'motivoDeEstadoDelUsuarioAdministrador' => "Ejerciendo",
       ]);
 
       $acceso = false;
@@ -129,50 +131,54 @@ class AdministradorController extends Controller
 
 
   //ACTUALIZAR ESTADO DE ADMINISTRADOR A INACTIVAR
-  public function inactivar (Request $request, $id)
-  {
-    $administrador = Administrador::find($id);
-    $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador4');
-
-    $nuevoEstado = 1;
-    if($request->input('motivoDeEstadoDelUsuarioAdministrador4') == "Inactivar");
+    public function inactivar (Request $request, $id)
     {
-      $nuevoEstado = 0;
+      $administrador = Administrador::find($id);
+      $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador4');
+
+      $nuevoEstado = 1;
+      if($request->input('motivoDeEstadoDelUsuarioAdministrador4') == "Inactivar");
+      {
+        $nuevoEstado = 0;
+      }
+      $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;
+      $administrador->save();
     }
-    $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;
-    $administrador->save();
-  }
-//
+  //
 
 
   //ACTUALIZAR DE ADMINISTRADOR A ACTIVAR
-  public function activar (Request $request, $id)
-  {
-    $administrador = Administrador::find($id);
-    $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador5');
-
-    $nuevoEstado = 0;
-    if($request->input('motivoDeEstadoDelUsuarioAdministrador5') == "ACTIVAR");
+    public function activar (Request $request, $id)
     {
-      $nuevoEstado = 1;
-    }
-    $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;
-    $administrador->save();
-  }
-//MODULO DE FACTURAS
-public function mostrarFacturas()
-{
-  $facturas = Facturas::orderBy('created_at','desc')->get();
-  $compras = Compras::all();
-  $fecha = date('d-m-Y');
-  $total = 0;
-  $indice = 0;
-  $indiceFactura = 0;
-  $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-  return view('facturas.mostrarFacturasAdmins',compact('facturas','compras','indice','name','indiceFactura','fecha','total'));
+      $administrador = Administrador::find($id);
+      $administrador->motivoDeEstadoDelUsuarioAdministrador = $request->input('motivoDeEstadoDelUsuarioAdministrador5');
 
-  // code...
-}
+      $nuevoEstado = 0;
+      if($request->input('motivoDeEstadoDelUsuarioAdministrador5') == "ACTIVAR");
+      {
+        $nuevoEstado = 1;
+      }
+      $administrador->estadoDelUsuarioAdministrador = $nuevoEstado;
+      $administrador->save();
+    }
+  //
+
+
+  //MODULO DE FACTURAS
+    public function mostrarFacturas()
+    {
+      $facturas = Facturas::orderBy('created_at','desc')->get();
+      $compras = Compras::all();
+      $fecha = date('d-m-Y');
+      $total = 0;
+      $indice = 0;
+      $indiceFactura = 0;
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view('facturas.mostrarFacturasAdmins',compact('facturas','compras','indice','name','indiceFactura','fecha','total'));
+
+      // code...
+    }
+  //
 
 
 }

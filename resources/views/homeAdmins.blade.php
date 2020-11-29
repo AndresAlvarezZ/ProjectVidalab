@@ -81,13 +81,13 @@
       <div id="siguienteImagen" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-interval="10000">
-            <img src="portadas/Portada 1.png" class="d-block w-100" alt="Nombre del laboratorio">
+            <img src="portadas/Portada1.png" class="d-block w-100" alt="Nombre del laboratorio">
           </div>
           <div class="carousel-item" data-interval="2000">
-            <img src="portadas/Portada 2.jpg" class="d-block w-100" alt="Bienvenida 1">
+            <img src="portadas/Portada2.jpg" class="d-block w-100" alt="Bienvenida 1">
           </div>
           <div class="carousel-item">
-            <img src="portadas/Portada 3.jpg" class="d-block w-100" alt="Bienvanida 2">
+            <img src="portadas/Portada3.jpg" class="d-block w-100" alt="Bienvanida 2">
           </div>
         </div>
         <a class="carousel-control-prev" href="#siguienteImagen" role="button" data-slide="prev">
@@ -116,6 +116,7 @@
       </div>
     </div>
   </body>
+  
   <footer>
     <div class="redes-container">
       <ul>
@@ -126,5 +127,6 @@
       </ul>
     </div>
   </footer>
+  
 </html>
 @endsection

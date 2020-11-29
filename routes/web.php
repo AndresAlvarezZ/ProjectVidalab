@@ -36,7 +36,7 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO ADMINISTRADOR
   Route::get('/administradores', 'AdministradorController@listar');  
-  Route::post('/nuevoAdministrador/registro', 'AdministradorController@nuevoAdministradorCreate');
+  Route::post('/nuevoAdministrador/registrar', 'AdministradorController@nuevoAdministradorCreate');
   Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
   Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');
   Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
@@ -51,7 +51,6 @@ Auth::routes();
   Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
   Route::get('/notificacionEspecificaEmpresarial','NotificacionesController@NotificacionEspecificaEmpresarial');
   Route::get('/notificacionMasivaEmpresarial','NotificacionesController@NotificacionMasivaEmpresarial');
-
   Route::post('/envioNotificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
   Route::post('/envioNotificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
   Route::post('/envioNotificacionEspecificaEmpresarial','NotificacionesController@envioDeNotificacionEspecificaEmpresarial');

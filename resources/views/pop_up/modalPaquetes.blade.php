@@ -1,5 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/estiloDePopUp.css">
-
+<link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
 
 <!--TAMAÑOS
 modal-dialog modal-xl

@@ -1,4 +1,4 @@
-<link href="{{ asset('css/estiloDePopUp.css') }}?v=" rel="stylesheet">
+<link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
 
 <!--TAMAÑOS
 modal-dialog modal-xl
@@ -40,6 +40,10 @@ modal-dialog modal-dialog-scrollable
 
                                 <label for="estado1">Estado</label>
                                 <input type="text" class="form-control" name="estadoDelUsuarioAdministrador" readonly="estadoDelUsuarioAdministrador" value="Activo"/>
+                                <br></br>
+
+                                <label for="estado1">Motivo de estado</label>
+                                <input type="text" class="form-control" name="motivoDeEstadoDelUsuarioAdministrador" readonly="motivoDeEstadoDelUsuarioAdministrador" value="Ejerciendo"/>
                                 <br></br>
 
                                 <input type="text" class="form-control" value="* Datos Personales" readonly>
@@ -258,10 +262,7 @@ modal-dialog modal-dialog-scrollable
                                 </br></br>
 
                                 <label for="motivo4">Motivo del nuevo estado</label>
-                                <input type="text" class="form-control" placeholder="Escriba el motivo de cambio de estado" name="motivoDeEstadoDelUsuarioAdministrador5"  />
-                                @error('motivoDeEstadoDelUsuarioAdministrador5')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
+                                <input type="text" class="form-control" placeholder="Escriba el motivo de cambio de estado" name="motivoDeEstadoDelUsuarioAdministrador5"/>
                                 </br></br>
 
                             </div>
