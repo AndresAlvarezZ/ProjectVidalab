@@ -107,7 +107,7 @@
                   </select>
                   <br></br>
 
-                  <center><button id="btnEnviar" type="submit" onclick="cambiarNombre()" class="btn btn-success"> Enviar Correo</button></center>
+                  <center><button id="btnEnviar" type="submit" onclick="iniciarContador()" class="btn btn-success"> Enviar Correo</button></center>
                 </form>
               </div>
             </div>
