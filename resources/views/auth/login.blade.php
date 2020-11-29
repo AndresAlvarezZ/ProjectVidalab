@@ -45,7 +45,6 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                        <br
 
                                         <div class="form-group col-md-10">
                                             <button type="submit" class="btn btn-primary">
