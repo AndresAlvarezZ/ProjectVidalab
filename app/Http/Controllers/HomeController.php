@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Clientes;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,14 @@ class HomeController extends Controller
      */
         public function index()
         {
+          $clave =Auth()->user()->dniDelUsuario;
+          $cliente = Clientes::find($clave);
+          if ($cliente!=null) {
             return view('home');
+          }
+          if ($cliente==null) {
+            return redirect('/afiliarme');
+          }
         }
     //
 }

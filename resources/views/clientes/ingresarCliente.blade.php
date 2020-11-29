@@ -2,6 +2,7 @@
 
 <head>
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <script src="{{ asset('js/calculoEdad.js') }}?v=<?php echo(rand()); ?>"defer></script>
 </head>
 
 @section('content')
@@ -15,7 +16,7 @@
                             <div class="card-header text-white bg-success mb-3"><h4><b><center>Afiliarme como cliente VIDAlab</center></b></h4></div>
 
                                 <div class="card-body">
-                                    <form method="POST" action="/afiliarme">
+                                    <form  method="POST" action="/afiliarme">
                                         @csrf
 
                                         <div class="alert alert-info" role="alert">
@@ -70,17 +71,16 @@
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label for="fechaDeNacimientoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Fecha de Nacimiento') }}</label>
-                                                <input id="fechaDeNacimientoDelCliente" type="date" class="form-control @error('fechaDeNacimientoDelCliente') is-invalid @enderror" name="fechaDeNacimientoDelCliente" value="{{ old('fechaDeNacimientoDelCliente') }}" required autocomplete="fechaDeNacimientoDelCliente" autofocus>
+                                                <input id="fechaDeNacimientoDelCliente" onchange="primer(this.value)" onclick="primer(this.value)" onkeyup="primer(this.value)" type="date" class="form-control @error('fechaDeNacimientoDelCliente') is-invalid @enderror" name="fechaDeNacimientoDelCliente" value="" required autocomplete="fechaDeNacimientoDelCliente" autofocus>
                                                 @error('fechaDeNacimientoDelCliente')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
                                             </div>
-
                                             <div class="form-group col-md-6">
                                                 <label for="edadDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Edad Actual') }}</label>
-                                                <input id="edadDelCliente" type="integer" placeholder="Ingrese en números su edad actual en años"class="form-control @error('edadDelCliente') is-invalid @enderror" name="edadDelCliente" value="{{ old('edadDelCliente') }}" required autocomplete="edadDelCliente" autofocus>
+                                                <input id="edadDelCliente" readonly type="integer" placeholder="este campo se calcula automatico"class="form-control @error('edadDelCliente') is-invalid @enderror" name="edadDelCliente" value="{{ old('edadDelCliente') }}" required autocomplete="edadDelCliente" autofocus>
                                                 @error('edadDelCliente')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

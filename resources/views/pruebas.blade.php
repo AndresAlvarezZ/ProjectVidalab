@@ -1,5 +1,7 @@
 
 este es el modulo de pruebas
 <br>
-se esta probando esto {{$nombre[1]}}
+<?php foreach ($data as $key): ?>
+  {{$key}}
+<?php endforeach; ?>
 <br>

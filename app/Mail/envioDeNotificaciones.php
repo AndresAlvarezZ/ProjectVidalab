@@ -11,7 +11,7 @@ class envioDeNotificaciones extends Mailable
 {
     use Queueable, SerializesModels;
 
-public $subject = "Mensaje Informativo";
+public $subject;
 public $data;
     /**
      * Create a new message instance.
@@ -21,6 +21,7 @@ public $data;
     public function __construct($data)
     {
         $this->data = $data;
+        $this->subject = $data['asunto'];
     }
 
     /**
@@ -31,10 +32,10 @@ public $data;
     public function build()
     {
         try {
-          //retorna la vista con ningun dato null
+          //retorna la vista con ningun dato
             return $this->view('Notificaciones.Notificacion')->attach($this->data['file'],[
                         'as' =>$this->data['file']->getClientOriginalName()  //obtiene el nombre original del archivo
-                    ]);
+                    ])->subject($this->subject);
 
         } catch (\Exception $e) {
           return $e->getMessage();
