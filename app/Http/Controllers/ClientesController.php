@@ -18,7 +18,7 @@ class ClientesController extends Controller
   {
       $this->middleware('auth:web');
   }
-  
+
     public function IngresarCliente()
     {
       return view('clientes.ingresarCliente');
@@ -39,7 +39,7 @@ class ClientesController extends Controller
         'aceptacionDeTerminos' => 'required'
       ]);
       $idUpdated = Auth()->user()->id;
-      Clientes::create([
+      Auth()->user()->cliente()->create([
         'idUsuario' => $idUpdated,
         'dniDelCliente' => $data['dniDelCliente'],
         'nombreDelCliente' =>$data['nombreDelCliente'] ,
@@ -58,5 +58,31 @@ class ClientesController extends Controller
               ->where('id', 7)
               ->update(['idCliente' => 9]);
       return redirect('/home');*/
+    }
+    public function verPerfil()
+    {
+      $dato = auth()->user()->dniDelUsuario;
+      $cliente = Clientes::find($dato);
+      return view('Perfiles.perfil',compact('cliente'));
+    }
+    public function subirImagen()
+    {
+      $cliente = Clientes::find(auth()->user()->dniDelUsuario);
+      if (request()->hasFile('imagenDelCliente')) {
+        $destinationPath = public_path().'/imagenes';
+        $files = request()->file('imagenDelCliente');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+            $files->move($destinationPath , $file_name); // move files to destination folder
+            $cliente->imagenDelCliente = $file_name;
+            $cliente->update();
+      }
+        return redirect('/verPerfil');
+    }
+    public function editarPerfil()
+    {
+        $cliente = Clientes::find(auth()->user()->dniDelUsuario);
+        $cliente->update(request()->all());
+        return redirect('/verPerfil');
+
     }
 }

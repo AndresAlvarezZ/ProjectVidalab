@@ -14,14 +14,15 @@
                         <br></br><br></br>
                         <div class="card border-primary mb-3" style="width: 35rem;">
                             <div class="card-header text-white bg-primary mb-3"><h4><b><center><i>Cliente</i><br>Restablecer mi contraseña</center></b></h4></div>
-                            
+
                                 <div class="card-body">
                                     @if (session('status'))
                                         <div class="alert alert-success" role="alert">
                                             {{ session('status') }}
                                         </div>
+                                        <?php $paseValido = 1; ?>
                                     @endif
-
+                                    @if($paseValido!=1)
                                     <form method="POST" action="{{ route('password.email') }}">
                                         @csrf
 
@@ -38,14 +39,24 @@
                                                 </span>
                                             @enderror
                                         </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="dniDelUsuario" class="col-md-4 col-form-label text-md-center">{{ __('Cédula') }}</label>
+                                            <input id="dniDelUsuario" type="number" placeholder="Ingrese su número de cédula" onkeyup="this.value = this.value.toLowerCase();" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
+                                            @error('dniDelUsuario')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
                                         <br>
-                                        
+
                                         <div class="form-group col-md-10">
                                             <button type="submit" class="btn btn-primary">
                                                 {{ __('Solicitar Contraseña') }}
                                             </button>
                                         </div>
                                     </form>
+                                    @endif
 
 
                                 </div>

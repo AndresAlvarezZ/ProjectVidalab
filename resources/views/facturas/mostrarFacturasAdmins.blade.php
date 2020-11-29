@@ -77,7 +77,7 @@
           <div class="">
             <form class="" id="prueba" method="post">
             </form>
-            <a href="/home" type="button" class="btn btn-primary">Entendido</a>
+            <a href="/homeAdmins" type="button" class="btn btn-primary">Entendido</a>
           </div>
         </div>
       </div>

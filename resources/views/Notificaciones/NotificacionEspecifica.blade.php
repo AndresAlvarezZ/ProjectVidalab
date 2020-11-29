@@ -24,7 +24,7 @@
   <body background="wallpapers/PaisajeFloral.jpg">
     <div class="container-fluid">
       <div class="row no-gutters">
-        
+
         <div class="col-sm">
           <div class="card" style="max-width: 50rem;"> 
             <div class="card-header"><center><h4><b>CORREOS PERSONALIZADOS ENVIADOS A CLIENTES</b></h4></center></div>
@@ -55,19 +55,21 @@
                         </tr>
                       </tfoot>
                       <tbody>
+                        <?php $contador = 0; ?>
                         @foreach($notificaciones as $notificacion)
                               <tr>
-                                  <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                                  <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
                                   <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                   <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                   <td><center>{{$notificacion->created_at}}</center></td>
                                   <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
                               </tr>
+                              <?php $contador++; ?>
                         @endforeach
                       </tbody>
                     </table>
-                  </ul>  
-                </center>          
+                  </ul>
+                </center>
                 <br></br>
               </div>
             </div>
@@ -76,7 +78,7 @@
 
           <div class="col col-lg-1">
           </div>
-          
+
 
           <div class="col-lg">
             <div class="card" style="max-width: 50rem;"> 
@@ -93,9 +95,9 @@
                  
                   <label for=""><strong>Mensaje:</strong></label><br><textarea  rows="6" cols="40" placeholder="Escriba motivo del correo" name="mensaje" class="form-control" required></textarea><br>
                   <input type="file" name="file" >
-            
+
                   <br></br>
-              
+
                   <label>Selecionar cliente</label><br>
                   <select class="form-control" name="clienteOpcion">
                     @foreach ($clientes as $cliente)

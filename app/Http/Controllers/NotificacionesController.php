@@ -13,7 +13,7 @@ use App\Mail\envioDeNotificaciones;
 class NotificacionesController extends Controller
 {
 
-  
+
   /**
    * Create a new controller instance.
    *
@@ -30,7 +30,16 @@ class NotificacionesController extends Controller
     {
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('Notificaciones.todasLasNotificaciones',compact('name', 'notificaciones'));
+      $nombre = [];
+      $apellido = [];
+      $contador=0;
+      foreach ($notificaciones as $notificacion) {
+        $administrador = Administrador::find($notificacion->idUsuarioAdministrador);
+        $nombre[$contador] = $administrador->nombreDelUsuarioAdministrador;
+        $apellido[$contador] = $administrador->primerApellidoAdministrador;
+        $contador++;
+      }
+      return view('Notificaciones.todasLasNotificaciones',compact('name', 'notificaciones','nombre','apellido'));
     }
   //
 
@@ -41,17 +50,33 @@ class NotificacionesController extends Controller
       $clientes = Clientes::all();
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '1')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('Notificaciones.NotificacionEspecifica',compact('name','clientes', 'notificaciones'));
+      $nombre = [];
+      $contador=0;
+      foreach ($notificaciones as $notificacion) {
+        $administrador = Administrador::find($notificacion->idUsuarioAdministrador);
+        $nombre[$contador] = $administrador->nombreDelUsuarioAdministrador;
+        $apellido[$contador] = $administrador->primerApellidoAdministrador;
+        $contador++;
+      }
+      return view('Notificaciones.NotificacionEspecifica',compact('name','clientes', 'notificaciones','nombre','apellido'));
     }
   //
- 
-  
+
+
   //MOSTRAR NOTIFICACIÓN MASIVA PARA CLIENTES
    public function NotificacionMasiva()
    {
      $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '2')->get();
      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-     return view('Notificaciones.NotificacionMasiva',compact('name', 'notificaciones'));
+     $nombre = [];
+     $contador=0;
+     foreach ($notificaciones as $notificacion) {
+       $administrador = Administrador::find($notificacion->idUsuarioAdministrador);
+       $nombre[$contador] = $administrador->nombreDelUsuarioAdministrador;
+       $apellido[$contador] = $administrador->primerApellidoAdministrador;
+       $contador++;
+     }
+     return view('Notificaciones.NotificacionMasiva',compact('name', 'notificaciones','nombre','apellido'));
    }
  //
 
@@ -62,7 +87,15 @@ class NotificacionesController extends Controller
       $empresas = Empresa::all();
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '3')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('Notificaciones.NotificacionEspecificaEmpresarial',compact('name','empresas', 'notificaciones'));
+      $nombre = [];
+      $contador=0;
+      foreach ($notificaciones as $notificacion) {
+        $administrador = Administrador::find($notificacion->idUsuarioAdministrador);
+        $nombre[$contador] = $administrador->nombreDelUsuarioAdministrador;
+        $apellido[$contador] = $administrador->primerApellidoAdministrador;
+        $contador++;
+      }
+      return view('Notificaciones.NotificacionEspecificaEmpresarial',compact('name','empresas', 'notificaciones','nombre','apellido'));
     }
   //
 
@@ -70,9 +103,17 @@ class NotificacionesController extends Controller
   //MOSTRAR NOTIFICACIÓN MASIVA PARA EMPRESAS
     public function NotificacionMasivaEmpresarial()
     {
+      $nombre = [];
+      $contador=0;
+      foreach ($notificaciones as $notificacion) {
+        $administrador = Administrador::find($notificacion->idUsuarioAdministrador);
+        $nombre[$contador] = $administrador->nombreDelUsuarioAdministrador;
+        $apellido[$contador] = $administrador->primerApellidoAdministrador;
+        $contador++;
+      }
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '4')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('Notificaciones.NotificacionMasivaEmpresarial',compact('name', 'notificaciones'));
+      return view('Notificaciones.NotificacionMasivaEmpresarial',compact('name', 'notificaciones','nombre','apellido'));
     }
   //
 
@@ -92,15 +133,22 @@ class NotificacionesController extends Controller
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
       Mail::to($data['clienteOpcion'])->send(new envioDeNotificaciones($data));
-
+      $file_name = 'sin archivo';
+      if (request()->hasFile('file')) {
+        $destinationPath = public_path().'/archivos';
+        $files = request()->file('file');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+            $files->move($destinationPath , $file_name);
+          }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => $data['clienteOpcion'],
         'asuntoDeNotificacion' => $data['asunto'],
         'mensajeDeNotificacion' => $data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
+        'archivo' => $file_name,
       ]);
-      
+
       return redirect('/notificaciones');
     }
   //
@@ -117,20 +165,27 @@ class NotificacionesController extends Controller
       ]);
 
       $todosLosClientes = Clientes::all();
-      foreach ($todosLosClientes as $cliente) 
+      foreach ($todosLosClientes as $cliente)
       {
         Mail::to($cliente->correoDelCliente)->send(new envioDeNotificaciones($data));
       }
 
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
-
+      $file_name = 'sin archivo';
+      if (request()->hasFile('file')) {
+        $destinationPath = public_path().'/archivos';
+        $files = request()->file('file');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+            $files->move($destinationPath , $file_name);
+          }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => 'Todos los clientes',
         'asuntoDeNotificacion' => $data['asunto'],
         'mensajeDeNotificacion' => $data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
+        'archivo' => $file_name,
       ]);
 
       return redirect('/notificaciones');
@@ -153,15 +208,22 @@ class NotificacionesController extends Controller
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
       Mail::to($data['clienteOpcion'])->send(new envioDeNotificaciones($data));
-
+      $file_name = 'sin archivo';
+      if (request()->hasFile('file')) {
+        $destinationPath = public_path().'/archivos';
+        $files = request()->file('file');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+            $files->move($destinationPath , $file_name);
+          }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => $data['clienteOpcion'],
         'asuntoDeNotificacion' => $data['asunto'],
         'mensajeDeNotificacion' => $data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
+        'archivo' => $file_name,
       ]);
-      
+
       return redirect('/notificaciones');
     }
   //
@@ -178,20 +240,27 @@ class NotificacionesController extends Controller
       ]);
 
       $todosLosClientes = Empresa::all();
-      foreach ($todosLosClientes as $cliente) 
+      foreach ($todosLosClientes as $cliente)
       {
         Mail::to($cliente->correoElectronicoDeLaEmpresa)->send(new envioDeNotificaciones($data));
       }
 
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
-
+      $file_name = 'sin archivo';
+      if (request()->hasFile('file')) {
+        $destinationPath = public_path().'/archivos';
+        $files = request()->file('file');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+            $files->move($destinationPath , $file_name);
+          }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => 'Todas las empresas',
         'asuntoDeNotificacion' =>$data['asunto'],
         'mensajeDeNotificacion' =>$data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
+        'archivo' => $file_name,
       ]);
 
       return redirect('/notificaciones');

@@ -17,7 +17,7 @@ class CreateEmpresasTable extends Migration
             $table->id('idDeLaEmpresa');
             $table->string('nombreDeLaEmpresa');
             $table->string('numeroDeTelefonoDeLaEmpresa');
-            $table->string('correoElectronicoDeLaEmpresa');
+            $table->string('correoElectronicoDeLaEmpresa')->unique();
             $table->text('direccionDeLaEmpresa');
             $table->timestamps();
         });

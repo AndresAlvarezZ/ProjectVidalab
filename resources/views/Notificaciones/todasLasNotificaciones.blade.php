@@ -42,6 +42,7 @@
                                             <th scope="col"><center>Enviado por: </center></th>
                                             <th scope="col"><center>Enviado a: </center></th>
                                             <th scope="col"><center>Asunto: </center></th>
+                                            <th scope="col"><center>Archivo: </center></th>
                                             <th scope="col"><center>Fecha de envío: </center></th>
                                             <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
@@ -52,20 +53,24 @@
                                             <th scope="col"><center>Enviado por: </center></th>
                                             <th scope="col"><center>Enviado a: </center></th>
                                             <th scope="col"><center>Asunto: </center></th>
+                                            <th scope="col"><center>Archivo: </center></th>
                                             <th scope="col"><center>Fecha de envío: </center></th>
-                                            <th scope="col"><center>Abrir correo</center></th> 
+                                            <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
                                     </tfoot>
 
                                     <tbody>
+                                      <?php $contador = 0; ?>
                                         @foreach($notificaciones as $notificacion)
                                             <tr>
-                                                <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                                                <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
                                                 <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                                 <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                                                <td><center>{{$notificacion->archivo}}</center></td>
                                                 <td><center>{{$notificacion->created_at}}</center></td>
                                                 <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
                                             </tr>
+                                            <?php $contador++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -81,6 +86,7 @@
                                             <th scope="col"><center>Enviado por: </center></th>
                                             <th scope="col"><center>Enviado a: </center></th>
                                             <th scope="col"><center>Asunto: </center></th>
+                                            <th scope="col"><center>Archivo: </center></th>
                                             <th scope="col"><center>Fecha de envío: </center></th>
                                             <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
@@ -91,25 +97,29 @@
                                             <th scope="col"><center>Enviado por: </center></th>
                                             <th scope="col"><center>Enviado a: </center></th>
                                             <th scope="col"><center>Asunto: </center></th>
+                                            <th scope="col"><center>Archivo: </center></th>
                                             <th scope="col"><center>Fecha de envío: </center></th>
-                                            <th scope="col"><center>Abrir correo</center></th> 
+                                            <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
                                     </tfoot>
 
                                     <tbody>
+                                      <?php $contador = 0; ?>
                                         @foreach($notificaciones as $notificacion)
                                             @if($notificacion->tipoDeNotificacion == '1')
                                                 <tr>
-                                                    <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                                                    <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
                                                     <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                                                    <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
                                                     <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>                                                </tr>
                                             @endif
+                                            <?php $contador++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </ul>                        
+                            </ul>
                         </div>
 
                         <div class="tab-pane fade" id="nav-clientesM" role="tabpanel" aria-labelledby="nav-clientesM-tab">
@@ -121,6 +131,7 @@
                                         <th scope="col"><center>Enviado por: </center></th>
                                         <th scope="col"><center>Enviado a: </center></th>
                                         <th scope="col"><center>Asunto: </center></th>
+                                        <th scope="col"><center>Archivo: </center></th>
                                         <th scope="col"><center>Fecha de envío: </center></th>
                                         <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
@@ -130,20 +141,24 @@
                                         <th scope="col"><center>Enviado por: </center></th>
                                         <th scope="col"><center>Enviado a: </center></th>
                                         <th scope="col"><center>Asunto: </center></th>
+                                        <th scope="col"><center>Archivo: </center></th>
                                         <th scope="col"><center>Fecha de envío: </center></th>
                                         <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                      <?php $contador = 0; ?>
                                         @foreach($notificaciones as $notificacion)
                                             @if($notificacion->tipoDeNotificacion == '2')
                                                 <tr>
-                                                    <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                                                    <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
                                                     <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                                                    <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
                                                     <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>                                                </tr>
                                             @endif
+                                            <?php $contador++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -159,6 +174,7 @@
                                         <th scope="col"><center>Enviado por: </center></th>
                                         <th scope="col"><center>Enviado a: </center></th>
                                         <th scope="col"><center>Asunto: </center></th>
+                                        <th scope="col"><center>Archivo: </center></th>
                                         <th scope="col"><center>Fecha de envío: </center></th>
                                         <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
@@ -168,20 +184,24 @@
                                         <th scope="col"><center>Enviado por: </center></th>
                                         <th scope="col"><center>Enviado a: </center></th>
                                         <th scope="col"><center>Asunto: </center></th>
+                                        <th scope="col"><center>Archivo: </center></th>
                                         <th scope="col"><center>Fecha de envío: </center></th>
                                         <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                      <?php $contador = 0; ?>
                                         @foreach($notificaciones as $notificacion)
                                             @if($notificacion->tipoDeNotificacion == '3')
                                                 <tr>
-                                                    <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                                                    <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
                                                     <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                                                    <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
                                                     <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>                                                </tr>
                                             @endif
+                                            <?php $contador++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -197,6 +217,7 @@
                                         <th scope="col"><center>Enviado por: </center></th>
                                         <th scope="col"><center>Enviado a: </center></th>
                                         <th scope="col"><center>Asunto: </center></th>
+                                        <th scope="col"><center>Archivo: </center></th>
                                         <th scope="col"><center>Fecha de envío: </center></th>
                                         <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
@@ -206,28 +227,32 @@
                                         <th scope="col"><center>Enviado por: </center></th>
                                         <th scope="col"><center>Enviado a: </center></th>
                                         <th scope="col"><center>Asunto: </center></th>
+                                        <th scope="col"><center>Archivo: </center></th>
                                         <th scope="col"><center>Fecha de envío: </center></th>
                                         <th scope="col"><center>Abrir correo</center></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                      <?php $contador = 0; ?>
                                         @foreach($notificaciones as $notificacion)
                                             @if($notificacion->tipoDeNotificacion == '4')
                                                 <tr>
-                                                    <td><center>{{$notificacion->idUsuarioAdministrador}}</center></td>
+                                                    <td><center>{{$nombre[$contador]}} {{$apellido[$contador]}}</center></td>
                                                     <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
+                                                    <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
                                                     <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>                                                </tr>
                                             @endif
+                                            <?php $contador++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </ul> 
+                            </ul>
 
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <br>
