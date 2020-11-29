@@ -9,6 +9,9 @@ function actualizar() {
     let asunto = document.getElementById('asunto')
     let mensaje = document.getElementById('mensaje')
     let boton = document.getElementById('btnEnviar')
+    if (asunto.value=='' || mensaje.value=='') {
+      clearInterval(intervalId)
+    }
     if (asunto.value!=''&&mensaje.value!='') {
     if (cambiador==1) {
       boton.innerHTML = 'enviando.'
@@ -32,5 +35,9 @@ function actualizar() {
 }
 
 function iniciarContador() {
+  let boton = document.getElementById('btnEnviar')
+  if (asunto.value!=''&&mensaje.value!='') {
+  boton.innerHTML = 'enviando'
+}
     intervalId = setInterval(actualizar, 1000); // Cada segundo
 }
