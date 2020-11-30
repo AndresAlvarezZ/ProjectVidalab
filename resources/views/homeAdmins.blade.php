@@ -53,6 +53,7 @@
       <li class="lista">
         <a href="javascript:void(0)" class="dropbtn">SOLICITUDES A DOMICILIO</a>
         <div class="dropdown-content">
+          <a href="/solicitudes">Todas las solicitudes</a>
           <a href="/solicitudes/enEspera">Solicitudes En Espera</a>
           <a href="/solicitudes/confirmadas">Solicitudes Confirmadas</a>
           <a href="/solicitudes/finalizadas">Solicitudes Finalizadas</a>

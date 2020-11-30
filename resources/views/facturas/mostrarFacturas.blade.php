@@ -42,11 +42,11 @@
                                     <?php $fecha = date('d-m-Y',strtotime($factura->fecha)) ?>
                                     <?php if ($factura->condicionDeCompra=='Pendiente'): ?>
                                       <tr>
-                                          <th scope="row"><center>{{ $fecha}}</center></th>
-                                          <th scope="row"><center>{{ $factura->idCliente}}</center></th>
-                                          <th scope="row"><center>{{ $factura->condicionDeCompra}}</center></th>
-                                          <th scope="row"><center>{{ $factura->total}}</center></th>
-                                          <td scope="row"><center><a href="/procesarFactura/{{$factura->idFactura}}" class="btn btn-primary">Procesar compra</a> </center></td>
+                                          <td><center>{{ $fecha}}</center></td>
+                                          <td><center>{{ $factura->idCliente}}</center></td>
+                                          <td><center>{{ $factura->condicionDeCompra}}</center></td>
+                                          <td><center>{{ $factura->total}}</center></td>
+                                          <td><center><a href="/procesarFactura/{{$factura->idFactura}}" class="btn btn-primary">Procesar compra</a> </center></td>
                                       </tr>
                                     <?php endif; ?>
                                 @endforeach

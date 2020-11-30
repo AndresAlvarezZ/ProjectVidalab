@@ -17,7 +17,7 @@
                 <div class="card-body">
 
                     <div class="alert alert-info" role="alert">
-                        <center>¡Lista de solicitudes ordenadas en cola!</center>
+                    <center><b>Lista de clientes que ya fueron atendidos a domicilio por el especialista</b><br>Lista de solicitudes ordenadas en cola según fecha y hora de registro en el sistema</center>
                     </div>
 
                     <ul class="list-group">
@@ -30,7 +30,6 @@
                                     <th scope="col"><center>Teléfono</center></th>
                                     <th scope="col"><center>Análisis Solicitados</center></th>
                                     <th scope="col"><center>Costo del Servicio</center></th>
-                                    <th scope="col"><center>Acción</center></th>
                                 </tr>
                             </thead>
 
@@ -42,7 +41,6 @@
                                     <th scope="col"><center>Teléfono</center></th>
                                     <th scope="col"><center>Análisis Solicitados</center></th>
                                     <th scope="col"><center>Costo del Servicio</center></th>
-                                    <th scope="col"><center>Acción</center></th>
                                 </tr>
                             </tfoot>
 

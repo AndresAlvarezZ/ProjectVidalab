@@ -14,6 +14,15 @@ class SolicitudesController extends Controller
     }
   //
 
+  //LISTAR TODOS LOS REGISTROS
+    public function index()
+    {
+      $solicitudes = Solicitudes::all();
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      return view ('solicitudes.todasLasSolicitudes',compact('solicitudes','name'));
+    }
+  //
+
 
   //LISTAR REGISTROS EN ESTADO DE ESPERA
     public function SolicitudesEnEspera()
@@ -56,15 +65,6 @@ class SolicitudesController extends Controller
 
 
   //CAMBIAR ESTADO
-    public function cambioDeEstado(Solicitudes $solicitud)
-    {
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view ('solicitudes.cambioDeEstado',compact('solicitud','name'));
-    }
-  //
-
-
-  //CAMBIAR ESTADO
     public function cambioDeEstadoConfirmadas(Solicitudes $solicitud)
     {
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
@@ -74,11 +74,21 @@ class SolicitudesController extends Controller
 
 
   //CAMBIAR ESTADO
-    public function procesarCambio(Solicitudes $solicitud)
+    public function procesarSolicitud(Request $request, $id)
     {
-      $solicitud->update(request()->all());
+      $solicitudes = Solicitudes::all();
+      $llavePrimaria = 0;
 
-    return redirect('/solicitudes/enEspera')->with('status','El estado de la solicitud ha sido modificado exitosamente!');
+      foreach($solicitudes as $solicitud)
+      {
+        if($solicitud->idFactura == $id)
+        {
+          $llavePrimaria = $solicitud->idDeSolicitud;
+          $solicitud->estado = $request->input('estado');
+          $solicitud->save();
+          return $solicitud;
+        }
+      }
     }
   //
 

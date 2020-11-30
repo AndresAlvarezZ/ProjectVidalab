@@ -104,10 +104,12 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO SOLICITUDES
+  Route::get('/solicitudes','SolicitudesController@index');
   Route::get('/solicitudes/enEspera','SolicitudesController@SolicitudesEnEspera');
   Route::get('/solicitudes/confirmadas','SolicitudesController@SolicitudesConfirmadas');
   Route::get('/solicitudes/finalizadas','SolicitudesController@SolicitudesFinalizadas');
   Route::get('/solicitudes/canceladas','SolicitudesController@SolicitudesCanceladas');
+  Route::put('/solicitudes/procesarSolicitud/{solicitud}','SolicitudesController@procesarSolicitud');
 //
 
 
@@ -142,12 +144,7 @@ Route::get('/procesarFactura/{factura}','FacturasController@procesarCompra');
 Route::put('/procesarFactura/{factura}','FacturasController@actualizarFactura');
 Route::get('/verFacturas','AdministradorController@mostrarFacturas');
 
-//Rutas de solicitudes
-  Route::get('/solicitudes/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstado');
-  Route::put('/solicitudes/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
-  Route::get('/solicitudesConfirmadas/cambioDeEstado/{solicitud}','SolicitudesController@cambioDeEstadoConfirmadas');
-  Route::put('/solicitudesConfirmadas/procesarCambio/{solicitud}','SolicitudesController@procesarCambio');
-//
+
 
 //RUTAS DE PRUEBA DE SISTEMA
 Route::get('/prueba{codigo}','ComprasController@FinalizarCompra');
