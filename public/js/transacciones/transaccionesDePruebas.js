@@ -3,9 +3,9 @@ var hayError;
 $(document).ready(function ()
 {
     //AGREGAR
-        $('#agregarForm').on('submit', function(e)
+        $('#agregarForm').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -28,8 +28,9 @@ $(document).ready(function ()
 
     
     //ACTUALIZAR
-        $('.btnEditar').on('click', function()
+        $('.btnEditar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarPrueba').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -71,9 +72,11 @@ $(document).ready(function ()
     //FIN DE ACTUALIZAR
 
 
+
     //ELIMINAR
-        $('.btnEliminar').on('click', function()
+        $('.btnEliminar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#eliminarPrueba').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -87,34 +90,56 @@ $(document).ready(function ()
             $('#costoDelAnalisis4').val(data[4]);
         });
         $('#eliminarForm').on('submit', function(e)
-        {
-            e.preventDefault();
-            var id = $('#idEliminar').val();
+    {
+        e.preventDefault();
+        var id = $('#idEliminar').val();
 
-            $.ajax
-            ({
-                type: "DELETE",
-                url: "/pruebas/"+id,
-                data: $('#eliminarForm').serialize(),
-                success: function (response)
-                {
-                    console.log(response)
-                    $('#agregarForm')[0].reset()
+        Swal.fire
+        ({
+            title: '¿Desea eliminar este registro?',
+            text: "¡Los cambios no serán revertibles una vez sea eliminado!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí!'
+        }).then((result) => 
+        {
+            if (result.isConfirmed) 
+            {
+                $.ajax
+                ({
+                    type: "DELETE",
+                    url: "/pruebas/"+id,
+                    data: $('#eliminarForm').serialize(),
+                    success: function (response)
+                    {
+                        console.log(response);
+                        $('#eliminarEmpresa').modal('hide');
+                        Alerta("HUMAcheck", "¡Registro eliminado correctamente!", "success", "OK")
+                    },
+                    error: function(error)
+                    {
+                        console.log(error)
+                        Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
+                    }
                     
-                },
-                error: function(error)
+                });
+            }else
+            {
+                Swal.fire({
+                    title: 'Cancelado',
+                    text: '¡El proceso fue cancelado y el registro no sufrió cambios!',
+                    icon: 'error',
+                }).then((result) => 
                 {
-                    console.log(error)
-                    swal
-                    ({
-                        title: "¡Error al registro!",
-                        text: "Verifique que: \n\nEl código del análisis no se encuentra registrado." + "\nO bien, que todos los campos solicitados esten completos y en el formato adecuado.",
-                        type: "warning",
-                    });
-                }
-            });
-        });
+                    window.location.href = "/pruebas";
+                })
+            }
+        })
+    });
     //FIN DE ELIMINAR
+
 
 
 

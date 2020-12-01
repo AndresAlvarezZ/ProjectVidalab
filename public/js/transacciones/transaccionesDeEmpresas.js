@@ -3,9 +3,9 @@ var hayError;
 $(document).ready(function ()
 {
     //AGREGAR
-        $('#agregarForm').on('submit', function(e)
+        $('#agregarForm').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -28,8 +28,9 @@ $(document).ready(function ()
 
 
     //ACTUALIZAR
-        $('.btnEditar').on('click', function()
+        $('.btnEditar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarEmpresa').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -56,7 +57,7 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarForm')[0].reset()
+                    $('#editarForm')[0].reset()
                     Alerta("HUMAcheck", "¡Datos de la Empresa actualizados correctamente!", "success", "OK")
                 },
                 error: function(error)
@@ -70,8 +71,9 @@ $(document).ready(function ()
       
 
     //ELIMINAR
-        $('.btnEliminar').on('click', function()
+        $('.btnEliminar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#eliminarEmpresa').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -88,26 +90,53 @@ $(document).ready(function ()
             e.preventDefault();
             var id = $('#idEliminar').val();
 
-            $.ajax
+            Swal.fire
             ({
-                type: "DELETE",
-                url: "/empresas/"+id,
-                data: $('#eliminarForm').serialize(),
-                success: function (response)
+                title: '¿Desea eliminar este registro?',
+                text: "¡Los cambios no serán revertibles una vez sea eliminado!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí!'
+            }).then((result) => 
+            {
+                if (result.isConfirmed) 
                 {
-                    console.log(response);
-                    $('#eliminarEmpresa').modal('hide');
-                    alert('Registro eliminado correctamente!');
-                    location.reload();
-                },
-                error: function(error)
+                    $.ajax
+                    ({
+                        type: "DELETE",
+                        url: "/empresas/"+id,
+                        data: $('#eliminarForm').serialize(),
+                        success: function (response)
+                        {
+                            console.log(response);
+                            $('#eliminarEmpresa').modal('hide');
+                            Alerta("HUMAcheck", "¡Registro eliminado correctamente!", "success", "OK")
+                        },
+                        error: function(error)
+                        {
+                            console.log(error)
+                            Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
+                        }
+                        
+                    });
+                }else
                 {
-                    console.log(error)
-                    alert("Error, inténtelo nuevamente!");
+                    Swal.fire({
+                        title: 'Cancelado',
+                        text: '¡El proceso fue cancelado y el registro no sufrió cambios!',
+                        icon: 'error',
+                    }).then((result) => 
+                    {
+                        window.location.href = "/empresas";
+                    })
                 }
-            });     
+            })
         });
     //FIN DE ELIMINAR
+
+
 
     //FUNCIONES DE ALERTA
         function Alerta(titulo, mensaje, tipo, boton)

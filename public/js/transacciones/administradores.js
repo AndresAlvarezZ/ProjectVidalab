@@ -3,9 +3,9 @@ var hayError;
 $(document).ready(function ()
 {
     //AGREGAR 
-        $('#agregarForm').on('submit', function(e)
+        $('#agregarForm').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -28,8 +28,9 @@ $(document).ready(function ()
 
 
     //ACTUALIZAR
-        $('.btnEditar').on('click', function()
+        $('.btnEditar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarAdministrador').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -69,8 +70,9 @@ $(document).ready(function ()
 
 
     //ACTUALIZAR ESTADO A INACTIVAR
-        $('.btnInactivar').on('click', function()
+        $('.btnInactivar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarEstado').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -110,8 +112,9 @@ $(document).ready(function ()
 
 
     //ACTUALIZAR ESTADO A ACTIVAR
-        $('.btnActivar').on('click', function()
+        $('.btnActivar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarEstadoActivar').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()

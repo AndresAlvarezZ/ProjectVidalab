@@ -3,9 +3,9 @@ var hayError;
 $(document).ready(function ()
 {
     //AGREGAR
-        $('#agregarForm').on('submit', function(e)
+        $('#agregarForm').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -29,8 +29,9 @@ $(document).ready(function ()
 
 
     //ACTUALIZAR
-        $('.btnEditar').on('click', function()
+        $('.btnEditar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarPaquete').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -72,25 +73,39 @@ $(document).ready(function ()
 
 
     //ELIMINAR
-        $('.btnEliminar').on('click', function()
+    $('.btnEliminar').on('click', function(ev)
+    {
+        ev.preventDefault();
+        $('#eliminarPaquete').modal('show');
+        $tr = $(this).closest('tr');
+        var data = $tr.children("td").map(function()
         {
-            $('#eliminarPaquete').modal('show');
-            $tr = $(this).closest('tr');
-            var data = $tr.children("td").map(function()
-            {
-                return $(this).text();
-            }).get();
-            console.log(data);
-            $('#idEliminar').val(data[0]);
-            $('#codigoDelPaquete4').val(data[0]);
-            $('#nombreDelPaquete4').val(data[1]);
-            $('#costoDelPaquete4').val(data[3]);
-        });
-        $('#eliminarForm').on('submit', function(e)
-        {
-            e.preventDefault();
-            var id = $('#idEliminar').val();
+            return $(this).text();
+        }).get();
+        console.log(data);
+        $('#idEliminar').val(data[0]);
+        $('#codigoDelPaquete4').val(data[0]);
+        $('#nombreDelPaquete4').val(data[1]);
+        $('#costoDelPaquete4').val(data[3]);
+    });
+    $('#eliminarForm').on('submit', function(e)
+{
+    e.preventDefault();
+    var id = $('#idEliminar').val();
 
+    Swal.fire
+    ({
+        title: '¿Desea eliminar este registro?',
+        text: "¡Los cambios no serán revertibles una vez sea eliminado!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí!'
+    }).then((result) => 
+    {
+        if (result.isConfirmed) 
+        {
             $.ajax
             ({
                 type: "DELETE",
@@ -99,18 +114,32 @@ $(document).ready(function ()
                 success: function (response)
                 {
                     console.log(response);
-                    $('#eliminarPaquete').modal('hide');
-                    alert('Registro eliminado correctamente!');
-                    location.reload();
+                    $('#eliminarEmpresa').modal('hide');
+                    Alerta("HUMAcheck", "¡Registro eliminado correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("Error, inténtelo nuevamente!");
+                    Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
-            });     
-        });
-    //FIN DE ELIMINAR
+                
+            });
+        }else
+        {
+            Swal.fire({
+                title: 'Cancelado',
+                text: '¡El proceso fue cancelado y el registro no sufrió cambios!',
+                icon: 'error',
+            }).then((result) => 
+            {
+                window.location.href = "/paquetes";
+            })
+        }
+    })
+});
+//FIN DE ELIMINAR
+
+
 
 
     //FUNCIONES DE ALERTA

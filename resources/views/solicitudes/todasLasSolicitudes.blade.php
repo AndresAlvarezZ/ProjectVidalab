@@ -1,6 +1,6 @@
 @extends('layouts.especial')
-@extends('pop_up.modalSolicitudesYFacturas')
 @section('content')
+
 
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -8,7 +8,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         
-        <script src="{{ asset('js/transacciones/procesarSolicitudesYFacturas.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
@@ -22,12 +21,8 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>REGISTRO DE SOLICITUDES EN ESTADO: CONFIRMADAS</center></b></h4></div>
+            <div class="card-header"><h4><b><center>REGISTRO DE TODAS LAS SOLICITUDES A DOMICILIO</center></b></h4></div>
                 <div class="card-body">
-
-                    <div class="alert alert-info" role="alert">
-                    <center><b>Lista de clientes que han confirmado fecha y hora para la toma de muestra a domicilio</b><br>Lista de solicitudes ordenadas en cola según fecha y hora de registro en el sistema</center>
-                    </div>
 
                     <ul class="list-group">
                         <table id="registros" class="table table-hover">
@@ -39,7 +34,7 @@
                                     <th scope="col"><center>Teléfono</center></th>
                                     <th scope="col"><center>Análisis Solicitados</center></th>
                                     <th scope="col"><center>Costo del Servicio</center></th>
-                                    <th scope="col"><center>Acción</center></th>
+                                    <th scope="col"><center>Estado</center></th>
                                 </tr>
                             </thead>
 
@@ -51,12 +46,12 @@
                                     <th scope="col"><center>Teléfono</center></th>
                                     <th scope="col"><center>Análisis Solicitados</center></th>
                                     <th scope="col"><center>Costo del Servicio</center></th>
-                                    <th scope="col"><center>Acción</center></th>
+                                    <th scope="col"><center>Estado</center></th>
                                 </tr>
                             </tfoot>
 
                             <tbody>
-                                @foreach($confirmadas as $solicitud)
+                                @foreach($solicitudes as $solicitud)
                                     <tr>
                                         <td><center>{{$solicitud->idFactura}}</center></td>
                                         <td><center>{{$solicitud->nombreDelCiente}}</center></td>
@@ -64,7 +59,7 @@
                                         <td><center>{{$solicitud->telefonoDelCliente}}</center></td>
                                         <td><center>{{$solicitud->analisisSolicitados}}</center></td>
                                         <td><center>{{$solicitud->costoDelServicio}}</center></td>
-                                        <td><center><a href="#" class="btn btn-primary btnEnConfirmada" data-toggle="tooltip" data-placement="right" title="Click para actualizar el estado de esta solicitud">Procesar Solicitud</a></center></td>
+                                        <td><center>{{$solicitud->estado}}</center></td>
                                     </tr>
                                 @endforeach
                             </tbody>

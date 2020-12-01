@@ -50,7 +50,7 @@
                                     <td><center>{{$cita->numeroDeClientesPorAtender}}</center></td>
                                     <td><center>{{$cita->tiposDeAnalisisRequeridos}}</center></td>
                                     <td><center>{{$cita->nombreDelSolicitante}} {{$cita->primerApellidoDelSolicitante}} {{$cita->segundoApellidoDelSolicitante}}</center></td>
-                                    <td><a href="/empresas/{{$cita->idDeLaEmpresa}}" class="btn btn-primary">Ir al Registro</a> </center></td>
+                                    <td><a href="/empresas/{{$cita->idDeLaEmpresa}}" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Click para ir a la ubicación del registro">Ir al Registro</a> </center></td>
                                 </tr>
                                 @endforeach
                             </tbody>

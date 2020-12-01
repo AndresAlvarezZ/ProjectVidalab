@@ -14,6 +14,8 @@
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
         
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
@@ -27,7 +29,7 @@
 
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarPrueba">Registrar nuevo Análisis</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarPrueba" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo análisis">Registrar nuevo Análisis</button>
                         </div>
                     </div>
                     <br>
@@ -68,8 +70,8 @@
                                 <td><center>{{$prueba->costoDelAnalisis}}</center></td>
                                 <td><center>{{$prueba->descuentoDelAnalisis}}</center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
-                                        <a href="#" class="btn btn-danger btnEliminar">Eliminar</a> <br></br>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este análisis">Actualizar</a> <br></br>
+                                        <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de esta prueba">Eliminar</a> <br></br>
                                     </center></td>
                                 </tr>
                                 @endforeach

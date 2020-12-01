@@ -1,4 +1,4 @@
-<link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
+<link href="{{ asset('css/estiloDePopUp.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
 <!--TAMAÑOS
 modal-dialog modal-xl

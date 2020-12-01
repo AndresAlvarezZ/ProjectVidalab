@@ -63,7 +63,7 @@
                                   <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                   <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                   <td><center>{{$notificacion->created_at}}</center></td>
-                                  <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
+                                  <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
                               </tr>
                               <?php $contador++; ?>
                         @endforeach

@@ -3,8 +3,9 @@ var hayError;
 $(document).ready(function ()
 {
     //NOTIFICACION ESPECÍFICA CLIENTES
-        $('#notificacionClienteE').on('submit', function(e)
+        $('#notificacionClienteE').on('submit', function(ev)
         {
+            ev.preventDefault();
             e.preventDefault();
             $.ajax
             ({
@@ -27,9 +28,9 @@ $(document).ready(function ()
 
 
     //NOTIFICACION ESPECÍFICA EMPRESA
-        $('#notificacionEmpresaE').on('submit', function(e)
+        $('#notificacionEmpresaE').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -51,9 +52,9 @@ $(document).ready(function ()
 
     
     //NOTIFICACION MASIVA CLIENTES
-        $('#notificacionClientesM').on('submit', function(e)
+        $('#notificacionClientesM').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -75,8 +76,9 @@ $(document).ready(function ()
 
 
     //NOTIFICACION MASIVA EMPRESAS
-        $('#notificacionEmpresasM').on('submit', function(e)
+        $('#notificacionEmpresasM').on('submit', function(ev)
         {
+            ev.preventDefault();
             e.preventDefault();
             $.ajax
             ({
