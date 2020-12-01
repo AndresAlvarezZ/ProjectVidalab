@@ -31,7 +31,12 @@ class CatalogoController extends Controller
         $identificadorDeAnalisis = 'Analisis';
         $identificadorDePaqete = 'Paquete';
         $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+        if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
         return view('catalogo.indexAdmins', compact('pruebas', 'paquetes','name','identificadorDeAnalisis','identificadorDePaqete'));
+        }
+        else{
+          return 'acceso denegado';
+        }
     }
     public function carrito()
     {

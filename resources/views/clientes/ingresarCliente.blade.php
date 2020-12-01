@@ -28,7 +28,7 @@
                                         <div class="row">
                                           <div class="form-group col-md-6">
                                               <label for="nombreDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Primer Nombre') }}</label>
-                                              <input id="nombreDelCliente" type="text" class="form-control @error('nombreDelCliente') is-invalid @enderror" name="nombreDelCliente"  value="{{ auth()->user()->nombreDelCliente }}" required autocomplete="nombreDelCliente" autofocus>
+                                              <input id="nombreDelCliente" type="text" placeholder="Ingrese su primer nombre" class="form-control @error('nombreDelCliente') is-invalid @enderror" name="nombreDelCliente"  value="{{ auth()->user()->nombreDelCliente }}" required autocomplete="nombreDelCliente" autofocus>
                                               @error('nombreDelCliente')
                                                   <span class="invalid-feedback" role="alert">
                                                       <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
 
                                           <div class="form-group col-md-6">
                                               <label for="segundoNombreDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Segundo Nombre') }}</label>
-                                              <input id="segundoNombreDelCliente" type="text" placeholder="Ingrese su nombre" class="form-control @error('segundoNombreDelCliente') is-invalid @enderror" name="segundoNombreDelCliente" value="{{ old('segundoNombreDelCliente') }}" required autocomplete="segundoNombreDelCliente" autofocus>
+                                              <input id="segundoNombreDelCliente" type="text" placeholder="Ingrese su segundo nombre" class="form-control @error('segundoNombreDelCliente') is-invalid @enderror" name="segundoNombreDelCliente" value="{{ old('segundoNombreDelCliente') }}" required autocomplete="segundoNombreDelCliente" autofocus>
                                               @error('segundoNombreDelCliente')
                                                   <span class="invalid-feedback" role="alert">
                                                       <strong>{{ $message }}</strong>

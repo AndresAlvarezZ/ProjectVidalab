@@ -18,13 +18,18 @@ class CitaController extends Controller
             $this->middleware('auth:admins');
         }
     //
-    
+
     //LISTAR REGISTROS
         public function index()
         {
             $citas = Cita::orderBy('created_at', 'desc')->get();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+            if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
             return view('citas.index', compact('citas','name'));
+            }
+            else{
+              return 'acceso denegado';
+            }
         }
     //
 
@@ -34,11 +39,11 @@ class CitaController extends Controller
         {
             $cita = new Cita;
 
-            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa1');        
+            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa1');
             $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
             $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
             $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
-            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');        
+            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');
             $cita->fechaDeCita = $request->input('fechaDeCita1');
             $cita->horaDeCita = $request->input('horaDeCita1');
             $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos1');
@@ -52,7 +57,7 @@ class CitaController extends Controller
         {
             $cita = Cita::find($id);
 
-            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');        
+            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');
             $cita->fechaDeCita = $request->input('fechaDeCita3');
             $cita->horaDeCita = $request->input('horaDeCita3');
             $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos3');

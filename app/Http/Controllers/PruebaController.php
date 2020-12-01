@@ -21,7 +21,12 @@ class PruebaController extends Controller
         {
             $pruebas = Prueba::all();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+            if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
             return view('pruebas.index',compact('pruebas', 'name'));
+            }
+            else{
+              return 'acceso denegado';
+            }
         }
     //
 

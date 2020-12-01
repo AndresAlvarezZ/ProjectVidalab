@@ -19,7 +19,12 @@ class SolicitudesController extends Controller
     {
       $solicitudes = Solicitudes::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.todasLasSolicitudes',compact('solicitudes','name'));
+      }
+      else{
+        return 'acceso denegado';
+      }
     }
   //
 
@@ -29,7 +34,12 @@ class SolicitudesController extends Controller
     {
       $enEspera = Solicitudes::whereIn('estado',['Espera'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.enEspera',compact('enEspera','name'));
+      }
+      else{
+        return 'acceso denegado';
+      }
     }
   //
 
@@ -39,7 +49,12 @@ class SolicitudesController extends Controller
     {
       $confirmadas = Solicitudes::whereIn('estado',['Confirmada'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.confirmadas',compact('confirmadas','name'));
+      }
+      else{
+        return 'acceso denegado';
+      }
     }
   //
 
@@ -49,7 +64,12 @@ class SolicitudesController extends Controller
     {
       $finalizadas = Solicitudes::whereIn('estado',['Finalizada'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.finalizadas',compact('finalizadas','name'));
+      }
+      else{
+        return 'acceso denegado';
+      }
     }
   //
 
@@ -59,7 +79,12 @@ class SolicitudesController extends Controller
     {
       $canceladas = Solicitudes::whereIn('estado',['Cancelada'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.canceladas',compact('canceladas','name'));
+      }
+      else{
+        return 'acceso denegado';
+      }
     }
   //
 
@@ -68,7 +93,12 @@ class SolicitudesController extends Controller
     public function cambioDeEstadoConfirmadas(Solicitudes $solicitud)
     {
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.cambioDeEstadoConfirmadas',compact('solicitud','name'));
+      }
+      else{
+        return 'acceso denegado';
+      }
     }
   //
 
