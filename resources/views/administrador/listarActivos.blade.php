@@ -73,7 +73,7 @@
                                         </center></td>
                                         <td><center>{{$administrador->motivoDeEstadoDelUsuarioAdministrador}}</center></td>
                                         <td><center>
-                                            <a href="#" class="btn btn-danger btnInactivar">Denegar Acceso</a>
+                                            <a href="#" class="btn btn-danger btnInactivar" data-toggle="tooltip" data-placement="right" title="Click para denegar a este administrador el acceso al sistema">Denegar Acceso</a>
                                         </center></td>
                                     </tr>
                                     @endif

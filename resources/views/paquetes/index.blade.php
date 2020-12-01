@@ -9,11 +9,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         
         <script src="{{ asset('js/transacciones/transaccionesDePaquetes.js') }}?v=<?php echo(rand()); ?>"defer></script>
-        <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}"defer></script>
+        <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
         
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
@@ -26,7 +28,7 @@
 
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarPaquete">Registrar nuevo Paquete</button>                                    </p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarPaquete" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva cita">Registrar nuevo Paquete</button>
                         </div>
                     </div>
                     <br>
@@ -61,8 +63,8 @@
                                     <td><center>{{$paquete->descripcionDelPaquete}}</center></td>
                                     <td><center>{{$paquete->costoDelPaquete}}</center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
-                                        <a href="#" class="btn btn-danger btnEliminar">Eliminar</a> <br></br>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este paquete">Actualizar</a> <br></br>
+                                        <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de este paquete">Eliminar</a> <br></br>
                                     </center></td>
                                 </tr>
                                 @endforeach

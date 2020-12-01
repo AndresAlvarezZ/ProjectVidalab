@@ -1,6 +1,7 @@
+
 .modal-content
 {
-    box-shadow: 6px 10px 0px rgba(0, 0, 0, 0.2);    
+    box-shadow: 5px 8px 3px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -15,6 +16,13 @@ label
 	display:inline-block;
 }
 
+
+::placeholder
+{
+  text-transform: initial;
+  text-align: center;
+}
+
 h5
 {
     color: black;
@@ -25,3 +33,5 @@ h5
     font-style: italic;
     text-transform: uppercase;
 }
+
+

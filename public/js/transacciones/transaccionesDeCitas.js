@@ -1,11 +1,11 @@
 var hayError;
-
+/////////////______________REVISAR POR INCOMPLETO________________///////////////////////
 $(document).ready(function ()
 {
     //AGREGAR
-        $('#agregarForm').on('submit', function(e)
+        $('#agregarForm').on('submit', function(ev)
         {
-            e.preventDefault();
+            ev.preventDefault();
             $.ajax
             ({
                 type: "POST",
@@ -29,8 +29,9 @@ $(document).ready(function ()
 
 
     //ACTUALIZAR
-        $('.btnEditar').on('click', function()
+        $('.btnEditar').on('click', function(ev)
         {
+            ev.preventDefault();
             $('#editarCita').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
@@ -115,6 +116,8 @@ $(document).ready(function ()
         });
     //FIN DE ELIMINAR
 
+
+    
     //FUNCIONES DE ALERTA
         function Alerta(titulo, mensaje, tipo, boton)
         {

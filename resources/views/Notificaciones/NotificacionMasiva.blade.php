@@ -8,9 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     
     <link href="{{ asset('css/estiloDeNotificaciones.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/transacciones/transaccionesDeNotificaciones.js') }}"defer></script>
-    <script src="{{ asset('js/buscador/clientesM.js') }}"defer></script>
-    <script src="{{ asset('js/scroll.js') }}"defer></script>
+    <script src="{{ asset('js/transacciones/transaccionesDeNotificaciones.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/buscador/clientesM.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/scroll.js') }}?v=<?php echo(rand()); ?>"defer></script>
     
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
@@ -62,7 +62,7 @@
                                   <td><center>{{$notificacion->receptorDeNotificacion}}</center></td>
                                   <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                   <td><center>{{$notificacion->created_at}}</center></td>
-                                  <td><center><a href="#" class="btn btn-info btnEditar">Ver</a></center></td>
+                                  <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
                               </tr>
                               <?php $contador++; ?>
                         @endforeach

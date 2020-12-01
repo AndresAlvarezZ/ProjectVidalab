@@ -73,7 +73,7 @@
                                         </center></td>
                                         <td><center>{{$administrador->motivoDeEstadoDelUsuarioAdministrador}}</center></td>
                                         <td><center>
-                                            <a href="#" class="btn btn-success btnActivar">Conceder Acceso</a>
+                                            <a href="#" class="btn btn-success btnActivar" data-toggle="tooltip" data-placement="right" title="Click para conceder a este administrador el acceso al sistema">Conceder Acceso</a>
                                         </center></td>
                                     </tr>
                                     @endif

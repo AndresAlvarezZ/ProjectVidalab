@@ -32,8 +32,65 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        Botón 1
-                        Botón 2
+
+<li class="lista">
+  <a href="javascript:void(0)" class="dropbtn">ADMINISTRADORES</a>
+  <div class="dropdown-content">
+    <a  href="/administradores">Registro de Administradores</a>
+    <a  href="/administradores/activos">Administradores Activos</a>
+    <a  href="/administradores/inactivos">Administradores Inactivos</a>
+  </div>
+</li>
+
+<li class="lista">
+  <a href="javascript:void(0)" class="dropbtn">NOTIFICACIONES</a>
+  <div class="dropdown-content">
+    <a href="/notificaciones">Todos las Notificaciones</a>
+    <a href="/notificacionEspecifica">Notificación Específica a Cliente</a>
+    <a href="/notificacionMasiva">Notificación Masiva a Clientes</a>
+    <a href="/notificacionEspecificaEmpresarial">Notificación Específica Empresarial</a>
+    <a href="/notificacionMasivaEmpresarial">Notificación Masiva Empresarial</a>
+  </div>
+</li>
+
+<li class="lista">
+  <a href="javascript:void(0)" class="dropbtn">SERVICIOS</a>
+  <div class="dropdown-content">
+    <a  href="/pruebas">Análisis</a>
+    <a  href="/paquetes">Paquetes</a>
+    <a  href="/catalogosAdmins">Catálogo</a>
+  </div>
+</li>
+
+<li class="lista">
+  <a href="javascript:void(0)" class="dropbtn">EMPRESARIAL</a>
+  <div class="dropdown-content">
+    <a  href="/empresas">Empresas</a>
+    <a  href="/citas">Citas Generales</a>
+  </div>
+</li>
+
+
+<li class="lista">
+  <a href="javascript:void(0)" class="dropbtn">SOLICITUDES A DOMICILIO</a>
+  <div class="dropdown-content">
+    <a href="/solicitudes">Todas las solicitudes</a>
+    <a href="/solicitudes/enEspera">Solicitudes En Espera</a>
+    <a href="/solicitudes/confirmadas">Solicitudes Confirmadas</a>
+    <a href="/solicitudes/finalizadas">Solicitudes Finalizadas</a>
+    <a href="/solicitudes/canceladas">Solicitudes Canceladas</a>
+  </div>
+</li>
+<li class="lista">
+  <a href="javascript:void(0)" class="dropbtn">COMPRAS EN LÍNEA</a>
+  <div class="dropdown-content">
+    <a  href="/verCompras">Pendientes</a>
+    <a  href="/verComprasCanceladas">Canceladas</a>
+  </div>
+</li>
+<li class="lista">
+  <a href="/verFacturas" class="dropbtn">FACTURAS</a>
+</li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

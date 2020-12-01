@@ -26,7 +26,7 @@
                     
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarAdministrador">Registrar nuevo Administrador</button></p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarAdministrador" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo administrador">Registrar nuevo Administrador</button></p>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@
                                     </center></td>
                                     <td><center>Activo</center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este administrador">Actualizar</a>
                                     </center></td>
                                 </tr>
 
@@ -100,7 +100,7 @@
                                         @endif
                                     </center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar">Actualizar</a> <br></br>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este administrador">Actualizar</a> <br></br>
                                         @if($administrador->estadoDelUsuarioAdministrador == 1)
                                             <a href="#" class="btn btn-danger btnInactivar">Denegar Acceso</a>
                                         @else
