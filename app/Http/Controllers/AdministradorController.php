@@ -40,7 +40,7 @@ class AdministradorController extends Controller
         return view('homeAdmins',compact('acceso','name'));
       }
       else{
-        return 'acceso denegado';
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
 
@@ -62,7 +62,7 @@ class AdministradorController extends Controller
       return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
       }
       else{
-        return 'acceso denegado';
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -80,7 +80,7 @@ class AdministradorController extends Controller
       return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
       }
       else{
-        return 'acceso denegado';
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -97,7 +97,7 @@ class AdministradorController extends Controller
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
       }
       else{
-        return 'acceso denegado';
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //

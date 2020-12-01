@@ -35,7 +35,7 @@ class CatalogoController extends Controller
         return view('catalogo.indexAdmins', compact('pruebas', 'paquetes','name','identificadorDeAnalisis','identificadorDePaqete'));
         }
         else{
-          return 'acceso denegado';
+          return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
         }
     }
     public function carrito()

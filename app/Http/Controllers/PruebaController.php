@@ -25,7 +25,7 @@ class PruebaController extends Controller
             return view('pruebas.index',compact('pruebas', 'name'));
             }
             else{
-              return 'acceso denegado';
+            return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
             }
         }
     //

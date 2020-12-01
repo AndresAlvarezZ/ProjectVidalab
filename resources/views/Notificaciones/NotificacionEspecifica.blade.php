@@ -10,7 +10,7 @@
     <link href="{{ asset('css/estiloDeNotificaciones.css') }}" rel="stylesheet">
     <script src="{{ asset('js/transacciones/transaccionesDeNotificaciones.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/buscador/clientesP.js') }}?v=<?php echo(rand()); ?>"defer></script>
-    <script src="{{ asset('js/cambiarNombre.js') }}?v=<?php echo(rand()); ?>?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/cambiarNombre.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/scroll.js') }}?v=<?php echo(rand()); ?>"defer></script>
 
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>

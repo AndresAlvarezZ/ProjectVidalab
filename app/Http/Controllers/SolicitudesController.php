@@ -23,7 +23,7 @@ class SolicitudesController extends Controller
       return view ('solicitudes.todasLasSolicitudes',compact('solicitudes','name'));
       }
       else{
-        return 'acceso denegado';
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -38,7 +38,7 @@ class SolicitudesController extends Controller
       return view ('solicitudes.enEspera',compact('enEspera','name'));
       }
       else{
-        return 'acceso denegado';
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -53,7 +53,7 @@ class SolicitudesController extends Controller
       return view ('solicitudes.confirmadas',compact('confirmadas','name'));
       }
       else{
-        return 'acceso denegado';
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -68,7 +68,7 @@ class SolicitudesController extends Controller
       return view ('solicitudes.finalizadas',compact('finalizadas','name'));
       }
       else{
-        return 'acceso denegado';
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -83,7 +83,7 @@ class SolicitudesController extends Controller
       return view ('solicitudes.canceladas',compact('canceladas','name'));
       }
       else{
-        return 'acceso denegado';
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -97,7 +97,7 @@ class SolicitudesController extends Controller
       return view ('solicitudes.cambioDeEstadoConfirmadas',compact('solicitud','name'));
       }
       else{
-        return 'acceso denegado';
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
