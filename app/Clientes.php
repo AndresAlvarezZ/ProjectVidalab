@@ -14,12 +14,14 @@ class Clientes extends Model
       'idUsuario',
       'dniDelCliente',
       'nombreDelCliente',
+      'segundoNombreDelCliente',
       'primerApellidoDelCliente',
       'segundoApellidoDelCliente',
       'fechaDeNacimientoDelCliente',
       'edadDelCliente',
       'correoDelCliente',
       'telefonoDelCliente',
+      'numeroDehijosDelcliente',
       'domicilioDelCliente',
       'aceptacionDeTerminos'
     ];

@@ -9,6 +9,7 @@ use App\Empresa;
 use App\Notificaciones;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\envioDeNotificaciones;
+use Illuminate\Support\Str;
 
 class NotificacionesController extends Controller
 {
@@ -103,6 +104,8 @@ class NotificacionesController extends Controller
   //MOSTRAR NOTIFICACIÓN MASIVA PARA EMPRESAS
     public function NotificacionMasivaEmpresarial()
     {
+      $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '3')->get();
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       $nombre = [];
       $contador=0;
       foreach ($notificaciones as $notificacion) {
@@ -133,16 +136,44 @@ class NotificacionesController extends Controller
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
       Mail::to($data['clienteOpcion'])->send(new envioDeNotificaciones($data));
-      $file_name = 'sin archivo';
-      if (request()->hasFile('file')) {
-        $destinationPath = public_path().'/archivos';
-        $files = request()->file('file');
-        $file_name = $files->getClientOriginalName(); //Get file original name
-            $files->move($destinationPath , $file_name);
+      $file_name = '| ';
+            //$files = array_filter($_FILES['upload']['name']); something like that to be used before processing files.
+      // Count # of uploaded files in array
+      $total = count($_FILES['file']['name']);
+
+      // Loop through each file
+      for($i=0; $i<$total; $i++) {
+           //Get the temp file path
+           $tmpFilePath = $_FILES['file']['tmp_name'][$i];
+
+           //Make sure we have a filepath
+           if ($tmpFilePath != ""){
+             //Setup our new file path
+             $newFilePath = "./archivos/" . $_FILES['file']['name'][$i];
+             //Upload the file into the temp dir
+             $nombre = $_FILES['file']['name'][$i];
+             if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+               $file_name = Str::finish($file_name,$nombre.' | ');
+             }
+           }
+           if ($tmpFilePath == ""){$file_name = 'sin archivo';}
+      }
+      //file no multiple
+    /*  if (request()->hasFile('file')) {
+     *    $destinationPath = public_path().'/archivos';
+     *    $files = request()->file('file');
+     *  $file_name = $files->getClientOriginalName(); //Get file original name
+     *  $files->move($destinationPath , $file_name);
+          }*/
+          $clientes = Clientes::where('correoDelCliente',$data['clienteOpcion'])->get();
+          foreach ($clientes as $cliente) {
+            $recibidoPor = Str::finish($cliente->nombreDelCliente.' ',$cliente->primerApellidoDelCliente);
           }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => $data['clienteOpcion'],
+        'enviadoPor' => Str::finish(auth()->administrador()->nombreDelUsuarioAdministrador.' ',auth()->administrador()->primerApellidoAdministrador),
+        'recibidoPor' => $recibidoPor,
         'asuntoDeNotificacion' => $data['asunto'],
         'mensajeDeNotificacion' => $data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
@@ -171,24 +202,40 @@ class NotificacionesController extends Controller
       }
 
       $id = auth()->administrador()->id;
-      $mensaje = $data['mensaje'];
-      $file_name = 'sin archivo';
-      if (request()->hasFile('file')) {
-        $destinationPath = public_path().'/archivos';
-        $files = request()->file('file');
-        $file_name = $files->getClientOriginalName(); //Get file original name
-            $files->move($destinationPath , $file_name);
-          }
+      $file_name = '| ';
+            //$files = array_filter($_FILES['upload']['name']); something like that to be used before processing files.
+      // Count # of uploaded files in array
+      $total = count($_FILES['file']['name']);
+
+      // Loop through each file
+      for($i=0; $i<$total; $i++) {
+           //Get the temp file path
+           $tmpFilePath = $_FILES['file']['tmp_name'][$i];
+
+           //Make sure we have a filepath
+           if ($tmpFilePath != ""){
+             //Setup our new file path
+             $newFilePath = "./archivos/" . $_FILES['file']['name'][$i];
+             //Upload the file into the temp dir
+             $nombre = $_FILES['file']['name'][$i];
+             if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+               $file_name = Str::finish($file_name,$nombre.' | ');
+             }
+           }
+           if ($tmpFilePath == ""){$file_name = 'sin archivo';}
+      }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => 'Todos los clientes',
+        'enviadoPor' => Str::finish(auth()->administrador()->nombreDelUsuarioAdministrador.' ',auth()->administrador()->primerApellidoAdministrador),
+        'recibidoPor' => 'todos los clientes',
         'asuntoDeNotificacion' => $data['asunto'],
         'mensajeDeNotificacion' => $data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
         'archivo' => $file_name,
       ]);
 
-      return redirect('/notificaciones');
+      return redirect('/notificaciones')->with('status','Notificacion enviada exisamente!!!');
     }
   //
 
@@ -208,16 +255,37 @@ class NotificacionesController extends Controller
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
       Mail::to($data['clienteOpcion'])->send(new envioDeNotificaciones($data));
-      $file_name = 'sin archivo';
-      if (request()->hasFile('file')) {
-        $destinationPath = public_path().'/archivos';
-        $files = request()->file('file');
-        $file_name = $files->getClientOriginalName(); //Get file original name
-            $files->move($destinationPath , $file_name);
-          }
+      $file_name = '| ';
+            //$files = array_filter($_FILES['upload']['name']); something like that to be used before processing files.
+      // Count # of uploaded files in array
+      $total = count($_FILES['file']['name']);
+
+      // Loop through each file
+      for($i=0; $i<$total; $i++) {
+           //Get the temp file path
+           $tmpFilePath = $_FILES['file']['tmp_name'][$i];
+
+           //Make sure we have a filepath
+           if ($tmpFilePath != ""){
+             //Setup our new file path
+             $newFilePath = "./archivos/" . $_FILES['file']['name'][$i];
+             //Upload the file into the temp dir
+             $nombre = $_FILES['file']['name'][$i];
+             if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+               $file_name = Str::finish($file_name,$nombre.' | ');
+             }
+           }
+           if ($tmpFilePath == ""){$file_name = 'sin archivo';}
+      }
+      $clientes = Empresa::where('correoElectronicoDeLaEmpresa',$data['clienteOpcion'])->get();
+      foreach ($clientes as $cliente) {
+        $recibidoPor = $cliente->nombreDeLaEmpresa;
+      }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => $data['clienteOpcion'],
+        'enviadoPor' => Str::finish(auth()->administrador()->nombreDelUsuarioAdministrador.' ',auth()->administrador()->primerApellidoAdministrador),
+        'recibidoPor' => $recibidoPor,
         'asuntoDeNotificacion' => $data['asunto'],
         'mensajeDeNotificacion' => $data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
@@ -247,16 +315,33 @@ class NotificacionesController extends Controller
 
       $id = auth()->administrador()->id;
       $mensaje = $data['mensaje'];
-      $file_name = 'sin archivo';
-      if (request()->hasFile('file')) {
-        $destinationPath = public_path().'/archivos';
-        $files = request()->file('file');
-        $file_name = $files->getClientOriginalName(); //Get file original name
-            $files->move($destinationPath , $file_name);
-          }
+      $file_name = '| ';
+            //$files = array_filter($_FILES['upload']['name']); something like that to be used before processing files.
+      // Count # of uploaded files in array
+      $total = count($_FILES['file']['name']);
+
+      // Loop through each file
+      for($i=0; $i<$total; $i++) {
+           //Get the temp file path
+           $tmpFilePath = $_FILES['file']['tmp_name'][$i];
+
+           //Make sure we have a filepath
+           if ($tmpFilePath != ""){
+             //Setup our new file path
+             $newFilePath = "./archivos/" . $_FILES['file']['name'][$i];
+             //Upload the file into the temp dir
+             $nombre = $_FILES['file']['name'][$i];
+             if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+               $file_name = Str::finish($file_name,$nombre.' | ');
+             }
+           }
+           if ($tmpFilePath == ""){$file_name = 'sin archivo';}
+      }
       Notificaciones::create([
         'idUsuarioAdministrador' =>$id,
         'receptorDeNotificacion'  => 'Todas las empresas',
+        'enviadoPor' => Str::finish(auth()->administrador()->nombreDelUsuarioAdministrador.' ',auth()->administrador()->primerApellidoAdministrador),
+        'recibidoPor' => 'Todas las empresas',
         'asuntoDeNotificacion' =>$data['asunto'],
         'mensajeDeNotificacion' =>$data['mensaje'],
         'tipoDeNotificacion'=>$data['tipoDeNotificacion'],
@@ -265,5 +350,5 @@ class NotificacionesController extends Controller
 
       return redirect('/notificaciones');
     }
-  //
+//
 }

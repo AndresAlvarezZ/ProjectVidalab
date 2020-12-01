@@ -17,6 +17,8 @@ class CreateNotificacionesTable extends Migration
           //Atributos del modelo
             $table->id();
             $table->integer('idUsuarioAdministrador')->unsigned();
+            $table->string('enviadoPor');
+            $table->string('recibidoPor');
             $table->text('receptorDeNotificacion');
             $table->text('asuntoDeNotificacion');
             $table->text('mensajeDeNotificacion');

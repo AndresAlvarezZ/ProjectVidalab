@@ -32,10 +32,16 @@ public $data;
     public function build()
     {
         try {
-          //retorna la vista con ningun dato
-            return $this->view('Notificaciones.Notificacion')->attach($this->data['file'],[
+          //retorna la vista con ningun dato nullable
+          $email = $this->view('Notificaciones.Notificacion')->subject($this->subject);
+          $archivos = $this->data['file'];
+          foreach ($archivos as $archivo) {
+            $email->attach($archivo,['as' =>$archivo->getClientOriginalName()]);
+          }
+          return $email;
+          /*  return $this->view('Notificaciones.Notificacion')->attach($this->data['file'],[
                         'as' =>$this->data['file']->getClientOriginalName()  //obtiene el nombre original del archivo
-                    ])->subject($this->subject);
+                    ])->subject($this->subject);*/
 
         } catch (\Exception $e) {
           return $e->getMessage();

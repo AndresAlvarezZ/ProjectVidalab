@@ -17,6 +17,7 @@ class CreateClientesTable extends Migration
             $table->integer('idUsuario')->unsigned();
             $table->integer('dniDelCliente')->primary();
             $table->string('nombreDelCliente');
+            $table->string('segundoNombreDelCliente');
             $table->string('imagenDelCliente')->nullable();
             $table->string('primerApellidoDelCliente');
             $table->string('segundoApellidoDelCliente');
@@ -24,6 +25,7 @@ class CreateClientesTable extends Migration
             $table->integer('edadDelCliente');
             $table->string('correoDelCliente');
             $table->integer('telefonoDelCliente');
+            $table->string('numeroDehijosDelcliente');
             $table->text('domicilioDelCliente');
             $table->boolean('aceptacionDeTerminos');
             $table->timestamps();

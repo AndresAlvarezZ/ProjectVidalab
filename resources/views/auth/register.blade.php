@@ -22,7 +22,7 @@
 
                                     <div class="form-group col-md-12">
                                         <label for="dniDelUsuario" class="col-md-12 col-form-label text-md-center">{{ __('Cédula/Identificación') }}</label>
-                                        <input id="dniDelUsuario" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
+                                        <input id="dniDelUsuario" min="9" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
                                         @error('dniDelUsuario')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

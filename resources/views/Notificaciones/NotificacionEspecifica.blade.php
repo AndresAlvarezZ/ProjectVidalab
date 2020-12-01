@@ -85,7 +85,7 @@
             <div class="card" style="max-width: 50rem;">
               <div class="card-header"><h4><b><center>REDACTAR CORREO A CLIENTE</center><b></h4></div>
               <div class="card-body">
-                <form id="notificacionClienteE" action="/envioNotificacionEspecifica" method="post" enctype="multipart/form-data" target="_self">
+                <form id="notificacionCliente" action="/envioNotificacionEspecifica" method="post" enctype="multipart/form-data" target="_self">
                   @csrf
 
                   <input type="hidden" name="tipoDeNotificacion" value="1">
@@ -95,7 +95,7 @@
                   <br></br>
 
                   <label for=""><strong>Mensaje:</strong></label><br><textarea id="mensaje" rows="6" cols="40" placeholder="Escriba motivo del correo" name="mensaje" class="form-control" required></textarea><br>
-                  <input type="file" name="file" >
+                  <input type="file" name="file[]" multiple>
 
                   <br></br>
 

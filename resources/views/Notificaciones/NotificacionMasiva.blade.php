@@ -6,15 +6,16 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    
+
     <link href="{{ asset('css/estiloDeNotificaciones.css') }}" rel="stylesheet">
     <script src="{{ asset('js/transacciones/transaccionesDeNotificaciones.js') }}"defer></script>
     <script src="{{ asset('js/buscador/clientesM.js') }}"defer></script>
+    <script src="{{ asset('js/cambiarNombre.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/scroll.js') }}"defer></script>
-    
+
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-    
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
@@ -26,7 +27,7 @@
       <div class="row no-gutters">
 
         <div class="col-sm">
-          <div class="card" style="max-width: 50rem;"> 
+          <div class="card" style="max-width: 50rem;">
             <div class="card-header"><center><h4><b>CORREOS MASIVOS ENVIADOS A CLIENTES</b></h4></center></div>
               <div class="card-body">
                 <div class="alert alert-info" role="alert">
@@ -81,7 +82,7 @@
 
           <div class="col-lg">
             <div class="card" style="max-width: 50rem;">
-                
+
               <div class="card-header"><h4><b><center>REDACTAR CORREO A CLIENTES</center><b></h4></div>
 
               <div class="card-body">
@@ -89,14 +90,14 @@
                   @csrf
                   <input type="hidden" name="tipoDeNotificacion" value="2">
                   <label for="asunto"><strong>Asunto:</strong></label><br>
-                  <input type="text" name="asunto" value="" placeholder="Escriba el asunto del correo" class="form-control" required ><br>
+                  <input id="asunto" type="text" name="asunto" value="" placeholder="Escriba el asunto del correo" class="form-control" required ><br>
                   <br></br>
-                  <label for=""><strong>Mensaje:</strong></label><br><textarea  rows="6" cols="40" placeholder="Escriba motivo del correo" name="mensaje" class="form-control" required></textarea><br>
-                  <input type="file" name="file">
+                  <label for=""><strong>Mensaje:</strong></label><br><textarea id="mensaje" rows="6" cols="40" placeholder="Escriba motivo del correo" name="mensaje" class="form-control" required></textarea><br>
+                  <input type="file" name="file[]" multiple>
 
                   <br></br><br>
 
-                  <center><button type="submit" class="btn btn-success"> Enviar Correo</button></center>
+                  <center><button id="btnEnviar" type="submit" onclick="iniciarContador()" class="btn btn-success"> Enviar Correo</button></center>
                 </form>
               </div>
             </div>

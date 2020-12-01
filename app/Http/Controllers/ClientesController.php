@@ -29,12 +29,14 @@ class ClientesController extends Controller
       [
         'dniDelCliente' => 'required',
         'nombreDelCliente' => 'required',
+        'segundoNombreDelCliente' => 'required',
         'primerApellidoDelCliente' => 'required',
         'segundoApellidoDelCliente' => 'required',
         'fechaDeNacimientoDelCliente' => 'required',
         'edadDelCliente' => 'required',
         'correoDelCliente' => 'required',
         'telefonoDelCliente' => 'required',
+        'numeroDehijosDelcliente' => 'required',
         'domicilioDelCliente' => 'required',
         'aceptacionDeTerminos' => 'required'
       ]);
@@ -43,12 +45,14 @@ class ClientesController extends Controller
         'idUsuario' => $idUpdated,
         'dniDelCliente' => $data['dniDelCliente'],
         'nombreDelCliente' =>$data['nombreDelCliente'] ,
+        'segundoNombreDelCliente' =>$data['segundoNombreDelCliente'] ,
         'primerApellidoDelCliente' =>$data['primerApellidoDelCliente'] ,
         'segundoApellidoDelCliente' => $data['segundoApellidoDelCliente'],
         'fechaDeNacimientoDelCliente' => $data['fechaDeNacimientoDelCliente'],
         'edadDelCliente' => $data['edadDelCliente'],
         'correoDelCliente' => $data['correoDelCliente'],
         'telefonoDelCliente' => $data['telefonoDelCliente'],
+        'numeroDehijosDelcliente' =>$data['numeroDehijosDelcliente'] ,
         'domicilioDelCliente' => $data['domicilioDelCliente'],
         'aceptacionDeTerminos' => $data['aceptacionDeTerminos']
       ]);
