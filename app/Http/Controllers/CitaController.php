@@ -18,13 +18,18 @@ class CitaController extends Controller
             $this->middleware('auth:admins');
         }
     //
-    
+
     //LISTAR REGISTROS
         public function index()
         {
             $citas = Cita::orderBy('created_at', 'desc')->get();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+            if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
             return view('citas.index', compact('citas','name'));
+            }
+            else{
+              return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+            }
         }
     //
 
@@ -34,11 +39,15 @@ class CitaController extends Controller
         {
             $cita = new Cita;
 
+<<<<<<< HEAD
             $cita->idDeLaEmpresa = $request->input('idCitaDeEmpresa');        
+=======
+            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa1');
+>>>>>>> ed5483b9014c727f60734d30d65500987d491654
             $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
             $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
             $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
-            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');        
+            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender1');
             $cita->fechaDeCita = $request->input('fechaDeCita1');
             $cita->horaDeCita = $request->input('horaDeCita1');
             $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos1');
@@ -52,7 +61,7 @@ class CitaController extends Controller
         {
             $cita = Cita::find($id);
 
-            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');        
+            $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');
             $cita->fechaDeCita = $request->input('fechaDeCita3');
             $cita->horaDeCita = $request->input('horaDeCita3');
             $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos3');

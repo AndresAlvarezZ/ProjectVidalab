@@ -26,7 +26,12 @@ class EmpresaController extends Controller
       $empresas = Empresa::all();
       $citas = Cita::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('empresas.index',compact('empresas', 'citas', 'name'));
+      }
+      else{
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
     }
   //
 
@@ -37,7 +42,12 @@ class EmpresaController extends Controller
       $empresas = Empresa::all();
       $citas = Cita::orderBy('created_at', 'desc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('empresas.mostrar', compact('empresa', 'citas','name'));
+      }
+      else{
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
     }
   //
 
@@ -47,7 +57,7 @@ class EmpresaController extends Controller
     {
       $empresa = new Empresa;
 
-      $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa1');        
+      $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa1');
       $empresa->numeroDeTelefonoDeLaEmpresa = $request->input('numeroDeTelefonoDeLaEmpresa1');
       $empresa->correoElectronicoDeLaEmpresa = $request->input('correoElectronicoDeLaEmpresa1');
       $empresa->direccionDeLaEmpresa = $request->input('direccionDeLaEmpresa1');
@@ -61,7 +71,7 @@ class EmpresaController extends Controller
     {
       $empresa = Empresa::find($id);
 
-      $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa3');        
+      $empresa->nombreDeLaEmpresa = $request->input('nombreDeLaEmpresa3');
       $empresa->numeroDeTelefonoDeLaEmpresa = $request->input('numeroDeTelefonoDeLaEmpresa3');
       $empresa->correoElectronicoDeLaEmpresa = $request->input('correoElectronicoDeLaEmpresa3');
       $empresa->direccionDeLaEmpresa = $request->input('direccionDeLaEmpresa3');

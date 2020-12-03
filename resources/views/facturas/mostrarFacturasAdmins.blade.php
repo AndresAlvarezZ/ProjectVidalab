@@ -19,7 +19,7 @@
         <div class="card-body">
           <div class="mostarFacturas">
           <table>
-            <?php $indiceFactura = 1; ?>
+            <?php $indiceFactura = 1; $contador=0; ?>
             <?php foreach ($facturas as $factura): ?>
               @php
               $fecha = date('d-m-Y', strtotime($factura->fecha))
@@ -33,8 +33,12 @@
                 <td id="sinRaya">{{$fecha}}</td>
               </tr>
               <tr>
-                <td id="sinRaya"><strong>Cédula</td></strong>
-                <td id="sinRaya">{{$factura->idCliente}}</td>
+                <td id="sinRaya"><strong>Cédula del cliente</td></strong>
+                <td id="sinRaya">{{$cedulas[$contador]}}</td>
+              </tr>
+              <tr>
+                <td id="sinRaya"><strong>Nombre del cliente</td></strong>
+                <td id="sinRaya">{{$nombre[$contador]}}</td>
               </tr>
               <tr>
                 <td id="sinRaya"><strong>Condicion</strong></td>
@@ -69,7 +73,7 @@
                 @endphp
                 <td id="sinRaya">{{$factura->total}}</td>
               </tr>
-              <?php $indiceFactura++; ?>
+              <?php $indiceFactura++; $contador++; ?>
             <?php endforeach; ?>
           </table>
         </div>

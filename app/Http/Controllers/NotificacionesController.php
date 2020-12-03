@@ -40,7 +40,12 @@ class NotificacionesController extends Controller
         $apellido[$contador] = $administrador->primerApellidoAdministrador;
         $contador++;
       }
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('Notificaciones.todasLasNotificaciones',compact('name', 'notificaciones','nombre','apellido'));
+      }
+      else{
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
     }
   //
 
@@ -70,7 +75,12 @@ class NotificacionesController extends Controller
         $apellido[$contador] = $administrador->primerApellidoAdministrador;
         $contador++;
       }
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('Notificaciones.NotificacionEspecifica',compact('name','clientes', 'notificaciones','nombre','apellido'));
+      }
+      else{
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
     }
   //
 
@@ -88,7 +98,12 @@ class NotificacionesController extends Controller
        $apellido[$contador] = $administrador->primerApellidoAdministrador;
        $contador++;
      }
+     if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
      return view('Notificaciones.NotificacionMasiva',compact('name', 'notificaciones','nombre','apellido'));
+     }
+     else{
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+     }
    }
  //
 
@@ -107,7 +122,12 @@ class NotificacionesController extends Controller
         $apellido[$contador] = $administrador->primerApellidoAdministrador;
         $contador++;
       }
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('Notificaciones.NotificacionEspecificaEmpresarial',compact('name','empresas', 'notificaciones','nombre','apellido'));
+      }
+      else{
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
     }
   //
 
@@ -127,7 +147,12 @@ class NotificacionesController extends Controller
       }
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '4')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('Notificaciones.NotificacionMasivaEmpresarial',compact('name', 'notificaciones','nombre','apellido'));
+      }
+      else{
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
     }
   //
 

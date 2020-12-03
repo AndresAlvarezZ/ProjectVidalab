@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Prueba;
 use App\Paquete;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,7 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO ADMINISTRADOR
-  Route::get('/administradores', 'AdministradorController@listar');  
+  Route::get('/administradores', 'AdministradorController@listar');
   Route::post('/nuevoAdministrador/registrar', 'AdministradorController@nuevoAdministradorCreate');
   Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
   Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');

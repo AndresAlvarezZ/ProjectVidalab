@@ -2,6 +2,8 @@
 
 <head>
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <script src="{{ asset('js/cambiarNombre.js') }}?v=<?php echo(rand()); ?>"defer></script>
+
 </head>
 
 @section('content')
@@ -19,10 +21,22 @@
                                     <div class="alert alert-info" role="alert">
                                         <center><b>¡Este registro es totalmente gratuito!</b></center>
                                     </div>
-
+                                    <div class="form-group col-md-12">
+                                        <label for="dniDelUsuario" class="col-md-12 col-form-label text-md-center">{{ __('Tipo de identificación') }}</label>
+                                        <select onchange="tipoIdentification()" id="tipoIdentificacion" class="form-control" name="">
+                                          <option value="1">Persona física</option>
+                                          <option value="2">Dimex (Residencia)</option>
+                                          <option value="3">Nite</option>
+                                        </select>
+                                            @error('dniDelUsuario')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                     <div class="form-group col-md-12">
                                         <label for="dniDelUsuario" class="col-md-12 col-form-label text-md-center">{{ __('Cédula/Identificación') }}</label>
-                                        <input id="dniDelUsuario" min="9" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
+                                        <input id="dniDelUsuario" min="9" max="9" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
                                         @error('dniDelUsuario')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
