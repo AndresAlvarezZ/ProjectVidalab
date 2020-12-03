@@ -73,7 +73,6 @@ Auth::routes();
   Route::get('/citas', 'CitaController@index');
   Route::post('/citas/registrar', 'CitaController@guardar');
   Route::delete('/citas/{cita}', 'CitaController@eliminar');
-
   Route::put('/citas/{cita}', 'CitaController@actualizar');
 //
 

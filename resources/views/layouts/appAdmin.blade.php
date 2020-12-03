@@ -34,16 +34,16 @@
                     
                     <!-- MENU DE OPCIONES -->
                     <ul class="navbar-nav mr-auto">
-                        @include('layouts.menu')
+                        @include('layouts.menuAdmin')
                     </ul>
 
                     <!--SESION-->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @php
-                        if($acceso ?? ''==true){
-                        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-                        }
+                            if($acceso ?? ''==true){
+                            $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+                            }
                         @endphp
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -61,6 +61,7 @@
                                 </form>
                             </div>
                         </li>
+                        
                     </ul>
                 </div>
             </nav>

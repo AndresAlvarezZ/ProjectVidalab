@@ -1,5 +1,23 @@
-#lblPerfil{
-	padding-right:10px;
+body
+{
+  background: #15b3bb9a;
+}
+.card-header
+{
+  background: rgba(255, 115, 0, 0.788);
+}
+th
+{
+  padding-right:40px;
+
+}  
+#datos{
+  margin-left:110px;
+}
+.img
+{
+  justify-content: center;
+  align-items: center;
 }
 .imagen{
   float: left;
@@ -7,13 +25,18 @@
 .datosPersonales{
   float: right;
 }
+label, h3
+{
+  font-weight: bold;
+}
 #imagenPerfil{
   margin-left:35px;
   height:120px;
   width: 120px;
   border-radius:150px;
   padding-bottom:5px;
+  text-align: center;
 }
 #btnModal{
-  margin-left:75px;
+  margin-left:30px;
 }

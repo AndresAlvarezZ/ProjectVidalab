@@ -93,7 +93,7 @@
 
                                     <tbody>
                                         @foreach($citas as $cita)
-                                        @if($empresa->idDeLaEmpresa === $cita->idDeLaEmpresa)
+                                        @if($empresa->idDeLaEmpresa == $cita->idDeLaEmpresa)
                                             <tr>
                                                 <td><center>{{$empresa->idDeLaEmpresa}}</center></td>
                                                 <td><center>{{$cita->idDeLaCita}}</center></td>
