@@ -38,7 +38,7 @@ class CitaController extends Controller
         public function guardar (Request $request)
         {
             $cita = new Cita;
-            $cita->idDeLaEmpresa = $request->input('idCitaDeEmpresa');        
+            $cita->idDeLaEmpresa = $request->input('idCitaDeEmpresa');
             $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
             $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
             $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
@@ -55,10 +55,8 @@ class CitaController extends Controller
         public function actualizar (Request $request, $id)
         {
             $cita = Cita::find($id);
-
             $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');
             $cita->fechaDeCita = $request->input('fechaDeCita3');
-            $cita->horaDeCita = $request->input('horaDeCita3');
             $cita->tiposDeAnalisisRequeridos = $request->input('tiposDeAnalisisRequeridos3');
             $cita->save();
         }
@@ -70,7 +68,6 @@ class CitaController extends Controller
         {
             $cita = Cita::find($id);
             $cita->delete();
-            return $cita;
         }
     //
 

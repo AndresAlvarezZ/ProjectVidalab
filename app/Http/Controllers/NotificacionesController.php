@@ -271,7 +271,7 @@ class NotificacionesController extends Controller
         'archivo' => $file_name,
       ]);
 
-      return redirect('/notificaciones')->with('status','Notificacion enviada exisamente!!!');
+      return redirect('/notificaciones')->with('status','Notificacion enviada');
     }
   //
 
@@ -328,7 +328,7 @@ class NotificacionesController extends Controller
         'archivo' => $file_name,
       ]);
 
-      return redirect('/notificaciones');
+      return redirect('/notificaciones')->with('status','Notificacion enviada');
     }
   //
 
@@ -384,7 +384,7 @@ class NotificacionesController extends Controller
         'archivo' => $file_name,
       ]);
 
-      return redirect('/notificaciones');
+      return redirect('/notificaciones')->with('status','Notificacion enviada');
     }
 //
 }

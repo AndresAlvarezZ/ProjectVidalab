@@ -2,7 +2,7 @@ var hayError;
 /////////////______________REVISAR POR INCOMPLETO________________///////////////////////
     $(document).ready(function ()
     {
-    //AGREGAR   
+    //AGREGAR
         $('#agregarForm').on('submit', function(ev)
         {
             ev.preventDefault();
@@ -40,6 +40,7 @@ var hayError;
             }).get();
             console.log(data);
             $('#idEditar').val(data[0]);
+            $('#idCita').val(data[1]);
             $('#fechaDeCita3').val(data[2]);
             $('#numeroDeClientesPorAtender3').val(data[4]);
             $('#tiposDeAnalisisRequeridos3').val(data[5]);
@@ -47,9 +48,9 @@ var hayError;
         });
 
         $('#editarCita').on('submit', function(e)
-        { 
+        {
             e.preventDefault();
-            var id = $('#idEditar').val();
+            var id = $('#idCita').val();
             $.ajax
             ({
                 type: "PUT",
@@ -58,7 +59,8 @@ var hayError;
                 success: function (response)
                 {
                     console.log(response)
-                    $('#editarCita')[0].reset()
+
+                    Alerta("HUMAcheck", "¡Datos de la Empresa actualizados correctamente!", "success", "OK")
                 },
                 error: function(error)
                 {
@@ -79,15 +81,15 @@ var hayError;
                 return $(this).text();
             }).get();
             console.log(data);
-            $('#idEliminar').val(data[0]);
+            $('#idEliminar').val(data[1]);
             $('#fechaDeCita4').val(data[2]);
             $('#horaDeCita4').val(data[3]);
         });
         $('#eliminarForm').on('submit', function(e)
         {
             e.preventDefault();
-            var id = $('#idEliminar').val();
-
+            var id = $('#idEliminar').val()
+            alert('es: '+id)
             $.ajax
             ({
                 type: "DELETE",
@@ -96,23 +98,23 @@ var hayError;
                 success: function (response)
                 {
                     console.log(response)
-                    $('#eliminarForm')[0].reset()
+                  Alerta("HUMAcheck", "¡Eliminacion exitosa!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
 
                 }
-            });     
+            });
         });
     //FIN DE ELIMINAR
 
 
-    
+
     //FUNCIONES DE ALERTA
         function Alerta(titulo, mensaje, tipo, boton)
         {
-            setTimeout(function () 
+            setTimeout(function ()
             {
                 swal
                 ({
@@ -125,12 +127,12 @@ var hayError;
                 {
                     if(tipo == "success")
                     {
-                        if (isConfirm) 
+                        if (isConfirm)
                         {
                             window.location.href = "/citas/";
                         }
                     }
-                }); 
+                });
             }, 000);
         }
     //FIN DE FUNCIONES DE ALERTA

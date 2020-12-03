@@ -30,7 +30,7 @@ modal-dialog modal-dialog-scrollable
                             {{method_field('PUT')}}
                             <div class="form-row">
                                 <input type="text" name="id" id="idEditar">
-
+                                <input type="text" hidden name="" id='idCita'>
                                 <div class="alert alert-warning" role="alert">
                                     <center><b>¡Por favor, verifique que el regitro a actualizar sea el correcto!</b></center>
                                 </div>

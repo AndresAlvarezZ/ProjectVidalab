@@ -25,9 +25,9 @@
             <div class="card-header"><h4><b><center>REGISTRO CORREOS</center></b></h4></div>
                 <div class="card-body">
                   @if (session('status'))
-                      <div class="alert alert-success" role="alert">
-                          {{ session('status') }}
-                      </div>
+
+          				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                      <script src="{{ asset('js/notificacion.js') }}?v=<?php echo(rand()); ?>"defer></script>
                   @endif
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -86,8 +86,8 @@
 
                         <div class="tab-pane fade" id="nav-clientesP" role="tabpanel" aria-labelledby="nav-clientesP-tab">
                             <br></br>
-                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo persoonalizado a cliente</a>  
-                        
+                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo persoonalizado a cliente</a>
+
                             <ul class="list-group">
                                 <br>
                                 <table id="registrosClientesP" class="table table-hover">
@@ -226,7 +226,7 @@
                             </ul>
                         </div>
 
-                        <div class="tab-pane fade" id="nav-empresasM" role="tabpanel" aria-labelledby="nav-empresasM-tab">    
+                        <div class="tab-pane fade" id="nav-empresasM" role="tabpanel" aria-labelledby="nav-empresasM-tab">
                             <br></br>
                             <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a empresas</a>
                             <br></br>

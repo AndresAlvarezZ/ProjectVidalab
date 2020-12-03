@@ -8,18 +8,18 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        
+
         <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
         <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
         <script src="{{ asset('js/transacciones/transaccionesDeCitas.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
-        
+
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        
+
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
@@ -31,7 +31,7 @@
                 <div class="col">
                     <div class="card" style="max-width: 18rem;">
                         <div class="card-header"><center><h4><b>EMPRESA</b></h4></center></div>
-                        
+
                         <div class="card-body">
                             <center><h4>{{$empresa->idDeLaEmpresa}}</h4></center>
                             <p class="card-text">
@@ -61,7 +61,7 @@
                                 <center>¡Lista de citas ordenada de forma <i>descendente, según fecha de regristro</i> en el sistema!</center>
                             </div>
                             <br>
-                            
+
 
                             <ul class="list-group">
                                 <table id="registros" class="table table-hover">
@@ -93,7 +93,7 @@
 
                                     <tbody>
                                         @foreach($citas as $cita)
-                                        @if($empresa->idDeLaEmpresa === $cita->idDeLaEmpresa)
+                                        @if($empresa->idDeLaEmpresa ==$cita->idDeLaEmpresa)
                                             <tr>
                                                 <td><center>{{$empresa->idDeLaEmpresa}}</center></td>
                                                 <td><center>{{$cita->idDeLaCita}}</center></td>

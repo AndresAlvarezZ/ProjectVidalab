@@ -89,7 +89,7 @@
               <div class="card-header"><h4><b><center>REDACTAR CORREO A CLIENTES</center><b></h4></div>
 
               <div class="card-body">
-                <form id="notificacionClientesM" action="/envioNotificacionMasiva" method="post" enctype="multipart/form-data" target="_self">
+                <form id="notificacionClientes" action="/envioNotificacionMasiva" method="post" enctype="multipart/form-data" target="_self">
                   @csrf
                   <input type="hidden" name="tipoDeNotificacion" value="2">
                   <label for="asunto"><strong>Asunto:</strong></label><br>

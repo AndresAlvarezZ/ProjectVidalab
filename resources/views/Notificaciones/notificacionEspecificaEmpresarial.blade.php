@@ -88,7 +88,7 @@
             <div class="card" style="max-width: 50rem;">
               <div class="card-header"><h4><b><center>REDACTAR CORREO A EMPRESA</center><b></h4></div>
               <div class="card-body">
-                <form id="notificacionEmpresaE" action="/envioNotificacionEspecificaEmpresarial" method="post" enctype="multipart/form-data" target="_self">
+                <form id="notificacionEmpresa" action="/envioNotificacionEspecificaEmpresarial" method="post" enctype="multipart/form-data" target="_self">
                   @csrf
 
                   <input type="hidden" name="tipoDeNotificacion" value="3">
