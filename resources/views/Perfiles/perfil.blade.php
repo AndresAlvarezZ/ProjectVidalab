@@ -71,7 +71,7 @@
                     <td>{{$cliente->edadDelCliente}}</td>
                   </tr>
                   </table>
-                  
+
               </p>
               <br>
             </div>
@@ -109,7 +109,8 @@
                   </tr>
                 </table>
               </p>
-
+              <br>
+              <a class="btn btn-primary" type="button" data-toggle="modal" data-target="#editarPerfil">Editar mis datos</a>
             </div>
           </div>
         </div>
