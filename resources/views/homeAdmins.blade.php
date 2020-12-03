@@ -9,75 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/estiloDeRedesSociales.css">
+    
+    <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <title></title>
-    <ul class="desplegable">
-
-      <li class="lista">
-        <a href="javascript:void(0)" class="dropbtn">ADMINISTRADORES</a>
-        <div class="dropdown-content">
-          <a  href="/administradores">Registro de Administradores</a>
-          <a  href="/administradores/activos">Administradores Activos</a>
-          <a  href="/administradores/inactivos">Administradores Inactivos</a>
-        </div>
-      </li>
-
-      <li class="lista">
-        <a href="javascript:void(0)" class="dropbtn">NOTIFICACIONES</a>
-        <div class="dropdown-content">
-          <a href="/notificaciones">Todos las Notificaciones</a>
-          <a href="/notificacionEspecifica">Notificación Específica a Cliente</a>
-          <a href="/notificacionMasiva">Notificación Masiva a Clientes</a>
-          <a href="/notificacionEspecificaEmpresarial">Notificación Específica Empresarial</a>
-          <a href="/notificacionMasivaEmpresarial">Notificación Masiva Empresarial</a>
-        </div>
-      </li>
-
-      <li class="lista">
-        <a href="javascript:void(0)" class="dropbtn">SERVICIOS</a>
-        <div class="dropdown-content">
-          <a  href="/pruebas">Análisis</a>
-          <a  href="/paquetes">Paquetes</a>
-          <a  href="/catalogosAdmins">Catálogo</a>
-        </div>
-      </li>
-
-      <li class="lista">
-        <a href="javascript:void(0)" class="dropbtn">EMPRESARIAL</a>
-        <div class="dropdown-content">
-          <a  href="/empresas">Empresas</a>
-          <a  href="/citas">Citas Generales</a>
-        </div>
-      </li>
-
-
-      <li class="lista">
-        <a href="javascript:void(0)" class="dropbtn">SOLICITUDES A DOMICILIO</a>
-        <div class="dropdown-content">
-          <a href="/solicitudes">Todas las solicitudes</a>
-          <a href="/solicitudes/enEspera">Solicitudes En Espera</a>
-          <a href="/solicitudes/confirmadas">Solicitudes Confirmadas</a>
-          <a href="/solicitudes/finalizadas">Solicitudes Finalizadas</a>
-          <a href="/solicitudes/canceladas">Solicitudes Canceladas</a>
-        </div>
-      </li>
-      <li class="lista">
-        <a href="javascript:void(0)" class="dropbtn">COMPRAS EN LÍNEA</a>
-        <div class="dropdown-content">
-          <a  href="/verCompras">Pendientes</a>
-          <a  href="/verComprasCanceladas">Canceladas</a>
-        </div>
-      </li>
-      <li class="lista">
-        <a href="/verFacturas" class="dropbtn">FACTURAS</a>
-      </li>
-  </ul>
-    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
   </head>
 
   <body>
     <div class="jumbotron jumbotron-fluid">
-    <h1><i><b>Y saber que todo empezó con un: ¡Hola mundo! </b></i><br>💙💙💙</h1>
-    <p></p>
 
       <div id="siguienteImagen" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">

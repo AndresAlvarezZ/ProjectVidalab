@@ -1,19 +1,26 @@
-
 .modal-content
 {
-    box-shadow: 5px 8px 3px rgba(0, 0, 0, 0.1); 
+  box-shadow: 5px 8px 3px rgba(0, 0, 0, 0.1);
 }
 
 
 .modal-header
 {
-    background-color: #17B2BA;
+  background-color: #17B2BA;
 }
+
+
+.alert
+{
+  width: 50rem;    
+}
+
 
 label
 {
+  text-align: center;
 	font-weight:bold;
-	display:inline-block;
+  display:inline-block;
 }
 
 
@@ -23,15 +30,39 @@ label
   text-align: center;
 }
 
+
+input
+{
+  text-align: center;
+}
+
+
+textarea
+{
+  text-align: center;
+}
+
+select, option
+{
+  text-align-last: center;
+}
+
+h4
+{
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+
 h5
 {
-    color: black;
-    text-shadow: 5px 6px 5px #45898d;
-    font-size: x-large;
-    font-family: fantasy;
-    font-weight: bold;
-    font-style: italic;
-    text-transform: uppercase;
+  color: black;
+  text-shadow: 3px 4px 3px #45898d;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 

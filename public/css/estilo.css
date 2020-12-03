@@ -1,6 +1,7 @@
 body{
 background-image: url("/imagenes/espacio.jpg");
 }
+
 h1
 {
 	text-align: center;
@@ -149,17 +150,17 @@ display: inline-block;
 
 .desplegable1, .dropbtn {
   display: inline-block;
-  color: white;
+  color: rgb(19, 18, 18);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .desplegable1:hover, .lista:hover .dropbtn {
-  background: linear-gradient(to left,#41f497,#41dff4);
+  	background: linear-gradient(to left,#41f497,#41dff4);
 	background-color: #555;
- color:black;
- text-decoration: inherit;
+ 	color:black;
+ 	text-decoration: inherit;
 }
 
 .lista {

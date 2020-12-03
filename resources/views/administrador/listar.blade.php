@@ -8,6 +8,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         
+        <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+        <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+
         <script src="{{ asset('js/transacciones/administradores.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         
@@ -21,12 +24,12 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>REGISTRO DE ADMINISTRADORES</center></b></h4></div>
+            <div class="card-header titulo"><h4><b><center>REGISTRO DE ADMINISTRADORES</center></b></h4></div>
                 <div class="card-body">
                     
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarAdministrador" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo administrador">Registrar nuevo Administrador</button></p>
+                            <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarAdministrador" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo administrador(a)"><span class="icon-user"></span>Registrar nuevo Administrador(a)</button></p>
                         </div>
                     </div>
 
@@ -74,7 +77,7 @@
                                     </center></td>
                                     <td><center>Activo</center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este administrador">Actualizar</a>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este administrador"><span class="icon-loop2"></span>Actualizar</a>
                                     </center></td>
                                 </tr>
 
@@ -100,11 +103,11 @@
                                         @endif
                                     </center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este administrador">Actualizar</a> <br></br>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este administrador"><span class="icon-loop2"></span>Actualizar</a> <br></br>
                                         @if($administrador->estadoDelUsuarioAdministrador == 1)
-                                            <a href="#" class="btn btn-danger btnInactivar">Denegar Acceso</a>
+                                            <a href="#" class="btn btn-danger btnInactivar"><span class="icon-cross"></span>Denegar Acceso</a>
                                         @else
-                                            <a href="#" class="btn btn-success btnActivar">Conceder Acceso</a>
+                                            <a href="#" class="btn btn-success btnActivar"><span class="icon-checkmark"></span>Conceder Acceso</a>
                                         @endif
                                     </center></td>
                                 </tr>

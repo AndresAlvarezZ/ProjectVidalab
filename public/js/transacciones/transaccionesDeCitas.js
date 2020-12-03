@@ -1,8 +1,8 @@
 var hayError;
 /////////////______________REVISAR POR INCOMPLETO________________///////////////////////
-$(document).ready(function ()
-{
-    //AGREGAR
+    $(document).ready(function ()
+    {
+    //AGREGAR   
         $('#agregarForm').on('submit', function(ev)
         {
             ev.preventDefault();
@@ -40,10 +40,10 @@ $(document).ready(function ()
             }).get();
             console.log(data);
             $('#idEditar').val(data[0]);
-            $('#nombreDeLaEmpresa3').val(data[1]);
-            $('#numeroDeTelefonoDeLaEmpresa3').val(data[2]);
-            $('#correoElectronicoDeLaEmpresa3').val(data[3]);
-            $('#direccionDeLaEmpresa3').val(data[4]);
+            $('#fechaDeCita3').val(data[2]);
+            $('#numeroDeClientesPorAtender3').val(data[4]);
+            $('#tiposDeAnalisisRequeridos3').val(data[5]);
+            $('#nombreDelSolicitante3').val(data[6]);
         });
 
         $('#editarCita').on('submit', function(e)
@@ -53,23 +53,16 @@ $(document).ready(function ()
             $.ajax
             ({
                 type: "PUT",
-                url: "/empresas/"+id,
+                url: "/citas/"+id,
                 data: $('#editarForm').serialize(),
                 success: function (response)
                 {
                     console.log(response)
-                    $('#agregarForm')[0].reset()
-                    Alerta("HUMAcheck", "¡Datos de la Cita actualizados correctamente!", "success", "OK")
+                    $('#editarCita')[0].reset()
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    swal
-                    ({
-                        title: "¡Error al actualizar registro!",
-                        text: "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!",
-                        type: "warning",
-                    });
                 }
             });
         });
@@ -79,7 +72,7 @@ $(document).ready(function ()
     //ELIMINAR
         $('.btnEliminar').on('click', function()
         {
-            $('#eliminarEmpresa').modal('show');
+            $('#eliminarCita').modal('show');
             $tr = $(this).closest('tr');
             var data = $tr.children("td").map(function()
             {
@@ -87,8 +80,8 @@ $(document).ready(function ()
             }).get();
             console.log(data);
             $('#idEliminar').val(data[0]);
-            $('#idDeLaEmpresa4').val(data[0]);
-            $('#nombreDeLaEmpresa4').val(data[1]);
+            $('#fechaDeCita4').val(data[2]);
+            $('#horaDeCita4').val(data[3]);
         });
         $('#eliminarForm').on('submit', function(e)
         {
@@ -98,19 +91,17 @@ $(document).ready(function ()
             $.ajax
             ({
                 type: "DELETE",
-                url: "/empresas/"+id,
+                url: "/citas/"+id,
                 data: $('#eliminarForm').serialize(),
                 success: function (response)
                 {
-                    console.log(response);
-                    $('#eliminarEmpresa').modal('hide');
-                    alert('Registro eliminado correctamente!');
-                    location.reload();
+                    console.log(response)
+                    $('#eliminarForm')[0].reset()
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    alert("Error, inténtelo nuevamente!");
+
                 }
             });     
         });
@@ -136,7 +127,7 @@ $(document).ready(function ()
                     {
                         if (isConfirm) 
                         {
-                            window.location.href = "/empresas/"+id;
+                            window.location.href = "/citas/";
                         }
                     }
                 }); 

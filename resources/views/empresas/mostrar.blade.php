@@ -9,6 +9,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         
+        <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+        <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+
         <script src="{{ asset('js/transacciones/transaccionesDeCitas.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         
@@ -30,21 +33,7 @@
                         <div class="card-header"><center><h4><b>EMPRESA</b></h4></center></div>
                         
                         <div class="card-body">
-                            <ul class="list-group">                                
-                                <table class="table table-hover">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th scope="col"><center><h4>Código</h4></center></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><center><h4>{{$empresa->idDeLaEmpresa}}</h4></center></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </ul>
-
+                            <center><h4>{{$empresa->idDeLaEmpresa}}</h4></center>
                             <p class="card-text">
                                 Empresa: {{$empresa->nombreDeLaEmpresa}}
                             </p>
@@ -66,16 +55,10 @@
                 </div>
 
                 <div class="col-md-8">
-                    <div class="card-header"><h4><b><center>REGISTRO DE CITAS POR EMPRESA<center></b></h4></div>
+                    <div class="card-header titulo"><h4><b><center>REGISTRO DE CITAS POR EMPRESA<center></b></h4></div>
                         <div class="card-body">
                             <div class="alert alert-info" role="alert">
                                 <center>¡Lista de citas ordenada de forma <i>descendente, según fecha de regristro</i> en el sistema!</center>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-12 margin-tb">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarCita" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva cita">Registrar nueva Cita</button></p>
-                                </div>
                             </div>
                             <br>
                             
@@ -84,6 +67,7 @@
                                 <table id="registros" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
+                                            <th scope="col"><center>Código Empresa</center></th>
                                             <th scope="col"><center>ID</center></th>
                                             <th scope="col"><center>Fecha</center></th>
                                             <th scope="col"><center>Hora</center></th>
@@ -96,6 +80,7 @@
 
                                     <tfoot class="thead-dark">
                                         </tr>
+                                            <th scope="col"><center>Código Empresa</center></th>
                                             <th scope="col"><center>ID</center></th>
                                             <th scope="col"><center>Fecha</center></th>
                                             <th scope="col"><center>Hora</center></th>
@@ -110,6 +95,7 @@
                                         @foreach($citas as $cita)
                                         @if($empresa->idDeLaEmpresa === $cita->idDeLaEmpresa)
                                             <tr>
+                                                <td><center>{{$empresa->idDeLaEmpresa}}</center></td>
                                                 <td><center>{{$cita->idDeLaCita}}</center></td>
                                                 <td><center>{{$cita->fechaDeCita}}</center></td>
                                                 <td><center>{{$cita->horaDeCita}}</center></td>
@@ -117,8 +103,8 @@
                                                 <td><center>{{$cita->tiposDeAnalisisRequeridos}}</center></td>
                                                 <td><center>{{$cita->nombreDelSolicitante}} {{$cita->primerApellidoDelSolicitante}} {{$cita->segundoApellidoDelSolicitante}}</center></td>
                                                 <td><center>
-                                                    <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de esta cita">Actualizar</a> <br></br>
-                                                    <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de esta cita">Eliminar</a> <br></br>
+                                                    <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de esta cita"><span class="icon-loop2"></span>Actualizar</a> <br></br>
+                                                    <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de esta cita"><span class="icon-bin"></span>Eliminar</a> <br></br>
                                             </tr>
                                             @endif
                                         @endforeach

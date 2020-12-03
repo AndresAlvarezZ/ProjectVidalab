@@ -33,12 +33,12 @@ $(document).ready(function ()
                {
                    console.log(response)
                    $('#editarEnEsperaForm')[0].reset()
-                   Alerta("HUMAcheck", "¡Esta Solicitud a Domicilio se ha actualizado exitosamente!", "success", "OK")
+                   Alerta("HUMAcheck", "¡Esta Solicitud a Domicilio se ha actualizado exitosamente!", "success", "OK", "espera")
                },
                error: function(error)
                {
                    console.log(error)
-                   Alerta("¡Error al actualizar estado de solicitud!", "Verifique que: \n\nEl campo solicitado esté completo.\n¡Inténtelo nuevamente!", "warning", "OK")
+                   Alerta("¡Error al actualizar estado de solicitud!", "Verifique que: \n\nEl campo solicitado esté completo.\n¡Inténtelo nuevamente!", "warning", "OK", "espera")
                }
            });
        });
@@ -75,12 +75,12 @@ $(document).ready(function ()
                 {
                     console.log(response)
                     $('#editarConfirmadaForm')[0].reset()
-                    Alerta("HUMAcheck", "¡Esta Solicitud a Domicilio se ha actualizado exitosamente!", "success", "OK")
+                    Alerta("HUMAcheck", "¡Esta Solicitud a Domicilio se ha actualizado exitosamente!", "success", "OK", "confirmada")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    Alerta("¡Error al actualizar registro!", "Error al actualizar estado de solicitud!", "Verifique que: \n\nEl campo solicitado esté completo.\n¡Inténtelo nuevamente!", "warning", "OK")
+                    Alerta("¡Error al actualizar registro!", "Error al actualizar estado de solicitud!", "Verifique que: \n\nEl campo solicitado esté completo.\n¡Inténtelo nuevamente!", "warning", "OK", "confirmada")
                 }
             });
         });
@@ -117,12 +117,12 @@ $(document).ready(function ()
                 {
                     console.log(response)
                     $('#editarCanceladaForm')[0].reset()
-                    Alerta("HUMAcheck", "¡Esta Solicitud a Domicilio se ha actualizado exitosamente!", "success", "OK")
+                    Alerta("HUMAcheck", "¡Esta Solicitud a Domicilio se ha actualizado exitosamente!", "success", "OK", "cancelada")
                 },
                 error: function(error)
                 {
                     console.log(error)
-                    Alerta("¡Error al actualizar registro!", "Error al actualizar estado de solicitud!", "Verifique que: \n\nEl campo solicitado esté completo.\n¡Inténtelo nuevamente!", "warning", "OK")
+                    Alerta("¡Error al actualizar registro!", "Error al actualizar estado de solicitud!", "Verifique que: \n\nEl campo solicitado esté completo.\n¡Inténtelo nuevamente!", "warning", "OK", "cancelada")
                 }
             });
         });
@@ -173,7 +173,7 @@ $(document).ready(function ()
 
 
     //FUNCIONES DE ALERTA
-        function Alerta(titulo, mensaje, tipo, boton)
+        function Alerta(titulo, mensaje, tipo, boton, solicitud)
         {
             setTimeout(function () 
             {
@@ -190,7 +190,18 @@ $(document).ready(function ()
                     {
                         if (isConfirm) 
                         {
-                            window.location.href = "/solicitudes/enEspera";
+                            if(solicitud == "espera")
+                            {
+                                window.location.href = "/solicitudes/enEspera";
+                            }
+                            if(solicitud == "confirmada")
+                            {
+                                window.location.href = "/solicitudes/confirmadas";
+                            }
+                            if(solicitud == "cancelada")
+                            {
+                                window.location.href = "/solicitudes/canceladas";
+                            }
                         }
                     }
                 }); 

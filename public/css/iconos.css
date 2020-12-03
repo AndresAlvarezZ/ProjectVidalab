@@ -1,0 +1,41 @@
+
+.btnActivar, .btnInactivar, .btnEditar, .btnEliminar, .btnCitas, .btnVerCita
+{
+  
+  width:200px;
+}
+
+.titulo
+{
+    background-color: #15b3bb9a;
+    border-radius: 10rem;
+    border-color: black;
+}
+
+.btnMenu
+{
+  font-weight: bold;
+}
+
+.navbar
+{
+  background-color: rgba(255, 255, 255, 0.911);
+}
+
+
+.btnActivar span,
+.btnInactivar span,
+.btnAgregar span, 
+.btnEditar span, 
+.btnEliminar span, 
+.btnAgregarCita span,
+.btnCitas span, 
+.btnEnviar span,
+.btnEnvio span,
+.btnMenu span, 
+.btnEnCancelada span,
+.btnEnConfirmada span,
+.btnEnEspera span
+{
+  margin-right: 10px;
+}

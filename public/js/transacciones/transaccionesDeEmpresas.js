@@ -2,7 +2,45 @@ var hayError;
 
 $(document).ready(function ()
 {
-    //AGREGAR
+    //AGREGAR CITA
+        $('.btnAgregarCita').on('click', function(ev)
+        {
+            ev.preventDefault();
+            $('#agregarCita').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function()
+            {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#idCitaDeEmpresa').val(data[0]);
+        });
+        
+        $('#agregarCitaForm').on('submit', function(ev)
+    {
+        ev.preventDefault();
+        $.ajax
+        ({
+            type: "POST",
+            url: "/citas/registrar",
+            data: $('#agregarCitaForm').serialize(),
+            success: function (response)
+            {
+                console.log(response)
+                $('#agregarCitaForm')[0].reset()
+                Alerta("HUMAcheck", "¡Datos de la Cita registrados exitosamente!", "success", "OK")
+            },
+            error: function(error)
+            {
+                console.log(error)
+                Alerta("¡Error al registrar!", "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
+            }
+        });
+    });
+    //FIN DE AGREGAR
+
+
+    //AGREGAR EMPRESA
         $('#agregarForm').on('submit', function(ev)
         {
             ev.preventDefault();

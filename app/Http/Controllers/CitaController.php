@@ -34,7 +34,7 @@ class CitaController extends Controller
         {
             $cita = new Cita;
 
-            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa1');        
+            $cita->idDeLaEmpresa = $request->input('idCitaDeEmpresa');        
             $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
             $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
             $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');

@@ -7,6 +7,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+        <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+        <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/clientesP.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/clientesM.js') }}?v=<?php echo(rand()); ?>"defer></script>
@@ -72,7 +75,7 @@
                                                 <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                                 <td><center>{{$notificacion->archivo}}</center></td>
                                                 <td><center>{{$notificacion->created_at}}</center></td>
-                                                <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
+                                                <td><center><a href="/mostrarNotificaciones/{{$notificacion->id}}" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo"><span class="icon-eye"></span>Ver</a></center></td>
                                             </tr>
                                             <?php $contador++; ?>
                                         @endforeach
@@ -82,8 +85,11 @@
                         </div>
 
                         <div class="tab-pane fade" id="nav-clientesP" role="tabpanel" aria-labelledby="nav-clientesP-tab">
+                            <br></br>
+                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo persoonalizado a cliente</a>  
+                        
                             <ul class="list-group">
-                            <br>
+                                <br>
                                 <table id="registrosClientesP" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
@@ -108,7 +114,7 @@
                                     </tfoot>
 
                                     <tbody>
-                                      <?php $contador = 0; ?>
+                                    <?php $contador = 0; ?>
                                         @foreach($notificaciones as $notificacion)
                                             @if($notificacion->tipoDeNotificacion == '1')
                                                 <tr>
@@ -117,7 +123,7 @@
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
-                                                    <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
+                                                    <td><center><a href="/mostrarNotificaciones/{{$notificacion->id}}" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo"><span class="icon-eye"></span>Ver</a></center></td>
                                                 </tr>
                                             @endif
                                             <?php $contador++; ?>
@@ -128,8 +134,10 @@
                         </div>
 
                         <div class="tab-pane fade" id="nav-clientesM" role="tabpanel" aria-labelledby="nav-clientesM-tab">
+                            <br></br>
+                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a clientes</a>
+                            <br></br>
                             <ul class="list-group">
-                            <br>
                                 <table id="registrosClientesM" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
@@ -161,7 +169,7 @@
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
-                                                    <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
+                                                    <td><center><a href="/mostrarNotificaciones/{{$notificacion->id}}" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo"><span class="icon-eye"></span>Ver</a></center></td>
                                                 </tr>
                                             @endif
                                             <?php $contador++; ?>
@@ -172,8 +180,11 @@
                         </div>
 
                         <div class="tab-pane fade" id="nav-empresasP" role="tabpanel" aria-labelledby="nav-empresasP-tab">
-                            <ul class="list-group">
+                            <br></br>
+                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo personalizado a empresa</a>
+                            <br></br>
                             <br>
+                            <ul class="list-group">
                                 <table id="registrosEmpresasP" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
@@ -205,7 +216,7 @@
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
-                                                    <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
+                                                    <td><center><a href="/mostrarNotificaciones/{{$notificacion->id}}" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo"><span class="icon-eye"></span>Ver</a></center></td>
                                                 </tr>
                                             @endif
                                             <?php $contador++; ?>
@@ -215,9 +226,12 @@
                             </ul>
                         </div>
 
-                        <div class="tab-pane fade" id="nav-empresasM" role="tabpanel" aria-labelledby="nav-empresasM-tab">
+                        <div class="tab-pane fade" id="nav-empresasM" role="tabpanel" aria-labelledby="nav-empresasM-tab">    
+                            <br></br>
+                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a empresas</a>
+                            <br></br>
+
                             <ul class="list-group">
-                            <br>
                                 <table id="registrosEmpresasM" class="table table-hover">
                                     <thead class="thead-dark">
                                         <tr>
@@ -249,7 +263,7 @@
                                                     <td><center>{{$notificacion->asuntoDeNotificacion}}</center></td>
                                                     <td><center>{{$notificacion->archivo}}</center></td>
                                                     <td><center>{{$notificacion->created_at}}</center></td>
-                                                    <td><center><a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo">Ver</a></center></td>
+                                                    <td><center><a href="/mostrarNotificaciones/{{$notificacion->id}}" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para ver el correo completo"><span class="icon-eye"></span>Ver</a></center></td>
                                                 </tr>
                                             @endif
                                             <?php $contador++; ?>

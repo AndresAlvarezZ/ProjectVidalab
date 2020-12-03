@@ -1,4 +1,4 @@
-<link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
+<link href="{{ asset('css/estiloDePopUp.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
 <!--TAMAÑOS
 modal-dialog modal-xl
@@ -33,20 +33,20 @@ modal-dialog modal-dialog-scrollable
                                     <center><b>¡Por favor, verifique que la solicitud a procesar sea la correcta!</b></center>
                                 </div>
 
-                                <label for="nombreDelCliente1">Nombre del cliente</label>
-                                <input type="text" class="form-control" name="nombreDelCliente1" id="nombreDelCliente1" readonly/>
-                                </br></br>
+                                <label for="nombreDelCliente1" class="col-12 text-center">Nombre del cliente</label>
+                                <input type="text" class="form-control" name="nombreDelCliente1" id="nombreDelCliente1" readonly/></br>
+                                <br></br>
 
-                                <label for="analisisSolicitados1">Análisis Solicitados</label>
-                                <input type="text" class="form-control" name="analisisSolicitados1" id="analisisSolicitados1" readonly/>
-                                </br></br>
+                                <label for="analisisSolicitados1" class="col-12 text-center">Análisis Solicitados</label>
+                                <input type="text" class="form-control" name="analisisSolicitados1" id="analisisSolicitados1" readonly/></br>
+                                <br></br>
 
-                                <label for="costoDelServicio1">Costo total del servicio</label>
-                                <input type="text" class="form-control" name="costoDelServicio1" id="costoDelServicio1" readonly/>
-                                </br></br>
+                                <label for="costoDelServicio1" class="col-12 text-center">Costo total del servicio</label>
+                                <input type="text" class="form-control" name="costoDelServicio1" id="costoDelServicio1" readonly/></br>
+                                <br></br>
 
                                 <div class="col">
-                                    <label>Cambiar estado</label>
+                                    <label class="col-12 text-center">Cambiar estado</label>
                                     <br>
                                     <select class="form-control" type="text" name="estado">
                                         <option value="Confirmada">Confirmar solicitud</option>
@@ -89,20 +89,20 @@ modal-dialog modal-dialog-scrollable
                                     <center><b>¡Por favor, verifique que la solicitud a procesar sea la correcta!</b></center>
                                 </div>
 
-                                <label for="nombreDelCliente2">Nombre del cliente</label>
-                                <input type="text" class="form-control" name="nombreDelCliente2" id="nombreDelCliente2" readonly/>
-                                </br></br>
+                                <label for="nombreDelCliente2" class="col-12 text-center">Nombre del cliente</label>
+                                <input type="text" class="form-control" name="nombreDelCliente2" id="nombreDelCliente2" readonly/></br>
+                                <br></br>
 
-                                <label for="analisisSolicitados2">Análisis Solicitados</label>
-                                <input type="text" class="form-control" name="analisisSolicitados2" id="analisisSolicitados2" readonly/>
-                                </br></br>
+                                <label for="analisisSolicitados2" class="col-12 text-center">Análisis Solicitados</label>
+                                <input type="text" class="form-control" name="analisisSolicitados2" id="analisisSolicitados2" readonly/></br>
+                                <br></br>
 
-                                <label for="costoDelServicio2">Costo total del servicio</label>
-                                <input type="text" class="form-control" name="costoDelServicio2" id="costoDelServicio2" readonly/>
-                                </br></br>
+                                <label for="costoDelServicio2" class="col-12 text-center">Costo total del servicio</label>
+                                <input type="text" class="form-control" name="costoDelServicio2" id="costoDelServicio2" readonly/></br>
+                                <br></br>
 
                                 <div class="col">
-                                    <label>Cambiar estado de solicitud:</label>
+                                    <label class="col-12 text-center">Cambiar estado de solicitud:</label>
                                     <br>
                                     <select class="form-control" type="text" name="estado">
                                         <option value="Finalizada">Finalizar solicitud</option>
@@ -145,20 +145,20 @@ modal-dialog modal-dialog-scrollable
                                     <center><b>¡Por favor, verifique que la solicitud a procesar sea la correcta!</b></center>
                                 </div>
 
-                                <label for="nombreDelCliente3">Nombre del cliente</label>
-                                <input type="text" class="form-control" name="nombreDelCliente3" id="nombreDelCliente3" readonly/>
-                                </br></br>
+                                <label for="nombreDelCliente3" class="col-12 text-center">Nombre del cliente</label>
+                                <input type="text" class="form-control" name="nombreDelCliente3" id="nombreDelCliente3" readonly/></br>
+                                <br></br>
 
-                                <label for="analisisSolicitados3">Análisis Solicitados</label>
-                                <input type="text" class="form-control" name="analisisSolicitados3" id="analisisSolicitados3" readonly/>
-                                </br></br>
+                                <label for="analisisSolicitados3" class="col-12 text-center">Análisis Solicitados</label>
+                                <input type="text" class="form-control" name="analisisSolicitados3" id="analisisSolicitados3" readonly/></br>
+                                <br></br>
 
-                                <label for="costoDelServicio3">Costo total del servicio</label>
-                                <input type="text" class="form-control" name="costoDelServicio3" id="costoDelServicio3" readonly/>
-                                </br></br>
+                                <label for="costoDelServicio3" class="col-12 text-center">Costo total del servicio</label>
+                                <input type="text" class="form-control" name="costoDelServicio3" id="costoDelServicio3" readonly/></br>
+                                <br></br>
 
                                 <div class="col">
-                                    <label>Cambiar estado de solicitud:</label>
+                                    <label class="col-12 text-center">Cambiar estado de solicitud:</label>
                                     <br>
                                     <select class="form-control" type="text" name="estado">
                                         <option value="Confirmada">Confirmar solicitud</option>

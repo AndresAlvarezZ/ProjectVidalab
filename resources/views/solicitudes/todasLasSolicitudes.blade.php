@@ -21,7 +21,7 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>REGISTRO DE TODAS LAS SOLICITUDES A DOMICILIO</center></b></h4></div>
+            <div class="card-header titulo"><h4><b><center>REGISTRO DE TODAS LAS SOLICITUDES A DOMICILIO</center></b></h4></div>
                 <div class="card-body">
 
                     <ul class="list-group">

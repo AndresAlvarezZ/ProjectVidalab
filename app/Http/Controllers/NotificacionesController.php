@@ -45,6 +45,17 @@ class NotificacionesController extends Controller
   //
 
 
+ //MOSTRAR ÚNICO REGISTRO
+  public function mostrarNotificacion($id)
+  {
+    $notificacion = Notificaciones::find($id);
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    return view ('Notificaciones.mostrarNotificacion', compact('notificacion', 'name'));
+  }
+//
+
+
+
   //MOSTRAR NOTIFICACIÓN ESPECÍFICA PARA CLIENTES
    public function NotificacionEspecifica()
     {

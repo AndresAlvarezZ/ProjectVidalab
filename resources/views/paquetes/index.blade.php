@@ -7,7 +7,10 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        
+     
+        <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+        <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+
         <script src="{{ asset('js/transacciones/transaccionesDePaquetes.js') }}?v=<?php echo(rand()); ?>"defer></script>
         <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
         
@@ -23,12 +26,12 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>REGISTRO DE PAQUETES</center></b></h4></div>
+            <div class="card-header titulo"><h4><b><center>REGISTRO DE PAQUETES</center></b></h4></div>
                 <div class="card-body">
 
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarPaquete" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva cita">Registrar nuevo Paquete</button>
+                            <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarPaquete" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva cita"><span class="icon-lab"></span>Registrar nuevo Paquete</button>
                         </div>
                     </div>
                     <br>
@@ -63,8 +66,8 @@
                                     <td><center>{{$paquete->descripcionDelPaquete}}</center></td>
                                     <td><center>{{$paquete->costoDelPaquete}}</center></td>
                                     <td><center>
-                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este paquete">Actualizar</a> <br></br>
-                                        <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de este paquete">Eliminar</a> <br></br>
+                                        <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este paquete"><span class="icon-loop2"></span>Actualizar</a> <br></br>
+                                        <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de este paquete"><span class="icon-bin"></span>Eliminar</a> <br></br>
                                     </center></td>
                                 </tr>
                                 @endforeach
