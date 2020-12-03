@@ -38,12 +38,7 @@ class CitaController extends Controller
         public function guardar (Request $request)
         {
             $cita = new Cita;
-
-<<<<<<< HEAD
             $cita->idDeLaEmpresa = $request->input('idCitaDeEmpresa');        
-=======
-            $cita->idDeLaEmpresa = $request->input('idDeLaEmpresa1');
->>>>>>> ed5483b9014c727f60734d30d65500987d491654
             $cita->nombreDelSolicitante = $request->input('nombreDelSolicitante1');
             $cita->primerApellidoDelSolicitante = $request->input('primerApellidoDelSolicitante1');
             $cita->segundoApellidoDelSolicitante = $request->input('segundoApellidoDelSolicitante1');
