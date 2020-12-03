@@ -16,7 +16,7 @@
       <div class="card-header text-center">
         <h3>Perfil de cliente</h3>
       </div>
-
+      <br></br>
       <div class="row">
         <div class="col-sm-6">
           <div class="card">
