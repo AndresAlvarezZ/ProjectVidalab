@@ -86,7 +86,7 @@
 
                         <div class="tab-pane fade" id="nav-clientesP" role="tabpanel" aria-labelledby="nav-clientesP-tab">
                             <br></br>
-                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo persoonalizado a cliente</a>
+                            <a href="/notificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo personalizado a cliente</a>
 
                             <ul class="list-group">
                                 <br>
@@ -135,7 +135,7 @@
 
                         <div class="tab-pane fade" id="nav-clientesM" role="tabpanel" aria-labelledby="nav-clientesM-tab">
                             <br></br>
-                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a clientes</a>
+                            <a href="/notificacionMasiva" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a clientes</a>
                             <br></br>
                             <ul class="list-group">
                                 <table id="registrosClientesM" class="table table-hover">
@@ -181,7 +181,7 @@
 
                         <div class="tab-pane fade" id="nav-empresasP" role="tabpanel" aria-labelledby="nav-empresasP-tab">
                             <br></br>
-                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo personalizado a empresa</a>
+                            <a href="/notificacionEspecificaEmpresarial" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo personalizado a empresa</a>
                             <br></br>
                             <br>
                             <ul class="list-group">
@@ -228,7 +228,7 @@
 
                         <div class="tab-pane fade" id="nav-empresasM" role="tabpanel" aria-labelledby="nav-empresasM-tab">
                             <br></br>
-                            <a href="/envioNotificacionEspecifica" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a empresas</a>
+                            <a href="/notificacionMasivaEmpresarial" class="btn btn-primary btnEnvio" data-toggle="tooltip" data-placement="right" title="Click para enviar correo de este tipo"><span class="icon-envelop"></span>Enviar correo masivo a empresas</a>
                             <br></br>
 
                             <ul class="list-group">
