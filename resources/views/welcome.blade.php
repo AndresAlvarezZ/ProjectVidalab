@@ -70,19 +70,27 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                  @if (Route::has('loginAdmins'))
+                  @auth('admins')
+                  <a href="{{('/homeAdmins') }}">HomeAdmins</a>
+                  @else
                     @auth
-                        <a href="{{('/home') }}">Home</a>
+                    <a href="{{('/home') }}">Home</a>
                     @else
+
                         <a href="{{ route('login') }}">Iniciar Sesión</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrarme</a>
                         @endif
                     @endauth
+                    @endauth
+                    @endif
                 </div>
             @endif
-        </div> 
-        
+
+        </div>
+
         <div class="content">
             <div class="title">
                 Laboratorio VIDAalab
