@@ -62,6 +62,17 @@
                         <div class="modal-body">
                         <div class="row">
                             <div class="col">
+                                <label for="numeroDeHijos" class="col-12 text-center">Número de hijos</label>
+                                <input required type="text" class="form-control"name="numeroDehijosDelcliente" value="{{$cliente->numeroDehijosDelcliente}}"/> <br>
+                                @error('numeroDehijosDelcliente')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
                                 <label for="telefonoDelCliente" class="col-12 text-center">Teléfono</label>
                                 <input required type="text" class="form-control"name="telefonoDelCliente" value="{{$cliente->telefonoDelCliente}}"/> <br>
                                 @error('telefonoDelCliente')
@@ -70,13 +81,16 @@
                             </div>
                             <div class="col">
                                 <label for="domicilioDelCliente" class="col-12 text-center">Domicilio</label>
-                                <textarea class="form-control" name="domicilioDelCliente">{{$cliente->domicilioDelCliente}}</textarea>
+                                <textarea  name="domicilioDelCliente" class="form-control" id="domicilioDelCliente" rows="6">{{$cliente->domicilioDelCliente}}</textarea>
                                 @error('domicilioDelCliente')
                                   <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                         </div>
      
+
+                            
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

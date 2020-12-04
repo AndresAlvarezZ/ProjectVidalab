@@ -2,6 +2,42 @@ var hayError;
 
 $(document).ready(function ()
 {
+
+    $('#notificacionClienteE').on('submit', function(e)
+    {
+        e.preventDefault();
+        $.ajax
+        ({
+            type: "POST",
+            url: "/envioNotificacionEspecifica",
+            data: $('#notificacionClienteE').serialize(),
+            success: function (response)
+            {
+                console.log(response)
+                Alerta("HUMAcheck", "¡El mensaje se envió de forma exitosa al/la cliente!", "success", "OK")
+            },
+            error: function(error)
+            {
+                console.log(error)
+                Alerta("¡Error al enviar!", "Verifique que: \n\nTodos los campos solicitados estén completos y en el formato adecuado.\n¡Inténtelo nuevamente!", "warning", "OK")
+            }
+        }).then((result) => 
+        {
+            if (result.isConfirmed) 
+            {
+                Swal.fire({
+                    title: 'Cancelado',
+                    text: '¡El proceso fue cancelado y el registro no sufrió cambios!',
+                    icon: 'error',
+                }).then((result) => 
+                {
+                    window.location.href = "/notificaciones";
+                })
+            }
+        })
+    });
+
+
     //NOTIFICACION ESPECÍFICA CLIENTES
         $('#notificacionClienteE').on('submit', function(ev)
         {

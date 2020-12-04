@@ -71,9 +71,9 @@
                     <td>{{$cliente->edadDelCliente}}</td>
                   </tr>
                   </table>
-
               </p>
               <br>
+              <a class="btn btn-primary btnEditar" type="button" data-toggle="modal" data-target="#editarPerfil"><span class="icon-loop2"></span>Editar mis datos</a>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
                   <br>
                   <table>
                   <tr>
-                    <textarea readonly name="domicilio" class="form-control" id="domicilio" rows="6">{{$cliente->domicilioDelCliente}}</textarea>
+                    <textarea readonly name="domicilio" class="form-control" id="domicilio" rows="7">{{$cliente->domicilioDelCliente}}</textarea>
                   </tr>
                 </table>
                 <h4 class="card-title">Datos personales Familiares</h4>
@@ -110,7 +110,6 @@
                 </table>
               </p>
               <br>
-              <a class="btn btn-primary" type="button" data-toggle="modal" data-target="#editarPerfil">Editar mis datos</a>
             </div>
           </div>
         </div>

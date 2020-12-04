@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <h3><strong>Laboratorio Vidalab comunica</strong></h3>
+    <h3>Laboratorio Vidalab comunica</h3>
   </head>
   <body>
       <p>{{$data['mensaje']}}</p>

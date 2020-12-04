@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     </head>
 
-    <body>
+    <body id="administrador">
         <div class="container-fluid">
             <div class="card-header titulo"><h4><b><center>REGISTRO DE ADMINISTRADORES</center></b></h4></div>
                 <div class="card-body">

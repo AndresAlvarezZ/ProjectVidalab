@@ -11,7 +11,8 @@ th
   padding-right:40px;
 
 }  
-#datos{
+#datos
+{
   margin-left:110px;
 }
 .img
@@ -37,6 +38,7 @@ label, h3
   padding-bottom:5px;
   text-align: center;
 }
-#btnModal{
-  margin-left:30px;
+.btnEditar
+{
+  margin-left:150px;
 }

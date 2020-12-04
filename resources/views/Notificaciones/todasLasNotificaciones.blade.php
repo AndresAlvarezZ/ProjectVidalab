@@ -22,7 +22,7 @@
 
     <body>
         <div class="container-fluid">
-            <div class="card-header"><h4><b><center>REGISTRO CORREOS</center></b></h4></div>
+            <div class="card-header titulo"><h4><b><center>REGISTRO CORREOS</center></b></h4></div>
                 <div class="card-body">
                   @if (session('status'))
 

@@ -7,9 +7,9 @@
 
 .titulo
 {
-    background-color: #15b3bb9a;
-    border-radius: 10rem;
-    border-color: black;
+  background: rgba(255, 255, 255, 0.822);
+  border-radius: 10rem;
+  border-color: black;
 }
 
 .btnMenu
@@ -35,7 +35,8 @@
 .btnMenu span, 
 .btnEnCancelada span,
 .btnEnConfirmada span,
-.btnEnEspera span
+.btnEnEspera span,
+.btnCompras
 {
   margin-right: 10px;
 }

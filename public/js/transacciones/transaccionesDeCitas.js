@@ -1,5 +1,4 @@
 var hayError;
-/////////////______________REVISAR POR INCOMPLETO________________///////////////////////
     $(document).ready(function ()
     {
     //AGREGAR
@@ -58,7 +57,7 @@ var hayError;
                 data: $('#editarForm').serialize(),
                 success: function (response)
                 {
-                    console.log(response)
+
 
                     Alerta("HUMAcheck", "¡Datos de la Empresa actualizados correctamente!", "success", "OK")
                 },
@@ -98,12 +97,12 @@ var hayError;
                 success: function (response)
                 {
                     console.log(response)
-                  Alerta("HUMAcheck", "¡Eliminacion exitosa!", "success", "OK")
+                    Alerta("HUMAcheck", "¡Eliminacion exitosa!", "success", "OK")
                 },
                 error: function(error)
                 {
                     console.log(error)
-
+                    Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
             });
         });
