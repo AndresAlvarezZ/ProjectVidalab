@@ -16,7 +16,7 @@
 </li>
 
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-users"></span>PERFILES PROFESIONALES</a>
+    <a id="navbarDropdown" class="nav-link btnMenu" href="/especialistas/perfiles" role="button" v-pre><span class="icon-users"></span>PERFILES PROFESIONALES</a>
 </li>
 
 <li class="nav-item dropdown">

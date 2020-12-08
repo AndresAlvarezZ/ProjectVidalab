@@ -1,6 +1,6 @@
 var hayError;
-    $(document).ready(function ()
-    {
+$(document).ready(function ()
+{
     //AGREGAR
         $('#agregarForm').on('submit', function(ev)
         {

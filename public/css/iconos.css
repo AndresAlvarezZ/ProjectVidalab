@@ -1,10 +1,12 @@
 
-.btnActivar, .btnInactivar, .btnEditar, .btnEliminar, .btnCitas, .btnVerCita
+.btnActivar, .btnInactivar, .btnEditar, .btnEliminar, .btnCitas, .btnVerCita, .btnPerfil
 {
-  
   width:200px;
 }
-
+#editarAspecto
+{
+  width:250px;
+}
 .titulo
 {
   background: rgba(255, 255, 255, 0.822);

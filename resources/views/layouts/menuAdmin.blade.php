@@ -62,11 +62,11 @@
 </li>
 
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon"></span>XXXXXX</a>
+    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon"></span>VIDAlab</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href=""></a>
-        <a class="dropdown-item" href=""></a>
-        <a class="dropdown-item" href=""></a>
+        <a class="dropdown-item" href="/especialistas">Registrar Especialistas</a>
+        <a class="dropdown-item" href="/especialistas/mostrar">Ver perfiles de especialistas</a>
+        <a class="dropdown-item" href="/informacion">Información VIDAlab</a>
         <a class="dropdown-item" href=""></a>
         <a class="dropdown-item" href=""></a>
     </div>
