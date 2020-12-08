@@ -22,7 +22,7 @@ use App\Paquete;
     return view('catalogo.index', compact('pruebas', 'paquetes'));
 });*/
 Route::get('/', function(){
-  return view('welcome');
+  return view('auth.login');
 });
 
 Auth::routes();
@@ -43,6 +43,25 @@ Auth::routes();
   Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
   Route::put('/administradores/inactivar/{administrador}', 'AdministradorController@inactivar');
   Route::put('/administradores/activar/{administrador}', 'AdministradorController@activar');
+//
+
+
+//RUTAS DE SUBMÓDULO INFORMACION DE LA EMPRESA
+  Route::get('/informacion', 'AspectoController@index');
+  Route::post('/aspectos/registrar', 'AspectoController@guardar');
+  Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
+//
+
+
+//RUTAS DE SUBMÓDULO ESPECIALISTAS
+  Route::get('/especialistas', 'EspecialistaController@index');
+  Route::get('/especialistas/mostrar', 'EspecialistaController@verPerfiles');                  //ADMINISTRADORES
+  Route::get('/especialistas/perfiles', 'EspecialistaController@verEspecialistas');            //CLIENTES
+
+  Route::post('/especialistas/registrar', 'EspecialistaController@guardar');
+  Route::put('/especialistas/{especialista}', 'EspecialistaController@actualizar');
+  Route::delete('/especialistas/{especialista}', 'EspecialistaController@eliminar');
+  Route::put('/subirImagenEspecialista','EspecialistaController@subirImagenEspecialista');
 //
 
 

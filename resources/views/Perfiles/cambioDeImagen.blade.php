@@ -22,8 +22,7 @@
                           </button>
                       </div>
                       <form accept-charset="UTF-8" enctype="multipart/form-data" action="/subirImagen" method="post">
-                        @csrf
-                        @method ('PUT')
+                      {{ csrf_field() }}
                           <div class="modal-body">
                               <div class="form-row">
                                   <div class="alert alert-info" role="alert">
@@ -87,10 +86,6 @@
                                 @enderror
                             </div>
                         </div>
-     
-
-                            
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

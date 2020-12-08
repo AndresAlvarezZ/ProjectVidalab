@@ -30,7 +30,7 @@ label, h3
 {
   font-weight: bold;
 }
-#imagenPerfil{
+#imagenPerfil, #perfil{
   margin-left:35px;
   height:120px;
   width: 120px;
@@ -38,7 +38,19 @@ label, h3
   padding-bottom:5px;
   text-align: center;
 }
-.btnEditar
+.btnEditarCliente
 {
   margin-left:150px;
+}
+.tarjetaDeEspecialista, .tituloEspecialistas
+{
+  border-radius:150px;
+  box-shadow: 5px 8px 3px rgba(0, 0, 0, 0.1);
+}
+
+.textarea
+{ 
+  background: transparent;
+  color: transparent;
+  color: white;
 }

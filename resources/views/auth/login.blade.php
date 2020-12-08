@@ -12,8 +12,8 @@
                 <div class="col-sm">
                     <center>
                         <br></br><br></br>
-                        <div class="card border-primary mb-3" style="width: 30rem;">
-                            <div class="card-header text-white bg-primary mb-3"><h4><b><center>Sesión de Clientes</center></b></h4></div>
+                        <div class="card border-primary mb-3 cliente" style="width: 30rem;">
+                            <div class="card-header text-white bg-primary mb-3 "><h4><b><center>Sesión de Clientes</center></b></h4></div>
 
                                 <div class="card-body">
                                     @if (session('status'))

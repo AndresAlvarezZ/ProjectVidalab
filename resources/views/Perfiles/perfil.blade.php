@@ -73,7 +73,7 @@
                   </table>
               </p>
               <br>
-              <a class="btn btn-primary btnEditar" type="button" data-toggle="modal" data-target="#editarPerfil"><span class="icon-loop2"></span>Editar mis datos</a>
+              <a class="btn btn-primary btnEditarCliente" type="button" data-toggle="modal" data-target="#editarPerfil"><span class="icon-loop2"></span>Actualizar mis datos</a>
             </div>
           </div>
         </div>

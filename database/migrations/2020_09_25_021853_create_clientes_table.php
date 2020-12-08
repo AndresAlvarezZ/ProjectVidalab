@@ -20,7 +20,7 @@ class CreateClientesTable extends Migration
             $table->string('segundoNombreDelCliente');
             $table->string('imagenDelCliente')->nullable();
             $table->string('primerApellidoDelCliente');
-            $table->string('segundoApellidoDelCliente');
+            $table->string('segundoApellidoDelCliente')->ullable();
             $table->date('fechaDeNacimientoDelCliente');
             $table->integer('edadDelCliente');
             $table->string('correoDelCliente');
