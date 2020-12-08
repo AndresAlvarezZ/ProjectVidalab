@@ -36,7 +36,7 @@ class LoginAdminsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:admins')->except('logout');
+        $this->middleware('guest')->except('logout');
     }
 
     protected function guard()
