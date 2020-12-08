@@ -1,4 +1,4 @@
-@extends('layouts.especial')
+@extends('layouts.appAdmin')
 @section('content')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
