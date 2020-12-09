@@ -1,3 +1,10 @@
+<head>
+    <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+
+
 
 <li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link btnMenu" href="/homeAdmins" role="button" v-pre><span class="icon-home"></span>HUMAcheck</a>
