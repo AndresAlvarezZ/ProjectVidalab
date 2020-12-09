@@ -7,7 +7,7 @@
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/administradores">Registro de Administradores</a>
         <a class="dropdown-item" href="/administradores/activos">Administradores Activos</a>
-        <a class="dropdown-item" href="/administradores/inactivos">Administradores Inactivos</a>        
+        <a class="dropdown-item" href="/administradores/inactivos">Administradores Inactivos</a>
     </div>
 </li>
 
@@ -67,7 +67,7 @@
         <a class="dropdown-item" href="/especialistas">Registrar Especialistas</a>
         <a class="dropdown-item" href="/especialistas/mostrar">Ver perfiles de especialistas</a>
         <a class="dropdown-item" href="/informacion">Información VIDAlab</a>
-        <a class="dropdown-item" href=""></a>
+        <a class="dropdown-item" href="/multimedia">Contenido multimedia</a>
         <a class="dropdown-item" href=""></a>
     </div>
 </li>

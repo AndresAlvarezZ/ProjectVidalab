@@ -20,5 +20,5 @@
 </li>
 
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-office"></span>VIDAlab</a>
+    <a id="navbarDropdown" class="nav-link btnMenu" href="/multimediaCliente" role="button"  v-pre><span class="icon-office"></span>VIDAlab</a>
 </li>
