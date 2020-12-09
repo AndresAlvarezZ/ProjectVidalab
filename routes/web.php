@@ -55,7 +55,7 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO ESPECIALISTAS
   Route::get('/especialistas', 'EspecialistaController@index');
-  Route::get('/especialistas/mostrar', 'EspecialistaController@verPerfiles');                  //ADMINISTRADORES
+  Route::get('/especialistas/mostrar', 'EspecialistaController@verPerfiles');       //ADMINISTRADORES
   Route::get('/especialistas/perfiles', 'EspecialistaController@verEspecialistas');            //CLIENTES
 
   Route::post('/especialistas/registrar', 'EspecialistaController@guardar');
