@@ -101,7 +101,7 @@
                   <label>Selecionar cliente</label><br>
                   <select class="form-control" name="clienteOpcion">
                     @foreach ($clientes as $cliente)
-                      <option value="{{$cliente->correoDelCliente}}">{{$cliente->nombreDelCliente}}</option>
+                      <option value="{{$cliente->correoDelCliente}}">{{$cliente->nombreDelCliente}} {{$cliente->primerApellidoDelCliente}}</option>
                     @endforeach
                   </select>
                   <br></br>
