@@ -50,6 +50,11 @@ Auth::routes();
   Route::get('/informacion', 'AspectoController@index');
   Route::post('/aspectos/registrar', 'AspectoController@guardar');
   Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
+  Route::get('/multimedia','ArchivosController@multimedia');
+  Route::get('/multimediaCliente','ArchivosController@multimediaCliente');
+  Route::post('/multimediaPost','ArchivosController@multimediaPost');
+  Route::get('/verContenido','ArchivosController@verContenido');
+  Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
 //
 
 

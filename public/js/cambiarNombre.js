@@ -57,3 +57,53 @@ function tipoIdentification() {
     cambiarTipo.setAttribute("max",9)
   }
 }
+function visible() {
+  var cambio = document.getElementById('opcion')
+  var lblImagen = document.getElementById('lblImagen')
+  var txtImagen = document.getElementById('txtImagen')
+  var lblVideo = document.getElementById('lblVideo')
+  var txtVideo = document.getElementById('txtVideo')
+  if (cambio.options[cambio.selectedIndex].value ==='0') {
+  lblImagen.hidden = true
+  txtImagen.hidden = true
+  lblVideo.hidden = true
+  txtVideo.hidden = true
+  }
+  if (cambio.options[cambio.selectedIndex].value ==='1') {
+    lblImagen.hidden = false
+    txtImagen.hidden = false
+    lblVideo.hidden = true
+    txtVideo.hidden = true
+  }
+  if (cambio.options[cambio.selectedIndex].value ==='2') {
+    lblImagen.hidden = true
+    txtImagen.hidden = true
+    lblVideo.hidden = false
+    txtVideo.hidden = false
+  }
+}
+function visible1() {
+  var cambio = document.getElementById('opcion1')
+  var lblImagen = document.getElementById('lblImagen1')
+  var txtImagen = document.getElementById('txtImagen1')
+  var lblVideo = document.getElementById('lblVideo1')
+  var txtVideo = document.getElementById('txtVideo1')
+  if (cambio.options[cambio.selectedIndex].value ==='0') {
+  lblImagen.hidden = true
+  txtImagen.hidden = true
+  lblVideo.hidden = true
+  txtVideo.hidden = true
+  }
+  if (cambio.options[cambio.selectedIndex].value ==='1') {
+    lblImagen.hidden = false
+    txtImagen.hidden = false
+    lblVideo.hidden = true
+    txtVideo.hidden = true
+  }
+  if (cambio.options[cambio.selectedIndex].value ==='2') {
+    lblImagen.hidden = true
+    txtImagen.hidden = true
+    lblVideo.hidden = false
+    txtVideo.hidden = false
+  }
+}
