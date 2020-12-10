@@ -27,7 +27,7 @@ modal-dialog modal-dialog-scrollable
                                 <center><b>¡Su cambio será visible cuando presione el botón subir!</b></center>
                             </div>
                             
-                            <input type="text" name="id" id="idAgregarImagen">
+                            <input type="hidden" name="id" id="idAgregarImagen">
                             
                             <br></br>
                             <input type="file" accept="image/*" class="form-control"  name="imagenDelEspecialista"/> <br>

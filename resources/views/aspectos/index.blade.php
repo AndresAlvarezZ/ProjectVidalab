@@ -50,7 +50,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center text-center"><i>Ubicación</i></h6>
                                         <p class="card-text">{{$aspecto->ubicacion}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->ubicacion}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Ubicación</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#ubicacion2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Ubicación</button>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>Teléfonos</i></h6>
                                         <p class="card-text">{{$aspecto->telefono}}</p>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->telefono}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Teléfono</button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#telefono2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Teléfono</button>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>Correo electrónico</i></h6>
                                         <p class="card-text">{{$aspecto->correoElectronico}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->correoElectronico}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Correo</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#correo2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Correo</button>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>Facebook</i></h6>
                                         <p class="card-text">{{$aspecto->facebook}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->facebook}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Facebook</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#facebook2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Facebook</button>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                 <div class="card-body aspectos">
                                     <h6 class="card-title text-center"><i>Instagram</i></h6>
                                     <p class="card-text">{{$aspecto->instagram}}</p>
-                                    <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->instagram}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Instagram</button>
+                                    <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#instagram2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Instagram</button>
                                 </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>WhatsApp</i></h6>
                                         <p class="card-text">{{$aspecto->whatsapp}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->whatsapp}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar WhatsApp</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar WhatsApp</button>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>Horario Regular</i></h6>
                                         <p class="card-text">{{$aspecto->horarioRegular}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->horarioRegular}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Horario</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#horarioRegular2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Horario</button>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>Lema</i></h6>
                                         <p class="card-text">{{$aspecto->lema}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->lema}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Lema</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#lema2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Lema</button>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                                     <div class="card-body aspectos">
                                         <h6 class="card-title text-center"><i>Historia</i></h6>
                                         <p class="card-text">{{$aspecto->historia}}</p>
-                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#{{$aspecto->historia}}" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Historia</button>
+                                        <button type="button" id="editarAspecto" class="btn btn-primary" data-toggle="modal" data-target="#historia2" data-toggle="tooltip" data-placement="right" title="Click para actualizar"><span class="icon-loop2"> </span> Actualizar Historia</button>
                                     </div>
                                 </div>
                             </div>

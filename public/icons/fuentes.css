@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?w7d7mu');
-  src:  url('fonts/icomoon.eot?w7d7mu#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?w7d7mu') format('truetype'),
-    url('fonts/icomoon.woff?w7d7mu') format('woff'),
-    url('fonts/icomoon.svg?w7d7mu#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?s1o0b7');
+  src:  url('fonts/icomoon.eot?s1o0b7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?s1o0b7') format('truetype'),
+    url('fonts/icomoon.woff?s1o0b7') format('woff'),
+    url('fonts/icomoon.svg?s1o0b7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -49,6 +49,9 @@
 .icon-credit-card:before {
   content: "\e93f";
 }
+.icon-phone:before {
+  content: "\e942";
+}
 .icon-envelop:before {
   content: "\e945";
 }
@@ -63,6 +66,9 @@
 }
 .icon-users:before {
   content: "\e972";
+}
+.icon-user-tie:before {
+  content: "\e976";
 }
 .icon-lab:before {
   content: "\e9aa";
@@ -87,4 +93,13 @@
 }
 .icon-loop2:before {
   content: "\ea2e";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
 }

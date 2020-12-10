@@ -157,7 +157,7 @@ modal-dialog modal-dialog-scrollable
 
 @foreach($aspectos as $aspecto)
     <!-- MODAL ubicacion-->
-        <div class="modal fade" id="{{$aspecto->ubicacion}}" tabindex="-1" aria-labelledby="{{$aspecto->ubicacion}}" aria-hidden="true">
+        <div class="modal fade" id="ubicacion2" tabindex="-1" aria-labelledby="ubicacion2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -189,7 +189,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL ubicacion-->
 
     <!-- MODAL telefono-->
-        <div class="modal fade" id="{{$aspecto->telefono}}" tabindex="-1" aria-labelledby="{{$aspecto->telefono}}" aria-hidden="true">
+        <div class="modal fade" id="telefono2" tabindex="-1" aria-labelledby="telefono2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -221,7 +221,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL telefono-->
 
     <!-- MODAL correo-->
-        <div class="modal fade" id="{{$aspecto->correoElectronico}}" tabindex="-1" aria-labelledby="{{$aspecto->correoElectronico}}" aria-hidden="true">
+        <div class="modal fade" id="correo2" tabindex="-1" aria-labelledby="correo2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -254,7 +254,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL correo-->
 
     <!-- MODAL facebook-->
-        <div class="modal fade" id="{{$aspecto->facebook}}" tabindex="-1" aria-labelledby="{{$aspecto->facebook}}" aria-hidden="true">
+        <div class="modal fade" id="facebook2" tabindex="-1" aria-labelledby="facebook2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -287,7 +287,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL facebook-->
 
     <!-- MODAL instagram-->
-        <div class="modal fade" id="{{$aspecto->instagram}}" tabindex="-1" aria-labelledby="{{$aspecto->instagram}}" aria-hidden="true">
+        <div class="modal fade" id="instagram2" tabindex="-1" aria-labelledby="instagram2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -320,7 +320,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL instagram-->
 
     <!-- MODAL whatsapp-->
-        <div class="modal fade" id="{{$aspecto->whatsapp}}" tabindex="-1" aria-labelledby="{{$aspecto->whatsapp}}" aria-hidden="true">
+        <div class="modal fade" id="whatsapp2" tabindex="-1" aria-labelledby="whatsapp2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -353,7 +353,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL whatsapp-->
 
     <!-- MODAL horarioRegular-->
-        <div class="modal fade" id="{{$aspecto->horarioRegular}}" tabindex="-1" aria-labelledby="{{$aspecto->horarioRegular}}" aria-hidden="true">
+        <div class="modal fade" id="horarioRegular2" tabindex="-1" aria-labelledby="horarioRegular2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -415,7 +415,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL horarioEspecial-->
 
     <!-- MODAL lema-->
-        <div class="modal fade" id="{{$aspecto->lema}}" tabindex="-1" aria-labelledby="{{$aspecto->lema}}" aria-hidden="true">
+        <div class="modal fade" id="lema2" tabindex="-1" aria-labelledby="lema2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -448,7 +448,7 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL lema-->
 
     <!-- MODAL historia-->
-        <div class="modal fade" id="{{$aspecto->historia}}" tabindex="-1" aria-labelledby="{{$aspecto->historia}}" aria-hidden="true">
+        <div class="modal fade" id="historia2" tabindex="-1" aria-labelledby="historia2" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -557,7 +557,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
                                 <input type="hidden" name="id" value="mision2">
                                 
-                                <textarea name="mision2" class="form-control" placeholder="Ingrese la misión de VIDAlab" id="mision2" rows="3"></textarea></br>
+                                <textarea name="mision2" class="form-control" placeholder="Ingrese la misión de VIDAlab" id="mision2" rows="3">{{$aspecto->misión}}</textarea></br>
                             </div>
                         </div>
                         <div class="modal-footer">
