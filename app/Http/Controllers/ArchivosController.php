@@ -51,7 +51,7 @@ class ArchivosController extends Controller
         'nombreDelArchivo'=>$nombre,
         'descripcionDelArchivo'=>request('descripcionDelArchivo')
       ]);
-      return redirect('/homeAdmins')->with('status','agregado');
+      return redirect('/multimedia')->with('status','agregado');
     }
     public function verContenido()
     {
@@ -90,6 +90,11 @@ class ArchivosController extends Controller
               $archivo->nombreDelArchivo = $nombre;
               $archivo->descripcionDelArchivo = request('descripcionDelArchivo');
               $archivo->update();
-      return redirect('/multimedia');
+      return redirect('/multimedia')->with('status1','hkj');
+    }
+    public function eliminarMultimedia(Archivos $archivo)
+    {
+      $archivo->delete();
+      return redirect('/multimedia')->with('status2','hkj');
     }
 }

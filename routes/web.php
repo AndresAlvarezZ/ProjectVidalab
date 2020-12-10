@@ -55,6 +55,7 @@ Auth::routes();
   Route::post('/multimediaPost','ArchivosController@multimediaPost');
   Route::get('/verContenido','ArchivosController@verContenido');
   Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
+  Route::delete('/multimedia/{archivo}','ArchivosController@eliminarMultimedia');
 //
 
 

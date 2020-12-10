@@ -108,16 +108,16 @@ modal-dialog modal-dialog-scrollable
 
 
     <!-- MODAL ELIMINAR-->
-        <div class="modal fade" id="eliminarEspecialista" tabindex="-1" aria-labelledby="labelEliminarEspecialista" aria-hidden="true">
+        <div class="modal fade" id="eliminarMultimedia" tabindex="-1" aria-labelledby="labelEliminarEspecialista" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered  modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title col-11 text-center" id="labelEliminarEspecialista">Eliminar Registro Completo de la Empresa</h5>
+                        <h5 class="modal-title col-11 text-center" id="labelEliminarEspecialista">Eliminar Contenido</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="eliminarForm">
+                    <form id="eliminarForm" method="post">
                         <div class="modal-body">
                             {{ csrf_field() }}
                             {{method_field('DELETE')}}
@@ -128,13 +128,13 @@ modal-dialog modal-dialog-scrollable
                                     <center>¡Lea cuidadosamente la información!</center>
                                 </div>
 
-                                <label for="nombreCompletoDelEspecialista4" class="col-12 text-center">Nombre completo</label>
-                                <input required type="text" class="form-control" name="nombreCompletoDelEspecialista4" id="nombreCompletoDelEspecialista4" readonly/> <br>
+                                <label for="nombreCompletoDelEspecialista4" class="col-12 text-center">Nombre del archivo</label>
+                                <input required type="text" class="form-control" name="nombreDelArchivo" id="nombreDelArchivo1" readonly/> <br>
 
                                 <br></br>
 
-                                <label for="sedeDelEspecialista4" class="col-12 text-center">Sede</label>
-                                <input required type="text" class="form-control" name="sedeDelEspecialista4" id="sedeDelEspecialista4" readonly/> <br>
+                                <label for="sedeDelEspecialista4" class="col-12 text-center">Descripción</label>
+                                <input required type="text" class="form-control" name="descripcionDelArchivo" id="descripcionDelArchivo1" readonly/> <br>
                             </div>
                         </div>
                         <div class="modal-footer text-center">
