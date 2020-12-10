@@ -29,8 +29,3 @@
 <li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link btnMenu" href="/multimediaCliente" role="button"  v-pre><span class="icon-office"></span>VIDAlab</a>
 </li>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 320f0b1bba9452b488aaed33907dfbf95f2acf49
