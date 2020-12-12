@@ -16,28 +16,21 @@
         form.setAttribute('action','/multimedia/'+id)
     });
 
-    //FUNCIONES DE ALERTA
-        function Alerta(titulo, mensaje, tipo, boton)
+    //Eliminar
+        $('.btnEliminar').on('click', function(ev)
         {
-            setTimeout(function ()
+            ev.preventDefault();
+            $('#eliminarMultimedia').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function()
             {
-                swal
-                ({
-                    title: titulo,
-                    text: mensaje,
-                    type: tipo,
-                    confirmButtonText: boton
-                },
-                function(isConfirm)
-                {
-                    if(tipo == "success")
-                    {
-                        if (isConfirm)
-                        {
-                            window.location.href = "/multimedia";
-                        }
-                    }
-                });
-            }, 000);
-        }
-    //FIN DE FUNCIONES DE ALERTA
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#idEliminar').val(data[0]);
+            $('#nombreDelArchivo1').val(data[2]);
+            $('#descripcionDelArchivo1').val(data[3]);
+            var id = $('#idEliminar').val();
+            var form = document.getElementById('eliminarForm')
+            form.setAttribute('action','/multimedia/'+id)
+        });

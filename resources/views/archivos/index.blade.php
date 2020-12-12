@@ -30,7 +30,21 @@
         <div class="container-fluid">
             <div class="card-header titulo"><h4><b><center>Registro De Contenido Multimedia</center></b></h4></div>
                 <div class="card-body">
+                  @if (session('status'))
 
+          				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                      <script src="{{ asset('js/agregacion.js') }}?v=<?php echo(rand()); ?>"defer></script>
+                  @endif
+                  @if (session('status1'))
+
+          				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                      <script src="{{ asset('js/actualizacion.js') }}?v=<?php echo(rand()); ?>"defer></script>
+                  @endif
+                  @if (session('status2'))
+
+                  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                      <script src="{{ asset('js/eliminacion.js') }}?v=<?php echo(rand()); ?>"defer></script>
+                  @endif
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
                             <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarArchivo" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo especialista"><span class="icon-camera"></span>Agregar Contenido</button>

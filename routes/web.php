@@ -58,6 +58,7 @@ Auth::routes();
   Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
   Route::post('/multimediaPost','ArchivosController@multimediaPost');
   Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
+  Route::delete('/multimedia/{archivo}','ArchivosController@eliminarMultimedia');
 //
 
 

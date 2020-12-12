@@ -119,36 +119,40 @@ class ArchivosController extends Controller
 
 
   //EDITAR REGISTRO
-    public function editarMultimedia(Archivos $archivo)
-    {
-      $nombre = $archivo->nombreDelArchivo;
-      $tipo = $archivo->tipoDeArchivo;
-      if (request()->hasFile('file')) 
-      {
-        unlink(public_path().'/archivosMultimedia/'.$nombre);
-        $destinationPath = public_path().'/archivosMultimedia';
-        $files = request()->file('file');
-        $file_name = $files->getClientOriginalName(); //Get file original name
-        $files->move($destinationPath , $file_name); // move files to destination folder
-        $nombre = $file_name;
-        $tipo = request('tipoDeArchivo');
+  public function editarMultimedia(Archivos $archivo)
+  {
+    $nombre = $archivo->nombreDelArchivo;
+    $tipo = $archivo->tipoDeArchivo;
+    if (request()->hasFile('file')) {
+      unlink(public_path().'/archivosMultimedia/'.$nombre);
+      $destinationPath = public_path().'/archivosMultimedia';
+      $files = request()->file('file');
+      $file_name = $files->getClientOriginalName(); //Get file original name
+      $files->move($destinationPath , $file_name); // move files to destination folder
+      $nombre = $file_name;
+      $tipo = request('tipoDeArchivo');
+    }
+    if (request()->hasFile('fileVideo')) {
+      unlink(public_path().'/archivosMultimedia/'.$nombre);
+      $destinationPath = public_path().'/archivosMultimedia';
+      $files = request()->file('fileVideo');
+      $file_name = $files->getClientOriginalName(); //Get file original name
+      $files->move($destinationPath , $file_name); // move files to destination folder
+      $nombre = $file_name;
+      $tipo = request('tipoDeArchivo');
       }
-      if (request()->hasFile('fileVideo')) {
-        unlink(public_path().'/archivosMultimedia/'.$nombre);
-        $destinationPath = public_path().'/archivosMultimedia';
-        $files = request()->file('fileVideo');
-        $file_name = $files->getClientOriginalName(); //Get file original name
-        $files->move($destinationPath , $file_name); // move files to destination folder
-        $nombre = $file_name;
-        $tipo = request('tipoDeArchivo');
-      }
-
       $archivo->tipoDeArchivo = $tipo;
       $archivo->nombreDelArchivo = $nombre;
       $archivo->descripcionDelArchivo = request('descripcionDelArchivo');
       $archivo->update();
+    return redirect('/multimedia')->with('status1','hkj');
+  }
 
-      return redirect('/multimedia');
-    }
+  public function eliminarMultimedia(Archivos $archivo)
+  {
+    $archivo->delete();
+    return redirect('/multimedia')->with('status2','hkj');
+  }
+}
   //
 }
