@@ -48,7 +48,7 @@ modal-dialog modal-dialog-scrollable
                                 <div class="col">
                                     <label class="col-12 text-center">Cambiar estado</label>
                                     <br>
-                                    <select class="form-control" type="text" name="estado">
+                                    <select required class="form-control" type="text" name="estado">
                                         <option value="Confirmada">Confirmar solicitud</option>
                                         <option value="Cancelada">Cancelar solicitud</option>
                                     </select>
@@ -104,7 +104,7 @@ modal-dialog modal-dialog-scrollable
                                 <div class="col">
                                     <label class="col-12 text-center">Cambiar estado de solicitud:</label>
                                     <br>
-                                    <select class="form-control" type="text" name="estado">
+                                    <select required class="form-control" type="text" name="estado">
                                         <option value="Finalizada">Finalizar solicitud</option>
                                         <option value="Cancelada">Cancelar solicitud</option>
                                     </select>
@@ -160,7 +160,7 @@ modal-dialog modal-dialog-scrollable
                                 <div class="col">
                                     <label class="col-12 text-center">Cambiar estado de solicitud:</label>
                                     <br>
-                                    <select class="form-control" type="text" name="estado">
+                                    <select  required class="form-control" type="text" name="estado">
                                         <option value="Confirmada">Confirmar solicitud</option>
                                     </select>
                                 </div>

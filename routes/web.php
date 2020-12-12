@@ -48,12 +48,15 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO INFORMACION DE LA EMPRESA
   Route::get('/informacion', 'AspectoController@index');
+  Route::get('/galeriaDeFotos','ArchivosController@galeriaDeFotos');
+  Route::get('/galeriaDeVideos','ArchivosController@galeriaDeVideos');
+
+  Route::get('/multimedia','ArchivosController@multimedia'); /**Revisar*/
+  Route::get('/verContenido','ArchivosController@verContenido'); /**Revisar*/
+
   Route::post('/aspectos/registrar', 'AspectoController@guardar');
   Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
-  Route::get('/multimedia','ArchivosController@multimedia');
-  Route::get('/multimediaCliente','ArchivosController@multimediaCliente');
   Route::post('/multimediaPost','ArchivosController@multimediaPost');
-  Route::get('/verContenido','ArchivosController@verContenido');
   Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
 //
 
@@ -112,6 +115,7 @@ Auth::routes();
 //RUTAS DE SUBMÓDULO PAQUETES
   Route::post('/paquetes/registrar', 'PaqueteController@guardar');
   Route::get('/paquetes', 'PaqueteController@index');
+  Route::put('/subirImagenPaquete','PaqueteController@subirImagenPaquete');
   Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');
   Route::delete('/paquetes/{paquete}', 'PaqueteController@eliminar');
 //
@@ -120,6 +124,7 @@ Auth::routes();
 //RUTAS DE SUBMÓDULO CATALOGO
   Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
   Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');
+  Route::get('/compras/carrito','CatalogoController@carrito');
 //
 
 
@@ -153,7 +158,6 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO COMPRAS
-Route::get('/compras/carrito','CatalogoController@carrito');
 Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');
 Route::get('/compras/validarCompra','ComprasController@validarCompra');
 Route::get('/compras/domicilio','ComprasController@pedidoDomicilio');

@@ -1,7 +1,9 @@
 
 	@extends('layouts.appAdmin')
 @section('content')
-
+<head>
+<link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+</head>
 
 	<div class="container">
 

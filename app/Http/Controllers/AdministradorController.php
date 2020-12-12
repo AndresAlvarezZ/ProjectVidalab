@@ -109,7 +109,6 @@ class AdministradorController extends Controller
       [
         'nombreDelUsuarioAdministrador' => 'required',
         'primerApellidoAdministrador' => 'required',
-        'segundoApellidoAdministrador' => 'required',
         'dniDelUsuarioAdministrador' => 'required',
         'email' => ['required','email','unique:administradors'],
         'telefonoDelUsuarioAdministrador' => 'required',

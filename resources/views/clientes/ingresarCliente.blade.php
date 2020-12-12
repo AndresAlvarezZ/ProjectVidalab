@@ -38,13 +38,9 @@
 
                                           <div class="form-group col-md-6">
                                               <label for="segundoNombreDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Segundo Nombre') }}</label>
-                                              <input id="segundoNombreDelCliente" type="text" placeholder="Ingrese su segundo nombre" class="form-control @error('segundoNombreDelCliente') is-invalid @enderror" name="segundoNombreDelCliente" value="{{ old('segundoNombreDelCliente') }}" required autocomplete="segundoNombreDelCliente" autofocus>
-                                              @error('segundoNombreDelCliente')
-                                                  <span class="invalid-feedback" role="alert">
-                                                      <strong>{{ $message }}</strong>
-                                                  </span>
-                                              @enderror
+                                              <input id="segundoNombreDelCliente" type="text" placeholder="Ingrese su segundo nombre" class="form-control" name="segundoNombreDelCliente" value="{{ old('segundoNombreDelCliente') }}" autofocus>
                                           </div>
+                                          
                                           <div class="form-group col-md-6">
                                               <label for="primerApellidoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Primer Apellido') }}</label>
                                               <input id="primerApellidoDelCliente" type="text" placeholder="Ingrese su primer apellido" class="form-control @error('primerApellidoDelCliente') is-invalid @enderror" name="primerApellidoDelCliente" value="{{ old('primerApellidoDelCliente') }}" required autocomplete="primerApellidoDelCliente" autofocus>

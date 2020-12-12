@@ -32,28 +32,28 @@ modal-dialog modal-dialog-scrollable
 
                                 <h4>Datos Generales</h4>
                                 <label for="codigo1" class="col-12 text-center">Código/Identificador</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el código del análisis" name="codigoDelAnalisis1" value="{{old('codigoDelAnalisis1')}}" /></br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el código del análisis" name="codigoDelAnalisis1" value="{{old('codigoDelAnalisis1')}}" /></br>
                                 @error('codigoDelAnalisis1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="nombre1" class="col-12 text-center">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el nombre del análisis" name="nombreDelAnalisis1" value="{{old('nombreDelAnalisis1')}}" /></br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el nombre del análisis" name="nombreDelAnalisis1" value="{{old('nombreDelAnalisis1')}}" /></br>
                                 @error('nombreDelAnalisis1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="maquina1" class="col-12 text-center">Número de máquina</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el número de máquina en la que se realiza el análisis" name="numeroDeMaquina1" value="{{old('numeroDeMaquina1')}}"/></br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el número de máquina en la que se realiza el análisis" name="numeroDeMaquina1" value="{{old('numeroDeMaquina1')}}"/></br>
                                 @error('numeroDeMaquina1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="descripcion1" class="col-12 text-center">Descripción</label>
-                                <textarea name="descripcionDelAnalisis1" class="form-control" cols="30" rows="5" placeholder="Ingrese una descripción del análisis">{{old('descripcionDelAnalisis1')}}</textarea></br>
+                                <textarea required name="descripcionDelAnalisis1" class="form-control" cols="30" rows="5" placeholder="Ingrese una descripción del análisis">{{old('descripcionDelAnalisis1')}}</textarea></br>
                                 @error('descripcionDelAnalisis1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
@@ -65,7 +65,7 @@ modal-dialog modal-dialog-scrollable
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">₡</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Ingrese el precio normal/regular del análisis en colones" name="costoDelAnalisis1" value="{{old('costoDelAnalisis1')}}"/></br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el precio normal/regular del análisis en colones" name="costoDelAnalisis1" value="{{old('costoDelAnalisis1')}}"/></br>
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>
@@ -80,7 +80,7 @@ modal-dialog modal-dialog-scrollable
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">₡</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Ingrese el descuento en colones aplicable al análisis" name="descuentoDelAnalisis1" value="{{old('descuentoDelAnalisis1')}}"/></br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el descuento en colones aplicable al análisis" name="descuentoDelAnalisis1" value="{{old('descuentoDelAnalisis1')}}"/></br>
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>

@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.appClienteEspecial')
 @section('content')
 <!DOCTYPE html>
 <html lang="es-ES">
 <head>
     <title>Carrito de compras</title>
-    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/carrito.css') }}" rel="stylesheet">
 <body>
 <div class="container">
   <div class="row justify-content-center">
@@ -74,7 +74,7 @@
           <div class="">
             <form class="" id="prueba" method="post">
             </form>
-            <a href="/home" type="button" class="btn btn-primary">Entendido</a>
+            <a href="/verPerfil" type="button" class="btn boton">Entendido</a>
           </div>
         </div>
       </div>

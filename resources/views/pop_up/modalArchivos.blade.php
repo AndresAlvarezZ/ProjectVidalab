@@ -25,7 +25,7 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                                 <div class="row">
                                     <label for="" class="col-12 text-center">Tipo de Archivo</label>
-                                  <select onchange="visible()" id="opcion" required  class="form-control" name="tipoDeArchivo">
+                                    <select onchange="visible()" id="opcion" required  class="form-control" name="tipoDeArchivo">
                                       <option class="modal-title col-11 text-center col-11 text-center" value="0"></option>
                                       <option value="1">Imagen</option>
                                       <option value="2">Video</option>

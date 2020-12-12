@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.appClienteEspecial')
 @section('content')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <script src="{{ asset('js/finalizarPedido.js') }}?v=<?php echo(rand()); ?>"defer></script>
-      <link href="{{ asset('css/domicilio.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+      <link href="{{ asset('css/carrito.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <title>Procesando compra...</title>
   </head>
   <body>
@@ -37,10 +37,11 @@
                  @csrf
               </form>
             </div>
-            <div class="card-foot">
-              <a type="button" class="btn btn-primary" href="/catalogos">Volver al catalogo</a>
-            </div>
+            
           </div>
+            <div class="card-foot">
+              <a type="button" class="btn botonCatalogo" href="/catalogos">Volver al catalogo</a>
+            </div>
         </div>
       </div>
     </div>

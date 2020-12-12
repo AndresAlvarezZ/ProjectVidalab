@@ -19,9 +19,11 @@
     <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-</head>
+    </head>
 
-<body>
+
+
+    <body>
     <div id="app">
         
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -33,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    @include('layouts.menuClientes')
+                    @include('layouts.seccionesGenerales.menuClientes')
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+
+p
+{
+	font-size: 1.3em;
+	font-weight: 300;
+	color: #111;
+}
+
+.noDisponible
+{
+	text-align: center;
+	font-style: italic;
+}
+
+h4
+{
+    text-align: center;
+    color: #119281;
+}
+
+.title
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.tituloDeSeccion
+{
+	color: #111;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.tituloDeSeccion span
+{
+	color: #119281;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+
+.boton, #carritoDeCompras
+{
+	font-size: 1em;
+	color: #fff;
+    background: #119281;
+    border-color: #119281;
+    display: inline-block;
+    width: 40%;
+	padding: 3px 0px;
+	margin-top: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	transition: 0.5s;
+}
+
+.boton:hover, #carritoDeCompras:hover
+{
+	letter-spacing: 4px;
+	text-decoration: none;
+	color: white;
+}
+
+
+.analisis .boton:hover, #carritoDeCompras:hover
+{
+	letter-spacing: 3px;
+	text-decoration: none;
+	color: white;
+}
+
+
+
+
+.analisis .contenedorDeAnalisis
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+
+.analisis .contenedorDeAnalisis .marcoDeAnalisis
+{
+	width: 500px;
+	margin: 50px;
+	border: 15px solid #fff;
+	box-shadow: 0 5px 35px rgb(0, 0, 0, 0.08)
+}
+	
+.analisis .contenedorDeAnalisis .marcoDeAnalisis .imagenDeAnalisis
+{
+	position: relative;
+	width: 100%;
+	height: 600px;
+}
+
+.analisis .contenedorDeAnalisis .marcoDeAnalisis .imagenDeAnalisis table
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+.imagenDeAnalisis
+{
+    height: 600;
+    overflow: auto;
+}
+
+.analisis .contenedorDeAnalisis .marcoDeAnalisis .text 
+{
+	padding: 15px 0 5px;
+}
+
+.analisis .contenedorDeAnalisis .marcoDeAnalisis .text p
+{
+	font-weight: 400;
+    color: #111;
+    text-align: center;
+}
+
+.paquete .contenedorDePaquete
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	margin-top: 40px;
+}
+
+.paquete .contenedorDePaquete .marcoDePaquete
+{
+	width: 310px;
+	margin: 20px;
+	border: 15px solid #fff;
+	box-shadow: 0 5px 35px rgb(0, 0, 0, 0.08)
+}
+	
+.paquete .contenedorDePaquete .marcoDePaquete .imagenDePaquete
+{
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+
+.paquete .contenedorDePaquete .marcoDePaquete .imagenDePaquete img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.paquete .contenedorDePaquete .marcoDePaquete .text 
+{
+	padding: 15px 0 5px;
+}
+
+.paquete .contenedorDePaquete .marcoDePaquete .text p
+{
+	font-weight: 400;
+    color: #111;
+    text-align: center;
+}
+
+
+
+.flotante
+{
+    display:scroll;
+    position:fixed;
+    bottom:100px;
+    right:50px;
+}
+
+.flotante span
+{
+	font-size: 3rem;
+	border-radius: 20px;
+	position: relative;
+    animation: mymove 5s infinite;
+    
+}
+
+@keyframes mymove 
+{
+    from {bottom: 0px;}
+    to {bottom: 50px;}
+}
+
+@media (max-width: 991px)
+{
+	.paquete .contenedorDePaquete
+	{
+		margin-top: 20px;
+	}
+	.paquete .contenedorDePaquete .marcoDePaquete
+	{
+		margin: 10px;
+	}
+	.paquete .contenedorDePaquete .marcoDePaquete .imagenDePaquete
+	{
+		height: 260px;
+	}
+
+	.title
+	{
+		text-align: center;
+	}
+}

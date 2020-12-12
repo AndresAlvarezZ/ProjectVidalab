@@ -14,9 +14,9 @@
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
         <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
 
@@ -34,7 +34,7 @@
                     
                     <!-- MENU DE OPCIONES -->
                     <ul class="navbar-nav mr-auto">
-                        @include('layouts.menuAdmin')
+                        @include('layouts.seccionesGenerales.menuAdmin')
                     </ul>
 
                     <!--SESION-->

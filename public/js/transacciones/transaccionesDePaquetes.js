@@ -2,6 +2,25 @@ var hayError;
 
 $(document).ready(function ()
 {
+
+    //AGREGAR IMAGEN
+        $('.btnImagen').on('click', function(ev)
+        {
+            ev.preventDefault();
+            $('#agregarImagen').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function()
+            {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#idAgregarImagen').val(data[0]);
+            
+        });
+
+    //FIN AGREGAR IMAGEN 
+
+
     //AGREGAR
         $('#agregarForm').on('submit', function(ev)
         {

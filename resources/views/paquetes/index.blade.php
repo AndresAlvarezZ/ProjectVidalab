@@ -22,6 +22,8 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+        <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     </head>
 
     <body>
@@ -42,6 +44,7 @@
                                 <tr>
                                     <th scope="col"><center>Código</center></th>
                                     <th scope="col"><center>Nombre</center></th>
+                                    <th scope="col"><center>Imagen</center></th>
                                     <th scope="col"><center>Descripción</center></th>
                                     <th scope="col"><center>Costo</center></th>
                                     <th scope="col"><center>Acción a realizar</center></th>
@@ -52,6 +55,7 @@
                                 </tr>
                                     <th scope="col"><center>Código</center></th>
                                     <th scope="col"><center>Nombre</center></th>
+                                    <th scope="col"><center>Imagen</center></th>
                                     <th scope="col"><center>Descripción</center></th>
                                     <th scope="col"><center>Costo</center></th>
                                     <th scope="col"><center>Acción a realizar</center></th>
@@ -63,9 +67,11 @@
                                 <tr>
                                     <td><center>{{$paquete->codigoDelPaquete}}</center></td>
                                     <td><center>{{$paquete->nombreDelPaquete}}</center></td>
+                                    <td><center>{{$paquete->imagenDelPaquete}}</center></td>
                                     <td><center>{{$paquete->descripcionDelPaquete}}</center></td>
                                     <td><center>{{$paquete->costoDelPaquete}}</center></td>
                                     <td><center>
+                                        <button type="button" class="btn btn-primary btnImagen" data-toggle="modal" data-target="#agregarImagen" data-toggle="tooltip" data-placement="right" title="Click para agregar imagen de paquete"><span class="icon-camera"></span> Imagen</button> <br></br>
                                         <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar los datos de este paquete"><span class="icon-loop2"></span>Actualizar</a> <br></br>
                                         <a href="#" class="btn btn-danger btnEliminar" data-toggle="tooltip" data-placement="right" title="Click para eliminar todo el registro de este paquete"><span class="icon-bin"></span>Eliminar</a> <br></br>
                                     </center></td>

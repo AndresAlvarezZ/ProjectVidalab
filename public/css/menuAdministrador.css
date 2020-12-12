@@ -1,0 +1,73 @@
+.logo
+{
+	color: #fff;
+	font-weight: 700;
+	font-size: 1em;
+	text-decoration: none;
+}
+
+.logo span
+{	
+	color: #119281
+}
+
+.logo .fin
+{	
+	color: rgb(223, 89, 0);
+	margin-right: 5px;
+}
+
+.mas
+{
+	color: rgb(223, 89, 0);
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+li
+{
+	
+	list-style: none;
+	margin-left: 10px;
+	font-size: 1em;
+	display: flex;
+	align-items: center;
+}
+
+li a .btnMenu
+{	
+	text-decoration: none;
+	color: #119281;
+}
+
+li a:hover
+{
+	color: black;
+	text-decoration: none;
+	letter-spacing: 2px;
+	transition: 0.6s;
+}
+
+.navbar-light .navbar-nav .nav-link
+{
+	color: #119281;
+}
+
+.dropdown-item
+{
+	color: white;	
+	background-color: #119281;
+}
+
+.dropdown-menu
+{
+	background-color: rgba(253, 249, 249, 0);
+}
+
+.navbar
+{
+	padding: 1rem 0rem;
+}
+
+
+

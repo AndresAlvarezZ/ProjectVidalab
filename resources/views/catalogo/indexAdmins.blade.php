@@ -11,7 +11,8 @@
         </div>
                 <link rel="stylesheet" type="text/css" href="css/estiloDelCatalogo.css">
 				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		    <script src="{{ asset('js/localStorage.js') }}"defer></script>
+            <script src="{{ asset('js/localStorage.js') }}"defer></script>
+            <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
 
         @foreach($pruebas as $prueba)

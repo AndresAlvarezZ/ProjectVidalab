@@ -8,6 +8,8 @@
         <link href="{{ asset('css/perfil.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
         <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
         <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+
+        <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     </head>
 
     <body>

@@ -73,8 +73,8 @@ function cargarCarrito()
     txtnombreDelCliente.required = true;
     txtnombreDelCliente.className = 'form form-control';
     var domicilioDelCliente = document.createElement('label');
-    var txtdomicilioDelCliente = document.createElement('input');
-    domicilioDelCliente.textContent ='Domicilio actual';
+    var txtdomicilioDelCliente = document.createElement('textarea');
+    domicilioDelCliente.textContent ='Dirección exacta';
     txtdomicilioDelCliente.name = 'domicilioDelCiente';
     txtdomicilioDelCliente.required = true;
     txtdomicilioDelCliente.className = 'form form-control';

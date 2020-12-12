@@ -93,7 +93,7 @@ function cargarCarrito()
     btnFinalizar.className = 'btn btn-primary';
     link.textContent = 'Solicitar a domicilio';
     link.href = '/compras/domicilio';
-    link.className = 'btn btn-primary';
+    link.className = 'btn boton';
       finalizarInter.appendChild(btnFinalizar);
       finalizarInter.appendChild(br2);
       finalizarInter.appendChild(link);

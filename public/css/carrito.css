@@ -1,0 +1,202 @@
+
+body{
+background-image: url("/imgHomeClientes/carrito.jpg");
+}
+
+h1
+{
+	text-align: center;
+	color: white;
+}
+
+.card-header
+{
+	background-color: #119281;
+}
+
+.card-foot
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button
+{
+	font-size: 0.9em;
+	color: #fff;
+    background: #119281;
+	border: none;
+	border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+	padding: 10px 10px;
+	margin: 40px 10px;
+	margin-top: 40px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	transition: 0.5s;
+
+}
+
+.boton, #borrarCarrito, .btn, .botonCatalogo
+{
+	font-size: 1em;
+	color: #fff;
+    background: #119281;
+    border-color: #119281;
+	display: inline-block;
+    width: 100%;
+	padding: 10px 10px;
+	margin: 40px 10px;
+	margin-top: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	transition: 0.5s;
+}
+
+.botonCatalogo
+{
+	width: 80%;
+	margin: 40px 10px;
+	padding: 10px 40px;
+}
+
+.boton:hover, #borrarCarrito:hover, button:hover
+{
+	letter-spacing: 4px;
+	text-decoration: none;
+	color: white;
+}
+
+.botonCatalogo:hover
+{
+	background-color:rgb(223, 89, 0);
+	color: white;
+	letter-spacing: 4px;
+}
+
+#carrito
+{
+	visibility: hidden;
+}
+
+table
+{
+	margin: auto;
+	text-align: center;
+}
+form
+{
+	margin: auto;
+	width: 90%;
+	text-align: center;
+}
+
+input, textarea
+{
+	text-align: center;
+}
+
+td
+{
+	padding-left: 15px;
+	padding-right: 15px;
+	border-top: solid;
+	border-color:  rgb(223, 89, 0);
+	font-size: 1.2rem;
+}
+
+label
+{
+	font-size: 1.2rem;
+}
+
+#tdProcesar
+{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-top: none;
+	border-color: none;
+	text-align: center;
+}
+
+#txtTotal
+{
+	margin-left:  15px;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+#tdArticulos{
+	
+}
+.tooltiptext
+{
+	display: none;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 57%;
+	left: 77%;
+	margin-left: -13%;
+	margin-bottom:-23%;
+}
+
+.tooltiptext::after 
+{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent black transparent transparent;
+}
+#borrarCarrito:hover .tooltiptext{
+display: inline-block;
+}
+#sinRaya{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-top: none;
+	border-color: none;
+	text-align: left;
+}
+#articulos{
+	padding-left: 5px;
+	padding-right: 5px;
+	border-top: none;
+	border-color: none;
+	text-align: center;
+}
+#factura{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	margin-top: 5px;
+	border-top: dashed;
+	border-color: brown;
+	text-align: right;
+}
+
+.mostarFacturas{
+	padding-top: 0px;
+	overflow-y: scroll;
+	height: 500px;
+	background-size: cover;
+}
+
+/*#tdDescripcion
+{
+	border-right: dashed;
+	border-left: dashed;
+	border-color: brown;
+}*

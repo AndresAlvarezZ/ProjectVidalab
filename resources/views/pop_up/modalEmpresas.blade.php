@@ -31,13 +31,13 @@ modal-dialog modal-dialog-scrollable
 
                                 <h4>Datos del solicitante</h4>
                                 <label for="nombre1" class="col-12 text-center">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el nombre del solicitante de la cita" name="nombreDelSolicitante1" value="{{old('nombreDelSolicitante1')}}" /> <br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el nombre del solicitante de la cita" name="nombreDelSolicitante1" value="{{old('nombreDelSolicitante1')}}" /> <br>
                                 @error('nombreDelSolicitante1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
-                                <label for="primerApellido1" class="col-12 text-center">Primer apellido</label>
+                                <label required for="primerApellido1" class="col-12 text-center">Primer apellido</label>
                                 <input type="text" class="form-control" placeholder="Ingrese el primer apellido del solicitante" name="primerApellidoDelSolicitante1" value="{{old('primerApellidoDelSolicitante1')}}"/> <br>
                                 @error('primerApellidoDelSolicitante1')
                                     <div class="alert alert-danger">{{$message}}</div>
@@ -45,7 +45,7 @@ modal-dialog modal-dialog-scrollable
                                 <br></br>
 
                                 <label for="segundoApellido1" class="col-12 text-center">Segundo apellido</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el segundo apellido del solicitante" name="segundoApellidoDelSolicitante1" value="{{old('segundoApellidoDelSolicitante1')}}"/> <br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el segundo apellido del solicitante" name="segundoApellidoDelSolicitante1" value="{{old('segundoApellidoDelSolicitante1')}}"/> <br>
                                 @error('segundoApellidoDelSolicitante1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
@@ -53,28 +53,28 @@ modal-dialog modal-dialog-scrollable
 
                                 <h4>Datos de la Cita</h4>
                                 <label for="clientes1" class="col-12 text-center">Total de clientes</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el total de clientes que serán atendidos" name="numeroDeClientesPorAtender1" value="{{old('numeroDeClientesPorAtender1')}}"/> <br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el total de clientes que serán atendidos" name="numeroDeClientesPorAtender1" value="{{old('numeroDeClientesPorAtender1')}}"/> <br>
                                 @error('numeroDeClientesPorAtender1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="fecha1" class="col-12 text-center">Fecha de cita</label>
-                                <input type="date" class="form-control" placeholder="Seleccione la fecha de cita" name="fechaDeCita1" value="{{old('fechaDeCita1')}}"/> <br>
+                                <input required type="date" class="form-control" placeholder="Seleccione la fecha de cita" name="fechaDeCita1" value="{{old('fechaDeCita1')}}"/> <br>
                                 @error('fechaDeCita1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="hora1" class="col-12 text-center">Hora de cita</label>
-                                <input type="TIME" class="form-control" placeholder="Seleccione la hora de cita" name="horaDeCita1" value="{{old('horaDeCita1')}}"/> <br>
+                                <input required type="TIME" class="form-control" placeholder="Seleccione la hora de cita" name="horaDeCita1" value="{{old('horaDeCita1')}}"/> <br>
                                 @error('horaDeCita1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="analisis1" class="col-12 text-center">Análisis requeridos</label>
-                                <textarea name="tiposDeAnalisisRequeridos1" class="form-control" cols="30" rows="5" placeholder="Ingrese los de análisis requeridos">{{old('tiposDeAnalisisRequeridos1')}}</textarea> <br>
+                                <textarea required name="tiposDeAnalisisRequeridos1" class="form-control" cols="30" rows="5" placeholder="Ingrese los de análisis requeridos">{{old('tiposDeAnalisisRequeridos1')}}</textarea> <br>
                                 @error('tiposDeAnalisisRequeridos1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror

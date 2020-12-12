@@ -1,56 +1,166 @@
-body
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+*
 {
-  background: #15b3bb9a;
-}
-.card-header
-{
-  background: rgba(255, 115, 0, 0.788);
-}
-th
-{
-  padding-right:40px;
-
-}  
-#datos
-{
-  margin-left:110px;
-}
-.img
-{
-  justify-content: center;
-  align-items: center;
-}
-.imagen{
-  float: left;
-}
-.datosPersonales{
-  float: right;
-}
-label, h3
-{
-  font-weight: bold;
-}
-#imagenPerfil, #perfil{
-  margin-left:35px;
-  height:120px;
-  width: 120px;
-  border-radius:150px;
-  padding-bottom:5px;
-  text-align: center;
-}
-.btnEditarCliente
-{
-  margin-left:150px;
-}
-.tarjetaDeEspecialista, .tituloEspecialistas
-{
-  border-radius:150px;
-  box-shadow: 5px 8px 3px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
-.textarea
-{ 
-  background: transparent;
-  color: transparent;
-  color: white;
+p
+{
+  font-size: 1.3em;
+  font-weight: 300;
+  color: #111;
 }
+
+.boton
+{
+	font-size: 1em;
+	color: #fff;
+	background: #119281;
+	display: inline-block;
+	padding: 10px 30px;
+	margin-top: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	transition: 0.5s;
+}
+
+.icon-camera
+{
+  font-size: 1.5em;
+  color:  #119281;
+  margin-top: 5%;
+}
+
+.boton:hover
+{
+	letter-spacing: 3px;
+	text-decoration: none;
+	color: white;
+}
+
+section
+{
+	padding: 50px;
+}
+
+.tituloDeSeccion
+{
+	color: #111;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.tituloDeSeccion span
+{
+	color: #119281;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.miPerfil
+{
+	background: url(../imgHomeClientes/perfilCliente.jpg);
+	background-size: cover;
+}
+
+.titulomiPerfil .tituloDeSeccion,
+.titulomiPerfil p
+{
+	color: #fff
+}
+
+.miPerfil .contenedorMiPerfil
+{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-top: 40px;
+}
+
+.miPerfil .contenedorMiPerfil .marco
+{
+	width: 450px;					/*ANCHO*/
+	margin: 20px;
+	padding: 40px;					/*LARGO O RELLENO*/
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  flex-direction: column;
+}
+
+.miPerfil .contenedorMiPerfil .marco .imgPerfil
+{
+	position: relative;
+	width: 200px;					/*ANCHO DE PERFIL*/
+	height: 200px;					/*ALTO DE PERFIL*/
+	margin-bottom: 20px;
+	border-radius: 50%;					/*CIRCULO*/
+	overflow: hidden;
+}
+
+.miPerfil .contenedorMiPerfil .marco .imgPerfil img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.miPerfil .contenedorMiPerfil .marco .btnModal
+{
+  border-color: #119281;
+  width: 30px;
+  border-radius: 20%;
+}
+
+
+.miPerfil .contenedorMiPerfil .marco .text
+{
+	text-align: center;
+}
+
+.miPerfil .contenedorMiPerfil .marco .text p
+{
+	color: #666;
+	font-style: italic;
+}
+
+h4, .datos
+{
+  color:#119281;
+  font-weight: bolder;
+}
+
+.miPerfil .contenedorMiPerfil .marco .text h3
+{
+	margin-top: 20px;
+	color: #111;
+	font-size: 1em;
+	color: #119281;
+}
+
+@media (max-width: 991px)
+{
+
+	section
+	{
+		padding: 20px; 
+  }
+  
+  .miPerfil .contenedorMiPerfil .marco
+	{
+		margin: 10px;
+		padding: 20px;
+  }
+}
+
+  

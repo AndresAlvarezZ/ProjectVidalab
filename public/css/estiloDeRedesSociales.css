@@ -10,6 +10,7 @@
 
 .redes-container
 {
+    padding: 80px 10px;
     display: flex;
     height: 80px;
     align-items: center;
@@ -29,7 +30,7 @@
 {
     display: block;
     padding: 0 10px;
-    background: black;
+    background: #119281;
     color: white;
     line-height: 50px;
     font-size: 25px;

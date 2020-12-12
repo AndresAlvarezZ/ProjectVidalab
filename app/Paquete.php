@@ -20,6 +20,7 @@ class Paquete extends Model
     [
         'codigoDelPaquete',
         'nombreDelPaquete',
+        'imagenDelPaquete',
         'descripcionDelPaquete',
         'costoDelPaquete'
     ];

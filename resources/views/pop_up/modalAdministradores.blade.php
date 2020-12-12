@@ -49,11 +49,11 @@ modal-dialog modal-dialog-scrollable
                             
                                 <h4>Datos Personales</h4>
                                 <label for="nombre1" class="col-12 text-center">Nombre</label>
-                                <input id="nombreDelUsuarioAdministrador" type="text" placeholder="Ingrese el primer nombre del administrador(a)" class="form-control @error('nombreDelUsuarioAdministrador') is-invalid @enderror" name="nombreDelUsuarioAdministrador" value="{{ old('nombreDelUsuarioAdministrador') }}" required autocomplete="nombreDelUsuarioAdministrador" autofocus></br>
+                                <input required id="nombreDelUsuarioAdministrador" type="text" placeholder="Ingrese el primer nombre del administrador(a)" class="form-control @error('nombreDelUsuarioAdministrador') is-invalid @enderror" name="nombreDelUsuarioAdministrador" value="{{ old('nombreDelUsuarioAdministrador') }}" required autocomplete="nombreDelUsuarioAdministrador" autofocus></br>
                                 <br></br>
 
                                 <label for="primerapellido1" class="col-12 text-center">Primer Apellido</label>
-                                <input id="primerApellidoAdministrador" type="text" placeholder="Ingrese el primer apellido del administrador(a)" class="form-control @error('primerApellidoAdministrador') is-invalid @enderror" name="primerApellidoAdministrador" value="{{ old('primerApellidoAdministrador') }}" required autocomplete="primerApellidoAdministrador" autofocus></br>
+                                <input required id="primerApellidoAdministrador" type="text" placeholder="Ingrese el primer apellido del administrador(a)" class="form-control @error('primerApellidoAdministrador') is-invalid @enderror" name="primerApellidoAdministrador" value="{{ old('primerApellidoAdministrador') }}" required autocomplete="primerApellidoAdministrador" autofocus></br>
                                 @error('primerApellidoAdministrador')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -62,16 +62,11 @@ modal-dialog modal-dialog-scrollable
                                 <br></br>
 
                                 <label for="segundoapellido1" class="col-12 text-center">Segundo Apellido</label>
-                                <input id="segundoApellidoAdministrador" type="text" placeholder="Ingrese el segundo apellido del administrador(a)" class="form-control @error('segundoApellidoAdministrador') is-invalid @enderror" name="segundoApellidoAdministrador" value="{{ old('segundoApellidoAdministrador') }}" required autocomplete="segundoApellidoAdministrador" autofocus></br>
-                                @error('segundoApellidoAdministrador')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input required id="segundoApellidoAdministrador" type="text" placeholder="Ingrese el segundo apellido del administrador(a)" class="form-control @error('segundoApellidoAdministrador') is-invalid @enderror" name="segundoApellidoAdministrador" value="{{ old('segundoApellidoAdministrador') }}" required autocomplete="segundoApellidoAdministrador" autofocus></br>
                                 <br></br>
 
                                 <label for="cedula1" class="col-12 text-center">Identificación/Cédula</label>
-                                <input id="dniDelUsuarioAdministrador" type="number"  placeholder="Ingrese el número de cédula/identificación del administrador(a). Formato: 123456789" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus></br>
+                                <input required id="dniDelUsuarioAdministrador"   placeholder="Ingrese el número de cédula/identificación del administrador(a). Formato: 123456789" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus></br>
                                 @error('dniDelUsuarioAdministrador')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -80,7 +75,7 @@ modal-dialog modal-dialog-scrollable
                                 <br></br>
 
                                 <label for="telefono1" class="col-12 text-center">Número telefónico</label>
-                                <input id="telefonoDelUsuarioAdministrador" type="number" placeholder="Ingrese un número telefónico para contactar al administrador(a). Formato: 12345678" class="form-control @error('telefonoDelUsuarioAdministrador') is-invalid @enderror" name="telefonoDelUsuarioAdministrador" value="{{ old('telefonoDelUsuarioAdministrador') }}" required autocomplete="telefonoDelUsuarioAdministrador" autofocus></br>
+                                <input required id="telefonoDelUsuarioAdministrador" type="number" placeholder="Ingrese un número telefónico para contactar al administrador(a). Formato: 12345678" class="form-control @error('telefonoDelUsuarioAdministrador') is-invalid @enderror" name="telefonoDelUsuarioAdministrador" value="{{ old('telefonoDelUsuarioAdministrador') }}" required autocomplete="telefonoDelUsuarioAdministrador" autofocus></br>
                                 @error('telefonoDelUsuarioAdministrador')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -90,7 +85,7 @@ modal-dialog modal-dialog-scrollable
 
                                 <h4>Datos Acceso</h4>
                                 <label for="correo1" class="col-12 text-center">Correo electrónico</label>
-                                <input id="email" type="email"  placeholder="Ingrese un correo electrónico para contactar al administrador(a)" class="form-control @error('email') is-invalid @enderror" name="email" onkeyup="this.value = this.value.toLowerCase();" value="{{ old('email') }}" required autocomplete="email" autofocus></br>
+                                <input required id="email" type="email"  placeholder="Ingrese un correo electrónico para contactar al administrador(a)" class="form-control @error('email') is-invalid @enderror" name="email" onkeyup="this.value = this.value.toLowerCase();" value="{{ old('email') }}" required autocomplete="email" autofocus></br>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -99,7 +94,7 @@ modal-dialog modal-dialog-scrollable
                                 <br></br>
 
                                 <label for="contrasena1" class="col-12 text-center">Contraseña</label>
-                                <input id="password" type="password" placeholder="Ingrese una contraseña para que el administrador(a) acceda al sistema" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"></br>
+                                <input required id="password" type="password" placeholder="Ingrese una contraseña para que el administrador(a) acceda al sistema" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"></br>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -108,7 +103,7 @@ modal-dialog modal-dialog-scrollable
                                 <br></br>
 
                                 <label for="confirmarcontrasena1" class="col-12 text-center">Confirmar Contraseña</label>
-                                <input id="password-confirm" type="password" placeholder="Reescriba la contraseña para confirmar que sea correcta" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input required id="password-confirm" type="password" placeholder="Reescriba la contraseña para confirmar que sea correcta" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 <br></br>
 
                             </div>
@@ -204,7 +199,7 @@ modal-dialog modal-dialog-scrollable
                                 </br></br>
 
                                 <label for="motivo4" class="col-12 text-center">Motivo del nuevo estado</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el motivo por el cual denegará el acceso al sistema a este administrador(a)" name="motivoDeEstadoDelUsuarioAdministrador4"  /></br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el motivo por el cual denegará el acceso al sistema a este administrador(a)" name="motivoDeEstadoDelUsuarioAdministrador4"  /></br>
                                 @error('motivoDeEstadoDelUsuarioAdministrador4')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
@@ -259,7 +254,7 @@ modal-dialog modal-dialog-scrollable
                                 </br></br>
 
                                 <label for="motivo4" class="col-12 text-center">Motivo del nuevo estado</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el motivo por el cual concederá el acceso al sistema a este administrador(a)" name="motivoDeEstadoDelUsuarioAdministrador5"/></br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el motivo por el cual concederá el acceso al sistema a este administrador(a)" name="motivoDeEstadoDelUsuarioAdministrador5"/></br>
                                 </br></br>
 
                             </div>

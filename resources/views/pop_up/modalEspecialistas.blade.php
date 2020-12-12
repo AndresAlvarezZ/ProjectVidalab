@@ -30,7 +30,7 @@ modal-dialog modal-dialog-scrollable
                             <input type="hidden" name="id" id="idAgregarImagen">
                             
                             <br></br>
-                            <input type="file" accept="image/*" class="form-control"  name="imagenDelEspecialista"/> <br>
+                            <input required type="file" accept="image/*" class="form-control"  name="imagenDelEspecialista"/> <br>
                             @error('imagenDelEspecialista')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -113,7 +113,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="especialidadesDelEspecialista1" class="col-12 text-center">Especialidades o Experiencia</label>
-                                    <textarea  name="especialidadesDelEspecialista1" class="form-control" placeholder="Ingrese especialidades o experiencia del especialista" id="especialidadesDelEspecialista1" rows="6"></textarea>
+                                    <textarea required  name="especialidadesDelEspecialista1" class="form-control" placeholder="Ingrese especialidades o experiencia del especialista" id="especialidadesDelEspecialista1" rows="6"></textarea>
                                     @error('especialidadesDelEspecialista1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                     @enderror

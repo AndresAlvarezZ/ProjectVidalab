@@ -1,4 +1,4 @@
-  <link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
+<link href="{{ asset('css/estiloDePopUp.css') }}" rel="stylesheet">
   <!--TAMAÑOS
   modal-dialog modal-xl
   modal-dialog modal-lg
@@ -29,7 +29,7 @@
                                       <center><b>¡Su cambio será visible cuando presione el botón subir!</b></center>
                                   </div>
                                   <br></br>
-                                    <input type="file" accept="image/*" class="form-control"  name="imagenDelCliente"/> <br>
+                                    <input required type="file" accept="image/*" class="form-control"  name="imagenDelCliente"/> <br>
                                     @error('imagenDelCliente')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -62,7 +62,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="numeroDeHijos" class="col-12 text-center">Número de hijos</label>
-                                <input required type="text" class="form-control"name="numeroDehijosDelcliente" value="{{$cliente->numeroDehijosDelcliente}}"/> <br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el total de hijos que tiene" name="numeroDehijosDelcliente" value="{{$cliente->numeroDehijosDelcliente}}"/> <br>
                                 @error('numeroDehijosDelcliente')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
@@ -73,14 +73,14 @@
                         <div class="row">
                             <div class="col">
                                 <label for="telefonoDelCliente" class="col-12 text-center">Teléfono</label>
-                                <input required type="text" class="form-control"name="telefonoDelCliente" value="{{$cliente->telefonoDelCliente}}"/> <br>
+                                <input required type="text" class="form-control" placeholder="Ingrese un número telefónico para contactar" name="telefonoDelCliente" value="{{$cliente->telefonoDelCliente}}"/> <br>
                                 @error('telefonoDelCliente')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="col">
                                 <label for="domicilioDelCliente" class="col-12 text-center">Domicilio</label>
-                                <textarea  name="domicilioDelCliente" class="form-control" id="domicilioDelCliente" rows="6">{{$cliente->domicilioDelCliente}}</textarea>
+                                <textarea  name="domicilioDelCliente" class="form-control" placeholder="Ingrese su domicilio en el siguiente formato: Provincia, contón, distrito, dirección exacta" id="domicilioDelCliente" rows="6">{{$cliente->domicilioDelCliente}}</textarea>
                                 @error('domicilioDelCliente')
                                   <div class="alert alert-danger">{{$message}}</div>
                                 @enderror

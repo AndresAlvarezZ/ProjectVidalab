@@ -1,55 +1,145 @@
-
-	@extends('layouts.app')
+@extends('layouts.appClienteEspecial')
 @extends('pop_up.modal')
 @section('content')
+	<head>
+  	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="ie-edge">
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="{{ asset('js/localStorage.js') }}"defer></script>
+		<link href="{{ asset('css/catalogo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+	</head>
+
+  	<body>
+
+	  	<a class='flotante' href='/compras/carrito'><span class="icon-cart"></span></a>
+
+		<section class="analisis" id="analisis">
+			<div class="title">
+				<h2 class="tituloDeSeccion"><span>L</span>ista de <span>A</span>nálisis</h2>
+				<p>
+					Listas de análisis/tests que realiza VIDAlab
+				</p>
+			</div>
+			@if($pruebaDisponible == 1)        
+				<div class="contenedorDeAnalisis">	
+				
+					@foreach($abecedario as $abc)
+					<?php
+						$validador = 1;
+						foreach($pruebas as $prueba)
+
+						if(Str::of($prueba->nombreDelAnalisis)->startsWith($abc))
+						{
+							if($validador == 1)
+							{
+						?>
+								<div class="marcoDeAnalisis">
+									<h4>{{$abc}}</h4>
+									<div class="imagenDeAnalisis">
+										<table id="registros" class="table table-hover">
+											<thead class="thead-dark">
+												<tr>
+													<th scope="col"><center>Nombre</center></th>
+													<th scope="col"><center>Acción a realizar</center></th>
+												</tr>
+											</thead>
+											<tfoot class="thead-dark">
+												</tr>
+													<th scope="col"><center>Nombre</center></th>
+													<th scope="col"><center>Acción a realizar</center></th>
+												</tr>
+											</tfoot>
+											<tbody>
+											@foreach($pruebas as $prueba)
+												<?php
+												
+												if(Str::of($prueba->nombreDelAnalisis)->startsWith($abc))
+												{
+												?>
+													<tr>
+														<td><center>{{$prueba->nombreDelAnalisis}}</center></td>
+														<td><center>
+														<div class="title">
+															<button type="button" class="btn boton" data-toggle="modal" data-target="#{{$prueba->codigoDelAnalisis}}">Leer</button>
+															<button id="carritoDeCompras" type="button" class="btn btn-primary" onclick="
+																AgregarCarrito('{{$prueba->codigoDelAnalisis}}',
+																'{{$prueba->nombreDelAnalisis}}',
+																'{{$prueba->descripcionDelAnalisis}}',
+																'{{$prueba->costoDelAnalisis}}',
+																'{{$prueba->descuentoDelAnalisis}}',
+																'{{$prueba->numeroDeMaquina}}','{{$identificadorDeAnalisis}}')" name="button"><span class="icon-cart"></span>
+															</button>
+														</div>
+														</center></td>
+													</tr>
+												<?php } ?>
+											@endforeach
+											<?php
+												$validador = 0;
+											?>
+											</tbody>
+										</table>
+									</div>
+								</div>
+						<?php
+							}
+						}
+					?>
+					@endforeach
+
+		
+				</div>
+			@else
+				<p class="noDisponible">
+					Datos no disponibles
+				</p>
+          	@endif
+		</section>
 
 
-	<div class="container">
 
-        <div class="card-header">
-           <h3><b><center>Catálogo de Análisis</center></b></h3>
-        </div>
-        <link rel="stylesheet" type="text/css" href="css/estiloDelCatalogo.css">
-				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		    <script src="{{ asset('js/localStorage.js') }}"defer></script>
-
-
-        @foreach($pruebas as $prueba)
-            <div class="card">
-                <img src="imagenes/microbiologia2.jpg">
-                <br>
-                <h5><b>{{$prueba->nombreDelAnalisis}}</b></h5>
-                <p>Costo: ₡ {{$prueba->costoDelAnalisis}}</p>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$prueba->codigoDelAnalisis}}">Leer más</button>
-								<button id="carritoDeCompras" type="button" class="btn btn-primary" onclick="
-								AgregarCarrito('{{$prueba->codigoDelAnalisis}}',
-								'{{$prueba->nombreDelAnalisis}}',
-								'{{$prueba->descripcionDelAnalisis}}',
-								'{{$prueba->costoDelAnalisis}}',
-								'{{$prueba->descuentoDelAnalisis}}',
-								'{{$prueba->numeroDeMaquina}}','{{$identificadorDeAnalisis}}')" name="button">Agregar al carrito</button>
-
-            </div>
-        @endforeach
-<a class='flotante' href='/compras/carrito'><img src='imagenes/vida.jpg' border="0"/>Ir al carrito</a>
-
-        <div class="card-header">
-           <h3><b><center>Catálogo de Ofertas de Paquetes de Análisis</center></b></h3>
-        </div>
-            @foreach($paquetes as $paquete)
-                <div class="card">
-                    <img src="imagenes/microbiologia.jpg">
-                    <br>
-                    <h5><b>{{$paquete->nombreDelPaquete}}</b></h5>
-                    <p>Costo: ₡ {{$paquete->costoDelPaquete}}</p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$paquete->codigoDelPaquete}}">Leer más</button>
-										<button id="carritoDeCompras" type="button" class="btn btn-primary" onclick="
+		<section class="paquete" id="paquete">
+			<div class="title">
+				<h2 class="tituloDeSeccion"><span>P</span>aquetes de <span>A</span>nálisis</h2>
+				<p>
+					Aproveche nuestras ofertas disponibles
+				</p>
+			</div>
+			@if($pruebaDisponible == 1)	
+				<div class="contenedorDePaquete">
+					@foreach($paquetes as $paquete)
+						<div class="marcoDePaquete">
+							<div class="imagenDePaquete">
+								<img src="imgDePaquetes/{{$paquete->imagenDelPaquete}}">
+							</div>
+							<div class="text">
+								<p>
+									{{$paquete->nombreDelPaquete}}
+								</p>
+								<div class="title">
+									<button type="button" class="btn boton" data-toggle="modal" data-target="#{{$paquete->codigoDelPaquete}}">Leer</button>
+									<button id="carritoDeCompras" type="button" class="btn btn-primary" onclick="
 										AgregarCarrito('{{$paquete->codigoDelPaquete}}',
 										'{{$paquete->nombreDelPaquete}}',
 										'{{$paquete->descripcionDelPaquete}}',
 										'{{$paquete->costoDelPaquete}}',
-										'no-aplica','{{$identificadorDePaqete}}')" name="button">Agregar al carrito</button>
+										'no-aplica','{{$identificadorDePaqete}}')" name="button"><span class="icon-cart"></span>
+									</button>
 								</div>
-						@endforeach
+							</div>
+						</div>
+					@endforeach
+				</div>
+			@else
+				<p class="noDisponible">
+					Datos no disponibles
+				</p>
+          	@endif
+		</section>
 
+  	</body>
+
+	@include('layouts.seccionesGenerales.derechosDeAutor')
+  
 @endsection
+

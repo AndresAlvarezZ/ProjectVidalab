@@ -11,8 +11,48 @@ modal-dialog modal-dialog-scrollable
 
 
 <!--MODALS-->
+
+    <!-- MODAL AGREGAR IMAGEN-->
+    <div class="modal fade" id="agregarImagen" tabindex="-1" aria-labelledby="labelImagen" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-ml">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title col-10 text-center col-10 text-center" id="labelImagen">Agregando Imagen de perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form accept-charset="UTF-8" enctype="multipart/form-data" action="/subirImagenPaquete" method="post">
+                @csrf
+                @method ('PUT')
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="alert alert-info" role="alert">
+                                <center><b>¡Su cambio será visible cuando presione el botón subir!</b></center>
+                            </div>
+                            
+                            <input type="hidden" name="id" id="idAgregarImagen">
+                            
+                            <br></br>
+                            <input required type="file" accept="image/*" class="form-control"  name="imagenDelPaquete"/> <br>
+                            @error('imagenDelPaquete')
+                                <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Subir</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    <!--FIN MODAL AGREGAR IMAGEN-->
+
+
     <!-- MODAL AGREGAR-->
-    <div class="modal fade" id="agregarPaquete" tabindex="-1" aria-labelledby="labelAgregarPaquete" aria-hidden="true">
+        <div class="modal fade" id="agregarPaquete" tabindex="-1" aria-labelledby="labelAgregarPaquete" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -32,21 +72,21 @@ modal-dialog modal-dialog-scrollable
 
                                 <h4>Datos Generales</h4>
                                 <label for="codigo1" class="col-12 text-center">Código/Identificador</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el código del paquete" name="codigoDelPaquete1" value="{{old('codigoDelPaquete1')}}" /></br>
+                                <input requeired type="text" class="form-control" placeholder="Ingrese el código del paquete" name="codigoDelPaquete1" value="{{old('codigoDelPaquete1')}}" /></br>
                                 @error('codigoDelPaquete1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="nombre1" class="col-12 text-center">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el nombre del paquete" name="nombreDelPaquete1" value="{{old('nombreDelPaquete1')}}"/></br>
+                                <input requeired type="text" class="form-control" placeholder="Ingrese el nombre del paquete" name="nombreDelPaquete1" value="{{old('nombreDelPaquete1')}}"/></br>
                                 @error('nombreDelPaquete1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                                 <br></br>
 
                                 <label for="descripción1" class="col-12 text-center">Descripción</label>
-                                <textarea name="descripcionDelPaquete1" class="form-control" cols="30" rows="5" placeholder="Ingrese una descripción del paquete">{{old('descripcionDelPaquete1')}}</textarea></br>
+                                <textarea requeired name="descripcionDelPaquete1" class="form-control" cols="30" rows="5" placeholder="Ingrese una descripción del paquete">{{old('descripcionDelPaquete1')}}</textarea></br>
                                 @error('descripcionDelPaquete1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
@@ -58,7 +98,7 @@ modal-dialog modal-dialog-scrollable
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">₡</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Ingrese el precio normal/regular del paquete en colones" name="costoDelPaquete1" value="{{old('costoDelPaquete1')}}"/></br>
+                                    <input requeired type="text" class="form-control" placeholder="Ingrese el precio normal/regular del paquete en colones" name="costoDelPaquete1" value="{{old('costoDelPaquete1')}}"/></br>
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>
@@ -109,6 +149,13 @@ modal-dialog modal-dialog-scrollable
                                     <label for="nombre3" class="col-12 text-center">Nombre</label>
                                     <input type="text" class="form-control" placeholder="Ingrese el nombre del paquete" name="nombreDelPaquete3" id="nombreDelPaquete3"/></br>
                                     </br></br>
+
+                                    <label for="imagen3" class="col-12 text-center">Imagen</label>
+                                    <input type="file" accept="image/*" class="form-control"  name="imagenDelPaquete3"/> <br>
+                                    @error('imagenDelPaquete3')
+                                        <div class="alert alert-danger">{{$message}}</div>
+                                    @enderror
+
 
                                     <label for="descripción3" class="col-12 text-center">Descripción</label>
                                     <input type="text" class="form-control" placeholder="Ingrese una descripción del paquete" name="descripcionDelPaquete3" id="descripcionDelPaquete3"/></br>

@@ -5,7 +5,9 @@
 
 <head>
     <title>Facturas</title>
-    <link href="{{ asset('css/estilo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+    <link href="{{ asset('css/carrito.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+
+    <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 
 <body>
 
@@ -81,7 +83,7 @@
           <div class="">
             <form class="" id="prueba" method="post">
             </form>
-            <a href="/homeAdmins" type="button" class="btn btn-primary">Entendido</a>
+            <a href="/homeAdmins" type="button" class="btn boton">Entendido</a>
           </div>
         </div>
       </div>
