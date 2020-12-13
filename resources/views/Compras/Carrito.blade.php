@@ -7,7 +7,7 @@
 <head>
     <title>Carrito de compras</title>
     <link href="{{ asset('css/carrito.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
-    <script src="{{ asset('js/localStorage.js') }}"defer></script>
+    <script src="{{ asset('js/localStorage.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{ asset('js/sesion.js') }}"defer></script>
 

@@ -46,6 +46,7 @@ function AgregarCompra(carrito)
     }
     agregandoCarrito.push(carrito);
     localStorage.setItem(carritoDeCompras, JSON.stringify(agregandoCarrito));
+    cargarCarrito()
 
 }
 
@@ -56,15 +57,16 @@ function cargarCarrito()
     var carrito = [],
         datoStorage = localStorage.getItem(carritoDeCompras),
         carritoInter = document.querySelector("#tabla tbody");
+        var articulos = document.getElementById('articulos')
     if (datoStorage !== null)
     {
         carrito = JSON.parse(datoStorage);
     }
 
-
+    var contador =0
     carrito.forEach(function (x, i)
     {
-      var contador = i+1;
+      contador = i+1;
         var tr = document.createElement("tr"),
             tdIndice = document.createElement("td"),
             tdDescripcion = document.createElement("td", "tdDescripcion"),
@@ -72,6 +74,9 @@ function cargarCarrito()
             btnEliminar = document.createElement("button", "btnEliminar");
 
         tdIndice.innerHTML = contador;
+        if (articulos!=null) {
+        articulos.innerHTML = contador;
+        }
         tdDescripcion.innerHTML ='<b>'+x.codigo +'<br>'+ x.nombre+'</b><br>'+ x.descripcion;
 
         btnEliminar.textContent = 'Eliminar Análisis';
@@ -80,12 +85,13 @@ function cargarCarrito()
         {
             eliminarDelCarrito(i);
         });
-
         tdEliminar.appendChild(btnEliminar);
         tr.appendChild(tdIndice);
         tr.appendChild(tdDescripcion);
         tr.appendChild(tdEliminar);
-        carritoInter.appendChild(tr);
+        if (carritoInter!=null) {
+        carritoInter.appendChild(tr);  
+        }
     });
 }
 

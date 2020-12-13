@@ -5,13 +5,14 @@
   	<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="ie-edge">
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<script src="{{ asset('js/localStorage.js') }}"defer></script>
+		<script src="{{ asset('js/localStorage.js') }}?v=<?php echo(rand()); ?>"defer></script>
 		<link href="{{ asset('css/catalogo.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 	</head>
 
   	<body>
-
-	  	<a class='flotante' href='/compras/carrito'><span class="icon-cart"></span></a>
+			<form class="" action="index.html" method="post">
+	  	<a class='flotante' href='/compras/carrito'><span class="icon-cart"><label for="" id="articulos"></label> </span></a>
+			</form>
 
 		<section class="analisis" id="analisis">
 			<div class="title">
@@ -20,9 +21,9 @@
 					Listas de análisis/tests que realiza VIDAlab
 				</p>
 			</div>
-			@if($pruebaDisponible == 1)        
-				<div class="contenedorDeAnalisis">	
-				
+			@if($pruebaDisponible == 1)
+				<div class="contenedorDeAnalisis">
+
 					@foreach($abecedario as $abc)
 					<?php
 						$validador = 1;
@@ -52,7 +53,7 @@
 											<tbody>
 											@foreach($pruebas as $prueba)
 												<?php
-												
+
 												if(Str::of($prueba->nombreDelAnalisis)->startsWith($abc))
 												{
 												?>
@@ -87,7 +88,7 @@
 					?>
 					@endforeach
 
-		
+
 				</div>
 			@else
 				<p class="noDisponible">
@@ -105,7 +106,7 @@
 					Aproveche nuestras ofertas disponibles
 				</p>
 			</div>
-			@if($pruebaDisponible == 1)	
+			@if($pruebaDisponible == 1)
 				<div class="contenedorDePaquete">
 					@foreach($paquetes as $paquete)
 						<div class="marcoDePaquete">
@@ -140,6 +141,5 @@
   	</body>
 
 	@include('layouts.seccionesGenerales.derechosDeAutor')
-  
-@endsection
 
+@endsection
