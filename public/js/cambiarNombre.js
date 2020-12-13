@@ -45,16 +45,16 @@ function tipoIdentification() {
   var cambio = document.getElementById('tipoIdentificacion')
   var cambiarTipo = document.getElementById('dniDelUsuario')
   if (cambio.options[cambio.selectedIndex].value ==2) {
-    cambiarTipo.setAttribute("min",11)
-    cambiarTipo.setAttribute("max",12)
+    cambiarTipo.setAttribute("minlength",11)
+    cambiarTipo.setAttribute("maxlength",12)
   }
   if (cambio.options[cambio.selectedIndex].value ==3) {
-    cambiarTipo.setAttribute("min",10)
-    cambiarTipo.setAttribute("max",10)
+    cambiarTipo.setAttribute("minlength",10)
+    cambiarTipo.setAttribute("maxlength",10)
   }
   if (cambio.options[cambio.selectedIndex].value ==1) {
-    cambiarTipo.setAttribute("min",9)
-    cambiarTipo.setAttribute("max",9)
+    cambiarTipo.setAttribute("minlength",9)
+    cambiarTipo.setAttribute("maxlength",9)
   }
 }
 function visible() {
