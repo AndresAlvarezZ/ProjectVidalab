@@ -101,7 +101,7 @@ h4
 	border: 15px solid #fff;
 	box-shadow: 0 5px 35px rgb(0, 0, 0, 0.08)
 }
-	
+
 .analisis .contenedorDeAnalisis .marcoDeAnalisis .imagenDeAnalisis
 {
 	position: relative;
@@ -126,7 +126,7 @@ h4
     overflow: auto;
 }
 
-.analisis .contenedorDeAnalisis .marcoDeAnalisis .text 
+.analisis .contenedorDeAnalisis .marcoDeAnalisis .text
 {
 	padding: 15px 0 5px;
 }
@@ -154,7 +154,7 @@ h4
 	border: 15px solid #fff;
 	box-shadow: 0 5px 35px rgb(0, 0, 0, 0.08)
 }
-	
+
 .paquete .contenedorDePaquete .marcoDePaquete .imagenDePaquete
 {
 	position: relative;
@@ -172,7 +172,7 @@ h4
 	object-fit: cover;
 }
 
-.paquete .contenedorDePaquete .marcoDePaquete .text 
+.paquete .contenedorDePaquete .marcoDePaquete .text
 {
 	padding: 15px 0 5px;
 }
@@ -200,10 +200,10 @@ h4
 	border-radius: 20px;
 	position: relative;
     animation: mymove 5s infinite;
-    
+
 }
 
-@keyframes mymove 
+@keyframes mymove
 {
     from {bottom: 0px;}
     to {bottom: 50px;}
@@ -228,4 +228,10 @@ h4
 	{
 		text-align: center;
 	}
+}
+#articulos{
+	font-size: 25;
+	margin-bottom: 40px;
+	margin-left: 10px;
+	position: fixed;
 }
