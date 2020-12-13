@@ -18,12 +18,12 @@
 				</p>
 			</div>
 
-			@if($fotoDisponible == 1)	
+			@if($fotoDisponible == 1)
 				<div class="contenedor">
 					@foreach($fotos as $foto)
 						<div class="marco">
 							<div class="imagen">
-								<img src="archivosMultimedia/{{$foto->nombreDelArchivo}}">
+								<img src="/archivosMultimedia/{{$foto->nombreDelArchivo}}">
 							</div>
 							<div class="text">
 								<p>
@@ -45,6 +45,5 @@
   	</body>
 
 	@include('layouts.seccionesGenerales.derechosDeAutor')
-  
-@endsection
 
+@endsection
