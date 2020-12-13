@@ -23,6 +23,7 @@
                       </div>
                       <form accept-charset="UTF-8" enctype="multipart/form-data" action="/subirImagen" method="post">
                       {{ csrf_field() }}
+                      @method('put')
                           <div class="modal-body">
                               <div class="form-row">
                                   <div class="alert alert-info" role="alert">
