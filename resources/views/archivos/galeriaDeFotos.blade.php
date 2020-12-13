@@ -23,7 +23,7 @@
 					@foreach($fotos as $foto)
 						<div class="marco">
 							<div class="imagen">
-								<img src="/archivosMultimedia/{{$foto->nombreDelArchivo}}">
+								<img src="/imagenes/{{$foto->nombreDelArchivo}}">
 							</div>
 							<div class="text">
 								<p>
