@@ -7,7 +7,7 @@ use App\Archivos;
 
 class ArchivosController extends Controller
 {
-    
+
   //PERMISOS
     public function __construct()
     {
@@ -91,7 +91,7 @@ class ArchivosController extends Controller
     public function multimediaPost()
     {
       $nombre = '';
-      if (request()->hasFile('file')) 
+      if (request()->hasFile('file'))
       {
         $destinationPath = public_path().'/archivosMultimedia';
         $files = request()->file('file');
@@ -99,7 +99,7 @@ class ArchivosController extends Controller
         $files->move($destinationPath , $file_name); // move files to destination folder
         $nombre = $file_name;
       }
-      if (request()->hasFile('fileVideo')) 
+      if (request()->hasFile('fileVideo'))
       {
         $destinationPath = public_path().'/archivosMultimedia';
         $files = request()->file('fileVideo');
@@ -153,6 +153,4 @@ class ArchivosController extends Controller
     $archivo->delete();
     return redirect('/multimedia')->with('status2','hkj');
   }
-}
-  //
 }

@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
-    <link href="{{ asset('css/estiloDeCliente.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">    
+    <link href="{{ asset('css/estiloDeCliente.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
   </head>
 
   <body>
 
-  <a class='flotante' href='#'><span class="icon-home"></span></a>
+  <a class='flotante' href='#'><span class="icon-home">0</span></a>
 
     <section class="inicio" id="inicio" >
       <div class="contenedor">
@@ -105,7 +105,7 @@
               {{$aspecto->valores}}
             @else
               Dato no disponible
-            @endif 
+            @endif
 					</p>
 				</div>
 			</div>
@@ -127,7 +127,7 @@
 				</div>
 			</div>
     </section>
-    
+
 
     <section class="profesionales" id="profesionales">
 			<div class="title tituloProfesionales">
@@ -136,10 +136,10 @@
 					Nuestro laboratorio VIDAlab cuenta con especialistas en el área.
 				</p>
 			</div>
-			<div class="contenedor">                    
+			<div class="contenedor">
 				@if($especialistaDisponible == 1)
           @foreach($especialistas as $especialista)
-            <div class="marco">        
+            <div class="marco">
               <div class="imagen">
                 @if($especialista->imagenDelEspecialista==null)
                   <img src="/perfilesDeEspecialistas/perfil.jpg">
@@ -156,7 +156,7 @@
                 </p>
                 <h3>{{$especialista->nombreDelEspecialista}} {{$especialista->segundoNombreDelEspecialista}} {{$especialista->primerApellidoDelEspecialista}} {{$especialista->segundoApellidoDelEspecialista}}</h3>
               </div>
-            </div>        
+            </div>
           @endforeach
         @else
           <p>
@@ -188,13 +188,13 @@
       </div>
     </section>
 
-  
+
     <section class="galeriaDeFotos" id="galeriaDeFotos">
-    
+
       <div class="title">
 				<h2 class="tituloDeSeccion"><span>G</span>alería de <span> F</span>otos</h2>
 				<p class="introduccion">
-					Las siguientes son fotografías tomadas en el laboratorio a modo de muestra y aprendizaje sobre nuestro trabajo 
+					Las siguientes son fotografías tomadas en el laboratorio a modo de muestra y aprendizaje sobre nuestro trabajo
         </p>
 			</div>
       <div class="contenedor">
@@ -231,14 +231,14 @@
           <div class="title">
             <a href="/galeriaDeFotos" class="boton">Ver fotos en cuadrícula</a>
           </div>
-          
+
         <!--VIDEOS-->
 
           <div class="title">
             <a href="/galeriaDeVideos" class="boton">Ver videos en cuadrícula</a>
           </div>
-        <!--FIN VIDEOS-->      
-             
+        <!--FIN VIDEOS-->
+
       </div>
     </section>
 
@@ -287,17 +287,12 @@
 				</p>
 			</div>
     </section>
-  
+
   </body>
 
   @include('layouts.seccionesGenerales.redesSociales')
 
   @include('layouts.seccionesGenerales.derechosDeAutor')
-  
+
 </html>
 @endsection
-
-
-
-
-
