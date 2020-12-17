@@ -41,6 +41,7 @@ $(document).ready(function ()
             $('#idEditar').val(data[0]);
             $('#idCita').val(data[1]);
             $('#fechaDeCita3').val(data[2]);
+            $('#horaDeCita3').val(data[3]);
             $('#numeroDeClientesPorAtender3').val(data[4]);
             $('#tiposDeAnalisisRequeridos3').val(data[5]);
             $('#nombreDelSolicitante3').val(data[6]);

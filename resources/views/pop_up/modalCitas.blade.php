@@ -47,6 +47,9 @@ modal-dialog modal-dialog-scrollable
                                 <input type="date" class="form-control" name="fechaDeCita3" id="fechaDeCita3"/> <br>
                                 <br></br>
 
+                                <label for="hora3" class="col-12 text-center">Hora de cita</label>
+                                <input required type="TIME" class="form-control" placeholder="Seleccione la hora de cita" name="horaDeCita3" id="horaDeCita3"/> <br>
+                                <br></br>
 
                                 <label for="analisis3" class="col-12 text-center">Análisis requeridos</label>
                                 <input type="text" class="form-control" placeholder="Ingrese los de análisis requeridos" name="tiposDeAnalisisRequeridos3" id="tiposDeAnalisisRequeridos3"/> <br>

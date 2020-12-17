@@ -1,44 +1,19 @@
-
-.btnActivar, .btnInactivar, .btnEditar, .btnEliminar, .btnCitas, .btnVerCita, .btnPerfil, .btnImagen
-{
-  width:200px;
-}
 #editarAspecto
 {
   width:250px;
 }
-.titulo
+
+
+.btnMenu span
 {
-  background: rgba(255, 255, 255, 0.822);
-  border-radius: 10rem;
-  border-color: black;
+  margin-right: 5px;
 }
 
-.btnMenu
-{
-  font-weight: bold;
-}
-
-.navbar
-{
-  background-color: rgba(255, 255, 255, 0.911);
+.btnPerfil, .btnEditar, .btnEliminar, .btnInactivar, .btnActivar, .btnImagen, .btnAgregarCita, .btnCitas, .btnEnCancelada, .btnEnConfirmada, .btnEnEspera
+{  
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 
-.btnActivar span,
-.btnInactivar span,
-.btnAgregar span, 
-.btnEditar span, 
-.btnEliminar span, 
-.btnAgregarCita span,
-.btnCitas span, 
-.btnEnviar span,
-.btnEnvio span,
-.btnMenu span, 
-.btnEnCancelada span,
-.btnEnConfirmada span,
-.btnEnEspera span,
-.btnCompras
-{
-  margin-right: 10px;
-}

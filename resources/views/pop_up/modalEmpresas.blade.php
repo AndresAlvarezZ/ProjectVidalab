@@ -23,7 +23,7 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             <div class="form-row">
 
-                                <input type="text" name="idCitaDeEmpresa" id="idCitaDeEmpresa"><br>
+                                <input type="hidden" name="idCitaDeEmpresa" id="idCitaDeEmpresa"><br>
 
                                 <div class="alert alert-info" role="alert">
                                     <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
