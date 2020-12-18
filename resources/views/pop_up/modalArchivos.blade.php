@@ -121,21 +121,19 @@ modal-dialog modal-dialog-scrollable
                         <div class="modal-body">
                             {{ csrf_field() }}
                             {{method_field('DELETE')}}
-                            <div class="form-row">
-                                <input type="hidden" name="id" id="idEliminar">
+                            <input type="hidden" name="id" id="idEliminar">
 
-                                <div class="alert alert-danger" role="alert">
-                                    <center>¡Lea cuidadosamente la información!</center>
-                                </div>
-
-                                <label for="nombreCompletoDelEspecialista4" class="col-12 text-center">Nombre del archivo</label>
-                                <input required type="text" class="form-control" name="nombreDelArchivo" id="nombreDelArchivo1" readonly/> <br>
-
-                                <br></br>
-
-                                <label for="sedeDelEspecialista4" class="col-12 text-center">Descripción</label>
-                                <input required type="text" class="form-control" name="descripcionDelArchivo" id="descripcionDelArchivo1" readonly/> <br>
+                            <div class="alert alert-danger" role="alert">
+                                <center>¡Lea cuidadosamente la información!</center>
                             </div>
+
+                            <label for="nombreCompletoDelEspecialista4" class="col-12 text-center">Nombre del archivo</label>
+                            <input required type="text" class="form-control" name="nombreDelArchivo" id="nombreDelArchivo1" readonly/>
+
+                            <br>
+
+                            <label for="sedeDelEspecialista4" class="col-12 text-center">Descripción</label>
+                            <input required type="text" class="form-control" name="descripcionDelArchivo" id="descripcionDelArchivo1" readonly/>
                         </div>
                         <div class="modal-footer text-center">
                             <button type="submit" class="btn btn-secondary btn-lg">Confirmar</button>

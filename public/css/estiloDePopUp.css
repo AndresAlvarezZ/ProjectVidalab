@@ -6,15 +6,8 @@
 
 .modal-header
 {
-  background-color: #119281;
+  background-color: #159b89ad;
 }
-
-
-.alert
-{
-  width: 50rem;    
-}
-
 
 label
 {
@@ -52,6 +45,7 @@ h4
   font-size: x-large;
   font-weight: bold;
   text-align: center;
+  text-decoration: underline;
 }
 
 

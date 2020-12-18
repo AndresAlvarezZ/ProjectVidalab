@@ -14,11 +14,39 @@ class ClientesController extends Controller
    *
    * @return void
    */
-  public function __construct()
-  {
-      $this->middleware('auth:web');
-  }
+  //PERMISOS
+    public function __construct()
+    {
+        $this->middleware('auth:web')->only('verPerfil', 'IngresarCliente', 'subirImagen', 'editarPerfil');
+        $this->middleware('auth:admins')->only('perfilesDeClientes');
+    }
+  //
 
+
+  //VER PERFIL: CLIENTE
+    public function verPerfil()
+    {
+      $dato = auth()->user()->dniDelUsuario;
+      $cliente = Clientes::find($dato);
+      return view('Perfiles.perfil',compact('cliente'));
+    }
+  //
+
+  //VER PERFILES: ADMINISTRADOR
+    public function perfilesDeClientes()
+    {
+      $clientes = Clientes::all();
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      return view ('clientes.index',compact('clientes','name'));
+      }
+      else{
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
+    }
+  //
+
+  //REGISTRAR
     public function IngresarCliente()
     {
       return view('clientes.ingresarCliente');
@@ -63,12 +91,10 @@ class ClientesController extends Controller
               ->update(['idCliente' => 9]);
       return redirect('/home');*/
     }
-    public function verPerfil()
-    {
-      $dato = auth()->user()->dniDelUsuario;
-      $cliente = Clientes::find($dato);
-      return view('Perfiles.perfil',compact('cliente'));
-    }
+  //
+
+  
+  //AGREGAR PERFIL
     public function subirImagen()
     {
       $cliente = Clientes::find(auth()->user()->dniDelUsuario);
@@ -79,17 +105,21 @@ class ClientesController extends Controller
         $destinationPath = public_path().'/perfilesDeClientes';
         $files = request()->file('imagenDelCliente');
         $file_name = $files->getClientOriginalName(); //Get file original name
-            $files->move($destinationPath , $file_name); // move files to destination folder
-            $cliente->imagenDelCliente = $file_name;
-            $cliente->update();
+        $files->move($destinationPath , $file_name); // move files to destination folder
+        $cliente->imagenDelCliente = $file_name;
+        $cliente->update();
       }
-        return redirect('/verPerfil');
+      return redirect('/verPerfil');
     }
+  //
+
+
+  //EDITAR
     public function editarPerfil()
     {
-        $cliente = Clientes::find(auth()->user()->dniDelUsuario);
-        $cliente->update(request()->all());
-        return redirect('/verPerfil');
-
+      $cliente = Clientes::find(auth()->user()->dniDelUsuario);
+      $cliente->update(request()->all());
+      return redirect('/verPerfil');
     }
+  //
 }

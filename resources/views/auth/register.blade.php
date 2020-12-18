@@ -3,7 +3,7 @@
 <head>
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <script src="{{ asset('js/cambiarNombre.js') }}?v=<?php echo(rand()); ?>"defer></script>
-
+    <script src="{{ asset('js/calidadoresDeTexto/caracteresPermitidos.js') }}?v=<?php echo(rand()); ?>"defer></script>
 </head>
 
 @section('content')
@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="dniDelUsuario" class="col-md-12 col-form-label text-md-center">{{ __('Cédula/Identificación') }}</label>
-                                        <input id="dniDelUsuario" minlength="9" maxlength="9" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
+                                        <input id="dniDelUsuario" minlength="9" maxlength="9" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
                                         @error('dniDelUsuario')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -56,7 +56,7 @@
 
                                     <div class="form-group col-md-12">
                                         <label for="name" class="col-md-12 col-form-label text-md-center">{{ __('Nombre de usuario') }}</label>
-                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Ingrese un nombre de usuario para acceder al sistema" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Ingrese un nombre de usuario para acceder al sistema" onkeypress="return soloNumerosLetras(event);" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

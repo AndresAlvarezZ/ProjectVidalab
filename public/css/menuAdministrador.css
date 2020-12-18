@@ -53,7 +53,7 @@ li a:hover
 	color: #119281;
 }
 
-.dropdown-item
+.dropdown-item, li a  .btnMenuSubmenu
 {
 	color: white;	
 	background-color: #119281;

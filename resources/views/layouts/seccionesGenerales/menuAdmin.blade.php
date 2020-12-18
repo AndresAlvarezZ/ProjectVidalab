@@ -10,6 +10,9 @@
 <li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-home"></span>VIDAlab</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/administradores">Registro de Administradores</a>
+        <a class="dropdown-item" href="/administradores/activos">Administradores Activos</a>
+        <a class="dropdown-item" href="/administradores/inactivos">Administradores Inactivos</a>
         <a class="dropdown-item" href="/especialistas">Registrar Especialistas</a>
         <a class="dropdown-item" href="/especialistas/mostrar">Ver perfiles de especialistas</a>
         <a class="dropdown-item" href="/informacion">Información VIDAlab</a>
@@ -19,11 +22,11 @@
 </li>
 
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-user"></span>ADMINISTRADORES</a>
+    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-lab"></span>SERVICIOS</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/administradores">Registro de Administradores</a>
-        <a class="dropdown-item" href="/administradores/activos">Administradores Activos</a>
-        <a class="dropdown-item" href="/administradores/inactivos">Administradores Inactivos</a>
+        <a class="dropdown-item" href="/pruebas">Análisis</a>
+        <a class="dropdown-item" href="/paquetes">Paquetes</a>
+        <a class="dropdown-item" href="/catalogosAdmins">Catálogo</a>
     </div>
 </li>
 
@@ -39,19 +42,18 @@
 </li>
 
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-lab"></span>SERVICIOS</a>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/pruebas">Análisis</a>
-        <a class="dropdown-item" href="/paquetes">Paquetes</a>
-        <a class="dropdown-item" href="/catalogosAdmins">Catálogo</a>
-    </div>
-</li>
-
-<li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-office"></span>EMPRESARIAL</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/empresas">Empresas</a>
         <a class="dropdown-item" href="/citas">Citas Generales</a>
+    </div>
+</li>
+
+<li class="nav-item dropdown">
+    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-users"></span>CLIENTES</a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/perfilesDeClientes">Registro de Clientes</a>
+        <a class="dropdown-item" href="/administradores/activos">Perfiles de clientes</a>
     </div>
 </li>
 

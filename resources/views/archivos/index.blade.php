@@ -12,7 +12,6 @@
             <div class="title">
 				<h2 class="tituloDeRegistro"><span>R</span>gistro de <span>C</span>ontenido <span>M</span>ultimedia</h2>
 			</div>
-            <div class="card-header titulo"><h4><b><center>Registro de Contenido Multimedia</center></b></h4></div>
             <div class="card-body">
                 @if (session('status'))
 

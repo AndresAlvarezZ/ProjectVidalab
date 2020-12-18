@@ -149,9 +149,10 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO CLIENTES
-  Route::get('/afiliarme','ClientesController@IngresarCliente');
-  Route::Post('/afiliarme','ClientesController@CrearCliente');
+  Route::get('/afiliarme','ClientesController@IngresarCliente');  
   Route::get('/verPerfil','ClientesController@verPerfil');
+  Route::get('/perfilesDeClientes','ClientesController@perfilesDeClientes');
+  Route::Post('/afiliarme','ClientesController@CrearCliente');
   Route::put('/subirImagen','ClientesController@subirImagen');
   Route::put('/editarPerfil','ClientesController@editarPerfil');
 

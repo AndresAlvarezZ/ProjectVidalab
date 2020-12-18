@@ -62,30 +62,6 @@ class EspecialistaController extends Controller
     //
 
 
-    /*VER PERFILES, CLIENTES
-        public function verEspecialistas()
-        {
-            $especialistas = Especialista::all();
-            $id = Especialista::find('1');
-            $datosDisponibles = 0;
-            if(empty($id))
-            {
-                $datosDisponibles = 0;
-            }
-            else{
-                $datosDisponibles = $id->id;
-            }
-            return view('especialistas.verEspecialistas', compact('especialistas', 'datosDisponibles'));
-        }
-    */
-
-
-
-
-
-
-
-
     //GUARDAR REGISTROS
         public function guardar (Request $request)
         {

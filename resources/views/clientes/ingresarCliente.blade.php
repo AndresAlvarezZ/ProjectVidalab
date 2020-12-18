@@ -3,6 +3,7 @@
 <head>
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <script src="{{ asset('js/calculoEdad.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/validadoresDeTexto/caracteresPermitidos.js') }}?v=<?php echo(rand()); ?>"defer></script>
 </head>
 
 @section('content')
@@ -28,7 +29,7 @@
                                         <div class="row">
                                           <div class="form-group col-md-6">
                                               <label for="nombreDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Primer Nombre') }}</label>
-                                              <input id="nombreDelCliente" type="text" placeholder="Ingrese su primer nombre" class="form-control @error('nombreDelCliente') is-invalid @enderror" name="nombreDelCliente"  value="{{ auth()->user()->nombreDelCliente }}" required autocomplete="nombreDelCliente" autofocus>
+                                              <input id="nombreDelCliente" type="text" placeholder="Ingrese su primer nombre" class="form-control @error('nombreDelCliente') is-invalid @enderror" name="nombreDelCliente" onkeypress="return soloLetras(event);" value="{{ auth()->user()->nombreDelCliente }}" required autocomplete="nombreDelCliente" autofocus>
                                               @error('nombreDelCliente')
                                                   <span class="invalid-feedback" role="alert">
                                                       <strong>{{ $message }}</strong>
@@ -38,12 +39,12 @@
 
                                           <div class="form-group col-md-6">
                                               <label for="segundoNombreDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Segundo Nombre') }}</label>
-                                              <input id="segundoNombreDelCliente" type="text" placeholder="Ingrese su segundo nombre" class="form-control" name="segundoNombreDelCliente" value="{{ old('segundoNombreDelCliente') }}" autofocus>
+                                              <input id="segundoNombreDelCliente" type="text" placeholder="Ingrese su segundo nombre" class="form-control" name="segundoNombreDelCliente" onkeypress="return soloLetras(event);" value="{{ old('segundoNombreDelCliente') }}" autofocus>
                                           </div>
                                           
                                           <div class="form-group col-md-6">
                                               <label for="primerApellidoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Primer Apellido') }}</label>
-                                              <input id="primerApellidoDelCliente" type="text" placeholder="Ingrese su primer apellido" class="form-control @error('primerApellidoDelCliente') is-invalid @enderror" name="primerApellidoDelCliente" value="{{ old('primerApellidoDelCliente') }}" required autocomplete="primerApellidoDelCliente" autofocus>
+                                              <input id="primerApellidoDelCliente" type="text" placeholder="Ingrese su primer apellido" class="form-control @error('primerApellidoDelCliente') is-invalid @enderror" onkeypress="return soloLetras(event);" name="primerApellidoDelCliente" value="{{ old('primerApellidoDelCliente') }}" required autocomplete="primerApellidoDelCliente" autofocus>
 
                                               @error('primerApellidoDelCliente')
                                                   <span class="invalid-feedback" role="alert">
@@ -54,7 +55,7 @@
 
                                           <div class="form-group col-md-6">
                                               <label for="segundoApellidoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Segundo Apellido') }}</label>
-                                              <input id="segundoApellidoDelCliente" type="text" placeholder="Ingrese su segundo apellido" class="form-control @error('segundoApellidoDelCliente') is-invalid @enderror" name="segundoApellidoDelCliente" value="{{ old('segundoApellidoDelCliente') }}" required autocomplete="segundoApellidoDelCliente" autofocus>
+                                              <input id="segundoApellidoDelCliente" type="text" placeholder="Ingrese su segundo apellido" class="form-control @error('segundoApellidoDelCliente') is-invalid @enderror" onkeypress="return soloLetras(event);" name="segundoApellidoDelCliente" value="{{ old('segundoApellidoDelCliente') }}" required autocomplete="segundoApellidoDelCliente" autofocus>
                                               @error('segundoApellidoDelCliente')
                                                   <span class="invalid-feedback" role="alert">
                                                       <strong>{{ $message }}</strong>
@@ -63,7 +64,7 @@
                                           </div>
                                             <div class="form-group col-md-6">
                                                 <label for="dniDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Cédula/Identificación') }}</label>
-                                                <input id="dniDelCliente" type="integer" class="form-control @error('dniDelCliente') is-invalid @enderror" name="dniDelCliente" readonly value="{{ auth()->user()->dniDelUsuario }}" required autocomplete="dniDelCliente" autofocus>
+                                                <input id="dniDelCliente" type="integer" class="form-control @error('dniDelCliente') is-invalid @enderror" name="dniDelCliente" readonly value="{{ auth()->user()->dniDelUsuario }}" onkeypress="return soloNumeros(event);" required autocomplete="dniDelCliente" autofocus>
                                                 @error('dniDelCliente')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -73,7 +74,7 @@
 
                                             <div class="form-group col-md-6">
                                                 <label for="numeroDehijosDelcliente" class="col-md-4 col-form-label text-md-center">{{ __('Numero de hijos') }}</label>
-                                                <input id="numeroDehijosDelcliente" type="number" placeholder="Ingrese su nombre" class="form-control @error('numeroDehijosDelcliente') is-invalid @enderror" name="numeroDehijosDelcliente" value="{{ old('numeroDehijosDelcliente') }}" required autocomplete="numeroDehijosDelcliente" autofocus>
+                                                <input id="numeroDehijosDelcliente" type="number" placeholder="Ingrese su nombre" class="form-control @error('numeroDehijosDelcliente') is-invalid @enderror" name="numeroDehijosDelcliente" onkeypress="return soloNumeros(event);" value="{{ old('numeroDehijosDelcliente') }}" required autocomplete="numeroDehijosDelcliente" autofocus>
                                                 @error('numeroDehijosDelcliente')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -85,7 +86,7 @@
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label for="fechaDeNacimientoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Fecha de Nacimiento') }}</label>
-                                                <input id="fechaDeNacimientoDelCliente" onchange="primer(this.value)" onclick="primer(this.value)" onkeyup="primer(this.value)" type="date" class="form-control @error('fechaDeNacimientoDelCliente') is-invalid @enderror" name="fechaDeNacimientoDelCliente" value="" required autocomplete="fechaDeNacimientoDelCliente" autofocus>
+                                                <input id="fechaDeNacimientoDelCliente" onchange="primer(this.value)" onclick="primer(this.value)" onkeyup="primer(this.value)" type="date" class="form-control @error('fechaDeNacimientoDelCliente') is-invalid @enderror" onkeypress="return soloNumeros(event);" name="fechaDeNacimientoDelCliente" value="" required autocomplete="fechaDeNacimientoDelCliente" autofocus>
                                                 @error('fechaDeNacimientoDelCliente')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -116,7 +117,7 @@
 
                                             <div class="form-group col-md-6">
                                                 <label for="telefonoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Teléfono') }}</label>
-                                                <input id="telefonoDelCliente" type="text" placeholder="Ingrese un número telefónico de contacto" class="form-control @error('telefonoDelCliente') is-invalid @enderror" name="telefonoDelCliente" value="{{ old('telefonoDelCliente') }}" required autocomplete="telefonoDelCliente" autofocus>
+                                                <input id="telefonoDelCliente" type="text" placeholder="Ingrese un número telefónico de contacto" class="form-control @error('telefonoDelCliente') is-invalid @enderror" name="telefonoDelCliente" onkeypress="return soloNumeros(event);" value="{{ old('telefonoDelCliente') }}" required autocomplete="telefonoDelCliente" autofocus>
 
                                                 @error('telefonoDelCliente')
                                                     <span class="invalid-feedback" role="alert">

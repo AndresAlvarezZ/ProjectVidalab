@@ -22,6 +22,7 @@
 
 
 <!--JS COMPLEMENTO DE DATATABLES-->
+    <script src="{{ asset('js/validadoresDeTexto/caracteresPermitidos.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/buscador/clientesP.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/buscador/clientesM.js') }}?v=<?php echo(rand()); ?>"defer></script>

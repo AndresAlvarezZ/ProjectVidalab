@@ -93,7 +93,7 @@
                   </select>
                   <br></br>
 
-                  <center><button id="btnEnviar" type="submit" onclick="iniciarContador()" class="btn btn-success btnEnvio"><span class="icon-upload2"> </span>Enviar Correo</button></center>
+                  <center><button id="btnEnviar" type="submit" onclick="iniciarContador()" class="btn btn-success btnEnvio"><span class="icon-upload2"> </span> Enviar Correo</button></center>
                 </form>
               </div>
             </div>
