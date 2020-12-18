@@ -142,7 +142,7 @@
             <div class="marco">
               <div class="imagen">
                 @if($especialista->imagenDelEspecialista==null)
-                  <img src="/perfilesDeEspecialistas/perfil.jpg">
+                  <img src="/perfilesDeEspecialistas/imagenFija.jpg">
                 @endif
                 @if($especialista->imagenDelEspecialista!=null)
                   <img src="/perfilesDeEspecialistas/{{$especialista->imagenDelEspecialista}}">
@@ -177,7 +177,7 @@
 			<div class="contenedor">
 				<div class="marco">
 					<div class="imagen">
-						<img src="imgHomeClientes/oferta1.jpg">
+						<img src="imgDePaquetes/imagenFija.png">
 					</div>
 					<div class="text">
           </div>

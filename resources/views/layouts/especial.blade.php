@@ -39,7 +39,7 @@
                         <!-- Authentication Links -->
                         @php
                         if($acceso ?? ''==true){
-                        $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+                            $name = auth()->administrador()->nombreDelUsuarioAdministrador;
                         }
                         @endphp
                         <li class="nav-item dropdown">

@@ -44,14 +44,14 @@ class HomeController extends Controller
           }
 
           $especialistas = Especialista::all();
-          $idEspecialista = Especialista::find('1');
+          $idEspecialista = Especialista::all();
             $especialistaDisponible = 0;
             if(empty($idEspecialista))
             {
                 $especialistaDisponible = 0;
             }
             else{
-                $especialistaDisponible = $idEspecialista->id;
+                $especialistaDisponible = '1';
             }
 
             $archivos = Archivos::all();

@@ -11,14 +11,14 @@ class ArchivosController extends Controller
   //PERMISOS
     public function __construct()
     {
-      $this->middleware('auth:admins')->only('multimedia','multimediaPost','verContenido','editarMultimedia');
-      $this->middleware('auth:web')->only('galeriaDeFotos');
+      $this->middleware('auth:admins')->only('index','multimediaPost','galeriaAdministrativa','editarMultimedia');
+      $this->middleware('auth:web')->only('galeriaDeFotos', 'galeriaDeVideos');
     }
   //
 
 
   //LISTA DE ARCHIVOS
-    public function multimedia()
+    public function index()
     {
       $archivos = Archivos::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
@@ -73,15 +73,38 @@ class ArchivosController extends Controller
 
 
   //VER GALERÍA: ADMINISTRADOR
-    public function verContenido()
+    public function galeriaAdministrativa()
     {
-      $archivos = Archivos::all();
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
-          return view('archivos.multimedia',compact('archivos','name'));
+      $idFoto = Archivos::where('tipoDeArchivo', '==', 1)->get();
+      $fotoDisponible = 0;
+      if(empty($idFoto)){
+        $fotoDisponible = '0';
       }
       else{
-      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        $fotoDisponible = '1';
+      }
+
+      $idVideo = Archivos::where('tipoDeArchivo', '==', '2')->get();
+      $videoDisponible = 0;
+      if(empty($idVideo)){
+        $videoDisponible = '0';
+      }
+      else{
+        $videoDisponible = '1';
+      }
+  
+      $videos = Archivos::where('tipoDeArchivo', 2)->get();
+      $fotos = Archivos::where('tipoDeArchivo', 1)->get();
+
+
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) 
+      {
+        return view('archivos.galeriaAdministrativa',compact('videos', 'fotos', 'fotoDisponible', 'videoDisponible', 'name'));
+      }
+      else
+      {
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
@@ -119,38 +142,42 @@ class ArchivosController extends Controller
 
 
   //EDITAR REGISTRO
-  public function editarMultimedia(Archivos $archivo)
-  {
-    $nombre = $archivo->nombreDelArchivo;
-    $tipo = $archivo->tipoDeArchivo;
-    if (request()->hasFile('file')) {
-      unlink(public_path().'/archivosMultimedia/'.$nombre);
-      $destinationPath = public_path().'/archivosMultimedia';
-      $files = request()->file('file');
-      $file_name = $files->getClientOriginalName(); //Get file original name
-      $files->move($destinationPath , $file_name); // move files to destination folder
-      $nombre = $file_name;
-      $tipo = request('tipoDeArchivo');
-    }
-    if (request()->hasFile('fileVideo')) {
-      unlink(public_path().'/archivosMultimedia/'.$nombre);
-      $destinationPath = public_path().'/archivosMultimedia';
-      $files = request()->file('fileVideo');
-      $file_name = $files->getClientOriginalName(); //Get file original name
-      $files->move($destinationPath , $file_name); // move files to destination folder
-      $nombre = $file_name;
-      $tipo = request('tipoDeArchivo');
+    public function editarMultimedia(Archivos $archivo)
+    {
+      $nombre = $archivo->nombreDelArchivo;
+      $tipo = $archivo->tipoDeArchivo;
+      if (request()->hasFile('file')) {
+        unlink(public_path().'/archivosMultimedia/'.$nombre);
+        $destinationPath = public_path().'/archivosMultimedia';
+        $files = request()->file('file');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+        $files->move($destinationPath , $file_name); // move files to destination folder
+        $nombre = $file_name;
+        $tipo = request('tipoDeArchivo');
       }
-      $archivo->tipoDeArchivo = $tipo;
-      $archivo->nombreDelArchivo = $nombre;
-      $archivo->descripcionDelArchivo = request('descripcionDelArchivo');
-      $archivo->update();
-    return redirect('/multimedia')->with('status1','hkj');
-  }
+      if (request()->hasFile('fileVideo')) {
+        unlink(public_path().'/archivosMultimedia/'.$nombre);
+        $destinationPath = public_path().'/archivosMultimedia';
+        $files = request()->file('fileVideo');
+        $file_name = $files->getClientOriginalName(); //Get file original name
+        $files->move($destinationPath , $file_name); // move files to destination folder
+        $nombre = $file_name;
+        $tipo = request('tipoDeArchivo');
+        }
+        $archivo->tipoDeArchivo = $tipo;
+        $archivo->nombreDelArchivo = $nombre;
+        $archivo->descripcionDelArchivo = request('descripcionDelArchivo');
+        $archivo->update();
+      return redirect('/multimedia')->with('status1','hkj');
+    }
+  //
 
-  public function eliminarMultimedia(Archivos $archivo)
-  {
-    $archivo->delete();
-    return redirect('/multimedia')->with('status2','hkj');
-  }
+
+  //ELIMINAR MULTIMEDIA
+    public function eliminarMultimedia(Archivos $archivo)
+    {
+      $archivo->delete();
+      return redirect('/multimedia')->with('status2','hkj');
+    }
+  //
 }

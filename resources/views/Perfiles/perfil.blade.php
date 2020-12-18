@@ -16,10 +16,10 @@
           <h2 class="tituloDeSeccion"><span class="fin">Mi Perfil</span></h2>      
           <div class="imgPerfil">
             @if($cliente->imagenDelCliente==null)
-              <img src="/imagenes/perfil.jpg">
+              <img src="/perfilesDeClientes/imagenFija.jpg">
             @endif
             @if($cliente->imagenDelCliente!=null)
-              <img src="/imagenes/{{$cliente->imagenDelCliente}}">
+              <img src="/perfilesDeClientes/{{$cliente->imagenDelCliente}}">
             @endif
           </div>
           <button class="btnModal" type="button" data-toggle="modal" data-target="#agregarImagen"><span class="icon-camera"></span></button>

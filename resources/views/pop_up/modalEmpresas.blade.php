@@ -226,7 +226,7 @@ modal-dialog modal-dialog-scrollable
                                 <input type="hidden" name="id" id="idEliminar">
 
                                 <div class="alert alert-danger" role="alert">
-                                    <center>¡Lea cuidadosamente la información!</center>
+                                    <center>¡Lea cuidadosamente la información! Si la empresa tiene citas registradas no le permitirá eliminarla del registro</center>
                                 </div>
 
                                 <label for="nombre" class="col-12 text-center">Código de la empresa</label>

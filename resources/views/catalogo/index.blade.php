@@ -111,7 +111,12 @@
 					@foreach($paquetes as $paquete)
 						<div class="marcoDePaquete">
 							<div class="imagenDePaquete">
-								<img src="imgDePaquetes/{{$paquete->imagenDelPaquete}}">
+								@if($paquete->imagenDelPaquete==null)
+									<img src="/imgDePaquetes/imagenFija.png">
+								@endif
+								@if($paquete->imagenDelPaquete!=null)
+									<img src="/imgDePaquetes/{{$paquete->imagenDelPaquete}}">
+								@endif
 							</div>
 							<div class="text">
 								<p>

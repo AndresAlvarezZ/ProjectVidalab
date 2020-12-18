@@ -22,7 +22,10 @@
 					@foreach($videos as $video)
 						<div class="marco">
 							<div class="imagen">
-								<video src="archivosMultimedia/{{$video->nombreDelArchivo}}" controls ></video>
+								<video src="/archivosMultimedia/{{$video->nombreDelArchivo}}" controls type="video/mp4">
+								<video src="archivosMultimedia/{{$video->nombreDelArchivo}}" controls type="video/ogg">
+								Lo sentimos, si navegador no soporta este formato de video. Formato sugerido (mp4).
+								</video>
 							</div>
 							<div class="text">
 								<p>

@@ -55,7 +55,14 @@ class NotificacionesController extends Controller
   {
     $notificacion = Notificaciones::find($id);
     $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-    return view ('Notificaciones.mostrarNotificacion', compact('notificacion', 'name'));
+    if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      return view ('Notificaciones.mostrarNotificacion', compact('notificacion', 'name'));
+      }
+      else{
+        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
+
+
   }
 //
 

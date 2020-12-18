@@ -58,13 +58,33 @@ class CatalogoController extends Controller
     public function indexAdmins(Prueba $nombre)
     {
       $pruebas = Prueba::all();
-      $paquetes = Paquete::all();
-      $identificadorDeAnalisis = 'Analisis';
-      $identificadorDePaqete = 'Paquete';
+      $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
+      $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+     
+      $idPrueba = Prueba::all();
+          $pruebaDisponible = 0;
+          if(empty($idPrueba))
+          {
+              $pruebaDisponible = 0;
+          }
+          else{
+              $pruebaDisponible = '1';
+          }
+
+
+          $idPaquete = Paquete::all();
+          $paqueteDisponible = 0;
+          if(empty($idPaquete))
+          {
+              $paqueteDisponible = 0;
+          }
+          else{
+              $paqueteDisponible = '1';
+          }
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) 
       {
-        return view('catalogo.indexAdmins', compact('pruebas', 'paquetes','name','identificadorDeAnalisis','identificadorDePaqete'));
+        return view('catalogo.indexAdmins', compact('abecedario', 'pruebas', 'paquetes','name', 'pruebaDisponible', 'paqueteDisponible'));
       }
       else
       {

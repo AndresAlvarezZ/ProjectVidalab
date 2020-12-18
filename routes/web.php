@@ -48,14 +48,13 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO INFORMACION DE LA EMPRESA
   Route::get('/informacion', 'AspectoController@index');
-  Route::get('/galeriaDeFotos','ArchivosController@galeriaDeFotos');
-  Route::get('/galeriaDeVideos','ArchivosController@galeriaDeVideos');
-
-  Route::get('/multimedia','ArchivosController@multimedia'); /**Revisar*/
-  Route::get('/verContenido','ArchivosController@verContenido'); /**Revisar*/
-
   Route::post('/aspectos/registrar', 'AspectoController@guardar');
   Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
+
+  Route::get('/multimedia','ArchivosController@index');
+  Route::get('/galeriaDeFotos','ArchivosController@galeriaDeFotos');
+  Route::get('/galeriaDeVideos','ArchivosController@galeriaDeVideos');
+  Route::get('/galeria/administrativa','ArchivosController@galeriaAdministrativa'); /**ADMIN*/
   Route::post('/multimediaPost','ArchivosController@multimediaPost');
   Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
   Route::delete('/multimedia/{archivo}','ArchivosController@eliminarMultimedia');
@@ -66,7 +65,6 @@ Auth::routes();
   Route::get('/especialistas', 'EspecialistaController@index');
   Route::get('/especialistas/mostrar', 'EspecialistaController@verPerfiles');       //ADMINISTRADORES
   Route::get('/especialistas/perfiles', 'EspecialistaController@verEspecialistas');            //CLIENTES
-
   Route::post('/especialistas/registrar', 'EspecialistaController@guardar');
   Route::put('/especialistas/{especialista}', 'EspecialistaController@actualizar');
   Route::delete('/especialistas/{especialista}', 'EspecialistaController@eliminar');

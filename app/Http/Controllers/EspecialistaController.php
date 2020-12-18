@@ -42,18 +42,18 @@ class EspecialistaController extends Controller
         public function verPerfiles()
         {
             $especialistas = Especialista::all();
-            $id = Especialista::find('1');
-            $datosDisponibles = 0;
-            if(empty($id))
+            $disponible = Especialista::all();
+            $especialistaDisponible = 0;
+            if(empty($disponible))
             {
-                $datosDisponibles = 0;
+                $especialistaDisponible = 0;
             }
             else{
-                $datosDisponibles = $id->id;
+                $especialistaDisponible = '1';
             }
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
             if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
-                return view('especialistas.perfilDeEspecialistas',compact('especialistas', 'datosDisponibles', 'acceso','name'));
+                return view('especialistas.perfilDeEspecialistas',compact('especialistas', 'especialistaDisponible', 'acceso','name'));
             }
             else{
             return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
@@ -62,7 +62,7 @@ class EspecialistaController extends Controller
     //
 
 
-    //VER PERFILES, CLIENTES
+    /*VER PERFILES, CLIENTES
         public function verEspecialistas()
         {
             $especialistas = Especialista::all();
@@ -77,7 +77,7 @@ class EspecialistaController extends Controller
             }
             return view('especialistas.verEspecialistas', compact('especialistas', 'datosDisponibles'));
         }
-    //
+    */
 
 
 

@@ -20,9 +20,7 @@
                                         <div class="alert alert-success" role="alert">
                                             {{ session('status') }}
                                         </div>
-                                        <?php $paseValido = 1; ?>
                                     @endif
-                                    @if($paseValido!=1)
                                     <form method="POST" action="{{ route('password.email') }}">
                                         @csrf
 
@@ -56,9 +54,6 @@
                                             </button>
                                         </div>
                                     </form>
-                                    @endif
-
-
                                 </div>
                             </div>
                         </div>

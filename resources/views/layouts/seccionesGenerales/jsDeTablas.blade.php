@@ -23,4 +23,8 @@
 
 <!--JS COMPLEMENTO DE DATATABLES-->
     <script src="{{ asset('js/buscador/buscadorDeRegistros.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/buscador/clientesP.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/buscador/clientesM.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/buscador/empresasP.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    <script src="{{ asset('js/buscador/empresasM.js') }}?v=<?php echo(rand()); ?>"defer></script>
 <!----> 

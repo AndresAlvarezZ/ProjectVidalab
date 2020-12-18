@@ -9,11 +9,17 @@
   margin-right: 5px;
 }
 
-.btnPerfil, .btnEditar, .btnEliminar, .btnInactivar, .btnActivar, .btnImagen, .btnAgregarCita, .btnCitas, .btnEnCancelada, .btnEnConfirmada, .btnEnEspera
+.btnPerfil, .btnEditar, .btnEliminar, .btnInactivar, .btnActivar, .btnImagen, .btnAgregarCita,
+.btnCitas, .btnEnCancelada, .btnEnConfirmada, .btnEnEspera, .btnVer
 {  
   font-size: 1.5rem;
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.btnAgregarMultimedia, .btnVerMultimedia
+{
+  width: 200px;
 }
 
 

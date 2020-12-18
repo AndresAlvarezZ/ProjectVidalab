@@ -23,13 +23,11 @@
       <div class="container">
         <div class="row justify-center">
           <div class="col-md-8">
-            <div class="card">
               @if (session('status'))
                   <div class="alert alert-success" role="alert">
                       {{ session('status') }}
                   </div>
               @endif
-            </div>
           </div>
         </div>
       </div>
@@ -37,6 +35,6 @@
   </body>
   
   @include('layouts.seccionesGenerales.redesSociales')
-  
+  @include('layouts.seccionesGenerales.derechosDeAutor')
 </html>
 @endsection

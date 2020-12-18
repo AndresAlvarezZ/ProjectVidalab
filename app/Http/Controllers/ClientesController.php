@@ -74,9 +74,9 @@ class ClientesController extends Controller
       $cliente = Clientes::find(auth()->user()->dniDelUsuario);
       if (request()->hasFile('imagenDelCliente')) {
         if ($cliente->imagenDelCliente!=null) {
-          unlink(public_path().'/imagenes/'.$cliente->imagenDelCliente);
+          unlink(public_path().'/perfilesDeClientes/'.$cliente->imagenDelCliente);
         }
-        $destinationPath = public_path().'/imagenes';
+        $destinationPath = public_path().'/perfilesDeClientes';
         $files = request()->file('imagenDelCliente');
         $file_name = $files->getClientOriginalName(); //Get file original name
             $files->move($destinationPath , $file_name); // move files to destination folder

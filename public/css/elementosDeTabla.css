@@ -1,8 +1,30 @@
-.titulo
+.tituloDeRegistro
 {
-    color: black;
-    background: #1192818a;
-    margin: 0px 0px 20px 0px;
+	color: #111;
+	font-size: 2.5em;
+    font-weight: 300;
+    text-align: center;
+}
+
+.tituloDeRegistro span
+{
+	color: #119281;
+	font-weight: 700;
+    font-size: 1em;
+}
+
+.tituloDeRegistro .vida
+{
+	color:  #119281;
+	font-weight: 700;
+    font-size: 1em;
+}
+
+.tituloDeRegistro .lab
+{
+	color:  rgb(223, 89, 0);
+	font-weight: 700;
+    font-size: 1em;
 }
 
 .dataTables_filter
@@ -82,7 +104,27 @@ div.dt-button-collection a.dt-button:active:not(.disabled), div.dt-button-collec
     border-color: rgb(0, 174, 255, 0.377);
 }
 
-.fa-file-excel, .fa-file-pdf, .fa-file-csv, .fa-print, .fa-copy
+.notificaciones
+{
+    opacity: .9;
+    background-color: rgb(255, 255, 255);
+}
+
+.notificacionEspecifica
+{
+    background: url("../wallpapers/PaisajeFloral.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.notificacionMasiva
+{
+    background: url("../wallpapers/PaisajeBosqueAmanecer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.icon-file-excel, .icon-file-pdf, .icon-empty-file, .icon-printer, .icon-copy
 {
     font-size: 1.3rem;
     color: white;

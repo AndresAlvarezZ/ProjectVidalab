@@ -80,7 +80,6 @@ $(document).ready(function ()
             {
                 return $(this).text();
             }).get();
-            console.log(data);
             $('#idEliminar').val(data[1]);
             $('#fechaDeCita4').val(data[2]);
             $('#horaDeCita4').val(data[3]);

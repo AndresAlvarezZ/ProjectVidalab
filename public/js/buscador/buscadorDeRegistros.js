@@ -61,7 +61,7 @@ $(document).ready(function()
                 buttons: 
                 [
                     {
-                        text: '<i class="fas fa-file-excel"></i>',
+                        text: '<i class="icon-file-excel"></i>',
                         extend:'excelHtml5',
                         titleAttr: 'Exportar a Excel',
                         messageTop: 'VIDAlab',
@@ -71,7 +71,7 @@ $(document).ready(function()
                         }
                     },
                     {
-                        text: '<i class="fas fa-file-pdf"></i>',
+                        text: '<i class="icon-file-pdf"></i>',
                         extend: 'pdfHtml5',
                         titleAttr: 'Exportar como PDF',
                         messageTop: 'VIDAlab',
@@ -81,7 +81,7 @@ $(document).ready(function()
                         }
                     },
                     {
-                        text: '<i class="fas fa-print"></i>',
+                        text: '<i class="icon-printer"></i>',
                         extend: 'print',
                         titleAttr: 'Imprimir tabla',
                         messageTop: 'VIDAlab',
@@ -91,7 +91,7 @@ $(document).ready(function()
                         }
                     },
                     {
-                        text: '<i class="fas fa-copy"></i>',
+                        text: '<i class="icon-copy"></i>',
                         extend:'copyHtml5',
                         titleAttr: 'Copiar tabla',
                         messageTop: 'VIDAlab',
@@ -101,7 +101,7 @@ $(document).ready(function()
                         }
                     },
                     {
-                        text: '<i class="fas fa-file-csv"></i>',
+                        text: '<i class="icon-file-empty"></i>',
                         extend: 'csvHtml5',
                         titleAttr: 'Todos los archivos',
                         className: 'btn btn-secondary archivo',

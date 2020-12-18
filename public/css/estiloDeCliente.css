@@ -66,82 +66,6 @@ p
 	color: white;
 }
 
-/*
-	header
-	{
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		padding: 40px 100px;
-		z-index: 10000;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		transition: 0.5s;
-	}
-
-	header.sticky
-	{
-		background: #fff;
-		padding: 10px 100px;
-		box-shadow: 0 5px 20px rgb(0, 0, 0, 0.05);
-	}
-
-	header .logo
-	{
-		color: #fff;
-		font-weight: 700;
-		font-size: 3.5em;
-		text-decoration: none;
-	}
-
-	header.sticky .logo
-	{
-		color: #111
-	}
-
-	header .logo span
-	{
-		color: #119281;
-	}
-
-	header .logo .fin
-	{
-		color: #f38545;
-	}
-
-	header .barraMenu
-	{
-		position: relative;
-		display: flex;
-	}
-
-	header .barraMenu li
-	{
-		list-style: none;
-		margin-left: 30px;
-		font-size: 1.2em;
-	}
-
-	header .barraMenu li a
-	{
-		text-decoration: none;
-		color: #fff;
-		font-weight: 300;
-	}
-
-	header.sticky .barraMenu li a
-	{
-		color: #111;
-	}
-
-	header .barraMenu li a:hover
-	{
-		color: #119281;
-	}
-*/
-
 section
 {
 	padding: 70px;
@@ -317,8 +241,8 @@ section
 
 .tituloProfesionales .tituloDeSeccion,
 .tituloProfesionales p
-{
-	color: #fff
+{	
+	color: #fff;
 }
 
 .profesionales .contenedor
@@ -371,6 +295,7 @@ section
 {
 	color: #666;
 	font-style: italic;
+	text-align: left;
 }
 
 .profesionales .contenedor .marco .text h3
@@ -417,7 +342,7 @@ section
 .contactos .title p
 {
 	position: relative;
-	text-align: center;
+	text-align: left;
 	background-color: white;
 	opacity: 0.8;
 	width: 30%;
@@ -428,6 +353,7 @@ section
 {
 	color: #119281;
 	font-size: 1.3em;
+	margin-left: 100px;
 }
 
 
@@ -456,65 +382,6 @@ section
 @media (max-width: 991px)
 {
 
-/*
-	header, header.sticky
-	{
-		padding: 10px 20px;
-	}
-
-	header .barraMenu
-	{
-		display: none;
-	}
-
-	header .barraMenu.active
-	{
-		width: 100%;
-		height: calc(100% - 68px);
-		position: fixed;
-		top: 68px;
-		left: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		background: #fff;
-	}
-	header .barraMenu li 
-	{
-		margin-left: 0;
-	}
-	header .barraMenu li a
-	{
-		color: #111;
-		font-size: 1.6em;
-	}
-
-	.menuToggle
-	{
-		position: relative;
-		width: 40px;
-		height: 40px;
-		background: url("../imgHomeClientes//menu.png");
-		background-size: 30px;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;	
-	}
-	.menuToggle.active
-	{
-		
-		background: url("../imgHomeClientes//close.png");
-		background-size: 25px;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-	header.sticky .menuToggle
-	{
-		filter: invert(1);
-	}
-*/
-	
 	section
 	{
 		padding: 20px; 
@@ -585,6 +452,12 @@ section
 		opacity: 0.8;
 		width: 70%;
 		height: 400px;	
+	}
+	.contactos p span
+	{
+		color: #119281;
+		font-size: 1.3em;
+		margin-left: 0px;
 	}
 }
 
