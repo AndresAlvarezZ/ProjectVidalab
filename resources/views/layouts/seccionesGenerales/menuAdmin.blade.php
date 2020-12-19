@@ -52,8 +52,8 @@
 <li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-users"></span>CLIENTES</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/perfilesDeClientes">Registro de Clientes</a>
-        <a class="dropdown-item" href="/administradores/activos">Perfiles de clientes</a>
+        <a class="dropdown-item" href="/clientes">Registro de Clientes</a>
+        <a class="dropdown-item" href="/clientes/perfiles">Perfiles de clientes</a>
     </div>
 </li>
 

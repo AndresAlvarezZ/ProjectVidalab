@@ -35,7 +35,7 @@
                     </thead>
 
                     <tfoot>
-                        </tr>
+                        <tr>
                             <th scope="col"><center>ID</center></th>
                             <th scope="col"><center>Nombre</center></th>
                             <th scope="col"><center>Cédula</center></th>

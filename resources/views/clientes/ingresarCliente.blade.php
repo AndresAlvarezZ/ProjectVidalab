@@ -117,7 +117,7 @@
 
                                             <div class="form-group col-md-6">
                                                 <label for="telefonoDelCliente" class="col-md-4 col-form-label text-md-center">{{ __('Teléfono') }}</label>
-                                                <input id="telefonoDelCliente" type="text" placeholder="Ingrese un número telefónico de contacto" class="form-control @error('telefonoDelCliente') is-invalid @enderror" name="telefonoDelCliente" onkeypress="return soloNumeros(event);" value="{{ old('telefonoDelCliente') }}" required autocomplete="telefonoDelCliente" autofocus>
+                                                <input id="telefonoDelCliente" type="text" placeholder="Ingrese un número telefónico de contacto" class="form-control @error('telefonoDelCliente') is-invalid @enderror" onkeypress="return soloNumeros(event);" name="telefonoDelCliente" onkeypress="return soloNumeros(event);" value="{{ old('telefonoDelCliente') }}" required autocomplete="telefonoDelCliente" autofocus>
 
                                                 @error('telefonoDelCliente')
                                                     <span class="invalid-feedback" role="alert">

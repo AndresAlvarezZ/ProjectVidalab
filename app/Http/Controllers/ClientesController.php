@@ -18,7 +18,7 @@ class ClientesController extends Controller
     public function __construct()
     {
         $this->middleware('auth:web')->only('verPerfil', 'IngresarCliente', 'subirImagen', 'editarPerfil');
-        $this->middleware('auth:admins')->only('perfilesDeClientes');
+        $this->middleware('auth:admins')->only('listarClientes', 'perfilesDeClientes');
     }
   //
 
@@ -33,18 +33,45 @@ class ClientesController extends Controller
   //
 
   //VER PERFILES: ADMINISTRADOR
-    public function perfilesDeClientes()
+    public function listarClientes()
     {
       $clientes = Clientes::all();
+
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
-      return view ('clientes.index',compact('clientes','name'));
+      return view ('clientes.listaDeClientes',compact('name', 'clientes'));
       }
       else{
       return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
       }
     }
   //
+
+
+  //VER PERFILES: ADMINISTRADOR
+    public function perfilesDeClientes()
+    {
+      $perfiles = Clientes::all();
+
+      $perfilDisponible = 0;
+      if(empty($perfiles))
+      {
+          $perfilDisponible = 0;
+      }
+      else{
+          $perfilDisponible = '1';
+      }
+
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      return view ('clientes.perfilesDeClientes',compact('name', 'perfilDisponible','perfiles'));
+      }
+      else{
+      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+      }
+    }
+  //
+
 
   //REGISTRAR
     public function IngresarCliente()

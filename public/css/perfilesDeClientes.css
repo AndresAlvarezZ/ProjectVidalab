@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+
+p
+{
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #111;
+}
+
+section
+{
+	padding: 70px;
+}
+
+.tituloDeSeccion
+{
+	color: #111;
+	font-size: 2em;
+    font-weight: 300;
+}
+
+
+.tituloDeSeccion span
+{
+	color: #119281;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.title
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+.tituloProfesionales .tituloDeSeccion,
+.tituloProfesionales p
+{	
+	color: rgb(8, 8, 8);
+}
+
+.profesionales .contenedor
+{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-top: 40px;
+}
+
+.profesionales .contenedor .marco
+{
+	width: 340px;					/*ANCHO*/
+	margin: 20px;
+    padding: 40px;					/*LARGO O RELLENO*/
+    border-radius: 5%;
+	background: #18a99640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.profesionales .contenedor .marco .imagen
+{
+	position: relative;
+	width: 200px;					/*ANCHO DE PERFIL*/
+	height: 200px;					/*ALTO DE PERFIL*/
+	margin-bottom: 20px;
+    border-radius: 50%;					/*CIRCULO*/
+    overflow: hidden;
+}
+
+.profesionales .contenedor .marco .imagen img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.profesionales .contenedor .marco .text
+{
+	text-align: center;
+}
+
+.profesionales .contenedor .marco .text p
+{
+	color: rgb(0, 0, 0);
+	font-style: italic;
+	text-align: left;
+}
+
+.profesionales .contenedor .marco .text p span
+{
+	color:#0f8273;
+}
+
+.profesionales .contenedor .marco .text h3
+{
+	margin-top: 20px;
+	color: #111;
+	font-size: 1.1em;
+	color: #0f8273;
+	font-weight: 600;
+}
+
+
+@media (max-width: 991px)
+{
+
+	section
+	{
+		padding: 20px; 
+	}
+
+	.title
+	{
+		text-align: center;
+	}
+	.tituloDeSeccion
+	{
+		font-size: 1.8em;
+		line-height: 1.5em;
+		margin-bottom: 15px;
+		font-weight: 300;
+	}
+	.profesionales .contenedor .marco
+	{
+		margin: 10px;
+		padding: 20px;
+	}	
+}
