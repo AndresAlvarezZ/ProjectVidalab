@@ -153,15 +153,18 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO CATALOGO
-  Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');                       //CLIENTES
-  Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');    //ADMINISTRADORES
-  Route::get('/compras/carrito','CatalogoController@carrito');
+  Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');                               //CLIENTES
+  Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');            //ADMINISTRADORES
+  Route::get('/catalogo/publico', 'CatalogoController@catalogoPublico')->name('catalogoPublico');       //PUBLICO
+  Route::get('/compras/carrito','CatalogoController@carrito');                                          //CLIENTES
+  Route::get('/consulta/carrito','CatalogoController@carritoPublico');                                  //PUBLICO
 //
 
 
 //RUTAS DE SUBMÓDULO COMPRAS
   Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');    //CLIENTE
-  Route::get('/compras/validarCompra','ComprasController@validarCompra');
+  Route::get('/consulta/total','ComprasController@totalCarritoPublico');         //PUBLICO
+  Route::get('/compras/validarCompra','ComprasController@validarCompra');        //CLIENTE        
   Route::get('/compras/domicilio','ComprasController@pedidoDomicilio');
   Route::get('/compras/domicilioFactura','ComprasController@pedidoDomicilioFactura');
 //

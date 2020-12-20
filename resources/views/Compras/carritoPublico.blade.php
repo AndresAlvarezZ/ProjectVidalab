@@ -1,5 +1,5 @@
 
-@extends('layouts.appClienteEspecial')
+@extends('layouts.appPublicaEspecialGaleria')
 @section('content')
 <!DOCTYPE html>
 <html lang="es-ES">
@@ -34,7 +34,7 @@
           <div class="">
             <form class="" id="prueba" method="post">
             </form>
-            <a href="/compras/FinalizarCompra" type="button" class="btn boton">Consultar Total a pagar</a>
+            <a href="/consulta/total" type="button" class="btn boton">Consultar Total</a>
           </div>
         </div>
       </div>

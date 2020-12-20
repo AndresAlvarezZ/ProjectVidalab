@@ -54,6 +54,40 @@ class CatalogoController extends Controller
   //
 
 
+  //LISTAR REGISTROS AMBOS CATÁLOGOS: PUBLICO
+    public function catalogoPublico()
+    {
+      $pruebas = Prueba::all();
+      $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
+      $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+      $identificadorDeAnalisis = 'Analisis';
+      $identificadorDePaqete = 'Paquete';
+
+      $idPrueba = Prueba::all();
+          $pruebaDisponible = 0;
+          if(empty($idPrueba))
+          {
+              $pruebaDisponible = 0;
+          }
+          else{
+              $pruebaDisponible = '1';
+          }
+
+
+          $idPaquete = Paquete::all();
+          $paqueteDisponible = 0;
+          if(empty($idPaquete))
+          {
+              $paqueteDisponible = 0;
+          }
+          else{
+              $paqueteDisponible = '1';
+          }
+      return view('catalogo.catalogoPublico', compact('abecedario', 'pruebas', 'paquetes','identificadorDeAnalisis','identificadorDePaqete', 'pruebaDisponible', 'paqueteDisponible'));
+    }
+  //
+
+
   //LISTAR REGISTROS AMBOS CATÁLOGOS: ADMINISTRADORES
     public function indexAdmins(Prueba $nombre)
     {
@@ -100,6 +134,16 @@ class CatalogoController extends Controller
       $usuario = 'user';
       $name = 'sinDatos';
       return view('Compras.carrito', compact('usuario','name'));
+    }
+  //
+
+
+    //DATOS PARA EL CARRITO PUBLICO
+    public function carritoPublico()
+    {
+      $usuario = 'user';
+      $name = 'sinDatos';
+      return view('Compras.carritoPublico', compact('usuario','name'));
     }
   //
 }

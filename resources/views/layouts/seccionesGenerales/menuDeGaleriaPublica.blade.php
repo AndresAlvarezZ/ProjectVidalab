@@ -8,6 +8,6 @@
 
 <li><div class="logo"><span>HUMA</span><span class="fin" >check </span></div></li>
 <li><a href="/inicio">Inicio</a></li>
-<li><a href="#">Catálogo</a></li>
+<li><a href="/catalogo/publico">Catálogo</a></li>
 <li><a href="/galeria/Publica/DeFotos">Fotos</a></li>
 <li><a href="/galeria/Publica/DeVideos">Videos</a></li>

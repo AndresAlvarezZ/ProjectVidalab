@@ -182,7 +182,7 @@
 					<div class="text">
           </div>
 					<div class="title">
-				    <a href="/catalogos" class="boton">Ver todo</a>
+				    <a href="/catalogo/publico" class="boton">Ver todo</a>
 			    </div>
 				</div>
       </div>
