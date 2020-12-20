@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Prueba;
 use App\Paquete;
 
+use App\Aspecto;
+use App\Especialista;
+use App\Archivos;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +25,33 @@ use App\Paquete;
   $paquetes = Paquete::all();
     return view('catalogo.index', compact('pruebas', 'paquetes'));
 });*/
-Route::get('/', function(){
-  return view('auth.login');
+Route::get('/', function()
+{
+  $aspecto = Aspecto::find('1');
+  $idAspecto = Aspecto::find('1');
+  $aspectoDisponible = 0;
+  if(empty($idAspecto))
+  {
+      $aspectoDisponible = 0;
+  }
+  else{
+      $aspectoDisponible = $idAspecto->id;
+  }
+
+  $especialistas = Especialista::all();
+  $idEspecialista = Especialista::all();
+    $especialistaDisponible = 0;
+    if(empty($idEspecialista))
+    {
+        $especialistaDisponible = 0;
+    }
+    else{
+        $especialistaDisponible = '1';
+    }
+
+    $archivos = Archivos::all();
+    $fotos = Archivos::where('tipoDeArchivo', 1)->get();
+    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'aspectoDisponible', 'especialistaDisponible'));
 });
 
 Auth::routes();
@@ -32,6 +61,7 @@ Auth::routes();
 //RUTAS DE BIENVENIDA
   Route::get('/homeAdmins', 'AdministradorController@index')->name('homeAdmins');
   Route::get('/home', 'HomeController@index')->name('home');
+  Route::get('/inicio', 'HomeController@homePublico')->name('homePublico');
 //
 
 
@@ -52,8 +82,10 @@ Auth::routes();
   Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
 
   Route::get('/multimedia','ArchivosController@index');
-  Route::get('/galeriaDeFotos','ArchivosController@galeriaDeFotos');
-  Route::get('/galeriaDeVideos','ArchivosController@galeriaDeVideos');
+  Route::get('/galeriaDeFotos','ArchivosController@galeriaDeFotos');                                //CLIENTES
+  Route::get('/galeriaDeVideos','ArchivosController@galeriaDeVideos');                              //CLIENTES
+  Route::get('/galeria/Publica/DeFotos','ArchivosController@galeriaDeFotosPublica');                //PUBLICO
+  Route::get('/galeria/Publica/DeVideos','ArchivosController@galeriaDeVideosPublica');              //PUBLICO
   Route::get('/galeria/administrativa','ArchivosController@galeriaAdministrativa'); /**ADMIN*/
   Route::post('/multimediaPost','ArchivosController@multimediaPost');
   Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
@@ -121,9 +153,17 @@ Auth::routes();
 
 
 //RUTAS DE SUBMÓDULO CATALOGO
-  Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');
-  Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');
+  Route::get('/catalogos', 'CatalogoController@index')->name('catalogo');                       //CLIENTES
+  Route::get('/catalogosAdmins', 'CatalogoController@indexAdmins')->name('catalogosAdmins');    //ADMINISTRADORES
   Route::get('/compras/carrito','CatalogoController@carrito');
+//
+
+
+//RUTAS DE SUBMÓDULO COMPRAS
+  Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');    //CLIENTE
+  Route::get('/compras/validarCompra','ComprasController@validarCompra');
+  Route::get('/compras/domicilio','ComprasController@pedidoDomicilio');
+  Route::get('/compras/domicilioFactura','ComprasController@pedidoDomicilioFactura');
 //
 
 
@@ -158,11 +198,7 @@ Auth::routes();
   Route::put('/editarPerfil','ClientesController@editarPerfil');
 
 
-//RUTAS DE SUBMÓDULO COMPRAS
-Route::get('/compras/FinalizarCompra','ComprasController@FinalizarCompra');
-Route::get('/compras/validarCompra','ComprasController@validarCompra');
-Route::get('/compras/domicilio','ComprasController@pedidoDomicilio');
-Route::get('/compras/domicilioFactura','ComprasController@pedidoDomicilioFactura');
+
 
 
 //Rutas de SUBMODULO de Facturas faltantes por revisar

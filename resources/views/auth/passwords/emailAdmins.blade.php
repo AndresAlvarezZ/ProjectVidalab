@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appPublicaEspecial')
 
 <head>
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">

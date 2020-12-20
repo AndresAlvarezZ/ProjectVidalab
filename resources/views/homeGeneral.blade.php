@@ -1,4 +1,4 @@
-@extends('layouts.appCliente')
+@extends('layouts.appPublica')
 
 @section('content')
 <!DOCTYPE html>
@@ -229,13 +229,13 @@
             </a>
           </div>
           <div class="title">
-            <a href="/galeriaDeFotos" class="boton">Ver fotos en cuadrícula</a>
+            <a href="/galeria/Publica/DeFotos" class="boton">Ver fotos en cuadrícula</a>
           </div>
 
         <!--VIDEOS-->
 
           <div class="title">
-            <a href="/galeriaDeVideos" class="boton">Ver videos en cuadrícula</a>
+            <a href="/galeria/Publica/DeVideos" class="boton">Ver videos en cuadrícula</a>
           </div>
         <!--FIN VIDEOS-->
 

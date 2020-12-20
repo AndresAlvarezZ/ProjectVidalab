@@ -12,7 +12,6 @@ class ArchivosController extends Controller
     public function __construct()
     {
       $this->middleware('auth:admins')->only('index','multimediaPost','galeriaAdministrativa','editarMultimedia');
-      $this->middleware('auth:web')->only('galeriaDeFotos', 'galeriaDeVideos');
     }
   //
 
@@ -32,7 +31,7 @@ class ArchivosController extends Controller
   //
 
 
-  //MOSTRAR FOTOS AL CLIENTE
+  //MOSTRAR FOTOS AL CLIENTE AFILIADO
     public function galeriaDeFotos()
     {
 
@@ -52,7 +51,7 @@ class ArchivosController extends Controller
   //
 
 
-  //MOSTRAR VIDEOS AL CLIENTE
+  //MOSTRAR VIDEOS AL CLIENTE AFILIADO
     public function galeriaDeVideos()
     {
 
@@ -70,6 +69,48 @@ class ArchivosController extends Controller
       return view('archivos.galeriaDeVideos',compact('videos','name', 'videoDisponible'));
     }
   //
+
+
+  //MOSTRAR FOTOS AL CLIENTE
+    public function galeriaDeFotosPublica()
+    {
+
+      $idFoto = Archivos::where('tipoDeArchivo', '==', 1)->get();
+      $fotoDisponible = 0;
+      if(empty($idFoto))
+      {
+          $fotoDisponible = '0';
+      }
+      else{
+          $fotoDisponible = '1';
+      }
+
+      $fotos = Archivos::where('tipoDeArchivo', 1)->get();
+      return view('archivos.galeriaDeFotosPublica',compact('fotos','name', 'fotoDisponible'));
+    }
+  //
+
+
+  //MOSTRAR VIDEOS AL CLIENTE
+    public function galeriaDeVideosPublica()
+    {
+
+      $idVideo = Archivos::where('tipoDeArchivo', '==', '2')->get();
+      $videoDisponible = 0;
+      if(empty($idVideo))
+      {
+          $videoDisponible = '0';
+      }
+      else{
+          $videoDisponible = '1';
+      }
+
+      $videos = Archivos::where('tipoDeArchivo', 2)->get();
+      return view('archivos.galeriaDeVideosPublica',compact('videos','name', 'videoDisponible'));
+    }
+  //
+
+
 
 
   //VER GALERÍA: ADMINISTRADOR

@@ -293,7 +293,7 @@ section
 
 .profesionales .contenedor .marco .text p
 {
-	color: #666;
+	color: black;
 	font-style: italic;
 	text-align: left;
 }
@@ -302,7 +302,7 @@ section
 {
 	margin-top: 20px;
 	color: #111;
-	font-size: 1em;
+	font-size: 1.2em;
 	color: #119281;
 	font-weight: 600;
 }

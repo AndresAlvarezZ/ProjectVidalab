@@ -56,7 +56,7 @@
     
 
         //SOLO PERMITE NUMEROS Y LETRAS
-        function soloNumeros(e)
+        function soloNumerosYLetras(e)
         {
             key=e.keyCode || e.which;
             teclado=String.fromCharCode(key).toLowerCase();
