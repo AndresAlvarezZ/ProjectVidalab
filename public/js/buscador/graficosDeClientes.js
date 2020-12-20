@@ -119,21 +119,9 @@ $(document).ready(function () {
     });
  
     // Create the chart with initial data
-    var container = $('#contenedor').insertBefore(table.table().container());
+    var container = $('#contenedor');
  
     var chart = Highcharts.chart(container[0], {
-        chart: {
-            type: 'pie',
-        },
-        title: {
-            text: 'Estadística de Cliente Según Número de Hijos',
-        },
-        series: [
-            {
-                data: chartData(table),
-            },
-        ],
-
         chart: {
             type: 'pie',
         },

@@ -1,9 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+*
+{
+	font-family: 'Poppins', sans-serif;
+}
+
 .logo
 {
 	color: #fff;
 	font-weight: 700;
 	font-size: 1.8em;
-	text-decoration: none;
+
+	text-decoration: bold;
 }
 
 .logo span
@@ -38,6 +45,7 @@ li a
 {	
 	text-decoration: none;
 	color: #119281;
+	
 }
 
 li a:hover
