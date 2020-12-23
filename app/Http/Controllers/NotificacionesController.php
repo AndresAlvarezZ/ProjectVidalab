@@ -44,7 +44,7 @@ class NotificacionesController extends Controller
       return view('Notificaciones.todasLasNotificaciones',compact('name', 'notificaciones','nombre','apellido'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
@@ -59,7 +59,7 @@ class NotificacionesController extends Controller
       return view ('Notificaciones.mostrarNotificacion', compact('notificacion', 'name'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
 
 
@@ -158,7 +158,7 @@ class NotificacionesController extends Controller
       return view('Notificaciones.NotificacionMasivaEmpresarial',compact('name', 'notificaciones','nombre','apellido'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //

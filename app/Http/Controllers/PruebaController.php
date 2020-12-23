@@ -25,7 +25,7 @@ class PruebaController extends Controller
             return view('pruebas.index',compact('pruebas', 'name'));
             }
             else{
-            return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+                return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
             }
         }
     //
@@ -40,7 +40,7 @@ class PruebaController extends Controller
             $prueba->nombreDelAnalisis = $request->input('nombreDelAnalisis1');
             $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis1');
             $prueba->costoDelAnalisis = $request->input('costoDelAnalisis1');
-            $prueba->numeroDeMaquina = $request->input('numeroDeMaquina1');
+            $prueba->categoriaDelAnalisis = $request->input('categoria');
             $prueba->descuentoDelAnalisis = $request->input('descuentoDelAnalisis1');
             $prueba->save();
         }
@@ -57,7 +57,7 @@ class PruebaController extends Controller
             $prueba->descripcionDelAnalisis = $request->input('descripcionDelAnalisis3');
             $prueba->costoDelAnalisis = $request->input('costoDelAnalisis3');
             $prueba->descuentoDelAnalisis = $request->input('descuentoDelAnalisis3');
-            $prueba->numeroDeMaquina = $request->input('numeroDeMaquina3');
+            $prueba->numeroDeMaquina = $request->input('categoria3');
             $prueba->save();
         }
     //

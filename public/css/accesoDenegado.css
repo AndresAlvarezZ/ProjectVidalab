@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+
+
+
+p
+{
+	font-size: 1.3em;
+	font-weight: 300;
+	color: #111;
+}
+
+.acceso
+{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #11928110;
+	background-size: cover;
+}
+
+.acceso .contenedor
+{
+	max-width: 900px;
+	text-align: center;
+}
+
+.acceso .contenedor h2
+{
+	font-size: 2em;
+	color:  rgb(223, 89, 0);
+	margin: 0 0 20px 0;
+}
+
+span
+{
+	font-size: 11em;
+	color: #119281;
+}
+
+.acceso .contenedor p
+{	
+	text-decoration: italic;
+	font-size: 1.5em;
+	color: rgb(7, 7, 7);
+	margin: 20px 0 0 0;
+}
+
+.acceso .contenedor p .raiz, .acceso .contenedor p .sufijo
+{
+	font-size: 1em;	
+	font-weight: bold;
+}
+
+.acceso .contenedor p .raiz
+{
+	color: #119281;
+}
+
+.acceso .contenedor p .sufijo
+{
+	color:  rgb(223, 89, 0);
+}
+
+
+
+@media (max-width: 991px)
+{
+
+	section
+	{
+		padding: 20px; 
+	}
+	.inicio .contenedor h2
+	{
+		font-size: 3em;
+		color: #fff;
+	}
+}

@@ -28,7 +28,7 @@ class CitaController extends Controller
             return view('citas.index', compact('citas','name'));
             }
             else{
-              return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+                return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
             }
         }
     //

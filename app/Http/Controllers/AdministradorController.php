@@ -22,7 +22,7 @@ class AdministradorController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('auth:admins');
+    $this->middleware('auth:admins')->only('index', 'guard','listar', 'listarAdministradoresActivos', 'actualizar', 'inactivar', 'activar', 'mostrarFacturas');
   }
 
   /**
@@ -40,7 +40,7 @@ class AdministradorController extends Controller
         return view('homeAdmins',compact('acceso','name'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
 
@@ -62,7 +62,7 @@ class AdministradorController extends Controller
       return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
@@ -80,10 +80,11 @@ class AdministradorController extends Controller
       return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
+
 
   //LISTAR REGISTROS CON ESTADO INACTIVO
     public function listarAdministradoresInactivos()
@@ -97,10 +98,11 @@ class AdministradorController extends Controller
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
       }
       else{
-      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
+
 
   //AGREGAR REGISTRO
     public function nuevoAdministradorCreate(Request $request)
@@ -209,7 +211,7 @@ class AdministradorController extends Controller
       return view('facturas.mostrarFacturasAdmins',compact('facturas','nombre','cedulas','compras','indice','name','indiceFactura','fecha','total'));
       }
       else{
-        return 'acceso denegado';
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
 
       // code...

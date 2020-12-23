@@ -43,10 +43,11 @@ modal-dialog modal-dialog-scrollable
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
                             <br>
-
-                            <label for="maquina1" class="col-12 text-center">Número de máquina</label>
-                            <input required type="text" class="form-control" placeholder="Ingrese el número de máquina en la que se realiza el análisis" name="numeroDeMaquina1" value="{{old('numeroDeMaquina1')}}" onkeypress="return soloNumeros(event);" class="form-control @error('numeroDeMaquina1') is-invalid @enderror" required autocomplete="numeroDeMaquina1" autofocus/>
-                            @error('numeroDeMaquina1')
+                            
+                            <!--CATEGORÍA DE PRUEBA-->
+                            <label for="categoria" class="col-12 text-center">Categoría de análisis</label>
+                            <input required type="text" class="form-control" placeholder="Ingrese la categoría del análisis" name="categoria" value="{{old('categoria')}}" onkeypress="return soloNumeros(event);" class="form-control @error('categoria') is-invalid @enderror" required autocomplete="categoria" autofocus/>
+                            @error('categoria')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
                             <br>
@@ -129,8 +130,8 @@ modal-dialog modal-dialog-scrollable
                             <input type="text" class="form-control" placeholder="Ingrese el nombre del análisis" name="nombreDelAnalisis3" id="nombreDelAnalisis3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('nombreDelAnalisis3') is-invalid @enderror" required autocomplete="nombreDelAnalisis3" autofocus/>
                             <br>
 
-                            <label for="maquina3" class="col-12 text-center">Número de máquina</label>
-                            <input type="text" class="form-control" placeholder="Ingrese el número de máquina en la que se realiza el análisis" name="numeroDeMaquina3" id="numeroDeMaquina3" onkeypress="return soloNumeros(event);" class="form-control @error('numeroDeMaquina3') is-invalid @enderror" required autocomplete="numeroDeMaquina3" autofocus/>
+                            <label for="categoria3" class="col-12 text-center">categoría de análisis</label>
+                            <input type="text" class="form-control" placeholder="Ingrese la categoría del análisis" name="categoria3" id="categoria3" onkeypress="return soloNumeros(event);" class="form-control @error('categoria3') is-invalid @enderror" required autocomplete="categoria3" autofocus/>
                             <br>
 
                             <label for="descripcion3" class="col-12 text-center">Descripción</label>

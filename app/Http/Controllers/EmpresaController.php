@@ -30,7 +30,7 @@ class EmpresaController extends Controller
       return view('empresas.index',compact('empresas', 'citas', 'name'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
@@ -46,7 +46,7 @@ class EmpresaController extends Controller
       return view('empresas.mostrar', compact('empresa', 'citas','name'));
       }
       else{
-      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //

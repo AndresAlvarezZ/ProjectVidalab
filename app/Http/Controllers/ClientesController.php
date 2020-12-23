@@ -42,7 +42,7 @@ class ClientesController extends Controller
       return view ('clientes.listaDeClientes',compact('name', 'clientes'));
       }
       else{
-      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
@@ -67,7 +67,7 @@ class ClientesController extends Controller
       return view ('clientes.perfilesDeClientes',compact('name', 'perfilDisponible','perfiles'));
       }
       else{
-      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //

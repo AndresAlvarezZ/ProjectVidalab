@@ -27,7 +27,7 @@ class FacturasController extends Controller
       return view('facturas.mostrarFacturas',compact('name','facturas','fecha'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
@@ -41,7 +41,7 @@ class FacturasController extends Controller
       return view('facturas.mostrarFacturasCanceladas',compact('name','facturas','fecha'));
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //
@@ -56,7 +56,7 @@ class FacturasController extends Controller
       return view('facturas.actualizarFactura',compact('factura','name','total'));
       }
       else{
-      return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
 
@@ -67,7 +67,7 @@ class FacturasController extends Controller
       return redirect('/verCompras');
       }
       else{
-        return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
   //

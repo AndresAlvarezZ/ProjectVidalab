@@ -32,7 +32,7 @@ class EspecialistaController extends Controller
                 return view('especialistas.index',compact('especialistas', 'acceso','name'));
             }
             else{
-            return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+                return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
             }
         }
     //
@@ -56,7 +56,7 @@ class EspecialistaController extends Controller
                 return view('especialistas.perfilDeEspecialistas',compact('especialistas', 'especialistaDisponible', 'acceso','name'));
             }
             else{
-            return "<h1>Acceso Denegado </h1><h3>Lo sentimos $name <br> has sido inhabilitado!!!</h3>";
+                return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
             }
         }
     //
