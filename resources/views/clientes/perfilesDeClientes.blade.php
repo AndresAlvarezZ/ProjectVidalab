@@ -21,10 +21,10 @@
                     @foreach($perfiles as $perfil)
                         <div class="marco">
                         <div class="imagen">
-                            @if($perfil->imagenDelEspecialista==null)
+                            @if($perfil->imagenDelCliente==null)
                             <img src="/perfilesDeClientes/imagenFija.jpg">
                             @endif
-                            @if($perfil->imagenDelEspecialista!=null)
+                            @if($perfil->imagenDelCliente!=null)
                             <img src="/perfilesDeClientes/{{$perfil->imagenDelCliente}}">
                             @endif
                         </div>

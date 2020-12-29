@@ -14,6 +14,7 @@
 
   <body>
 
+    
   <a class='flotante' href='#'><span class="icon-home"></span></a>
 
     <section class="inicio" id="inicio" >

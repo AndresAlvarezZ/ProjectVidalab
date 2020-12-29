@@ -99,8 +99,11 @@ class EspecialistaController extends Controller
             $identificador = $request->input('id');
             $especialista = Especialista::find($identificador);
 
-            if (request()->hasFile('imagenDelEspecialista')) 
+            if (request()->hasFile('imagenDelEspecialista'))
             {
+              if ($especialista->imagenDelEspecialista!=null) {
+                unlink(public_path().'/perfilesDeEspecialistas/'.$especialista->imagenDelEspecialista);
+              }
                 $destinationPath = public_path().'/perfilesDeEspecialistas';
                 $files = request()->file('imagenDelEspecialista');
                 $file_name = $files->getClientOriginalName();

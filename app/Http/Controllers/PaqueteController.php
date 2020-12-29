@@ -51,8 +51,11 @@ class PaqueteController extends Controller
       $identificador = $request->input('id');
       $paquete = Paquete::find($identificador);
 
-      if (request()->hasFile('imagenDelPaquete')) 
+      if (request()->hasFile('imagenDelPaquete'))
       {
+        if ($paquete->imagenDelPaquete!=null) {
+          unlink(public_path().'/imgDePaquetes/'.$paquete->imagenDelPaquete);
+        }
           $destinationPath = public_path().'/imgDePaquetes';
           $files = request()->file('imagenDelPaquete');
           $file_name = $files->getClientOriginalName();

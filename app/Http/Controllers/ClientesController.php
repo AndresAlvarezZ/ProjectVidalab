@@ -120,7 +120,7 @@ class ClientesController extends Controller
     }
   //
 
-  
+
   //AGREGAR PERFIL
     public function subirImagen()
     {

@@ -90,7 +90,7 @@ function cargarCarrito()
         tr.appendChild(tdDescripcion);
         tr.appendChild(tdEliminar);
         if (carritoInter!=null) {
-        carritoInter.appendChild(tr);  
+        carritoInter.appendChild(tr);
         }
     });
 }

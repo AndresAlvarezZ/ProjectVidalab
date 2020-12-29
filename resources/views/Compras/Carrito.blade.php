@@ -9,7 +9,8 @@
     <link href="{{ asset('css/carrito.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <script src="{{ asset('js/localStorage.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="{{ asset('js/sesion.js') }}"defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('js/sesion.js') }}?v=<?php echo(rand()); ?>"defer></script>
 
 <body>
 

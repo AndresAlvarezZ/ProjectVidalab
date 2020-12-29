@@ -49,7 +49,6 @@ function cargarCarrito()
         tdDescuento.id = 'tdProcesar'
         articulo.appendChild(tdArticulo);
         articulo.appendChild(tdPrecio);
-        articulo.appendChild(tdDescuento)
         articulos.appendChild(articulo);
         finalizarInter.appendChild(div);
 

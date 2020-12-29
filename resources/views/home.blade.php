@@ -13,7 +13,14 @@
   </head>
 
   <body>
-
+    @if(session('compra'))
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('js/compra.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    @endif
+    @if(session('solicitud'))
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('js/solicitud.js') }}?v=<?php echo(rand()); ?>"defer></script>
+    @endif
   <a class='flotante' href='#'><span class="icon-home"></span></a>
 
     <section class="inicio" id="inicio" >
