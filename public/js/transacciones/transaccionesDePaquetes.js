@@ -15,10 +15,10 @@ $(document).ready(function ()
             }).get();
             console.log(data);
             $('#idAgregarImagen').val(data[0]);
-            
+
         });
 
-    //FIN AGREGAR IMAGEN 
+    //FIN AGREGAR IMAGEN
 
 
     //AGREGAR
@@ -61,13 +61,13 @@ $(document).ready(function ()
             $('#idEditar').val(data[0]);
             $('#codigoDelPaquete3').val(data[0]);
             $('#nombreDelPaquete3').val(data[1]);
-            $('#descripcionDelPaquete3').val(data[2]);
-            $('#costoDelPaquete3').val(data[3]);
+            $('#descripcionDelPaquete3').val(data[3]);
+            $('#costoDelPaquete3').val(data[4]);
 
         });
 
         $('#editarPaquete').on('submit', function(e)
-        { 
+        {
             e.preventDefault();
             var id = $('#idEditar').val();
             $.ajax
@@ -121,9 +121,9 @@ $(document).ready(function ()
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: '¡Sí!'
-    }).then((result) => 
+    }).then((result) =>
     {
-        if (result.isConfirmed) 
+        if (result.isConfirmed)
         {
             $.ajax
             ({
@@ -141,7 +141,7 @@ $(document).ready(function ()
                     console.log(error)
                     Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
                 }
-                
+
             });
         }else
         {
@@ -149,7 +149,7 @@ $(document).ready(function ()
                 title: 'Cancelado',
                 text: '¡El proceso fue cancelado y el registro no sufrió cambios!',
                 icon: 'error',
-            }).then((result) => 
+            }).then((result) =>
             {
                 window.location.href = "/paquetes";
             })
@@ -164,7 +164,7 @@ $(document).ready(function ()
     //FUNCIONES DE ALERTA
         function Alerta(titulo, mensaje, tipo, boton)
         {
-            setTimeout(function () 
+            setTimeout(function ()
             {
                 swal
                 ({
@@ -177,12 +177,12 @@ $(document).ready(function ()
                 {
                     if(tipo == "success")
                     {
-                        if (isConfirm) 
+                        if (isConfirm)
                         {
                             window.location.href = "/paquetes";
                         }
                     }
-                }); 
+                });
             }, 000);
         }
     //FIN DE FUNCIONES DE ALERTA

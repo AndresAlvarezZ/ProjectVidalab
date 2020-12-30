@@ -27,7 +27,6 @@
                 <tr>
                   <td><strong>Artículo</strong></td>
                   <td><strong>Precio</strong></td>
-                  <td><strong>Descuento</strong></td>
                 </tr>
 
               </table>
@@ -37,7 +36,7 @@
                  @csrf
               </form>
             </div>
-            
+
           </div>
             <div class="card-foot">
               <a type="button" class="btn botonCatalogo" href="/catalogos">Volver al catalogo</a>

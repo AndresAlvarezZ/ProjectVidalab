@@ -29,9 +29,9 @@ modal-dialog modal-dialog-scrollable
                             <div class="alert alert-info" role="alert">
                                 <center><b>¡Su cambio será visible cuando presione el botón subir!</b></center>
                             </div>
-                            
+
                             <input type="hidden" name="id" id="idAgregarImagen">
-                            
+
                             <br></br>
                             <input required type="file" accept="image/*" class="form-control"  name="imagenDelPaquete"/> <br>
                             @error('imagenDelPaquete')
@@ -144,13 +144,6 @@ modal-dialog modal-dialog-scrollable
                                 <input type="text" class="form-control" placeholder="Ingrese el nombre del paquete" name="nombreDelPaquete3" id="nombreDelPaquete3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('nombreDelPaquete3') is-invalid @enderror" required autocomplete="nombreDelPaquete3" autofocus/></br>
                                 </br></br>
 
-                                <label for="imagen3" class="col-12 text-center">Imagen</label>
-                                <input type="file" accept="image/*" class="form-control"  name="imagenDelPaquete3"<br>
-                                @error('imagenDelPaquete3')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
-
-
                                 <label for="descripción3" class="col-12 text-center">Descripción</label>
                                 <input type="text" class="form-control" placeholder="Ingrese una descripción del paquete" name="descripcionDelPaquete3" id="descripcionDelPaquete3" class="form-control @error('codigoDelPaquete1') is-invalid @enderror" required autocomplete="codigoDelPaquete1" autofocus/></br>
                                 </br></br>
@@ -160,7 +153,7 @@ modal-dialog modal-dialog-scrollable
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">₡</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Ingrese el costo regular/normal en colones del paquete" name="costoDelPaquete3" id="costoDelPaquete3" onkeypress="return soloNumeros(event);" class="form-control @error('codigoDelPaquete1') is-invalid @enderror" required autocomplete="codigoDelPaquete1" autofocus/></br>
+                                    <input type="text" class="form-control" placeholder="Ingrese el costo regular/normal en colones del paquete" name="costoDelPaquete3" id="costoDelPaquete3" value="{{old('costoDelPaquete3')}}" onkeypress="return soloNumeros(event);" class="form-control @error('codigoDelPaquete1') is-invalid @enderror" required autocomplete="costoDelPaquete3" autofocus/></br>
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>
@@ -196,7 +189,7 @@ modal-dialog modal-dialog-scrollable
                                 <div class="alert alert-danger" role="alert">
                                     <center>¡Lea cuidadosamente la información!</center>
                                 </div>
-                                
+
                                 <label for="codigo4" class="col-12 text-center">Código del paquete</label>
                                 <input type="text" class="form-control" name="codigoDelPaquete4" readonly="codigoDelPaquete4" id="codigoDelPaquete4"/>
                                 <br>

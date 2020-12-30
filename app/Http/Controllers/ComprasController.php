@@ -91,7 +91,7 @@ class ComprasController extends Controller
         'fecha'=> $fecha,
         'condicionDeCompra' =>'Pendiente'
       ]);
-      return  redirect('/home')->with('status', 'la compra ha sido realizada con éxito');
+      return  redirect('/home')->with('compra', 'la compra ha sido realizada con éxito');
       }
     }
   //
@@ -163,8 +163,8 @@ class ComprasController extends Controller
       return view('compras.compraDomicilio');
     }
   //
-  
-    
+
+
     public function pedidoDomicilioFactura(Request $request)
     {
       $probar = Count($request->all());
@@ -234,7 +234,7 @@ class ComprasController extends Controller
         'costoDelServicio' => $subtotal-$descuento,
         'estado' => 'Espera'
       ]);
-      return  redirect('/home')->with('status', 'la compra ha sido realizada con éxito');
+      return  redirect('/home')->with('solicitud', 'la compra ha sido realizada con éxito');
       }
       }
     }
