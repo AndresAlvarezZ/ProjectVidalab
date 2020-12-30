@@ -6,7 +6,8 @@
 </head>
 
 
-<li><div class="logo"><span>HUMA</span><span class="fin" >check </span></div></li>
+<li><div class="logo"><span>HUMA</span><span class="fin" >check </span> 
+<br><span class="conector">de </span> <span class="vida">VIDA</span><span class="lab">lab</span></div></li>
 <li><a href="/inicio">Inicio</a></li>
 <li><a href="/catalogo/publico">Catálogo</a></li>
 <li><a href="/galeria/Publica/DeFotos">Fotos</a></li>

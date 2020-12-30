@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appPublicaEspecial')
 
 <head>
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
@@ -22,7 +22,10 @@
 
                                         <div class="alert alert-info" role="alert">
                                             <center><b>Los siguientes datos son requeridos para concluir su registro en el sistema y la respectiva apertura de su expediente.<br>
-                                            Sus datos no serán compartidos ni difundidos como parte de nuestros valores y responsabilidades en VIDAlab.</b></center>
+                                            Sus datos no serán compartidos ni difundidos como parte de nuestros valores y responsabilidades en VIDAlab.
+                                            <br>
+                                            Se solicita el número de hijos debido a que constantemente se realizan ofertas que se adapten a nuestros clientes
+                                        </b></center>
                                         </div>
 
 

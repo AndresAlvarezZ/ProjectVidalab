@@ -3,9 +3,10 @@
 <div class="copyRightText">
     <p>Copyright 2020 | Derechos de Autor 2020</p>
     <br>
-    <p>Proyecto de Graduación Bach. Informática Empresarial UCR, por:
-      <br>Analista: Stephanie Quirós Torres
-      <br>Backend: Andrés Álvarez Zúñiga
-      <br>Frontend: Iryeri Rojas Ramos	
+    <p>Este sitio web es un Proyecto de Graduación de Bach. Informática Empresarial UCR, <br>
+      desarrollado por:
+      <br>Analista-Tester: Stephanie Quirós Torres
+      <br>Backend-Frontend: Andrés Álvarez Zúñiga
+      <br>Frontend-Backend: Iryeri Rojas Ramos	
     </p>
 </div>

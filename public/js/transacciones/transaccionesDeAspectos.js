@@ -27,7 +27,7 @@ $(document).ready(function ()
     //FIN DE AGREGAR
 
 
-    //ACTUALIZAR
+    //ACTUALIZAR ASPECTOS
         $('#ubicacionForm').on('submit', function(e)
         { 
             e.preventDefault();
@@ -349,7 +349,7 @@ $(document).ready(function ()
                 }
             });
         });
-
+    //
 
         
     //FUNCIONES DE ALERTA

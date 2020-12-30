@@ -5,7 +5,9 @@
     <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
 </head>
 
-<li><div class="logo"><span>HUMA</span><span class="fin" >check </span></div></li>
+<li><div class="logo"><span>HUMA</span><span class="fin" >check </span> 
+<br><span class="conector">de </span> 
+<a href="/homeAdmins"><span class="vida">VIDA</span><span class="lab">lab</span></a></div></li>
 
 <li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-home"></span>VIDAlab</a>

@@ -23,8 +23,6 @@ p
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: url("../imgHomeClientes/presentacion2.jpeg");
-	background-size: cover;
 }
 
 .inicio .contenedor
@@ -235,7 +233,6 @@ section
 
 .profesionales
 {
-	background: url(../imgHomeClientes/perfiles.jpg);
 	background-size: cover;
 }
 
@@ -335,7 +332,6 @@ section
 
 .contactos
 {
-	background: url(../imgHomeClientes/contactos.jpg);
 	background-size: cover;
 }
 

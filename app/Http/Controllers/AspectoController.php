@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Aspecto;
+use App\Fondo;
 
 class AspectoController extends Controller
 {
@@ -32,10 +33,22 @@ class AspectoController extends Controller
             else{
                 $datosDisponibles = $id->id;
             }
+
+            $fondos = Fondo::all();
+            $idFondo = Fondo::find('1');
+            $fondosDisponibles = 0;
+            if(empty($idFondo))
+            {
+                $fondosDisponibles = 0;
+            }
+            else{
+                $fondosDisponibles = $idFondo->id;
+            }
+
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
             if (auth()->administrador()->estadoDelUsuarioAdministrador==1) 
             {
-                return view('aspectos.index',compact('aspectos', 'datosDisponibles', 'name'));
+                return view('aspectos.index',compact('aspectos', 'fondos', 'datosDisponibles', 'fondosDisponibles', 'name'));
             }
             else
             {

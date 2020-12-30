@@ -41,14 +41,14 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="telefono1" class="col-12 text-center">Número telefónico *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" name="telefono1" id="telefono1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" onkeypress="return soloNumeros(event);" name="telefono1" id="telefono1"/> </br>
                                     @error('telefono1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="correoElectronico1" class="col-12 text-center">Correo electrónico *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese el correo electrónico de VIDAlab" name="correoElectronico1" id="correoElectronico1"/> </br>
+                                    <input required type="email" class="form-control" placeholder="Ingrese el correo electrónico de VIDAlab" onkeyup="this.value = this.value.toLowerCase();" name="correoElectronico1" id="correoElectronico1"/> </br>
                                     @error('correoElectronico1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -75,7 +75,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="whatsapp1" class="col-12 text-center">WhatsApp *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese el número de WhatsApp de VIDAlab" name="whatsapp1" id="whatsapp1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el número de WhatsApp de VIDAlab" onkeypress="return soloNumeros(event);" name="whatsapp1" id="whatsapp1"/> </br>
                                     @error('whatsapp1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -154,6 +154,96 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODA-->
 
 
+    <!-- MODAL AGREGAR IMAGENES DE FONDO-->
+        <div class="modal fade" id="agregarImagenes" tabindex="-1" aria-labelledby="labelAgregarImagenes" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-ml">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-10 text-center col-10 text-center" id="labelAgregarImagenes">Agregando Imagen de perfil</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form accept-charset="UTF-8" enctype="multipart/form-data" action="/subirFondos" method="post">
+                        @csrf
+                        @method ('PUT')
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="alert alert-info" role="alert">
+                                    <center><b>¡Su cambio será visible cuando presione el botón "Subir"!<br><br>
+                                    Asegurese que las imágenes no sean repetidas o contengan el mismo nombre<br>
+                                    Preferiblemente publique imágenes horizontales y alta calidad. Que el fondo para la 
+                                    sección Profesionales sea colores sólidos o degradados</b></center>
+                                </div>
+                                <br></br>
+                                
+                                
+                                <label for="imagenDeBienvenida">Imagen para Sección de Bienvenida</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeBienvenida"/> <br>
+                                @error('imagenDeBienvenida')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeHistoria">Imagen para Sección de Historia</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeHistoria"/> <br>
+                                @error('imagenDeHistoria')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeMision">Imagen para Sección de Misión</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeMision"/> <br>
+                                @error('imagenDeMision')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeVision">Imagen para Sección de Visión</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeVision"/> <br>
+                                @error('imagenDeVision')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeValores">Imagen para Sección de Valores</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeValores"/> <br>
+                                @error('imagenDeValores')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeCompromiso">Imagen para Sección de Compromiso</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeCompromiso"/> <br>
+                                @error('imagenDeCompromiso')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeProfesionales">Imagen para Sección de Profesionales</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeProfesionales"/> <br>
+                                @error('imagenDeProfesionales')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                                <label for="imagenDeContactos">Imagen para Sección de Contactos</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeContactos"/> <br>
+                                @error('imagenDeContactos')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Subir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL AGREGAR -->
 
 @foreach($aspectos as $aspecto)
     <!-- MODAL ubicacion-->
@@ -198,10 +288,10 @@ modal-dialog modal-dialog-scrollable
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="telefonoForm">
-                        <div class="modal-body">
-                            {{ csrf_field() }}
-                            {{method_field('PUT')}}
+                    <form id="editarForm" accept-charset="utf-8" enctype="multipart/form-data" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
                             <div class="form-row">
                                 
                                 <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" name="telefono2" id="telefono2" value="{{$aspecto->telefono}}"/> </br>
@@ -600,3 +690,294 @@ modal-dialog modal-dialog-scrollable
         </div>
     <!--FIN MODAL vision-->
 @endforeach
+
+
+@foreach($fondos as $fondo)
+    <!-- MODAL BIENVENIDA-->
+        <div class="modal fade" id="ImagenDeBienvenida2" tabindex="-1" aria-labelledby="ImagenDeBienvenida2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeBienvenida2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgbienvenidaForm" accept-charset="UTF-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                            @csrf
+                            @method ('PUT')
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="1">
+                                <label for="imagenDeBienvenida2">Imagen para Sección de Bienvenida</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeBienvenida2" id="imagenDeBienvenida2"/> <br>
+                                @error('imagenDeBienvenida2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL BIENVENIDA-->
+
+    <!-- MODAL HISTORIA-->
+        <div class="modal fade" id="ImagenDeHistoria2" tabindex="-1" aria-labelledby="ImagenDeHistoria2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeHistoria2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imghistoriaForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="2">
+
+                                <label for="imagenDeHistoria2">Imagen para Sección de Historia</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeHistoria2" id="imagenDeHistoria2"/> <br>
+                                @error('imagenDeHistoria2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL HISTORIA-->
+
+    <!-- MODAL MISION-->
+        <div class="modal fade" id="ImagenDeMision2" tabindex="-1" aria-labelledby="ImagenDeMision2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeMision2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgmisionForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="3">
+                                
+                                <label for="imagenDeMision2">Imagen para Sección de Misión</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeMision2" id="imagenDeMision2"/> <br>
+                                @error('imagenDeMision2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL MISION-->
+
+    <!-- MODAL VISION-->
+        <div class="modal fade" id="ImagenDeVision2" tabindex="-1" aria-labelledby="ImagenDeVision2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeVision2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgvisionForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="4">
+                                
+                                <label for="imagenDeVision2">Imagen para Sección de Visión</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeVision2" id="imagenDeVision2"/> <br>
+                                @error('imagenDeVision2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL VISION-->
+
+    <!-- MODAL VALORES-->
+        <div class="modal fade" id="ImagenDeValores2" tabindex="-1" aria-labelledby="ImagenDeValores2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeValores2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgvaloresForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="5">
+                                
+                                <label for="imagenDeValores2">Imagen para Sección de Valores</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeValores2" id="imagenDeValores2"/> <br>
+                                @error('imagenDeValores2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL VALORES-->
+
+    <!-- MODAL COMPROMISO-->
+        <div class="modal fade" id="ImagenDeCompromiso2" tabindex="-1" aria-labelledby="ImagenDeCompromiso2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeCompromiso2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgcompromisoForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="6">
+                                
+                                <label for="imagenDeCompromiso2">Imagen para Sección de Compromiso</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeCompromiso2" id="imagenDeCompromiso2"/> <br>
+                                @error('imagenDeCompromiso2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL COMPROMISO-->
+
+    <!-- MODAL PROFESIONALES-->
+        <div class="modal fade" id="ImagenDeProfesionales2" tabindex="-1" aria-labelledby="ImagenDeProfesionales2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeProfesionales2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgprofesionalesForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="7">
+
+                                <label for="imagenDeProfesionales2">Imagen para Sección de Profesionales</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeProfesionales2" id="imagenDeProfesionales2"/> <br>
+                                @error('imagenDeProfesionales2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                                <br></br>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL PROFESIONALES-->
+
+    <!-- MODAL CONTACTOS-->
+        <div class="modal fade" id="ImagenDeContactos2" tabindex="-1" aria-labelledby="ImagenDeContactos2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center" id="ImagenDeContactos2">Actualizar Imagen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="imgcontactosForm" accept-charset="utf-8" enctype="multipart/form-data" action="/actualizar/fondo" method="post">
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                            <div class="form-row">
+                                <input type="hidden" name="id" id="id" value="8">
+
+                                <label for="imagenDeContactos2">Imagen para Sección de Contactos</label>
+                                <input required type="file" accept="image/*" class="form-control"  name="imagenDeContactos2" id="imagenDeContactos2"/> <br>
+                                @error('imagenDeContactos2')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar Actualización</button>
+                            <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL CONTACTOS-->
+@endforeach
+
+

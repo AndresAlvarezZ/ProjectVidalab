@@ -68,7 +68,7 @@ modal-dialog modal-dialog-scrollable
                                 </div>
                                 <div class="col">
                                     <label for="segundoNombreDelEspecialista1" class="col-12 text-center">Segundo nombre</label>
-                                    <input type="text" class="form-control" placeholder="Ingrese el segundo nombre del especialista" name="segundoNombreDelEspecialista1" id="segundoNombreDelEspecialista1" onkeypress="return soloLetras(event);" class="form-control @error('segundoNombreDelEspecialista1') is-invalid @enderror" required autocomplete="segundoNombreDelEspecialista1" autofocus/><br>
+                                    <input type="text" class="form-control" placeholder="Ingrese el segundo nombre del especialista" name="segundoNombreDelEspecialista1" id="segundoNombreDelEspecialista1" onkeypress="return soloLetras(event);" class="form-control @error('segundoNombreDelEspecialista1') is-invalid @enderror" autocomplete="segundoNombreDelEspecialista1" autofocus/><br>
                                 </div>
                             </div>
 

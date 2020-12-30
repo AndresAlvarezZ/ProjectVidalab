@@ -5,6 +5,7 @@ use App\Prueba;
 use App\Paquete;
 
 use App\Aspecto;
+use App\Fondo;
 use App\Especialista;
 use App\Archivos;
 
@@ -49,9 +50,20 @@ Route::get('/', function()
         $especialistaDisponible = '1';
     }
 
+    $fondo = Fondo::find('1');
+    $idFondo = Fondo::find('1');
+    $fondosDisponibles = 0;
+    if(empty($idFondo))
+    {
+        $fondosDisponibles = 0;
+    }
+    else{
+        $fondosDisponibles = $idFondo->id;
+    }
+
     $archivos = Archivos::all();
     $fotos = Archivos::where('tipoDeArchivo', 1)->get();
-    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'aspectoDisponible', 'especialistaDisponible'));
+    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
 });
 
 Auth::routes();
@@ -80,6 +92,9 @@ Auth::routes();
   Route::get('/informacion', 'AspectoController@index');
   Route::post('/aspectos/registrar', 'AspectoController@guardar');
   Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
+
+  Route::put('/subirFondos', 'FondoController@subirFondos');
+  Route::put('/actualizar/fondo', 'FondoController@actualizarFondo');
 
   Route::get('/multimedia','ArchivosController@index');
   Route::get('/galeriaDeFotos','ArchivosController@galeriaDeFotos');                                //CLIENTES
@@ -185,12 +200,6 @@ Auth::routes();
   Route::put('/solicitudes/procesarSolicitud/{solicitud}','SolicitudesController@procesarSolicitud');
 //
 
-
-
-/*----------------RUTAS A MEDIAS---------------------- */
-
-
-
 //RUTAS DE SUBMÓDULO CLIENTES
   Route::get('/afiliarme','ClientesController@IngresarCliente');  
   Route::get('/verPerfil','ClientesController@verPerfil');
@@ -199,17 +208,15 @@ Auth::routes();
   Route::Post('/afiliarme','ClientesController@CrearCliente');
   Route::put('/subirImagen','ClientesController@subirImagen');
   Route::put('/editarPerfil','ClientesController@editarPerfil');
+//
 
 
-
-
-
-//Rutas de SUBMODULO de Facturas faltantes por revisar
-Route::get('/facturas','FacturasController@miExpediente');
-Route::get('/procesarFactura/{factura}','FacturasController@procesarCompra');
-Route::put('/procesarFactura/{factura}','FacturasController@actualizarFactura');
-Route::get('/verFacturas','AdministradorController@mostrarFacturas');
-
+//RUTAS DE SUBMÓDULO FACTURAS
+  Route::get('/facturas','FacturasController@miExpediente');
+  Route::get('/procesarFactura/{factura}','FacturasController@procesarCompra');
+  Route::put('/procesarFactura/{factura}','FacturasController@actualizarFactura');
+  Route::get('/verFacturas','AdministradorController@mostrarFacturas');
+//
 
 
 //RUTAS DE PRUEBA DE SISTEMA

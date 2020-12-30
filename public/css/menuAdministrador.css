@@ -24,12 +24,35 @@
 	font-weight: bold;
 }
 
+.logo .conector
+{
+	font-size: 0.5em;
+	color: black;
+	text-decoration: bold;
+}
+
+.logo .vida
+{
+	font-weight: 700;
+	font-size: 0.9em;
+	color: #119281;
+	text-decoration: bold;
+}
+
+.logo .lab
+{
+	font-weight: 700;
+	font-size: 0.9em;
+	color: rgb(223, 89, 0);
+	text-decoration: bold;
+}
+
 li
 {
 	
 	list-style: none;
 	margin-left: 10px;
-	font-size: 1em;
+	font-size: 1.1em;
 	display: flex;
 	align-items: center;
 }
