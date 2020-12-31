@@ -55,7 +55,10 @@
         <div class="col-md-8">
           <div class="card-body">
             <div class="alert alert-info" role="alert">
-                <center>¡Lista de Tareas ordenadas de la más antigua a la más reciente</center>
+                <center>Lista de Tareas ordenadas de la más antigua a la más reciente<br>
+                Urgente: <button class="btn btn-danger" disable></button><br>
+                Aplazable: <button class="btn btn-warning" disable></button>
+                </center>
             </div>
             <br>
             <table id="registros" class="table table-striped" style="width:100%">
@@ -88,7 +91,7 @@
                     @if($tarea->tipoDeTarea == 1)
                       <td><center><button class="btn btn-danger" disable></button></center></td>
                     @else
-                      <td><center><button class="btn btn-success" disable></button></center></td>
+                      <td><center><button class="btn btn-warning" disable></button></center></td>
                     @endif
                     <td><center>{{$tarea->tarea}}</center></td>
                     <td><center>
