@@ -88,6 +88,12 @@ Auth::routes();
 //
 
 
+//RUTAS DE SUBMÓDULO TAREAS
+  Route::post('/tareas/registrar', 'TareaController@guardar');
+  Route::delete('/tareas/eliminar/{id}', 'TareaController@eliminar');
+//
+
+
 //RUTAS DE SUBMÓDULO INFORMACION DE LA EMPRESA
   Route::get('/informacion', 'AspectoController@index');
   Route::post('/aspectos/registrar', 'AspectoController@guardar');

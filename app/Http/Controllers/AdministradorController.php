@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Administrador;
+use App\Tarea;
+use App\Prueba;
 use App\Clientes;
 use App\Notificaciones;
 use App\Facturas;
