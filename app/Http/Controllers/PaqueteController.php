@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Paquete;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Request;
 
 class PaqueteController extends Controller
@@ -43,6 +45,51 @@ class PaqueteController extends Controller
       $paquete->save();
     }
   //
+
+
+  //GUARDAR REGISTROS
+    public function importarRegistros(Request $request)
+    {
+      $archivoCSV = $_FILES['archivo']; 
+      $archivoCSV = file_get_contents($archivoCSV['tmp_name']); 
+
+      $archivoCSV = explode("\n", $archivoCSV);
+      $archivoCSV = array_filter($archivoCSV); 
+
+      foreach ($archivoCSV as $dato) 
+      {
+          $listaDePaquetes[] = explode(",", $dato);
+      }
+
+      foreach ($listaDePaquetes as $dato) 
+      {
+        if(!empty(Paquete::find($dato[0])))
+        {
+          $affected = DB::table('paquetes')->where('codigoDelPaquete', $dato[0])
+          ->update
+          ([
+            'nombreDelPaquete' => $dato[1],
+            'descripcionDelPaquete' => $dato[2],
+            'costoDelPaquete' => $dato[3],
+            'imagenDelPaquete' => '',
+          ]);
+        }
+        else
+        {
+          DB::table('paquetes')->insert([
+            'codigoDelPaquete' => $dato[0],
+            'nombreDelPaquete' => $dato[1],
+            'descripcionDelPaquete' => $dato[2],
+            'costoDelPaquete' => $dato[3],
+            'imagenDelPaquete' => '',
+          ]);
+        }
+        }
+
+        return redirect('/paquetes');
+    }
+  //
+
 
   //SUBIR FOTO DE PERFIL
     public function subirImagenPaquete(Request $request)

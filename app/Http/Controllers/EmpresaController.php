@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Empresa;
 use App\Cita;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
@@ -64,6 +66,50 @@ class EmpresaController extends Controller
       $empresa->save();
     }
   //
+
+
+  //GUARDAR REGISTROS
+    public function importarRegistros(Request $request)
+    {
+      $archivoCSV = $_FILES['archivo']; 
+      $archivoCSV = file_get_contents($archivoCSV['tmp_name']); 
+
+      $archivoCSV = explode("\n", $archivoCSV);
+      $archivoCSV = array_filter($archivoCSV); 
+
+      foreach ($archivoCSV as $dato) 
+      {
+        $listaDePruebas[] = explode(",", $dato);
+      }
+
+      foreach ($listaDePruebas as $dato) 
+      {
+        if(!empty(Empresa::find($dato[2])))
+        {
+          $affected = DB::table('empresas')->where('nombreDeLaEmpresa', $dato[0])
+          ->update
+          ([
+            'nombreDeLaEmpresa' => $dato[0],
+            'numeroDeTelefonoDeLaEmpresa' => $dato[1],
+            'correoElectronicoDeLaEmpresa' => $dato[2],
+            'direccionDeLaEmpresa' => $dato[3],
+          ]);
+        }
+        else
+        {
+          DB::table('empresas')->insert([
+            'nombreDeLaEmpresa' => $dato[0],
+            'numeroDeTelefonoDeLaEmpresa' => $dato[1],
+            'correoElectronicoDeLaEmpresa' => $dato[2],
+            'direccionDeLaEmpresa' => $dato[3],
+            
+          ]);
+        }
+      }
+
+      return redirect('/empresas');
+    }
+    //
 
 
   //ACTUALIZAR REGISTROS

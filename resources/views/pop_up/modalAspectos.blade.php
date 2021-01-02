@@ -29,7 +29,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="ubicacion1" class="col-12 text-center">Ubicación de Sedes VIDAlab *</label>
-                                    <textarea  required name="ubicacion1" class="form-control" placeholder="Ingrese la ubicación de sedes VIDAlab" id="ubicacion1" rows="3"></textarea></br>
+                                    <textarea  required name="ubicacion1" class="form-control" placeholder="Ingrese la ubicación de sedes VIDAlab" id="ubicacion1" rows="3">{{ old('ubicacion1') }}</textarea></br>
                                     @error('ubicacion1')
                                     <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -41,14 +41,14 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="telefono1" class="col-12 text-center">Número telefónico *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" onkeypress="return soloNumeros(event);" name="telefono1" id="telefono1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" onkeypress="return soloNumeros(event);" name="telefono1" id="telefono1" value="{{ old('telefono1') }}"/> </br>
                                     @error('telefono1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="correoElectronico1" class="col-12 text-center">Correo electrónico *</label>
-                                    <input required type="email" class="form-control" placeholder="Ingrese el correo electrónico de VIDAlab" onkeyup="this.value = this.value.toLowerCase();" name="correoElectronico1" id="correoElectronico1"/> </br>
+                                    <input required type="email" class="form-control" placeholder="Ingrese el correo electrónico de VIDAlab" onkeyup="this.value = this.value.toLowerCase();" name="correoElectronico1" id="correoElectronico1" value="{{ old('correoElectronico1') }}"/> </br>
                                     @error('correoElectronico1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -59,14 +59,14 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="facebook1" class="col-12 text-center">Cuenta de Facebook *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese la cuenta de Facebook de VIDAlab" name="facebook1" id="facebook1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese la cuenta de Facebook de VIDAlab" name="facebook1" id="facebook1" value="{{ old('facebook1') }}"/> </br>
                                     @error('facebook1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
                                     <label for="instagram1" class="col-12 text-center">Cuenta de Instagram *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese la cuenta Instagram de VIDAlab" name="instagram1" id="instagram1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese la cuenta Instagram de VIDAlab" name="instagram1" id="instagram1" value="{{ old('instagram1') }}"/> </br>
                                     @error('instagram1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -75,7 +75,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="whatsapp1" class="col-12 text-center">WhatsApp *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese el número de WhatsApp de VIDAlab" onkeypress="return soloNumeros(event);" name="whatsapp1" id="whatsapp1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el número de WhatsApp de VIDAlab" onkeypress="return soloNumeros(event);" name="whatsapp1" id="whatsapp1" value="{{ old('whatsapp1') }}"/> </br>
                                     @error('whatsapp1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -89,7 +89,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="horarioRegular1" class="col-12 text-center">Horario regular *</label>
-                                    <textarea required name="horarioRegular1" class="form-control" placeholder="Ingrese el horario de atención regular de VIDAlab" id="horarioRegular1" rows="3"></textarea></br>
+                                    <textarea required name="horarioRegular1" class="form-control" placeholder="Ingrese el horario de atención regular de VIDAlab" id="horarioRegular1" rows="3">{{ old('horarioRegular1') }}</textarea></br>
                                     @error('horarioRegular1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -104,7 +104,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="lema1" class="col-12 text-center">Lema o frase común de VIDAlab *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese el lema o frase icónica de VIDAlab" name="lema1" id="lema1"/> </br>
+                                    <input required type="text" class="form-control" placeholder="Ingrese el lema o frase icónica de VIDAlab" name="lema1" id="lema1" value="{{ old('lema1') }}"/> </br>
                                     @error('lema1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -113,7 +113,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="historia1" class="col-12 text-center">Historia de VIDAlab *</label>
-                                    <textarea  required name="historia1" class="form-control" placeholder="Ingrese la historia de VIDAlab" id="historia1" rows="4"></textarea></br>
+                                    <textarea  required name="historia1" class="form-control" placeholder="Ingrese la historia de VIDAlab" id="historia1" rows="4">{{ old('historia1') }}</textarea></br>
                                     @error('historia1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror

@@ -35,23 +35,23 @@ modal-dialog modal-dialog-scrollable
                             </div>
 
                             <label for="nombre3" class="col-12 text-center">Nombre del solicitante</label>
-                            <input type="text" class="form-control" name="nombreDelSolicitante3" id="nombreDelSolicitante3" readonly/>
+                            <input type="text" class="form-control" name="nombreDelSolicitante3" id="nombreDelSolicitante3" value="{{ old('nombreDelSolicitante3') }}" readonly/>
                             <br>
 
                             <label for="clientes3" class="col-12 text-center">Total de clientes</label>
-                            <input type="text" class="form-control" placeholder="Ingrese el total de clientes que serán atendidos" name="numeroDeClientesPorAtender3" id="numeroDeClientesPorAtender3" onkeypress="return soloNumeros(event);" class="form-control @error('numeroDeClientesPorAtender3') is-invalid @enderror" required autocomplete="numeroDeClientesPorAtender3" autofocus/>
+                            <input type="text" class="form-control" placeholder="Ingrese el total de clientes que serán atendidos" name="numeroDeClientesPorAtender3" id="numeroDeClientesPorAtender3" onkeypress="return soloNumeros(event);" class="form-control @error('numeroDeClientesPorAtender3') is-invalid @enderror" required autocomplete="numeroDeClientesPorAtender3" value="{{ old('numeroDeClientesPorAtender3') }}" autofocus/>
                             <br>
 
                             <label for="fecha3" class="col-12 text-center">Fecha de cita</label>
-                            <input type="date" class="form-control" name="fechaDeCita3" id="fechaDeCita3" onkeypress="return soloNumeros(event);" class="form-control @error('fechaDeCita3') is-invalid @enderror" required autocomplete="fechaDeCita3" autofocus/>
+                            <input type="date" class="form-control" name="fechaDeCita3" id="fechaDeCita3" onkeypress="return soloNumeros(event);" class="form-control @error('fechaDeCita3') is-invalid @enderror" required autocomplete="fechaDeCita3" value="{{ old('fechaDeCita3') }}" autofocus/>
                             <br>
 
                             <label for="hora3" class="col-12 text-center">Hora de cita</label>
-                            <input required type="TIME" class="form-control" placeholder="Seleccione la hora de cita" name="horaDeCita3" id="horaDeCita3" onkeypress="return soloNumeros(event);" class="form-control @error('horaDeCita3') is-invalid @enderror" required autocomplete="horaDeCita3" autofocus/>
+                            <input required type="TIME" class="form-control" placeholder="Seleccione la hora de cita" name="horaDeCita3" id="horaDeCita3" onkeypress="return soloNumeros(event);" class="form-control @error('horaDeCita3') is-invalid @enderror" required autocomplete="horaDeCita3" value="{{ old('horaDeCita3') }}" autofocus/>
                             <br>
 
                             <label for="analisis3" class="col-12 text-center">Análisis requeridos</label>
-                            <input type="text" class="form-control" placeholder="Ingrese los de análisis requeridos" name="tiposDeAnalisisRequeridos3" id="tiposDeAnalisisRequeridos3" class="form-control @error('tiposDeAnalisisRequeridos3') is-invalid @enderror" required autocomplete="tiposDeAnalisisRequeridos3" autofocus/>
+                            <input type="text" class="form-control" placeholder="Ingrese los de análisis requeridos" name="tiposDeAnalisisRequeridos3" id="tiposDeAnalisisRequeridos3" class="form-control @error('tiposDeAnalisisRequeridos3') is-invalid @enderror" required autocomplete="tiposDeAnalisisRequeridos3" value="{{ old('tiposDeAnalisisRequeridos3') }}" autofocus/>
                             <br>
                         </div>
                         <div class="modal-footer">
