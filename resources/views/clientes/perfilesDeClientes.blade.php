@@ -7,6 +7,7 @@
         <link href="{{ asset('css/perfilesDeClientes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
         <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
         <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
+        <script src="http://momentjs.com/downloads/moment.min.js"></script>
 
         <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     </head>
@@ -33,13 +34,13 @@
                             <p>
                             <span class="icon-profile"> </span> {{ $perfil->dniDelCliente}} <br>
                             <span class="icon-calendar"> </span> {{ \Carbon\Carbon::parse( $perfil->fechaDeNacimientoDelCliente)->format('d/m/Y')}} <br>
-                            <span class="icon-info"> </span> {{ $perfil->edadDelCliente}} años<br>
+                            <span class="icon-info"> </span><?php $date1 = new DateTime('now');$date2 = new DateTime("$perfil->fechaDeNacimientoDelCliente");$diff = $date1->diff($date2);echo $diff->y .' años '; ?><br>
                             <span class="icon-man-woman"> </span> {{ $perfil->numeroDehijosDelcliente}} hijo(s)<br>
                             <span class="icon-envelop"> </span> {{ $perfil->correoDelCliente}} <br>
                             <span class="icon-history"> </span> Cliente desde {{ \Carbon\Carbon::parse( $perfil->created_at)->format('m/Y')}}
                             </p>
                         </div>
-                        </div>
+                            </div>
                     @endforeach
                 @else
                     <p>

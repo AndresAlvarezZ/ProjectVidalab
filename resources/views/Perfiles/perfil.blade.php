@@ -11,9 +11,9 @@
 
 	<body>
 		<section class="miPerfil" id="miPerfil">
-			<div class="contenedorMiPerfil">                    
-        <div class="marco">  
-          <h2 class="tituloDeSeccion"><span class="fin">Mi Perfil</span></h2>      
+			<div class="contenedorMiPerfil">
+        <div class="marco">
+          <h2 class="tituloDeSeccion"><span class="fin">Mi Perfil</span></h2>
           <div class="imgPerfil">
             @if($cliente->imagenDelCliente==null)
               <img src="/perfilesDeClientes/imagenFija.jpg">
@@ -26,16 +26,17 @@
           <div class="texto">
             <p>
               <h4>Datos Personales</h4>
-              <span class="datos">Nombre: </span>{{$cliente->nombreDelCliente}} {{$cliente->segundoNombreDelCliente}} {{$cliente->primerApellidoDelCliente}} {{$cliente->segundoApellidoDelCliente}}<br> 
-              <span class="datos">Identificación: </span>{{$cliente->dniDelCliente}} <br> 
-              <span class="datos">Fecha de Nacimiento: </span>{{$cliente->fechaDeNacimientoDelCliente}} <br> 
-              <span class="datos">Edad: </span>{{$cliente->edadDelCliente}} <br></br> 
+              <span class="datos">Nombre: </span>{{$cliente->nombreDelCliente}} {{$cliente->segundoNombreDelCliente}} {{$cliente->primerApellidoDelCliente}} {{$cliente->segundoApellidoDelCliente}}<br>
+              <span class="datos">Identificación: </span>{{$cliente->dniDelCliente}} <br>
+              <span class="datos">Fecha de Nacimiento: </span>{{$cliente->fechaDeNacimientoDelCliente}} <br>
+              <span class="datos">Edad: </span><?php $date1 = new DateTime('now');$date2 = new DateTime("$cliente->fechaDeNacimientoDelCliente");$diff = $date1->diff($date2);echo $diff->y .' años '; ?>
+			 <br></br>
               <h4>Datos Adicionales</h4>
-              <span class="datos">Teléfono: </span>{{$cliente->telefonoDelCliente}} <br> 
-              <span class="datos">Correo electrónico: </span>{{$cliente->correoDelCliente}} <br> 
+              <span class="datos">Teléfono: </span>{{$cliente->telefonoDelCliente}} <br>
+              <span class="datos">Correo electrónico: </span>{{$cliente->correoDelCliente}} <br>
               <span class="datos">Domicilio: </span>{{$cliente->domicilioDelCliente}} <br></br>
               <h4>Datos Familiares</h4>
-              <span class="datos">Número de hijos: </span>{{$cliente->numeroDehijosDelcliente}} <br> 
+              <span class="datos">Número de hijos: </span>{{$cliente->numeroDehijosDelcliente}} <br>
             </p>
           </div>
           <a class="boton" type="button" data-toggle="modal" data-target="#editarPerfil"><span class="icon-loop2"> </span> Actualizar mis datos</a>

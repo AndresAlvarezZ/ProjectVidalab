@@ -129,7 +129,7 @@
 										'{{$paquete->nombreDelPaquete}}',
 										'{{$paquete->descripcionDelPaquete}}',
 										'{{$paquete->costoDelPaquete}}',
-										'no-aplica','{{$identificadorDePaqete}}')" name="button"><span class="icon-cart"></span>
+										'no-aplica','','{{$identificadorDePaqete}}')" name="button"><span class="icon-cart"></span>
 									</button>
 								</div>
 							</div>
