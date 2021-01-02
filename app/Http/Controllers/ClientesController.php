@@ -111,6 +111,9 @@ class ClientesController extends Controller
         'domicilioDelCliente' => $data['domicilioDelCliente'],
         'aceptacionDeTerminos' => $data['aceptacionDeTerminos']
       ]);
+      DB::table('users')
+                ->where('id', auth()->user()->id)
+                ->update(['name' => $data['nombreDelCliente']]);
       return redirect('/home');
       //actualizacion de tabla
     /*  DB::table('users')
