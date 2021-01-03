@@ -24,7 +24,7 @@ class AdministradorController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('auth:admins')->only('index', 'guard','listar', 'listarAdministradoresActivos', 'actualizar', 'inactivar', 'activar', 'mostrarFacturas');
+    $this->middleware('auth:admins')->only('index', 'guard','listar', 'listarAdministradoresActivos','listarAdministradoresInactivos', 'actualizar', 'inactivar', 'activar', 'mostrarFacturas');
   }
 
   /**
