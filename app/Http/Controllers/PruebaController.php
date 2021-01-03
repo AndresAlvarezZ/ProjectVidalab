@@ -60,7 +60,7 @@ class PruebaController extends Controller
 
             foreach ($archivoCSV as $dato) 
             {
-                $listaDePruebas[] = explode(",", $dato);
+                $listaDePruebas[] = explode(";", $dato);
             }
 
             foreach ($listaDePruebas as $dato) 
