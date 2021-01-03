@@ -17,9 +17,9 @@ class CreatePruebasTable extends Migration
             $table->string('codigoDelAnalisis')->primary();
             $table->string('nombreDelAnalisis');
             $table->text('descripcionDelAnalisis');
+            $table->integer('categoriaDelAnalisis');
             $table->decimal('costoDelAnalisis', 16, 1);
             $table->decimal('descuentoDelAnalisis', 16, 1);
-            $table->integer('categoriaDelAnalisis');
             $table->timestamps();
         });
     }

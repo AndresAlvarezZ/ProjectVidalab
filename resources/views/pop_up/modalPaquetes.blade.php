@@ -116,6 +116,45 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL AGREGAR-->
 
 
+    <!-- MODAL IMPORTAR-->
+        <div class="modal fade" id="importarRegistros" tabindex="-1" aria-labelledby="labelImportarRegistros" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center col-11 text-center" id="labelImportarRegistros">Registro de Análisis de Excel</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="importarForm" action="/importar/registros/paquetes" method="post" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            {{ csrf_field() }}
+
+                            <div class="alert alert-info text-left" role="alert">
+                                <center><b>Pasos: </b><br>
+                                    <b>1)</b> Descargue la plantilla de tipo csv<br>
+                                    <b>2)</b> Para agregar los registros puede editarla desde Excel y siempre respetando el orden de las columnas<br>
+                                    <b>3)</b> Por favor, antes de guardar verifique que no hayan campos repetidos, únicamente la columna "IMAGEN" debe ir en blanco e importante eliminar el encabezado de cada columna. Además, eliminar columnas ocultas o bien más hojas de excel<br>
+                                    <b>4)</b> Finalmente asegurese de guardarlo en el mismo formato csv y no de excel. Listo, puede "Importar Registros"<br>
+                                    
+                                    Al importar el archivo el sisitema automáticamente se encargará de cargar todos los datos, los cuales podrá verificar en la tabla de registros al recargar la página</center>
+                            </div>
+
+                            <label for="archivo">Cargar Archivo</label>
+                            <input class="form-control" type="file" name="archivo" id="archivo" accept=".csv">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success btn-lg">Importar Archivo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL IMPORTAR-->
+
+
     <!-- MODAL EDITAR-->
         <div class="modal fade" id="editarPaquete" tabindex="-1" aria-labelledby="labelEditarPaquete" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -137,23 +176,23 @@ modal-dialog modal-dialog-scrollable
                                 </div>
 
                                 <label for="codigo3" class="col-12 text-center">Código/Identificador</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el código del paquete" name="codigoDelPaquete3" id="codigoDelPaquete3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('codigoDelPaquete3') is-invalid @enderror" required autocomplete="codigoDelPaquete3" autofocus/></br>
-                                </br></br>
+                                <input type="text" class="form-control" placeholder="Ingrese el código del paquete" name="codigoDelPaquete3" id="codigoDelPaquete3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('codigoDelPaquete3') is-invalid @enderror" required autocomplete="codigoDelPaquete3" value="{{old('codigoDelPaquete3')}}" autofocus/>
+                                <br>
 
                                 <label for="nombre3" class="col-12 text-center">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Ingrese el nombre del paquete" name="nombreDelPaquete3" id="nombreDelPaquete3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('nombreDelPaquete3') is-invalid @enderror" required autocomplete="nombreDelPaquete3" autofocus/></br>
-                                </br></br>
+                                <input type="text" class="form-control" placeholder="Ingrese el nombre del paquete" name="nombreDelPaquete3" id="nombreDelPaquete3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('nombreDelPaquete3') is-invalid @enderror" required autocomplete="nombreDelPaquete3" value="{{old('nombreDelPaquete3')}}" autofocus/>
+                                <br>
 
                                 <label for="descripción3" class="col-12 text-center">Descripción</label>
-                                <input type="text" class="form-control" placeholder="Ingrese una descripción del paquete" name="descripcionDelPaquete3" id="descripcionDelPaquete3" class="form-control @error('codigoDelPaquete1') is-invalid @enderror" required autocomplete="codigoDelPaquete1" autofocus/></br>
-                                </br></br>
+                                <input type="text" class="form-control" placeholder="Ingrese una descripción del paquete" name="descripcionDelPaquete3" id="descripcionDelPaquete3" class="form-control @error('codigoDelPaquete1') is-invalid @enderror" required autocomplete="codigoDelPaquete1" value="{{old('codigoDelPaquete1')}}" autofocus/>
+                                <br>
 
                                 <label for="costo3" class="col-12 text-center">Costo Regular</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">₡</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Ingrese el costo regular/normal en colones del paquete" name="costoDelPaquete3" id="costoDelPaquete3" value="{{old('costoDelPaquete3')}}" onkeypress="return soloNumeros(event);" class="form-control @error('codigoDelPaquete1') is-invalid @enderror" required autocomplete="costoDelPaquete3" autofocus/></br>
+                                    <input type="text" class="form-control" placeholder="Ingrese el costo regular/normal en colones del paquete" name="costoDelPaquete3" id="costoDelPaquete3" value="{{old('costoDelPaquete3')}}" onkeypress="return soloNumeros(event);" class="form-control @error('costoDelPaquete3') is-invalid @enderror" required autocomplete="costoDelPaquete3" value="{{old('costoDelPaquete3')}}" autofocus/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">.00</span>
                                     </div>

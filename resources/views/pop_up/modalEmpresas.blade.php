@@ -9,7 +9,7 @@ modal-dialog modal-dialog-scrollable
 -->
 
     <!-- MODAL AGREGAR CITA-->
-    <div class="modal fade" id="agregarCita" tabindex="-1" aria-labelledby="labelAgregarCita" aria-hidden="true">
+        <div class="modal fade" id="agregarCita" tabindex="-1" aria-labelledby="labelAgregarCita" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -149,6 +149,45 @@ modal-dialog modal-dialog-scrollable
     <!--FIN MODAL AGREGAR-->
 
 
+    <!-- MODAL IMPORTAR-->
+        <div class="modal fade" id="importarRegistros" tabindex="-1" aria-labelledby="labelImportarRegistros" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-11 text-center col-11 text-center" id="labelImportarRegistros">Registro de Análisis de Excel</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="importarForm" action="/importar/registros/empresas" method="post" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            {{ csrf_field() }}
+
+                            <div class="alert alert-info text-left" role="alert">
+                                <center><b>Pasos: </b><br>
+                                    <b>1)</b> Descargue la plantilla de tipo csv<br>
+                                    <b>2)</b> Para agregar los registros puede editarla desde Excel y siempre respetando el orden de las columnas<br>
+                                    <b>3)</b> Por favor, antes de guardarla verifique que no hayan campos repetidos, campos en blanco e importante eliminar el encabezado de cada columna. Además, eliminar columnas ocultas o bien más hojas de excel<br>
+                                    <b>4)</b> Finalmente asegurese de guardarlo en el mismo formato csv y no de excel. Listo, puede "Importar Registros"<br>
+                                    
+                                    Al importar el archivo el sisitema automáticamente se encargará de cargar todos los datos, los cuales podrá verificar en la tabla de registros al recargar la página</center>
+                            </div>
+
+                            <label for="archivo">Cargar Archivo</label>
+                            <input class="form-control" type="file" name="archivo" id="archivo" accept=".csv">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success btn-lg">Importar Archivo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!--FIN MODAL IMPORTAR-->
+
+
     <!-- MODAL EDITAR-->
         <div class="modal fade" id="editarEmpresa" tabindex="-1" aria-labelledby="labelEditarEmpresa" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered  modal-lg">
@@ -170,19 +209,19 @@ modal-dialog modal-dialog-scrollable
                             </div>
 
                             <label for="exampleFormControlSelect1" class="col-12 text-center">Nombre</label>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre completo de la empresa" name="nombreDeLaEmpresa3" id="nombreDeLaEmpresa3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('nombreDeLaEmpresa3') is-invalid @enderror" required autocomplete="nombreDeLaEmpresa3" autofocus/>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre completo de la empresa" name="nombreDeLaEmpresa3" id="nombreDeLaEmpresa3" onkeypress="return soloNumerosLetrasYEspacios(event);" class="form-control @error('nombreDeLaEmpresa3') is-invalid @enderror" required autocomplete="nombreDeLaEmpresa3" value="{{old('nombreDeLaEmpresa3')}}" autofocus/>
                             <br>
 
                             <label for="exampleFormControlSelect1" class="col-12 text-center">Número telefónico</label>
-                            <input type="text" class="form-control" placeholder="Ingrese un número telefónico para contactar" name="numeroDeTelefonoDeLaEmpresa3" id="numeroDeTelefonoDeLaEmpresa3" onkeypress="return soloNumeros(event);" class="form-control @error('numeroDeTelefonoDeLaEmpresa3') is-invalid @enderror" required autocomplete="numeroDeTelefonoDeLaEmpresa3" autofocus/>
+                            <input type="text" class="form-control" placeholder="Ingrese un número telefónico para contactar" name="numeroDeTelefonoDeLaEmpresa3" id="numeroDeTelefonoDeLaEmpresa3" onkeypress="return soloNumeros(event);" class="form-control @error('numeroDeTelefonoDeLaEmpresa3') is-invalid @enderror" required autocomplete="numeroDeTelefonoDeLaEmpresa3" value="{{old('numeroDeTelefonoDeLaEmpresa3')}}" autofocus/>
                             <br>
 
                             <label for="exampleFormControlSelect1" class="col-12 text-center">Correo electrónico</label>
-                            <input type="email" class="form-control" placeholder="Ingrese un correo electrónico para contactar" onkeyup="this.value = this.value.toLowerCase();" name="correoElectronicoDeLaEmpresa3" id="correoElectronicoDeLaEmpresa3" class="form-control @error('correoElectronicoDeLaEmpresa3') is-invalid @enderror" required autocomplete="correoElectronicoDeLaEmpresa3" autofocus/>
+                            <input type="email" class="form-control" placeholder="Ingrese un correo electrónico para contactar" onkeyup="this.value = this.value.toLowerCase();" name="correoElectronicoDeLaEmpresa3" id="correoElectronicoDeLaEmpresa3" class="form-control @error('correoElectronicoDeLaEmpresa3') is-invalid @enderror" required autocomplete="correoElectronicoDeLaEmpresa3" value="{{old('correoElectronicoDeLaEmpresa3')}}" autofocus/>
                             <br>
 
                             <label for="exampleFormControlSelect1" class="col-12 text-center">Ubicación (dirección exacta)</label>
-                            <input type="text" class="form-control" placeholder="Ingrese la dirección de la empresa con el formato: Provincia, cantón, distrito, dirección exacta" name="direccionDeLaEmpresa3" id="direccionDeLaEmpresa3" class="form-control @error('direccionDeLaEmpresa3') is-invalid @enderror" required autocomplete="direccionDeLaEmpresa3" autofocus/>
+                            <input type="text" class="form-control" placeholder="Ingrese la dirección de la empresa con el formato: Provincia, cantón, distrito, dirección exacta" name="direccionDeLaEmpresa3" id="direccionDeLaEmpresa3" class="form-control @error('direccionDeLaEmpresa3') is-invalid @enderror" required autocomplete="direccionDeLaEmpresa3" value="{{old('direccionDeLaEmpresa3')}}" autofocus/>
                             <br>
                         </div>
                         <div class="modal-footer">

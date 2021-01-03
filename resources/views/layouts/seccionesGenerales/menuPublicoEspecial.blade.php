@@ -8,6 +8,10 @@
 
 <li><div class="logo"><span>HUMA</span><span class="fin" >check </span> 
 <br><span class="conector">de </span> <span class="vida">VIDA</span><span class="lab">lab</span></div></li>
-<li><a href="/inicio">Inicio</a></li>
+@if($link == 0)
+    <br>
+@else
+    <li><a href="/inicio">Inicio</a></li>
+@endif
 
    

@@ -41,7 +41,7 @@ modal-dialog modal-dialog-scrollable
                                 </div>
                                 <div class="row">
                                     <label for="" class="col-12 text-center">Descripción</label>
-                                    <textarea class="form-control" name="descripcionDelArchivo" required rows="4" cols="80"></textarea>
+                                    <textarea class="form-control" name="descripcionDelArchivo" required rows="4" cols="80">{{ old('descripcionDelArchivo') }}</textarea>
                                 </div>
 
                         </div>
@@ -91,7 +91,7 @@ modal-dialog modal-dialog-scrollable
                               </div>
                               <div class="row">
                                   <label for="" class="col-12 text-center">Descripción</label>
-                                  <textarea class="form-control" id="descripcionDelArchivo" name="descripcionDelArchivo" required rows="4" cols="80"></textarea>
+                                  <textarea class="form-control" id="descripcionDelArchivo" name="descripcionDelArchivo" required rows="4" cols="80">{{ old('descripcionDelArchivo') }}</textarea>
 
                               </div>
 

@@ -142,6 +142,7 @@ Auth::routes();
 //RUTAS DE SUBMÓDULO EMPRESAS
   Route::get('/empresas', 'EmpresaController@index');
   Route::post('/empresas/registrar', 'EmpresaController@guardar');
+  Route::post('/importar/registros/empresas', 'EmpresaController@importarRegistros');
   Route::get('/empresas/{empresa}', 'EmpresaController@mostrar');
   Route::put('/empresas/{empresa}', 'EmpresaController@actualizar');
   Route::delete('/empresas/{empresa}', 'EmpresaController@eliminar');
@@ -158,6 +159,7 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO PRUEBAS
   Route::post('/pruebas/registrar', 'PruebaController@guardar');
+  Route::post('/importar/registros/pruebas', 'PruebaController@importarRegistros');
   Route::get('/pruebas', 'PruebaController@index');
   Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');
   Route::delete('/pruebas/{prueba}', 'PruebaController@eliminar');
@@ -166,6 +168,7 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO PAQUETES
   Route::post('/paquetes/registrar', 'PaqueteController@guardar');
+  Route::post('/importar/registros/paquetes', 'PaqueteController@importarRegistros');
   Route::get('/paquetes', 'PaqueteController@index');
   Route::put('/subirImagenPaquete','PaqueteController@subirImagenPaquete');
   Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');

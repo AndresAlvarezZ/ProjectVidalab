@@ -41,7 +41,7 @@ $(document).ready(function ()
             $('#idEditar').val(data[0]);
             $('#codigoDelAnalisis3').val(data[0]);
             $('#nombreDelAnalisis3').val(data[1]);
-            $('#numeroDeMaquina3').val(data[2]);
+            $('#categoria3').val(data[2]);
             $('#descripcionDelAnalisis3').val(data[3]);
             $('#costoDelAnalisis3').val(data[4]);
             $('#descuentoDelAnalisis3').val(data[5]);
