@@ -223,7 +223,7 @@ class NotificacionesController extends Controller
         'archivo' => $file_name,
       ]);
 
-      return redirect('/notificaciones');
+      return redirect('/notificaciones')->with('status','Notificacion enviada');
     }
   //
 

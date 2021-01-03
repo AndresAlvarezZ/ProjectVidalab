@@ -136,11 +136,7 @@ class AdministradorController extends Controller
           'estadoDelUsuarioAdministrador' =>  1, //POR DEFECTO ES ACTIVO
           'motivoDeEstadoDelUsuarioAdministrador' => "Ejerciendo",
       ]);
-
-      $acceso = false;
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('homeAdmins',compact('acceso','name'))->with('status','Administrador Agregado exitosamente');
-    }
+  }
   //
 
 

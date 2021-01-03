@@ -28,7 +28,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="alert alert-info" role="alert">
                                 <center><b>¡Por favor, antes de Registrar verifique que los datos sean los correctos y respetar los formatos solicitados por el sistema!</b></center>
                             </div>
-                            
+
                             <h4>Datos Generales</h4><br>
                             <div class="row">
                                 <div class="col">
@@ -44,7 +44,7 @@ modal-dialog modal-dialog-scrollable
                                     <input type="text" class="form-control" name="motivoDeEstadoDelUsuarioAdministrador" readonly="motivoDeEstadoDelUsuarioAdministrador" value="Ejerciendo"/><br><br>
                                 </div>
                             </div>
-                        
+
                             <h4>Datos Personales</h4><br>
                             <label for="nombre1" class="col-12 text-center">Nombre</label>
                             <input required id="nombreDelUsuarioAdministrador" type="text" placeholder="Ingrese el primer nombre del administrador(a)" class="form-control @error('nombreDelUsuarioAdministrador') is-invalid @enderror" name="nombreDelUsuarioAdministrador" onkeypress="return soloLetras(event);" value="{{ old('nombreDelUsuarioAdministrador') }}" required autocomplete="nombreDelUsuarioAdministrador" autofocus>
@@ -64,7 +64,7 @@ modal-dialog modal-dialog-scrollable
                             <br>
 
                             <label for="cedula1" class="col-12 text-center">Identificación/Cédula</label>
-                            <input required id="dniDelUsuarioAdministrador"   placeholder="Ingrese el número de cédula/identificación del administrador(a). Formato: 123456789" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus>
+                            <input required id="dniDelUsuarioAdministrador" min="100000000" max="999999999"  placeholder="Ingrese el número de cédula/identificación del administrador(a). Formato: 123456789" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus>
                             @error('dniDelUsuarioAdministrador')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -137,11 +137,11 @@ modal-dialog modal-dialog-scrollable
 
                             <label for="nombre3" class="col-12 text-center">Nombre del administrador(a)</label>
                             <input type="text" class="form-control" name="nombreCompleto3" readonly="nombreCompleto3" id="nombreCompleto3" />
-                            
+
 
                             <label for="telefono3" class="col-12 text-center">Número telefónico</label>
                             <input type="text" class="form-control" placeholder="Ingrese un número telefónico para contactar al administrador(a). Formato: 12345678" name="telefonoDelUsuarioAdministrador3" class="form-control @error('telefonoDelUsuarioAdministrador3') is-invalid @enderror" onkeypress="return soloNumeros(event);" required autocomplete="telefonoDelUsuarioAdministrador3" id="telefonoDelUsuarioAdministrador3" autofocus/>
-                            
+
 
                             <label for="correo3" class="col-12 text-center">Correo electrónico</label>
                             <input type="email" class="form-control" onkeyup="this.value = this.value.toLowerCase();" placeholder="Ingrese un correo electrónico para contactar al administrador(a)" class="form-control @error('email3') is-invalid @enderror" name="email3" id="email3" required autocomplete="email3" autofocus/>
@@ -179,15 +179,15 @@ modal-dialog modal-dialog-scrollable
 
                             <label for="nombre4" class="col-12 text-center">Nombre del administrador(a)</label>
                             <input type="text" class="form-control" name="nombreCompleto4" readonly="nombreCompleto4" id="nombreCompleto4"/> <br>
-                            
+
 
                             <label for="cedula4" class="col-12 text-center">Identificación/Cédula</label>
                             <input type="text" class="form-control" name="numeroDeCedula4" readonly="numeroDeCedula4" id="numeroDeCedula4"/> <br>
-                            
+
 
                             <label for="estado4" class="col-12 text-center">Estado a asignar</label>
                             <input type="text" class="form-control" name="nuevoEstadoDelUsuarioAdministrador4" readonly="nuevoEstadoDelUsuarioAdministrador4" value="Inactivar"/> <br>
-                            
+
 
                             <label for="motivo4" class="col-12 text-center">Motivo del nuevo estado</label>
                             <input required type="text" class="form-control" placeholder="Ingrese el motivo por el cual denegará el acceso al sistema a este administrador(a)" name="motivoDeEstadoDelUsuarioAdministrador4" class="form-control @error('motivoDeEstadoDelUsuarioAdministrador4') is-invalid @enderror" required autocomplete="motivoDeEstadoDelUsuarioAdministrador4" autofocus/>
@@ -227,16 +227,16 @@ modal-dialog modal-dialog-scrollable
                             </div>
 
                             <label for="nombre4" class="col-12 text-center" class="col-12 text-center">Nombre del administrador(a)</label>
-                            <input type="text" class="form-control" name="nombreCompleto5" readonly="nombreCompleto5" id="nombreCompleto5"/> 
-                            
+                            <input type="text" class="form-control" name="nombreCompleto5" readonly="nombreCompleto5" id="nombreCompleto5"/>
+
 
                             <label for="cedula4" class="col-12 text-center" class="col-12 text-center">Identificación/Cédula</label>
-                            <input type="text" class="form-control" name="numeroDeCedula5" readonly="numeroDeCedula5" id="numeroDeCedula5"/> 
-                            
+                            <input type="text" class="form-control" name="numeroDeCedula5" readonly="numeroDeCedula5" id="numeroDeCedula5"/>
+
 
                             <label for="estado4" class="col-12 text-center">Estado a asignar</label>
-                            <input type="text" class="form-control" name="nuevoEstadoDelUsuarioAdministrador5" readonly="nuevoEstadoDelUsuarioAdministrador5" value="Activar"/> 
-                            
+                            <input type="text" class="form-control" name="nuevoEstadoDelUsuarioAdministrador5" readonly="nuevoEstadoDelUsuarioAdministrador5" value="Activar"/>
+
 
                             <label for="motivo4" class="col-12 text-center">Motivo del nuevo estado</label>
                             <input required type="text" class="form-control" placeholder="Ingrese el motivo por el cual concederá el acceso al sistema a este administrador(a)" name="motivoDeEstadoDelUsuarioAdministrador5" class="form-control @error('motivoDeEstadoDelUsuarioAdministrador5') is-invalid @enderror" required autocomplete="motivoDeEstadoDelUsuarioAdministrador5" autofocus/>

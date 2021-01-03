@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="dniDelUsuario" class="col-md-12 col-form-label text-md-center">{{ __('Cédula/Identificación') }}</label>
-                                        <input id="dniDelUsuario" minlength="9" maxlength="9" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuario') }}" required autocomplete="dniDelUsuario" autofocus>
+                                        <input id="dniDelUsuario" min="100000000" max="999999999" type="number" placeholder="Ingrese su número de identificación" class="form-control @error('dniDelUsuario') is-invalid @enderror" name="dniDelUsuario" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuario') }}" required  >
                                         @error('dniDelUsuario')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
