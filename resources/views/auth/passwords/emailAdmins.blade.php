@@ -1,3 +1,6 @@
+<?php
+    $link = 1;
+?>
 @extends('layouts.appPublicaEspecial')
 
 <head>

@@ -76,7 +76,8 @@ class ClientesController extends Controller
   //REGISTRAR
     public function IngresarCliente()
     {
-      return view('clientes.ingresarCliente');
+      $link = 0;
+      return view('clientes.ingresarCliente', compact('link'));
     }
     public function CrearCliente(Request $request)
     {
