@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarPaquete" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva cita"><span class="icon-lab"> </span>Registrar nuevo Paquete</button>
-                        <a href="/registroDePaquetes.csv" class="btn btn-success btnDescargar" data-toggle="tooltip" data-placement="right" title="Click para descargar plantilla de registro"><span class="icon-folder-download"> </span>Descargar plantilla</a>
+                        <a href="/registroDePaquetes.xlsx" class="btn btn-success btnDescargar" data-toggle="tooltip" data-placement="right" title="Click para descargar plantilla de registro"><span class="icon-folder-download"> </span>Descargar plantilla</a>
                         <button type="button" class="btn btn-primary btnImportar" data-toggle="modal" data-target="#importarRegistros" data-toggle="tooltip" data-placement="right" title="Click para importar todos los registros"><span class="icon-lab"> </span><span class="icon-table2"> </span>Importar Registros</button>
                     </div>
                 </div>

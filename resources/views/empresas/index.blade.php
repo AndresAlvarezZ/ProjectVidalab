@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarEmpresa" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva empresa"><span class="icon-office"> </span>Registrar nueva Empresa</button>
-                        <a href="/registroDeEmpresas.csv" class="btn btn-success btnDescargar" data-toggle="tooltip" data-placement="right" title="Click para descargar plantilla de registro"><span class="icon-folder-download"> </span>Descargar plantilla CSV</a>
+                        <a href="/registroDeEmpresas.xlsx" class="btn btn-success btnDescargar" data-toggle="tooltip" data-placement="right" title="Click para descargar plantilla de registro"><span class="icon-folder-download"> </span>Descargar plantilla</a>
                         <button type="button" class="btn btn-primary btnImportar" data-toggle="modal" data-target="#importarRegistros" data-toggle="tooltip" data-placement="right" title="Click para importar todos los registros"><span class="icon-lab"> </span><span class="icon-table2"> </span>Importar Registros</button>
                     </div>
                 </div>
