@@ -24,7 +24,7 @@ class AdministradorController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('auth:admins')->only('index', 'guard','listar', 'listarAdministradoresActivos', 'actualizar', 'inactivar', 'activar', 'mostrarFacturas');
+    $this->middleware('auth:admins')->only('index', 'guard','listar', 'listarAdministradoresActivos','listarAdministradoresInactivos', 'actualizar', 'inactivar', 'activar', 'mostrarFacturas');
   }
 
   /**
@@ -136,11 +136,7 @@ class AdministradorController extends Controller
           'estadoDelUsuarioAdministrador' =>  1, //POR DEFECTO ES ACTIVO
           'motivoDeEstadoDelUsuarioAdministrador' => "Ejerciendo",
       ]);
-
-      $acceso = false;
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      return view('homeAdmins',compact('acceso','name'))->with('status','Administrador Agregado exitosamente');
-    }
+  }
   //
 
 

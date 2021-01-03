@@ -85,7 +85,6 @@ class ClientesController extends Controller
       [
         'dniDelCliente' => 'required',
         'nombreDelCliente' => 'required',
-        'segundoNombreDelCliente' => 'required',
         'primerApellidoDelCliente' => 'required',
         'segundoApellidoDelCliente' => 'required',
         'fechaDeNacimientoDelCliente' => 'required',
@@ -97,11 +96,12 @@ class ClientesController extends Controller
         'aceptacionDeTerminos' => 'required'
       ]);
       $idUpdated = Auth()->user()->id;
+
       Auth()->user()->cliente()->create([
         'idUsuario' => $idUpdated,
         'dniDelCliente' => $data['dniDelCliente'],
         'nombreDelCliente' =>$data['nombreDelCliente'] ,
-        'segundoNombreDelCliente' =>$data['segundoNombreDelCliente'] ,
+        'segundoNombreDelCliente' => request('segundoNombreDelCliente'),
         'primerApellidoDelCliente' =>$data['primerApellidoDelCliente'] ,
         'segundoApellidoDelCliente' => $data['segundoApellidoDelCliente'],
         'fechaDeNacimientoDelCliente' => $data['fechaDeNacimientoDelCliente'],
