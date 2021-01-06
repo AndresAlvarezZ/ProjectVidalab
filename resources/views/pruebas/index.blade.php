@@ -18,7 +18,6 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarPrueba" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo análisis"><span class="icon-lab"> </span>Registrar nuevo Análisis</button>
-                        <a href="/registroDeAnalisis.xlsx" class="btn btn-success btnDescargar" data-toggle="tooltip" data-placement="right" title="Click para descargar plantilla de registro"><span class="icon-folder-download"> </span>Descargar Excel</a>
                         <button type="button" class="btn btn-primary btnImportar" data-toggle="modal" data-target="#importarRegistros" data-toggle="tooltip" data-placement="right" title="Click para importar todos los registros"><span class="icon-lab"> </span><span class="icon-table2"> </span>Importar Registros</button>
                     </div>
                 </div>

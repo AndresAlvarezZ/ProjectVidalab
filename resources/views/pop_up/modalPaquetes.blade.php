@@ -130,17 +130,14 @@ modal-dialog modal-dialog-scrollable
                         <div class="modal-body">
                             {{ csrf_field() }}
 
-                            <div class="alert alert-warning" role="alert">
-                                <center><b>Pasos: </b><br>
-                                    <b>1)</b> Descargue la plantilla de Excel<br>
-                                    <b>2)</b> Agregue o copie los datos según los encabezados de cada columna de la Hoja de Excel.<br>
-                                    <b>3)</b> Lo que no debe hacer: por favor, no use comas (,) o punto y coma (;) en los datos, no agregue más columnas u oculte columnas,
-                                     no agregue más hojas a este libro de Excel, no deje campos vacíos y no duplique fila de datos (principalmente códigos).<br>
-                                    <b>4)</b> Antes de guardar el Excel: aplicar formato general a las columnas (esto para evitar decimales), asegurese que ningún campo esté vacío o duplicado y <b>eliminar la primera fila (de encabezados de cada columna).</b> De lo contrario el sistema no podrá guardar los datos.<br>
-                                    <b>5)</b> Para guardar el archivo, seleccione <b>"Guardar como"</b>, asigne el mismo nombre o el de su preferencia al archivo, debajo del nombre 
-                                    en el campo <b>"Tipo"</b> seleccione <b>"CSV UTF-8(delimitado por comas)"</b> y guárdelo. 
-                                    <b>6)</b> Listo! Puede "Cargar el archivo" y finalmente verificar en la tabla de registros sus datos agregados.
-                                </center>
+                            <div class="alert alert-warning">
+                                <b>Pasos: </b><br>
+                                <b>1) Ir a:</b> <a href="https://docs.google.com/spreadsheets/d/1eZNCh2BR9YFd-VMhOLDnjtpeaCQ5K2UicjeWkyCjG9c/edit?usp=sharing" target="_blank"> Plantilla Editable de Excel</a> <span class="icon-folder-download"> </span><br>
+                                <b>2) Agregar o copiar:</b> los datos según los encabezados de cada columna en la plantilla.<br>
+                                <b>3) Lo que no debe hacer:</b> agregar u ocultar columnas, no agregue más hojas a la plantilla, no deje campos vacíos y <b>no duplique códigos</b>.<br>
+                                <b>4) Verificar:</b> aplicar formato general a las columnas (esto para evitar decimales o puntos en los números).<br>
+                                <b>5) Descargar el archivo:</b> seleccione <b>Archivo", "Descargar", "Valores separador por comas(.csv hoja actual)"</b>, asigne el nombre de su preferencia al archivo y guárdelo. <br>
+                                <b>6) Listo!</b> Puede "Cargar el archivo" y finalmente verificar en la tabla de registros sus datos agregados. 
                             </div>
 
                             <label for="archivo">Cargar Archivo</label>

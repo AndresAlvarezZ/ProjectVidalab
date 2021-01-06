@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 use App\Prueba;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\pruebasImport;
+
 class PruebaController extends Controller
 {
+
+
  /**
    * Create a new controller instance.
    *
@@ -49,51 +52,15 @@ class PruebaController extends Controller
     //
 
 
-    //GUARDAR REGISTROS
+    //IMPORTAR REGISTROS
         public function importarRegistros(Request $request)
         {
-            $archivoCSV = $_FILES['archivo']; 
-            $archivoCSV = file_get_contents($archivoCSV['tmp_name']); 
-
-            $archivoCSV = explode("\n", $archivoCSV);
-            $archivoCSV = array_filter($archivoCSV); 
-
-            foreach ($archivoCSV as $dato) 
-            {
-                $listaDePruebas[] = explode(";", $dato);
-            }
-
-            foreach ($listaDePruebas as $dato) 
-            {
-                if(!empty(Prueba::find($dato[0])))
-                {
-                    $affected = DB::table('pruebas')->where('codigoDelAnalisis', $dato[0])
-                    ->update
-                    ([
-                        'nombreDelAnalisis' => $dato[1],
-                        'descripcionDelAnalisis' => $dato[2],
-                        'categoriaDelAnalisis' => $dato[3],
-                        'costoDelAnalisis' => $dato[4],
-                        'descuentoDelAnalisis' => $dato[5],
-                    ]);
-                }
-                else
-                {
-                    DB::table('pruebas')->insert([
-                        'codigoDelAnalisis' => $dato[0],
-                        'nombreDelAnalisis' => $dato[1],
-                        'descripcionDelAnalisis' => $dato[2],
-                        'categoriaDelAnalisis' => $dato[3],
-                        'costoDelAnalisis' => $dato[4],
-                        'descuentoDelAnalisis' => $dato[5],
-                    ]);
-                }
-            }
-
-            return redirect('/pruebas');
+            $archivo = $request->file('archivo');
+            (new pruebasImport)->import($archivo);
+            return redirect ('/pruebas');
         }
     //
-
+    
 
     //ACTUALIZAR REGISTROS
         public function actualizar (Request $request, $id)

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Paquete;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\paquetesImport;
 use Illuminate\Http\Request;
 
 class PaqueteController extends Controller
@@ -47,46 +47,13 @@ class PaqueteController extends Controller
   //
 
 
-  //GUARDAR REGISTROS
+  //IMPORTAR REGISTROS
     public function importarRegistros(Request $request)
     {
-      $archivoCSV = $_FILES['archivo']; 
-      $archivoCSV = file_get_contents($archivoCSV['tmp_name']); 
+      $archivo = $request->file('archivo');
+      Excel::import(new paquetesImport, $archivo);
 
-      $archivoCSV = explode("\n", $archivoCSV);
-      $archivoCSV = array_filter($archivoCSV); 
-
-      foreach ($archivoCSV as $dato) 
-      {
-          $listaDePaquetes[] = explode(",", $dato);
-      }
-
-      foreach ($listaDePaquetes as $dato) 
-      {
-        if(!empty(Paquete::find($dato[0])))
-        {
-          $affected = DB::table('paquetes')->where('codigoDelPaquete', $dato[0])
-          ->update
-          ([
-            'nombreDelPaquete' => $dato[1],
-            'descripcionDelPaquete' => $dato[2],
-            'costoDelPaquete' => $dato[3],
-            'imagenDelPaquete' => '',
-          ]);
-        }
-        else
-        {
-          DB::table('paquetes')->insert([
-            'codigoDelPaquete' => $dato[0],
-            'nombreDelPaquete' => $dato[1],
-            'descripcionDelPaquete' => $dato[2],
-            'costoDelPaquete' => $dato[3],
-            'imagenDelPaquete' => '',
-          ]);
-        }
-        }
-
-        return redirect('/paquetes');
+      return redirect ('/paquetes');
     }
   //
 
@@ -113,7 +80,6 @@ class PaqueteController extends Controller
       return redirect('/paquetes');
     }
   //
-
 
 
   //ACTUALIZAR REGISTROS

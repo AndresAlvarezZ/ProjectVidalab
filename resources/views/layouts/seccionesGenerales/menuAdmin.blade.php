@@ -27,6 +27,7 @@
     <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-lab"></span>SERVICIOS</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/pruebas">Análisis</a>
+        <a class="dropdown-item" href="/pruebaExcel">Prueba Importar</a>
         <a class="dropdown-item" href="/paquetes">Paquetes</a>
         <a class="dropdown-item" href="/catalogosAdmins">Catálogo</a>
     </div>
