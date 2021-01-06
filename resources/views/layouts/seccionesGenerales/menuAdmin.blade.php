@@ -57,6 +57,7 @@
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/clientes">Registro de Clientes</a>
         <a class="dropdown-item" href="/clientes/perfiles">Perfiles de clientes</a>
+        <a class="dropdown-item" href="/graficar/clientes">Grafica</a>
     </div>
 </li>
 

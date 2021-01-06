@@ -217,6 +217,9 @@ Auth::routes();
   Route::Post('/afiliarme','ClientesController@CrearCliente');
   Route::put('/subirImagen','ClientesController@subirImagen');
   Route::put('/editarPerfil','ClientesController@editarPerfil');
+
+
+  Route::get('/graficar/clientes','ClientesController@graficarClientes');  
 //
 
 

@@ -120,7 +120,7 @@ modal-dialog modal-dialog-scrollable
                                 <b>Pasos: </b><br>
                                 <b>1) Ir a:</b> <a href="https://docs.google.com/spreadsheets/d/1BcApKODSJi86pFmYTPQlZ5qEu25t6mYA7aKClvXQOhE/edit?usp=sharing" target="_blank"> Plantilla Editable de Excel</a> <span class="icon-folder-download"> </span><br>
                                 <b>2) Agregar o copiar:</b> los datos según los encabezados de cada columna en la plantilla.<br>
-                                <b>3) Lo que no debe hacer:</b> agregar u ocultar columnas, no agregue más hojas a la plantilla, no deje campos vacíos y <b>no duplique códigos</b>.<br>
+                                <b>3) Lo que no debe hacer:</b> agregar u ocultar columnas, no agregue más hojas a la plantilla, no deje campos vacíos y <b>no duplique códigos</b> Las columnas "COSTO" y "DESCUENTO" no deben contener símbolos de moneda, espacios, puntos o comas.<br>
                                 <b>4) Verificar:</b> aplicar formato general a las columnas (esto para evitar decimales o puntos en los números).<br>
                                 <b>5) Descargar el archivo:</b> seleccione <b>Archivo", "Descargar", "Valores separador por comas(.csv hoja actual)"</b>, asigne el nombre de su preferencia al archivo y guárdelo. <br>
                                 <b>6) Listo!</b> Puede "Cargar el archivo" y finalmente verificar en la tabla de registros sus datos agregados. 

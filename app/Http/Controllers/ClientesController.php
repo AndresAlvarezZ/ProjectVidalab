@@ -18,7 +18,7 @@ class ClientesController extends Controller
     public function __construct()
     {
         $this->middleware('auth:web')->only('verPerfil', 'IngresarCliente', 'subirImagen', 'editarPerfil');
-        $this->middleware('auth:admins')->only('listarClientes', 'perfilesDeClientes');
+        $this->middleware('auth:admins')->only('listarClientes', 'perfilesDeClientes', 'graficarClientes');
     }
   //
 
@@ -152,5 +152,24 @@ class ClientesController extends Controller
       $cliente->update(request()->all());
       return redirect('/verPerfil');
     }
+  //
+
+
+
+  //GRAFICAR CLIENTES
+    public function graficarClientes()
+    {
+      $clientes = Clientes::select(DB::raw("COUNT(*) as count"))->
+      whereYear('created_at',date('Y'))->groupBy(DB::raw("Month(created_at) month"))->pluck('count');
+    
+      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      return view ('clientes.graficarClientes',compact('name', 'clientes'));
+      }
+      else{
+        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
+      }
+    }
+
   //
 }
