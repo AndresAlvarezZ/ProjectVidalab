@@ -14,19 +14,19 @@
 
     <body>
         
-        <div class="container"></div>
+        <div id="container"></div>
 
     </body>
 
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
 
     <script type="text/javascript">
-        var clientes = <?php echo json_encode($clientes)?>;
+        var clientes = <?php echo json_encode($datos)?>;
         Highcharts.chart('container', 
         {
             title:
             {
-                text: 'Clientes registrados en el HUMAcheck',
+                text: 'Clientes registrados en HUMAcheck',
             },
             subtitle:
             {
@@ -84,7 +84,7 @@
                     {
                         condition:
                         {
-                            maxWidh: 500,
+                            maxWidh: 1000,
                         },
                         chartOptions:
                         {

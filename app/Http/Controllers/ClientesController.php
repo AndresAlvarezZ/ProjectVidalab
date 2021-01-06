@@ -159,12 +159,26 @@ class ClientesController extends Controller
   //GRAFICAR CLIENTES
     public function graficarClientes()
     {
-      $clientes = Clientes::select(DB::raw("COUNT(*) as count"))->
-      whereYear('created_at',date('Y'))->groupBy(DB::raw("Month(created_at) month"))->pluck('count');
+      $clientes = Clientes::select(DB::raw("COUNT(*) as count"))
+      ->whereYear('created_at',date('Y'))
+      ->groupBy(DB::raw("Month(created_at)"))
+      ->pluck('count');
     
+      $meses = Clientes::select(DB::raw("Month(created_at) as month"))
+      ->whereYear('created_at',date('Y'))
+      ->groupBy(DB::raw("Month(created_at)"))
+      ->pluck('month');
+
+      $datos= array(0,0,0,0,0,0,0,0,0,0,0,0);
+      foreach($meses as $index => $mes)
+      {
+        $datos[$mes] = $clientes[$index];
+      }
+
+
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
-      return view ('clientes.graficarClientes',compact('name', 'clientes'));
+      return view ('clientes.graficarClientes',compact('name', 'datos'));
       }
       else{
         return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
