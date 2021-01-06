@@ -7,13 +7,18 @@
     </head>
 
     <body>
-        @include('layouts.seccionesGenerales.css-jsDeModales')   
+        @include('layouts.seccionesGenerales.css-jsDeModales')
         <div class="container-fluid">
             <div class="title">
 				<h2 class="tituloDeRegistro"><span>R</span>egistro de <span>E</span>specialistas</h2>
 			</div>
             <div class="card-body">
-
+              <div class="col-md-8">
+                  @if(session('imagen'))
+                  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                  <script src="{{ asset('js/imagen.js') }}?v=<?php echo(rand()); ?>"defer></script>
+                  @endif
+              </div>
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarEspecialista" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo especialista"><span class="icon-user"> </span>Registrar nuevo Especialista</button>

@@ -61,7 +61,7 @@ class PruebaController extends Controller
             return redirect ('/pruebas');
         }
     //
-    
+
 
     //ACTUALIZAR REGISTROS
         public function actualizar (Request $request, $id)

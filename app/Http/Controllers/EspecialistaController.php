@@ -111,7 +111,7 @@ class EspecialistaController extends Controller
                 $especialista->imagenDelEspecialista = $file_name;
                 $especialista->update();
             }
-            return redirect('/especialistas');
+            return redirect('/especialistas')->with('imagen','cambiada');
         }
     //
 
@@ -124,6 +124,4 @@ class EspecialistaController extends Controller
             return $especialista;
         }
     //
-
-
 }
