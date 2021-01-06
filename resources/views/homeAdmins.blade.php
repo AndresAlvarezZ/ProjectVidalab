@@ -122,7 +122,6 @@
     @include('layouts.seccionesGenerales.jsDeTablas')
   </body>
   
-  @include('layouts.seccionesGenerales.redesSociales')
   @include('layouts.seccionesGenerales.derechosDeAutor')
 </html>
 @endsection

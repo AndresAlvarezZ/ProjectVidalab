@@ -32,6 +32,7 @@ class ClientesController extends Controller
     }
   //
 
+
   //VER PERFILES: ADMINISTRADOR
     public function listarClientes()
     {
@@ -155,7 +156,6 @@ class ClientesController extends Controller
   //
 
 
-
   //GRAFICAR CLIENTES
     public function graficarClientes()
     {
@@ -174,7 +174,6 @@ class ClientesController extends Controller
       {
         $datos[$mes] = $clientes[$index];
       }
-
 
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {

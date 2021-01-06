@@ -1,29 +1,39 @@
-@extends('layouts.appAdmin')
+@extends('layouts.especial')
 @section('content')
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <link href="{{ asset('css/perfilesDeClientes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
-        <link href="{{ asset('icons/fuentes.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
-        <link href="{{ asset('css/iconos.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
-        <script src="http://momentjs.com/downloads/moment.min.js"></script>
 
+    <head>
         <link href="{{ asset('css/menuAdministrador.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     </head>
-
+    
     <body>
-        
         <div id="container"></div>
-
     </body>
 
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <script type="text/javascript">
         var clientes = <?php echo json_encode($datos)?>;
         Highcharts.chart('container', 
         {
+            lang: 
+            {
+                printChart: "Imprimir gráfico",
+                downloadCSV:"Descarga como CSV",  
+                downloadJPEG:"Descarga como JPEG",
+                downloadPDF: "Descarga como PDF",
+                downloadPNG: "Descarga como PNG",
+                downloadSVG: "Descarga SVG imagen vector",
+                downloadXLS: "Descarga como Excel",
+                exitFullscreen:"Salir de pantalla completa",
+                viewData: "Mostrar datos en tabla",
+                hideData: "Ocultar datos de tabla",
+                viewFullscreen:"Ver en pantalla completa",
+            },
             title:
             {
                 text: 'Clientes registrados en HUMAcheck',
@@ -47,14 +57,14 @@
                     'Sep', 
                     'Oct', 
                     'Nov', 
-                    'Dic',
-                ],
+                    'Dic'
+                ]
             },
             yAxis:
             {
                 title:
                 {
-                    text: 'Nuevos clientes',
+                    text: 'Total de clientes',
                 }
             },
             legend:
@@ -100,5 +110,4 @@
             }
         });
     </script>
-</html>
 @endsection
