@@ -35,7 +35,7 @@ class ClientesController extends Controller
   //VER PERFILES: ADMINISTRADOR
     public function listarClientes()
     {
-      $clientes = Clientes::all();
+      $clientes = Clientes::orderBy('primerApellidoDelCliente', 'asc')->get();
 
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {

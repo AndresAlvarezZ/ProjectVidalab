@@ -24,7 +24,7 @@ class PruebaController extends Controller
     //LISTAR REGISTROS
         public function index ()
         {
-            $pruebas = Prueba::all();
+            $pruebas = Prueba::orderBy('codigoDelAnalisis', 'asc')->get();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
             if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
             return view('pruebas.index',compact('pruebas', 'name'));
@@ -56,7 +56,8 @@ class PruebaController extends Controller
         public function importarRegistros(Request $request)
         {
             $archivo = $request->file('archivo');
-            (new pruebasImport)->import($archivo);
+            Excel::import(new pruebasImport, $archivo);
+
             return redirect ('/pruebas');
         }
     //
