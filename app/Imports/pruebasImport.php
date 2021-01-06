@@ -15,6 +15,7 @@ class pruebasImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
+      if ($this->siEsNull($row)==null) {
         return new Prueba([
             'codigoDelAnalisis' => $row['codigo'],
             'nombreDelAnalisis' => $row['nombre'],
@@ -23,10 +24,21 @@ class pruebasImport implements ToModel, WithHeadingRow
             'costoDelAnalisis' => $row['costo'],
             'descuentoDelAnalisis'=> $row['descuento']
         ]);
+      }
     }
 
     public function headingRow(): int
     {
         return 1;
     }
+
+protected function validator(array $validator)
+{
+  return $validator['codigo'];
+}
+protected function siEsNull(array $siEsNull){
+  $variableADestacar = $this->validator($siEsNull);
+  $variableValidadora = Prueba::find($variableADestacar);
+  return $variableValidadora;
+}
 }
