@@ -6,12 +6,14 @@
     </head>
 
     <body>
-        <p>
-            <br></br>
-            <a href="/homeAdmin" class="btn btn-info " data-toggle="tooltip" data-placement="right" title="Click para ir al menú principal"><span class="icon-home"> </span> Volver al Menú Principal</a>
-        </p>
-        
-        <div id="container"></div>
+        <div class="container-fluid">
+            <p>
+                <br></br>
+                <a href="/homeAdmins" class="btn btn-info " data-toggle="tooltip" data-placement="right" title="Click para ir al menú principal"><span class="icon-home"> </span> Volver al Menú Principal</a>
+            </p>
+            
+            <div id="container"></div>
+        </div>
     </body>
 
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
