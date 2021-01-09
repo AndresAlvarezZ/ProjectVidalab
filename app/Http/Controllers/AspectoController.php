@@ -16,12 +16,18 @@ class AspectoController extends Controller
    */
         public function __construct()
         {
-            $this->middleware('auth:admins');
+            $this->middleware('auth:admins')
+            ->only
+            (
+                'index',
+                'guardar',
+                'actualizar',
+            );
         }
     //
 
     //LISTAR REGISTROS
-        public function index ()
+        public function index()
         {
             $aspectos = Aspecto::all();
             $id = Aspecto::find('1');
@@ -59,7 +65,7 @@ class AspectoController extends Controller
 
 
     //GUARDAR REGISTROS
-      public function guardar (Request $request)
+      public function guardar(Request $request)
       {
         $aspectos = new Aspecto;
 
@@ -81,66 +87,69 @@ class AspectoController extends Controller
       }
     //
 
-    public function actualizar (Request $request, $id)
-    {
-        $aspectos = Aspecto::find('1');
-        if($id == '1')
-        {
-            $aspectos->ubicacion = $request->input('ubicacion2');
-        }
-        else if($id == '2')
-        {
-            $aspectos->telefono = $request->input('telefono2');
-        }
-        else if($id == '3')
-        {
-            $aspectos->correoElectronico = $request->input('correoElectronico2');
-        }
-        else if($id == '4')
-        {
-            $aspectos->facebook = $request->input('facebook2');
-        }
-        else if($id == '5')
-        {
-            $aspectos->instagram = $request->input('instagram2');
-        }
-        else if($id == '6')
-        {
-            $aspectos->whatsapp = $request->input('whatsapp2');
-        }
-        else if($id == '7')
-        {
-            $aspectos->horarioRegular = $request->input('horarioRegular2');
-        }
-        else if($id == '8')
-        {
-            $aspectos->horarioEspecial = $request->input('horarioEspecial2');
-        }
-        else if($id == '9')
-        {
-            $aspectos->lema = $request->input('lema2');
-        }
-        else if($id == '10')
-        {
-            $aspectos->historia = $request->input('historia2');
-        }
-        else if($id == '11')
-        {
-            $aspectos->valores = $request->input('valores2');
-        }
-        else if($id == '12')
-        {
-            $aspectos->compromiso = $request->input('compromiso2');
-        }
-        else if($id == '13')
-        {
-            $aspectos->mision = $request->input('mision2');
-        }
-        else if($id == '14')
-        {
-            $aspectos->vision = $request->input('vision2');
-        }
 
-        $aspectos->save();
-    }
+    //ACTUALIZAR REGISTROS
+        public function actualizar(Request $request, $id)
+        {
+            $aspectos = Aspecto::find('1');
+            if($id == '1')
+            {
+                $aspectos->ubicacion = $request->input('ubicacion2');
+            }
+            else if($id == '2')
+            {
+                $aspectos->telefono = $request->input('telefono2');
+            }
+            else if($id == '3')
+            {
+                $aspectos->correoElectronico = $request->input('correoElectronico2');
+            }
+            else if($id == '4')
+            {
+                $aspectos->facebook = $request->input('facebook2');
+            }
+            else if($id == '5')
+            {
+                $aspectos->instagram = $request->input('instagram2');
+            }
+            else if($id == '6')
+            {
+                $aspectos->whatsapp = $request->input('whatsapp2');
+            }
+            else if($id == '7')
+            {
+                $aspectos->horarioRegular = $request->input('horarioRegular2');
+            }
+            else if($id == '8')
+            {
+                $aspectos->horarioEspecial = $request->input('horarioEspecial2');
+            }
+            else if($id == '9')
+            {
+                $aspectos->lema = $request->input('lema2');
+            }
+            else if($id == '10')
+            {
+                $aspectos->historia = $request->input('historia2');
+            }
+            else if($id == '11')
+            {
+                $aspectos->valores = $request->input('valores2');
+            }
+            else if($id == '12')
+            {
+                $aspectos->compromiso = $request->input('compromiso2');
+            }
+            else if($id == '13')
+            {
+                $aspectos->mision = $request->input('mision2');
+            }
+            else if($id == '14')
+            {
+                $aspectos->vision = $request->input('vision2');
+            }
+
+            $aspectos->save();
+        }
+    //
 }

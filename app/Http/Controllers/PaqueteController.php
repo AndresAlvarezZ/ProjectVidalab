@@ -16,12 +16,21 @@ class PaqueteController extends Controller
    */
     public function __construct()
     {
-      $this->middleware('auth:admins');
+      $this->middleware('auth:admins')
+      ->only
+      (
+        'index',
+        'guardar',
+        'importarRegistros',
+        'subirImagenPaquete',
+        'actualizar',
+        'eliminar',
+      );
     }
   //
 
   //LISTAR REGISTROS
-    public function index ()
+    public function index()
     {
       $paquetes = Paquete::orderBy('nombreDelPaquete', 'asc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
@@ -34,8 +43,9 @@ class PaqueteController extends Controller
     }
   //
 
+
   //GUARDAR REGISTROS
-    public function guardar (Request $request)
+    public function guardar(Request $request)
     {
       $paquete = new Paquete;
       $paquete->codigoDelPaquete = $request->input('codigoDelPaquete1');
@@ -83,7 +93,7 @@ class PaqueteController extends Controller
 
 
   //ACTUALIZAR REGISTROS
-    public function actualizar (Request $request, $id)
+    public function actualizar(Request $request, $id)
     {
       $paquete = Paquete::find($id);
 
@@ -98,7 +108,7 @@ class PaqueteController extends Controller
 
 
   //ELIMINAR REGISTROS
-    public function eliminar ($id)
+    public function eliminar($id)
     {
       $paquete = Paquete::find($id);
       $paquete->delete();

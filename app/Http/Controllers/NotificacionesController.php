@@ -67,9 +67,8 @@ class NotificacionesController extends Controller
 //
 
 
-
   //MOSTRAR NOTIFICACIÓN ESPECÍFICA PARA CLIENTES
-   public function NotificacionEspecifica()
+    public function NotificacionEspecifica()
     {
       $clientes = Clientes::all();
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '1')->get();

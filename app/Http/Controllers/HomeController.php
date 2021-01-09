@@ -89,6 +89,9 @@ class HomeController extends Controller
     //
 
   //
+
+
+  //HOME PARA TODO PUBLICO
     public function homePublico()
     {
       $aspecto = Aspecto::find('1');
@@ -104,30 +107,30 @@ class HomeController extends Controller
 
       $especialistas = Especialista::all();
       $idEspecialista = Especialista::all();
-        $especialistaDisponible = 0;
-        if(empty($idEspecialista))
-        {
-            $especialistaDisponible = 0;
-        }
-        else{
-            $especialistaDisponible = '1';
-        }
+      $especialistaDisponible = 0;
+      if(empty($idEspecialista))
+      {
+          $especialistaDisponible = 0;
+      }
+      else{
+          $especialistaDisponible = '1';
+      }
 
 
-        $fondo = Fondo::find('1');
-        $fondosDisponibles = 0;
-        if(empty($fondo))
-        {
-            $fondosDisponibles = 0;
-        }
-        else{
-            $fondosDisponibles = $fondo->id;
-        }
+      $fondo = Fondo::find('1');
+      $fondosDisponibles = 0;
+      if(empty($fondo))
+      {
+          $fondosDisponibles = 0;
+      }
+      else{
+          $fondosDisponibles = $fondo->id;
+      }
 
-        $archivos = Archivos::all();
-        $fotos = Archivos::where('tipoDeArchivo', 1)->get();
+      $archivos = Archivos::all();
+      $fotos = Archivos::where('tipoDeArchivo', 1)->get();
 
-        return view('/homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
-      }  
-    //
+      return view('/homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
+    }  
+   //
 }

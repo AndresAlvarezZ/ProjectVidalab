@@ -9,11 +9,13 @@ class SolicitudesController extends Controller
 {
 
   //CONSTRUCTOR
-    public function __construct(){
+    public function __construct()
+    {
       $this->middleware('auth:admins');
     }
   //
 
+  
   //LISTAR TODOS LOS REGISTROS
     public function index()
     {

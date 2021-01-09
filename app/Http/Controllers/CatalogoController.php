@@ -13,8 +13,18 @@ class CatalogoController extends Controller
   //PERMISOS
     public function __construct()
     {
-      $this->middleware('auth:web')->only('index','carrito');
-      $this->middleware('auth:admins')->only('indexAdmins');
+      $this->middleware('auth:web')
+      ->only
+      (
+        'index',
+        'carrito'
+      );
+      
+      $this->middleware('auth:admins')
+      ->only
+      (
+        'indexAdmins'
+      );
     }
   //
 
@@ -138,7 +148,7 @@ class CatalogoController extends Controller
   //
 
 
-    //DATOS PARA EL CARRITO PUBLICO
+  //DATOS PARA EL CARRITO PUBLICO
     public function carritoPublico()
     {
       $usuario = 'user';

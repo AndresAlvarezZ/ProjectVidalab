@@ -17,15 +17,29 @@ class EspecialistaController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('auth:web')->only('verEspecialistas');
-    $this->middleware('auth:admins')->only('index', 'verPerfiles', 'guardar', 'actualizar', 'subirImagenEspecialista', 'eliminar');
+    $this->middleware('auth:web')
+    ->only
+    (
+        'verEspecialistas'
+    );
+
+    $this->middleware('auth:admins')
+    ->only
+    (
+        'index', 
+        'verPerfiles', 
+        'guardar', 
+        'actualizar', 
+        'subirImagenEspecialista', 
+        'eliminar'
+    );
   }
 
     //
 
 
     //LISTAR REGISTROS
-        public function index ()
+        public function index()
         {
             $especialistas = Especialista::orderBy('primerApellidoDelEspecialista', 'asc')->get();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
@@ -75,7 +89,7 @@ class EspecialistaController extends Controller
 
 
     //GUARDAR REGISTROS
-        public function guardar (Request $request)
+        public function guardar(Request $request)
         {
             $especialista = new Especialista;
 
@@ -92,7 +106,7 @@ class EspecialistaController extends Controller
 
 
     //ACTUALIZAR REGISTROS
-        public function actualizar (Request $request, $id)
+        public function actualizar(Request $request, $id)
         {
             $especialista = Especialista::find($id);
 
@@ -129,7 +143,7 @@ class EspecialistaController extends Controller
 
 
     //ELIMINAR REGISTROS
-        public function eliminar ($id)
+        public function eliminar($id)
         {
             $especialista = Especialista::find($id);
             $especialista->delete();

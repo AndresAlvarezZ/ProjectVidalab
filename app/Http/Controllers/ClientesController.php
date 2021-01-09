@@ -17,8 +17,22 @@ class ClientesController extends Controller
   //PERMISOS
     public function __construct()
     {
-        $this->middleware('auth:web')->only('verPerfil', 'IngresarCliente', 'subirImagen', 'editarPerfil');
-        $this->middleware('auth:admins')->only('listarClientes', 'perfilesDeClientes', 'graficarClientes');
+      $this->middleware('auth:web')
+      ->only
+      (
+        'verPerfil', 
+        'IngresarCliente', 
+        'subirImagen', 
+        'editarPerfil',
+      );
+
+      $this->middleware('auth:admins')
+      ->only
+      (
+        'listarClientes', 
+        'perfilesDeClientes', 
+        'graficarClientes',
+      );
     }
   //
 
@@ -118,7 +132,7 @@ class ClientesController extends Controller
                 ->update(['name' => $data['nombreDelCliente']]);
       return redirect('/home');
       //actualizacion de tabla
-    /*  DB::table('users')
+      /*  DB::table('users')
               ->where('id', 7)
               ->update(['idCliente' => 9]);
       return redirect('/home');*/

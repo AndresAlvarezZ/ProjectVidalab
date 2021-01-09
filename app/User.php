@@ -18,7 +18,11 @@ class User extends Authenticatable
      */
     protected $fillable = 
     [
-        'idCliente','name','dniDelUsuario', 'email', 'password',
+        'idCliente',
+        'name',
+        'dniDelUsuario', 
+        'email', 
+        'password',
     ];
 
     /**
@@ -28,7 +32,8 @@ class User extends Authenticatable
      */
     protected $hidden = 
     [
-        'password', 'remember_token',
+        'password', 
+        'remember_token',
     ];
 
     /**
