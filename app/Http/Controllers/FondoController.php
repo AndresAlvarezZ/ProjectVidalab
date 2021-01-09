@@ -19,7 +19,7 @@ class FondoController extends Controller
         ->only
         (
           'subirFondos',
-          'actualizarFondo',
+          'actualizarFondo'
         );
     }
   //

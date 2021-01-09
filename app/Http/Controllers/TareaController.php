@@ -21,7 +21,7 @@ class TareaController extends Controller
       ->only
       (
         'guardar',
-        'eliminar',
+        'eliminar'
       );
     }
   //

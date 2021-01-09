@@ -21,7 +21,7 @@ class CitaController extends Controller
                 'index',
                 'guardar',
                 'actualizar',
-                'eliminar',
+                'eliminar'
             );
         }
     //

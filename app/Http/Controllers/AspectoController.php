@@ -21,7 +21,7 @@ class AspectoController extends Controller
             (
                 'index',
                 'guardar',
-                'actualizar',
+                'actualizar'
             );
         }
     //

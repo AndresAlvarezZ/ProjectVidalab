@@ -36,7 +36,8 @@ class AdministradorController extends Controller
       'actualizar', 
       'inactivar', 
       'activar', 
-      'mostrarFacturas');
+      'mostrarFacturas'
+    );
   }
 
   /**

@@ -25,7 +25,7 @@ class ArchivosController extends Controller
         'multimediaPost',
         'galeriaAdministrativa',
         'editarMultimedia',
-        'eliminarMultimedia',
+        'eliminarMultimedia'
       );
     }
   //

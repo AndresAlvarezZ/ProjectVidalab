@@ -24,7 +24,7 @@ class PaqueteController extends Controller
         'importarRegistros',
         'subirImagenPaquete',
         'actualizar',
-        'eliminar',
+        'eliminar'
       );
     }
   //

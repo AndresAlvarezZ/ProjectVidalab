@@ -25,7 +25,7 @@ class PruebaController extends Controller
                 'guardar',
                 'importarRegistros',
                 'actualizar',
-                'eliminar',
+                'eliminar'
             );
         }
 

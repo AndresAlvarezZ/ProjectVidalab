@@ -23,7 +23,7 @@ class ClientesController extends Controller
         'verPerfil', 
         'IngresarCliente', 
         'subirImagen', 
-        'editarPerfil',
+        'editarPerfil'
       );
 
       $this->middleware('auth:admins')
@@ -31,7 +31,7 @@ class ClientesController extends Controller
       (
         'listarClientes', 
         'perfilesDeClientes', 
-        'graficarClientes',
+        'graficarClientes'
       );
     }
   //

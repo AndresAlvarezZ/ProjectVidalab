@@ -17,7 +17,7 @@ class CreatePaquetesTable extends Migration
             $table->string('codigoDelPaquete')->primary();
             $table->string('nombreDelPaquete');
             $table->text('descripcionDelPaquete');
-            $table->decimal('costoDelPaquete');
+            $table->decimal('costoDelPaquete', 25, 2);
             $table->string('imagenDelPaquete')->nullable();
             $table->timestamps();
         });
