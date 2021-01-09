@@ -88,25 +88,25 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO ADMINISTRADOR
   Route::get('/administradores', 'AdministradorController@listar');
-  Route::post('/nuevoAdministrador/registrar', 'AdministradorController@nuevoAdministradorCreate');
+  Route::post('/nuevoAdministrador/registrar', 'AdministradorController@nuevoAdministradorCreate');//*
   Route::get('/administradores/activos', 'AdministradorController@listarAdministradoresActivos');
   Route::get('/administradores/inactivos', 'AdministradorController@listarAdministradoresInactivos');
-  Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');
-  Route::put('/administradores/inactivar/{administrador}', 'AdministradorController@inactivar');
-  Route::put('/administradores/activar/{administrador}', 'AdministradorController@activar');
+  Route::put('/administradores/{administrador}', 'AdministradorController@actualizar');//*
+  Route::put('/administradores/inactivar/{administrador}', 'AdministradorController@inactivar');//*
+  Route::put('/administradores/activar/{administrador}', 'AdministradorController@activar');//*
 //
 
 
 //RUTAS DE SUBMÓDULO TAREAS
-  Route::post('/tareas/registrar', 'TareaController@guardar');
-  Route::delete('/tareas/eliminar/{id}', 'TareaController@eliminar');
+  Route::post('/tareas/registrar', 'TareaController@guardar');//*
+  Route::delete('/tareas/eliminar/{id}', 'TareaController@eliminar');//*
 //
 
 
 //RUTAS DE SUBMÓDULO INFORMACION DE LA EMPRESA
   Route::get('/informacion', 'AspectoController@index');
-  Route::post('/aspectos/registrar', 'AspectoController@guardar');
-  Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');
+  Route::post('/aspectos/registrar', 'AspectoController@guardar');//*
+  Route::put('/aspectos/{aspecto}', 'AspectoController@actualizar');//*
 
   Route::put('/subirFondos', 'FondoController@subirFondos');
   Route::put('/actualizar/fondo', 'FondoController@actualizarFondo');
@@ -116,10 +116,10 @@ Auth::routes();
   Route::get('/galeriaDeVideos','ArchivosController@galeriaDeVideos');                              //CLIENTES
   Route::get('/galeria/Publica/DeFotos','ArchivosController@galeriaDeFotosPublica');                //PUBLICO
   Route::get('/galeria/Publica/DeVideos','ArchivosController@galeriaDeVideosPublica');              //PUBLICO
-  Route::get('/galeria/administrativa','ArchivosController@galeriaAdministrativa'); /**ADMIN*/
-  Route::post('/multimediaPost','ArchivosController@multimediaPost');
-  Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');
-  Route::delete('/multimedia/{archivo}','ArchivosController@eliminarMultimedia');
+  Route::get('/galeria/administrativa','ArchivosController@galeriaAdministrativa');                 //ADMIN
+  Route::post('/multimediaPost','ArchivosController@multimediaPost');//*
+  Route::put('/multimedia/{archivo}','ArchivosController@editarMultimedia');//*
+  Route::delete('/multimedia/{archivo}','ArchivosController@eliminarMultimedia');//*
 //
 
 
@@ -127,10 +127,10 @@ Auth::routes();
   Route::get('/especialistas', 'EspecialistaController@index');
   Route::get('/especialistas/mostrar', 'EspecialistaController@verPerfiles');       //ADMINISTRADORES
   Route::get('/especialistas/perfiles', 'EspecialistaController@verEspecialistas');            //CLIENTES
-  Route::post('/especialistas/registrar', 'EspecialistaController@guardar');
-  Route::put('/especialistas/{especialista}', 'EspecialistaController@actualizar');
-  Route::delete('/especialistas/{especialista}', 'EspecialistaController@eliminar');
-  Route::put('/subirImagenEspecialista','EspecialistaController@subirImagenEspecialista');
+  Route::post('/especialistas/registrar', 'EspecialistaController@guardar');//*
+  Route::put('/especialistas/{especialista}', 'EspecialistaController@actualizar');//*
+  Route::delete('/especialistas/{especialista}', 'EspecialistaController@eliminar');//*
+  Route::put('/subirImagenEspecialista','EspecialistaController@subirImagenEspecialista');//*
 //
 
 
@@ -141,17 +141,17 @@ Auth::routes();
   Route::get('/notificacionMasiva','NotificacionesController@NotificacionMasiva');
   Route::get('/notificacionEspecificaEmpresarial','NotificacionesController@NotificacionEspecificaEmpresarial');
   Route::get('/notificacionMasivaEmpresarial','NotificacionesController@NotificacionMasivaEmpresarial');
-  Route::post('/envioNotificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');
-  Route::post('/envioNotificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');
-  Route::post('/envioNotificacionEspecificaEmpresarial','NotificacionesController@envioDeNotificacionEspecificaEmpresarial');
-  Route::post('/envioNotificacionMasivaEmpresarial','NotificacionesController@envioDeNotificacionMasivaEmpresarial');
+  Route::post('/envioNotificacionEspecifica','NotificacionesController@envioDeNotificacionEspecifica');//*
+  Route::post('/envioNotificacionMasiva','NotificacionesController@envioDeNotificacionMasiva');//*
+  Route::post('/envioNotificacionEspecificaEmpresarial','NotificacionesController@envioDeNotificacionEspecificaEmpresarial');//*
+  Route::post('/envioNotificacionMasivaEmpresarial','NotificacionesController@envioDeNotificacionMasivaEmpresarial');//*
 //
 
 
 //RUTAS DE SUBMÓDULO EMPRESAS
   Route::get('/empresas', 'EmpresaController@index');
   Route::post('/empresas/registrar', 'EmpresaController@guardar');
-  Route::post('/importar/registros/empresas', 'EmpresaController@importarRegistros');
+  Route::post('/importar/registros/empresas', 'EmpresaController@importarRegistros');//*
   Route::get('/empresas/{empresa}', 'EmpresaController@mostrar');
   Route::put('/empresas/{empresa}', 'EmpresaController@actualizar');
   Route::delete('/empresas/{empresa}', 'EmpresaController@eliminar');
@@ -160,28 +160,28 @@ Auth::routes();
 
 //RUTAS DE SUBMÓDULO CITAS
   Route::get('/citas', 'CitaController@index');
-  Route::post('/citas/registrar', 'CitaController@guardar');
-  Route::delete('/citas/{cita}', 'CitaController@eliminar');
-  Route::put('/citas/{cita}', 'CitaController@actualizar');
+  Route::post('/citas/registrar', 'CitaController@guardar');//*
+  Route::delete('/citas/{cita}', 'CitaController@eliminar');//*
+  Route::put('/citas/{cita}', 'CitaController@actualizar');//*
 //
 
 
 //RUTAS DE SUBMÓDULO PRUEBAS
-  Route::post('/pruebas/registrar', 'PruebaController@guardar');
-  Route::post('/importar/registros/pruebas', 'PruebaController@importarRegistros');
+  Route::post('/pruebas/registrar', 'PruebaController@guardar');//*
+  Route::post('/importar/registros/pruebas', 'PruebaController@importarRegistros');//*
   Route::get('/pruebas', 'PruebaController@index');
-  Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');
-  Route::delete('/pruebas/{prueba}', 'PruebaController@eliminar');
+  Route::put('/pruebas/{prueba}', 'PruebaController@actualizar');//*
+  Route::delete('/pruebas/{prueba}', 'PruebaController@eliminar');//*
 //
 
 
 //RUTAS DE SUBMÓDULO PAQUETES
-  Route::post('/paquetes/registrar', 'PaqueteController@guardar');
-  Route::post('/importar/registros/paquetes', 'PaqueteController@importarRegistros');
+  Route::post('/paquetes/registrar', 'PaqueteController@guardar');//*
+  Route::post('/importar/registros/paquetes', 'PaqueteController@importarRegistros');//*
   Route::get('/paquetes', 'PaqueteController@index');
-  Route::put('/subirImagenPaquete','PaqueteController@subirImagenPaquete');
-  Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');
-  Route::delete('/paquetes/{paquete}', 'PaqueteController@eliminar');
+  Route::put('/subirImagenPaquete','PaqueteController@subirImagenPaquete');//*
+  Route::put('/paquetes/{paquete}', 'PaqueteController@actualizar');//*
+  Route::delete('/paquetes/{paquete}', 'PaqueteController@eliminar');//*
 //
 
 
@@ -215,7 +215,7 @@ Auth::routes();
   Route::get('/solicitudes/confirmadas','SolicitudesController@SolicitudesConfirmadas');
   Route::get('/solicitudes/finalizadas','SolicitudesController@SolicitudesFinalizadas');
   Route::get('/solicitudes/canceladas','SolicitudesController@SolicitudesCanceladas');
-  Route::put('/solicitudes/procesarSolicitud/{solicitud}','SolicitudesController@procesarSolicitud');
+  Route::put('/solicitudes/procesarSolicitud/{solicitud}','SolicitudesController@procesarSolicitud');//*
 //
 
 //RUTAS DE SUBMÓDULO CLIENTES
@@ -223,9 +223,9 @@ Auth::routes();
   Route::get('/verPerfil','ClientesController@verPerfil');
   Route::get('/clientes','ClientesController@listarClientes');
   Route::get('/clientes/perfiles','ClientesController@perfilesDeClientes');
-  Route::Post('/afiliarme','ClientesController@CrearCliente');
-  Route::put('/subirImagen','ClientesController@subirImagen');
-  Route::put('/editarPerfil','ClientesController@editarPerfil');
+  Route::Post('/afiliarme','ClientesController@CrearCliente');//*
+  Route::put('/subirImagen','ClientesController@subirImagen');//*
+  Route::put('/editarPerfil','ClientesController@editarPerfil');//*
   Route::get('/graficar/clientes','ClientesController@graficarClientes');  
 //
 

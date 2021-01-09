@@ -11,6 +11,7 @@ class ArchivosController extends Controller
   //PERMISOS
     public function __construct()
     {
+      $this->middleware('auth:web')->only('galeriaDeFotos', 'galeriaDeVideos');
       $this->middleware('auth:admins')->only('index','multimediaPost','galeriaAdministrativa','editarMultimedia');
     }
   //

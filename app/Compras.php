@@ -7,17 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class Compras extends Model
 {
   protected $primaryKey = 'dniDelCliente';
-    protected $fillable =[
-      'dniDelCliente',
-      'codigoDelAnalisis',
-      'codigoDelPaquete',
-      'nombre',
-      'costoDelServicio',
-      'descuento',
-      'Fecha'
-    ];
-    public function Facturas()
-    {
-      return $this->hasOne(Facturas::class);
-    }
+
+
+  protected $fillable =
+  [
+    'dniDelCliente',
+    'codigoDelAnalisis',
+    'codigoDelPaquete',
+    'nombre',
+    'costoDelServicio',
+    'descuento',
+    'Fecha'
+  ];
+
+  
+  public function Facturas()
+  {
+    return $this->hasOne(Facturas::class);
+  }
 }

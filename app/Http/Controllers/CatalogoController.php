@@ -13,7 +13,7 @@ class CatalogoController extends Controller
   //PERMISOS
     public function __construct()
     {
-      //$this->middleware('auth:web')->only('index','carrito');
+      $this->middleware('auth:web')->only('index','carrito');
       $this->middleware('auth:admins')->only('indexAdmins');
     }
   //

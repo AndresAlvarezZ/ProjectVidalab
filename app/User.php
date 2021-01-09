@@ -16,7 +16,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
+    protected $fillable = 
+    [
         'idCliente','name','dniDelUsuario', 'email', 'password',
     ];
 
@@ -25,7 +26,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
+    protected $hidden = 
+    [
         'password', 'remember_token',
     ];
 
@@ -34,11 +36,12 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
+    protected $casts = 
+    [
         'email_verified_at' => 'datetime',
     ];
     public function cliente()
-{
-  return $this->belongsTo(Clientes::class);
-}
+    {
+    return $this->belongsTo(Clientes::class);
+    }
 }

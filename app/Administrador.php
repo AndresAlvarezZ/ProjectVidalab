@@ -18,40 +18,45 @@ class Administrador extends Authenticatable
    * @var array
    */
 
-//ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
-  protected $primaryKey = 'id';
+  //ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
+    protected $primaryKey = 'id';
 
-    // datos que necesitan llenarse en un formulario
+  // datos que necesitan llenarse en un formulario
     protected $fillable =
-  ['nombreDelUsuarioAdministrador',
-  'primerApellidoAdministrador',
-  'segundoApellidoAdministrador',
-  'dniDelUsuarioAdministrador',
-  'email',
-  'telefonoDelUsuarioAdministrador',
-  'password',
-  'rol',
-  'estadoDelUsuarioAdministrador',
-  'motivoDeEstadoDelUsuarioAdministrador',
-];
+    [
+      'nombreDelUsuarioAdministrador',
+      'primerApellidoAdministrador',
+      'segundoApellidoAdministrador',
+      'dniDelUsuarioAdministrador',
+      'email',
+      'telefonoDelUsuarioAdministrador',
+      'password',
+      'rol',
+      'estadoDelUsuarioAdministrador',
+      'motivoDeEstadoDelUsuarioAdministrador',
+    ];
+  //
 
-/**
- * The attributes that should be hidden for arrays.
- *
- * @var array
- */
-protected $hidden = [
-    'password', 'remember_token',
-];
+  /**
+   * The attributes that should be hidden for arrays.
+   *
+   * @var array
+   */
+    protected $hidden = 
+    [
+      'password', 'remember_token',
+    ];
+  //
 
-/**
- * The attributes that should be cast to native types.
- *
- * @var array
- */
-protected $casts = [
-    'email_verified_at' => 'datetime',
-];
-
+  /**
+   * The attributes that should be cast to native types.
+   *
+   * @var array
+   */
+    protected $casts = 
+    [
+        'email_verified_at' => 'datetime',
+    ];
+  //
 
 }

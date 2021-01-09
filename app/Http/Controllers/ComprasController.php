@@ -16,7 +16,7 @@ class ComprasController extends Controller
 
   //PERMISOS
     public function __construct(){
-      $this->middleware('auth:web')->only('FinalizarCompra', 'validarCompra');
+      $this->middleware('auth:web')->only('FinalizarCompra', 'pedidoDomicilio', 'pedidoDomicilioFactura', 'validarCompra');
     }
   //
 
