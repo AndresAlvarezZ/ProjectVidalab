@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Prueba;
 use App\Paquete;
-
 use App\Aspecto;
 use App\Fondo;
 use App\Especialista;
@@ -61,9 +60,19 @@ Route::get('/', function()
         $fondosDisponibles = $idFondo->id;
     }
 
+    $paquetes = Paquete::all();
+    $paquetesDisponibles = 0;
+    if(empty($paquetes))
+    {
+        $paquetesDisponibles = 0;
+    }
+    else{
+        $paquetesDisponibles = 1;
+    }
+
     $archivos = Archivos::all();
     $fotos = Archivos::where('tipoDeArchivo', 1)->get();
-    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
+    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'paquetesDisponibles', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
 });
 
 Auth::routes();

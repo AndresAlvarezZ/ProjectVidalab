@@ -126,7 +126,7 @@ $(document).ready(function () {
             type: 'pie',
         },
         title: {
-            text: 'Estadística de Cliente Según Número de Hijos',
+            text: 'VIDAlab: Distribución de clientes registrados en el sistema por número de hijos',
         },
         series: [
             {

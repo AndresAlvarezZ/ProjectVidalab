@@ -308,8 +308,6 @@
             </div>
             <script src="{{ asset('js/transacciones/transaccionesDeAspectos.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <br>
-            <center><a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div>
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>

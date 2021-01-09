@@ -28,7 +28,6 @@
             }).get();
             console.log(data);
             $('#idEliminar').val(data[0]);
-            $('#nombreDelArchivo1').val(data[2]);
             $('#descripcionDelArchivo1').val(data[3]);
             var id = $('#idEliminar').val();
             var form = document.getElementById('eliminarForm')

@@ -22,7 +22,7 @@ class CatalogoController extends Controller
   //LISTAR REGISTROS AMBOS CATÁLOGOS: CLIENTES
     public function index(Prueba $nombre)
     {
-      $pruebas = Prueba::all();
+      $pruebas = Prueba::orderBy('nombreDelAnalisis', 'asc')->get();
       $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
       $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
       $identificadorDeAnalisis = 'Analisis';

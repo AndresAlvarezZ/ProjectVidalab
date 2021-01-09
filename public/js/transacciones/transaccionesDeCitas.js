@@ -87,24 +87,51 @@ $(document).ready(function ()
         $('#eliminarForm').on('submit', function(e)
         {
             e.preventDefault();
-            var id = $('#idEliminar').val()
-            alert('es: '+id)
-            $.ajax
+            var id = $('#idEliminar').val();
+
+            Swal.fire
             ({
-                type: "DELETE",
-                url: "/citas/"+id,
-                data: $('#eliminarForm').serialize(),
-                success: function (response)
+                title: '¿Desea eliminar este registro?',
+                text: "¡Los cambios no serán revertibles una vez sea eliminado!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí!'
+            }).then((result) => 
+            {
+                if (result.isConfirmed) 
                 {
-                    console.log(response)
-                    Alerta("HUMAcheck", "¡Eliminacion exitosa!", "success", "OK")
-                },
-                error: function(error)
+                    $.ajax
+                    ({
+                        type: "DELETE",
+                        url: "/citas/"+id,
+                        data: $('#eliminarForm').serialize(),
+                        success: function (response)
+                        {
+                            console.log(response);
+                            $('#eliminarCita').modal('hide');
+                            Alerta("HUMAcheck", "¡Registro eliminado correctamente!", "success", "OK")
+                        },
+                        error: function(error)
+                        {
+                            console.log(error)
+                            Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
+                        }
+                        
+                    });
+                }else
                 {
-                    console.log(error)
-                    Alerta("¡Error al eliminar registro!", "\n\n¡Inténtelo nuevamente!", "warning", "OK")
+                    Swal.fire({
+                        title: 'Cancelado',
+                        text: '¡El proceso fue cancelado y el registro no sufrió cambios!',
+                        icon: 'error',
+                    }).then((result) => 
+                    {
+                        window.location.href = "/empresas";
+                    })
                 }
-            });
+            })
         });
     //FIN DE ELIMINAR
 

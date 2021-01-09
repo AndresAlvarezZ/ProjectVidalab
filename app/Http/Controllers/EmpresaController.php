@@ -25,7 +25,7 @@ class EmpresaController extends Controller
   //LISTAR REGISTROS
     public function index ()
     {
-      $empresas = Empresa::all();
+      $empresas = Empresa::orderBy('nombreDeLaEmpresa', 'asc')->get();
       $citas = Cita::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {

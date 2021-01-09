@@ -19,7 +19,7 @@ class ArchivosController extends Controller
   //LISTA DE ARCHIVOS
     public function index()
     {
-      $archivos = Archivos::all();
+      $archivos = Archivos::orderBy('nombreDelArchivo', 'asc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
           return view('archivos.index',compact('archivos','name'));

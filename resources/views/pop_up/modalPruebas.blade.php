@@ -222,7 +222,7 @@ modal-dialog modal-dialog-scrollable
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title col-11 text-center" id="labelEliminarPrueba">Eliminar Registro Completo de la Prueba</h5>
+                        <h5 class="modal-title col-11 text-center" id="labelEliminarPrueba">Eliminar Registro Completo del Análisis</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>

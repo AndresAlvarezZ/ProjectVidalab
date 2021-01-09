@@ -33,7 +33,7 @@ class ClientesController extends Controller
   //
 
 
-  //VER PERFILES: ADMINISTRADOR
+  //LISTAR: ADMINISTRADOR
     public function listarClientes()
     {
       $clientes = Clientes::orderBy('primerApellidoDelCliente', 'asc')->get();
@@ -52,7 +52,7 @@ class ClientesController extends Controller
   //VER PERFILES: ADMINISTRADOR
     public function perfilesDeClientes()
     {
-      $perfiles = Clientes::all();
+      $perfiles = Clientes::orderBy('primerApellidoDelCliente', 'asc')->get();
 
       $perfilDisponible = 0;
       if(empty($perfiles))

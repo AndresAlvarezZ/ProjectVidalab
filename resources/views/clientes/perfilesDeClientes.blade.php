@@ -20,7 +20,7 @@
 			<div class="contenedor">
 				@if($perfilDisponible == 1)
                     @foreach($perfiles as $perfil)
-                        <div class="marco">
+                    <div class="marco">
                         <div class="imagen">
                             @if($perfil->imagenDelCliente==null)
                             <img src="/perfilesDeClientes/imagenFija.jpg">
@@ -34,13 +34,13 @@
                             <p>
                             <span class="icon-profile"> </span> {{ $perfil->dniDelCliente}} <br>
                             <span class="icon-calendar"> </span> {{ \Carbon\Carbon::parse( $perfil->fechaDeNacimientoDelCliente)->format('d/m/Y')}} <br>
-                            <span class="icon-info"> </span><?php $date1 = new DateTime('now');$date2 = new DateTime("$perfil->fechaDeNacimientoDelCliente");$diff = $date1->diff($date2);echo $diff->y .' años '; ?><br>
+                            <span class="icon-info"> </span> <?php $date1 = new DateTime('now');$date2 = new DateTime("$perfil->fechaDeNacimientoDelCliente");$diff = $date1->diff($date2);echo $diff->y .' años '; ?><br>
                             <span class="icon-man-woman"> </span> {{ $perfil->numeroDehijosDelcliente}} hijo(s)<br>
                             <span class="icon-envelop"> </span> {{ $perfil->correoDelCliente}} <br>
                             <span class="icon-history"> </span> Cliente desde {{ \Carbon\Carbon::parse( $perfil->created_at)->format('m/Y')}}
                             </p>
                         </div>
-                            </div>
+                    </div>
                     @endforeach
                 @else
                     <p>

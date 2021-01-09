@@ -10,7 +10,7 @@
         @include('layouts.seccionesGenerales.css-jsDeModales')   
         <div class="container-fluid">
             <div class="title">
-				<h2 class="tituloDeRegistro"><span>R</span>gistro de <span>C</span>ontenido <span>M</span>ultimedia</h2>
+				<h2 class="tituloDeRegistro"><span>R</span>egistro de <span>C</span>ontenido <span>M</span>ultimedia</h2>
 			</div>
             <div class="card-body">
                 @if (session('status'))
@@ -45,19 +45,19 @@
                         <tr>
                             <th scope="col"><center>Identificador</center></th>
                             <th scope="col"><center>Tipo</center></th>
-                            <th scope="col"><center>Nombre del archivo</center></th>
+                            <th scope="col"><center>Archivo</center></th>
                             <th scope="col"><center>Descripción</center></th>
-                                <th scope="col"><center>Acción<center></th>
+                            <th scope="col"><center>Acción a Realizar<center></th>
                         </tr>
                     </thead>
 
                     <tfoot>
                         <tr>
-                        <th scope="col"><center>Identificador</center></th>
-                        <th scope="col"><center>Tipo</center></th>
-                        <th scope="col"><center>Nombre del archivo</center></th>
-                        <th scope="col"><center>Descripción</center></th>
-                            <th scope="col"><center>Acción<center></th>
+                            <th scope="col"><center>Identificador</center></th>
+                            <th scope="col"><center>Tipo</center></th>
+                            <th scope="col"><center>Archivo</center></th>
+                            <th scope="col"><center>Descripción</center></th>
+                            <th scope="col"><center>Acción a Realizar<center></th>
                         </tr>
                     </tfoot>
 
@@ -65,8 +65,18 @@
                         @foreach($archivos as $archivo)
                         <tr>
                             <td><center>{{$archivo->id}}</center></td>
-                            <td><center>{{$archivo->tipoDeArchivo}}</center></td>
-                            <td><center>{{$archivo->nombreDelArchivo}}</center></td>
+
+                            @if($archivo->tipoDeArchivo == 1)
+                                <td><center>Imagen</center></td>
+                            @else
+                                <td><center>Video</center></td>
+                            @endif
+
+                            @if($archivo->tipoDeArchivo == 1)
+                                <td><center>  <img src="/archivosMultimedia/{{$archivo->nombreDelArchivo}}" style="heigh: 160px; width:160px;"> </center></td>
+                            @else
+                                <td><center>  <video src="/archivosMultimedia/{{$archivo->nombreDelArchivo}}" controls type="video/mp4" style="heigh: 160px; width:160px;"> </center></td>
+                            @endif
                             <td><center>{{$archivo->descripcionDelArchivo}}</center></td>
                             <td><center>
                                 <a href="#" class="btn btn-info btnEditar" data-toggle="tooltip" data-placement="right" title="Click para actualizar registro multimedia"><span class="icon-loop2"></span></a>
@@ -78,8 +88,6 @@
                 </table>
                 <script src="{{ asset('js/transacciones/transaccionesDeMultimedios.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <br>
-            <center><a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div>
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>

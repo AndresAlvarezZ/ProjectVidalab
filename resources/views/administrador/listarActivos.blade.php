@@ -21,7 +21,7 @@
                             <th scope="col"><center>Cédula</center></th>
                             <th scope="col"><center>Rol</center></th>
                             <th scope="col"><center>Estado</center></th>
-                            <th scope="col"><center>Motivo reciente</center></th>
+                            <th scope="col"><center>Motivo Reciente</center></th>
                             <th scope="col"><center>Acción a Realizar<center></th>
                         </tr>
                     </thead>
@@ -33,7 +33,7 @@
                             <th scope="col"><center>Cédula</center></th>
                             <th scope="col"><center>Rol</center></th>
                             <th scope="col"><center>Estado</center></th>
-                            <th scope="col"><center>Motivo reciente</center></th>
+                            <th scope="col"><center>Motivo Reciente</center></th>
                             <th scope="col"><center>Acción a Realizar<center></th>
                         </tr>
                     </tfoot>
@@ -70,7 +70,6 @@
                 </table>
                 <script src="{{ asset('js/transacciones/administradores.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <center><a href="/administradores/inactivos" class="btn btn-dark">Administradores Inactivos</a>    |   <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div> 
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>  

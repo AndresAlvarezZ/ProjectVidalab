@@ -23,25 +23,25 @@
                 <table id="registros" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th scope="col"><center>Factura#</center></th>
+                            <th scope="col"><center>Factura #</center></th>
                             <th scope="col"><center>Nombre del cliente</center></th>
                             <th scope="col"><center>Domicilio</center></th>
                             <th scope="col"><center>Teléfono</center></th>
                             <th scope="col"><center>Análisis Solicitados</center></th>
                             <th scope="col"><center>Costo del Servicio</center></th>
-                            <th scope="col"><center>Acción</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </thead>
 
                     <tfoot>
                         <tr>
-                            <th scope="col"><center>Factura#</center></th>
+                            <th scope="col"><center>Factura #</center></th>
                             <th scope="col"><center>Nombre del cliente</center></th>
                             <th scope="col"><center>Domicilio</center></th>
                             <th scope="col"><center>Teléfono</center></th>
                             <th scope="col"><center>Análisis Solicitados</center></th>
                             <th scope="col"><center>Costo del Servicio</center></th>
-                            <th scope="col"><center>Acción</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </tfoot>
 

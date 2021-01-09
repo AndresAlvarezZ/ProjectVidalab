@@ -16,7 +16,7 @@
                         <div class="card-header"><center><h4><b>EMPRESA</b></h4></center></div>
 
                         <div class="card-body">
-                            <center><h4>{{$empresa->idDeLaEmpresa}}</h4></center>
+                            <center><h3>{{$empresa->idDeLaEmpresa}}</h3></center>
                             <p class="card-text">
                                 Empresa: {{$empresa->nombreDeLaEmpresa}}
                             </p>
@@ -28,12 +28,6 @@
                             </li>
                             <li class="list-group-item">Derección: {{$empresa->direccionDeLaEmpresa}}</li>
                         </ul>
-                        <div class="card-body">
-                            <center>
-                                <a href="/empresas" class="btn btn-dark">Regresar a la lista</a> <br></br>
-                                <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a>
-                            </center>
-                        </div>
                     </div>
                 </div>
 

@@ -105,12 +105,12 @@
             lang: 
             {
                 printChart: "Imprimir gráfico",
-                downloadCSV:"Descarga como CSV",  
-                downloadJPEG:"Descarga como JPEG",
-                downloadPDF: "Descarga como PDF",
-                downloadPNG: "Descarga como PNG",
-                downloadSVG: "Descarga SVG imagen vector",
-                downloadXLS: "Descarga como Excel",
+                downloadCSV:"Descargar como CSV",  
+                downloadJPEG:"Descargar como JPEG",
+                downloadPDF: "Descargar como PDF",
+                downloadPNG: "Descargar como PNG",
+                downloadSVG: "Descargar SVG imagen vector",
+                downloadXLS: "Descargar como Excel",
                 exitFullscreen:"Salir de pantalla completa",
                 viewData: "Mostrar datos en tabla",
                 hideData: "Ocultar datos de tabla",
@@ -118,11 +118,11 @@
             },
             title:
             {
-                text: 'Clientes Registrados en HUMAcheck',
+                text: 'VIDAlab: Disctribución de número de clientes registrados mensualmente en el sistema durante el año 2021',
             },
             subtitle:
             {
-                text: 'Comportamiento de registro de clientes de forma anual y mensual',
+                text: 'HUMAcheck',
             },
             xAxis:
             {

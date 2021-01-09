@@ -17,7 +17,7 @@
 
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
-                        <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarPaquete" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nueva cita"><span class="icon-lab"> </span>Registrar nuevo Paquete</button>
+                        <button type="button" class="btn btn-primary btnAgregar" data-toggle="modal" data-target="#agregarPaquete" data-toggle="tooltip" data-placement="right" title="Click para agregar datos de nuevo paquete"><span class="icon-lab"> </span>Registrar nuevo Paquete</button>
                         <button type="button" class="btn btn-primary btnImportar" data-toggle="modal" data-target="#importarRegistros" data-toggle="tooltip" data-placement="right" title="Click para importar todos los registros"><span class="icon-lab"> </span><span class="icon-table2"> </span>Importar Registros</button>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                             <th scope="col"><center>Imagen</center></th>
                             <th scope="col"><center>Descripción</center></th>
                             <th scope="col"><center>Costo</center></th>
-                            <th scope="col"><center>Acción a realizar</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </thead>
 
@@ -42,7 +42,7 @@
                             <th scope="col"><center>Imagen</center></th>
                             <th scope="col"><center>Descripción</center></th>
                             <th scope="col"><center>Costo</center></th>
-                            <th scope="col"><center>Acción a realizar</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </tfoot>
 
@@ -51,7 +51,12 @@
                         <tr>
                             <td><center>{{$paquete->codigoDelPaquete}}</center></td>
                             <td><center>{{$paquete->nombreDelPaquete}}</center></td>
-                            <td><center>{{$paquete->imagenDelPaquete}}</center></td>
+                            @if($paquete->imagenDelPaquete==null)
+                                <td><center>  <img src="imgDePaquetes/imagenFija.png" style="heigh: 160px; width:160px;"> </center></td>
+                            @else
+                                <td><center>  <img src="/imgDePaquetes/{{$paquete->imagenDelPaquete}}" style="heigh: 160px; width:160px;"> </center></td>
+                            @endif
+
                             <td><center>{{$paquete->descripcionDelPaquete}}</center></td>
                             <td><center>{{$paquete->costoDelPaquete}}</center></td>
                             <td><center>
@@ -65,8 +70,6 @@
                 </table>
                 <script src="{{ asset('js/transacciones/transaccionesDePaquetes.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <br>
-            <center><a href="/pruebas" class="btn btn-dark">Desplegar lista de análisis</a>    |    <a href="/catalogosAdmins" class="btn btn-dark">Ir al catálogo</a>    |    <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div>
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>

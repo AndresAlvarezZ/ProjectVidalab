@@ -23,7 +23,7 @@ class PaqueteController extends Controller
   //LISTAR REGISTROS
     public function index ()
     {
-      $paquetes = Paquete::orderBy('codigoDelPaquete', 'asc')->get();
+      $paquetes = Paquete::orderBy('nombreDelPaquete', 'asc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view('paquetes.index',compact('paquetes', 'name'));

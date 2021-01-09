@@ -83,7 +83,7 @@
               <tbody>
                 <?php
                   use App\Tarea;
-                  $tareas = Tarea::all();
+                  $tareas = Tarea::orderBy('created_at', 'asc')->get();
                 ?>
                 @foreach($tareas as $tarea)
                   <tr>

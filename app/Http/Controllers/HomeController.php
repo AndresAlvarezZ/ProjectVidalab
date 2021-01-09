@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Clientes;
+use App\Paquete;
 use App\Aspecto;
 use App\Fondo;
 use App\Especialista;
@@ -65,12 +66,21 @@ class HomeController extends Controller
               $fondosDisponibles = $fondo->id;
           }
 
+          $paquetes = Paquete::all();
+          $paquetesDisponibles = 0;
+          if(empty($paquetes))
+          {
+              $paquetesDisponibles = 0;
+          }
+          else{
+              $paquetesDisponibles = 1;
+          }
 
           $archivos = Archivos::all();
           $fotos = Archivos::where('tipoDeArchivo', 1)->get();
 
         if ($cliente!=null) {
-          return view('home', compact('fotos', 'cliente','aspecto', 'fondo', 'fondosDisponibles', 'especialistas', 'aspectoDisponible', 'especialistaDisponible'));
+          return view('home', compact('fotos', 'paquetes', 'cliente','aspecto', 'fondo', 'fondosDisponibles', 'paquetesDisponibles', 'especialistas', 'aspectoDisponible', 'especialistaDisponible'));
         }
         if ($cliente==null) {
           return redirect('/afiliarme');
