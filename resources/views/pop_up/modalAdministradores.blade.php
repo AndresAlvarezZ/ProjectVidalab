@@ -64,7 +64,7 @@ modal-dialog modal-dialog-scrollable
                             <br>
 
                             <label for="cedula1" class="col-12 text-center">Identificación/Cédula</label>
-                            <input required id="dniDelUsuarioAdministrador" min="100000000" max="999999999"  placeholder="Ingrese el número de cédula/identificación del administrador(a). Formato: 123456789" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus>
+                            <input required id="dniDelUsuarioAdministrador" placeholder="Ingrese el número de cédula/identificación del administrador(a). Formato: 123456789" class="form-control @error('dniDelUsuarioAdministrador') is-invalid @enderror" name="dniDelUsuarioAdministrador" onkeypress="return soloNumeros(event);" value="{{ old('dniDelUsuarioAdministrador') }}" required autocomplete="dniDelUsuarioAdministrador" autofocus>
                             @error('dniDelUsuarioAdministrador')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

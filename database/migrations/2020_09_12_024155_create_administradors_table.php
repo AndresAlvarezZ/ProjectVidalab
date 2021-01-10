@@ -18,7 +18,7 @@ class CreateAdministradorsTable extends Migration
             $table->string('nombreDelUsuarioAdministrador');
             $table->string('primerApellidoAdministrador');
             $table->string('segundoApellidoAdministrador');
-            $table->integer('dniDelUsuarioAdministrador');
+            $table->string('dniDelUsuarioAdministrador');
             $table->string('email');
             $table->integer('telefonoDelUsuarioAdministrador');
             $table->string('password');
