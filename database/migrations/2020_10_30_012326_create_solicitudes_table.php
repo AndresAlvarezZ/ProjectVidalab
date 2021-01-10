@@ -20,7 +20,7 @@ class CreateSolicitudesTable extends Migration
           $table->string('domicilioDelCiente');
           $table->string('telefonoDelCliente');
           $table->string('analisisSolicitados');
-          $table->decimal('costoDelServicio');
+          $table->decimal('costoDelServicio', 25, 2);
           $table->string('estado');
           $table->timestamps();
           //relaciones

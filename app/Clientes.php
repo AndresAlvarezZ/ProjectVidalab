@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Clientes extends Model
 {
   //ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
-      protected $primaryKey = 'dniDelCliente';
+    protected $primaryKey = 'dniDelCliente';
 
 
-    protected $fillable = [
+    protected $fillable = 
+    [
       'idUsuario',
       'dniDelCliente',
       'nombreDelCliente',
@@ -26,8 +27,9 @@ class Clientes extends Model
       'aceptacionDeTerminos'
     ];
 
-      public function user()
-      {
-      return $this->belongsTo(User::class);
-      }
+    
+    public function user()
+    {
+    return $this->belongsTo(User::class);
+    }
 }

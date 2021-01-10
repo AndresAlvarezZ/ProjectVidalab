@@ -15,25 +15,25 @@
                 <table id="registros" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th scope="col"><center>Código de empresa</center></th>
-                            <th scope="col"><center>Fecha de cita</center></th>
-                            <th scope="col"><center>Hora de cita</center></th>
-                            <th scope="col"><center>Clientes totales por atender</center></th>
-                            <th scope="col"><center>Análisis solicitados</center></th>
+                            <th scope="col"><center>Código de Empresa</center></th>
+                            <th scope="col"><center>Fecha de Cita</center></th>
+                            <th scope="col"><center>Hora de Cita</center></th>
+                            <th scope="col"><center>Clientes Totales por Atender</center></th>
+                            <th scope="col"><center>Análisis Solicitados</center></th>
                             <th scope="col"><center>Solicitante</center></th>
-                            <th scope="col"><center>Acción a realizar</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </thead>
 
                     <tfoot>
                         <tr>
-                            <th scope="col"><center>Código de empresa</center></th>
-                            <th scope="col"><center>Fecha de cita</center></th>
-                            <th scope="col"><center>Hora de cita</center></th>
-                            <th scope="col"><center>Clientes totales por atender</center></th>
-                            <th scope="col"><center>Análisis solicitados</center></th>
+                            <th scope="col"><center>Código de Empresa</center></th>
+                            <th scope="col"><center>Fecha de Cita</center></th>
+                            <th scope="col"><center>Hora de Cita</center></th>
+                            <th scope="col"><center>Clientes Totales por Atender</center></th>
+                            <th scope="col"><center>Análisis Solicitados</center></th>
                             <th scope="col"><center>Solicitante</center></th>
-                            <th scope="col"><center>Acción a realizar</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </tfoot>
 
@@ -52,8 +52,6 @@
                     </tbody>
                 </table>
             </div>
-            <br>
-            <center><a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div> 
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>  

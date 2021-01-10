@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Archivos extends Model
 {
-    protected $fillable = [
+    protected $fillable = 
+    [
       'tipoDeArchivo',
       'descripcionDelArchivo',
       'nombreDelArchivo'

@@ -31,7 +31,7 @@
                                 <th scope="col"><center>Número Telefónico</center></th>
                                 <th scope="col"><center>Correo Electrónico<center></th>
                                 <th scope="col"><center>Ubicación<center></th>
-                                <th scope="col"><center>Acción<center></th>
+                                <th scope="col"><center>Acción a Realizar<center></th>
                             </tr>
                         </thead>
 
@@ -42,7 +42,7 @@
                                 <th scope="col"><center>Número Telefónico</center></th>
                                 <th scope="col"><center>Correo Electrónico<center></th>
                                 <th scope="col"><center>Ubicación<center></th>
-                                <th scope="col"><center>Acción<center></th>
+                                <th scope="col"><center>Acción a Realizar<center></th>
                             </tr>
                         </tfoot>
 

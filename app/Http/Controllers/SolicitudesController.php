@@ -9,11 +9,13 @@ class SolicitudesController extends Controller
 {
 
   //CONSTRUCTOR
-    public function __construct(){
+    public function __construct()
+    {
       $this->middleware('auth:admins');
     }
   //
 
+  
   //LISTAR TODOS LOS REGISTROS
     public function index()
     {
@@ -32,7 +34,7 @@ class SolicitudesController extends Controller
   //LISTAR REGISTROS EN ESTADO DE ESPERA
     public function SolicitudesEnEspera()
     {
-      $enEspera = Solicitudes::whereIn('estado',['Espera'])->get();
+      $enEspera = Solicitudes::orderBy('created_at', 'desc')->whereIn('estado',['Espera'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.enEspera',compact('enEspera','name'));
@@ -47,7 +49,7 @@ class SolicitudesController extends Controller
   //LISTAR REGISTROS EN ESTADO CONFIRMADO
     public function SolicitudesConfirmadas()
     {
-      $confirmadas = Solicitudes::whereIn('estado',['Confirmada'])->get();
+      $confirmadas = Solicitudes::orderBy('created_at', 'desc')->whereIn('estado',['Confirmada'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.confirmadas',compact('confirmadas','name'));
@@ -62,7 +64,7 @@ class SolicitudesController extends Controller
   //LISTAR REGISTROS EN ESTADO FINALIZADO
     public function SolicitudesFinalizadas()
     {
-      $finalizadas = Solicitudes::whereIn('estado',['Finalizada'])->get();
+      $finalizadas = Solicitudes::orderBy('created_at', 'desc')->whereIn('estado',['Finalizada'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.finalizadas',compact('finalizadas','name'));
@@ -77,7 +79,7 @@ class SolicitudesController extends Controller
   //LISTAR REGISTROS EN ESTADO CANCELADO
     public function SolicitudesCanceladas()
     {
-      $canceladas = Solicitudes::whereIn('estado',['Cancelada'])->get();
+      $canceladas = Solicitudes::orderBy('created_at', 'desc')->whereIn('estado',['Cancelada'])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
       return view ('solicitudes.canceladas',compact('canceladas','name'));

@@ -16,8 +16,8 @@ class CreateFacturasTable extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->increments('idFactura');
             $table->integer('idCliente');
-            $table->decimal('descuento',16,2);
-            $table->decimal('total',16,2);
+            $table->decimal('descuento',25,2);
+            $table->decimal('total',25,2);
             $table->string('condicionDeCompra');
             $table->DateTime('fecha');
             $table->timestamps();

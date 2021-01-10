@@ -11,7 +11,22 @@ class ArchivosController extends Controller
   //PERMISOS
     public function __construct()
     {
-      $this->middleware('auth:admins')->only('index','multimediaPost','galeriaAdministrativa','editarMultimedia');
+      $this->middleware('auth:web')
+      ->only
+      (
+        'galeriaDeFotos', 
+        'galeriaDeVideos'
+      );
+
+      $this->middleware('auth:admins')
+      ->only
+      (
+        'index',
+        'multimediaPost',
+        'galeriaAdministrativa',
+        'editarMultimedia',
+        'eliminarMultimedia'
+      );
     }
   //
 
@@ -19,7 +34,7 @@ class ArchivosController extends Controller
   //LISTA DE ARCHIVOS
     public function index()
     {
-      $archivos = Archivos::all();
+      $archivos = Archivos::orderBy('nombreDelArchivo', 'asc')->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
           return view('archivos.index',compact('archivos','name'));
@@ -111,8 +126,6 @@ class ArchivosController extends Controller
   //
 
 
-
-
   //VER GALERÍA: ADMINISTRADOR
     public function galeriaAdministrativa()
     {
@@ -179,7 +192,6 @@ class ArchivosController extends Controller
       return redirect('/multimedia')->with('status','agregado');
     }
   //
-
 
 
   //EDITAR REGISTRO

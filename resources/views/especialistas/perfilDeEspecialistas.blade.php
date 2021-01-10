@@ -13,8 +13,12 @@
     </head>
 
     <body>
-    <section class="profesionales" id="profesionales">
-			<div class="title tituloProfesionales">
+        @if($fondosDisponibles == 1)
+            <section class="profesionales" id="profesionales" style= "background: url('/imgHomeClientes/{{$fondo->imagenDeProfesionales}}'); background-size: cover;">
+        @else
+            <section class="profesionales" id="profesionales" style= "background: url('/imgHomeClientes/P7.jpg'); background-size: cover;">
+        @endif
+    		<div class="title tituloProfesionales">
 				<h2 class="tituloDeSeccion"><span>P</span>rofesionales</h2>
 				<p>
 					Nuestro laboratorio VIDAlab cuenta con especialistas en el área.
@@ -34,9 +38,9 @@
                         </div>
                         <div class="text">
                             <p>
-                            <span class="icon-home"> </span>Sede, {{ $especialista->sedeDelEspecialista}} <br>
-                            <span class="icon-envelop"> </span>{{ $especialista->correoDelEspecialista}} <br>
-                            <span class="icon-folder-plus"> </span>{{ $especialista->especialidadesDelEspecialista}}
+                            <span class="icon-home"> </span> Sede, {{ $especialista->sedeDelEspecialista}} <br>
+                            <span class="icon-envelop"> </span> {{ $especialista->correoDelEspecialista}} <br>
+                            <span class="icon-folder-plus"> </span> {{ $especialista->especialidadesDelEspecialista}}
                             </p>
                             <h3>{{ $especialista->nombreDelEspecialista}} {{$especialista->segundoNombreDelEspecialista}} {{$especialista->primerApellidoDelEspecialista}} {{$especialista->segundoApellidoDelEspecialista}}</h3>
                         </div>

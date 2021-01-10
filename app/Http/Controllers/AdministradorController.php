@@ -24,7 +24,20 @@ class AdministradorController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('auth:admins')->only('index', 'guard','listar', 'listarAdministradoresActivos','listarAdministradoresInactivos', 'actualizar', 'inactivar', 'activar', 'mostrarFacturas');
+    $this->middleware('auth:admins')
+    ->only
+    (
+      'index', 
+      'guard',
+      'listar', 
+      'nuevoAdministradorCreate', 
+      'listarAdministradoresActivos',
+      'listarAdministradoresInactivos', 
+      'actualizar', 
+      'inactivar', 
+      'activar', 
+      'mostrarFacturas'
+    );
   }
 
   /**
@@ -34,6 +47,14 @@ class AdministradorController extends Controller
    */
 
   //PERMISO DE ACCESO
+    protected function guard()
+    {
+      return Auth::guard('admins');
+    }
+  //
+
+
+  //MOSTRAR PANEL PRINCIPAL
     public function index()
     {
       $acceso = false;
@@ -45,11 +66,6 @@ class AdministradorController extends Controller
         return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
       }
     }
-
-    protected function guard()
-    {
-      return Auth::guard('admins');
-    }
   //
 
 
@@ -60,7 +76,7 @@ class AdministradorController extends Controller
       $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
                                         ->where('rol', '!=', 1)->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1 && auth()->administrador()->rol==1) {
       return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
       }
       else{
@@ -78,7 +94,7 @@ class AdministradorController extends Controller
                                           ['estadoDelUsuarioAdministrador', '=', 1],
                                           ['rol', '!=', 1]])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1  && auth()->administrador()->rol==1) {
       return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
       }
       else{
@@ -96,7 +112,7 @@ class AdministradorController extends Controller
                                         ['estadoDelUsuarioAdministrador', '=', 0],
                                         ['rol', '!=', 1]])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1  && auth()->administrador()->rol==1) {
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
       }
       else{
@@ -186,34 +202,32 @@ class AdministradorController extends Controller
 
 
   //MODULO DE FACTURAS
-    public function mostrarFacturas()
-    {
-      $facturas = Facturas::orderBy('created_at','desc')->get();
-      $nombre = [];
-      $cedulas = [];
-      $contador =0;
-      foreach ($facturas as $nombres) {
-        $cliente = Clientes::find($nombres->idCliente);
-        $nombreAlmacenar = Str::finish($cliente->nombreDelCliente.' ',$cliente->primerApellidoDelCliente);
-        $nombre[$contador] = $nombreAlmacenar;
-        $cedulas[$contador] = $cliente->dniDelCliente;
-        $contador++;
-      }
-      $compras = Compras::all();
-      $fecha = date('d-m-Y');
-      $total = 0;
-      $indice = 0;
-      $indiceFactura = 0;
-      $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
-      return view('facturas.mostrarFacturasAdmins',compact('facturas','nombre','cedulas','compras','indice','name','indiceFactura','fecha','total'));
-      }
-      else{
-        return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
-      }
-
-      // code...
+  public function mostrarFacturas()
+  {
+    $facturas = Facturas::orderBy('created_at','desc')->get();
+    $nombre = [];
+    $cedulas = [];
+    $contador =0;
+    foreach ($facturas as $nombres) {
+      $cliente = Clientes::find($nombres->idCliente);
+      $nombreAlmacenar = Str::finish($cliente->nombreDelCliente.' ',$cliente->primerApellidoDelCliente);
+      $nombre[$contador] = $nombreAlmacenar;
+      $cedulas[$contador] = $cliente->dniDelCliente;
+      $contador++;
     }
+    $compras = Compras::all();
+    $fecha = date('d-m-Y');
+    $total = 0;
+    $indice = 0;
+    $indiceFactura = 0;
+    $name = auth()->administrador()->nombreDelUsuarioAdministrador;
+    if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+    return view('facturas.mostrarFacturasAdmins',compact('facturas','nombre','cedulas','compras','indice','name','indiceFactura','fecha','total'));
+    }
+    else{
+      return view('layouts.seccionesGenerales.accesoDenegado', compact('name'));
+    }
+  }
   //
 
 

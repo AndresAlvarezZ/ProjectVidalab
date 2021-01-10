@@ -127,11 +127,6 @@ modal-dialog modal-dialog-scrollable
                                 <center>¡Lea cuidadosamente la información!</center>
                             </div>
 
-                            <label for="nombreCompletoDelEspecialista4" class="col-12 text-center">Nombre del archivo</label>
-                            <input required type="text" class="form-control" name="nombreDelArchivo" id="nombreDelArchivo1" readonly/>
-
-                            <br>
-
                             <label for="sedeDelEspecialista4" class="col-12 text-center">Descripción</label>
                             <input required type="text" class="form-control" name="descripcionDelArchivo" id="descripcionDelArchivo1" readonly/>
                         </div>

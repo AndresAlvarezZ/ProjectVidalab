@@ -162,7 +162,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="row">
                                 <div class="col">
                                     <label for="especialidadesDelEspecialista3" class="col-12 text-center">Especialidades o Experiencia</label>
-                                    <textarea  name="especialidadesDelEspecialista3" class="form-control" placeholder="Ingrese especialidades o experiencia del especialista" id="especialidadesDelEspecialista3" rows="6">{{old('especialidadesDelEspecialista3')}}</textarea>
+                                    <textarea required name="especialidadesDelEspecialista3" class="form-control" placeholder="Ingrese especialidades o experiencia del especialista" id="especialidadesDelEspecialista3" rows="6">{{old('especialidadesDelEspecialista3')}}</textarea>
                                     @error('especialidadesDelEspecialista3')
                                     <div class="alert alert-danger">{{$message}}</div>
                                     @enderror
@@ -185,7 +185,7 @@ modal-dialog modal-dialog-scrollable
             <div class="modal-dialog modal-dialog-centered  modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title col-11 text-center" id="labelEliminarEspecialista">Eliminar Registro Completo de la Empresa</h5>
+                        <h5 class="modal-title col-11 text-center" id="labelEliminarEspecialista">Eliminar Registro Completo del Especialista</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>

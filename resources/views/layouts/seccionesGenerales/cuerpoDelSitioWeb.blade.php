@@ -187,16 +187,56 @@
 				</p>
 			</div>
 			<div class="contenedor">
-				<div class="marco">
-					<div class="imagen">
-						<img src="imgDePaquetes/imagenFija.png">
+				
+            @if($numeroDeOfertas >= 6)
+              <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="width:850px; heigh:850px;">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                  @foreach($ultimasCincoOfertas as $oferta)
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                  @endforeach
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="imgDePaquetes/imagenFija.png" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p>De click en "Ver todo" para informarse a detalle de todas nuestras ofertas</p>
+                    </div>
+                  </div>
+                  @foreach($ultimasCincoOfertas as $oferta)
+                  <div class="carousel-item">
+                    @if($oferta->imagenDelPaquete==null)
+                      <img src="imgDePaquetes/imagenFija.png" class="d-block w-100">
+                    @endif
+                    @if($oferta->imagenDelPaquete!=null)
+                      <img src="imgDePaquetes/{{$oferta->imagenDelPaquete}}" class="d-block w-100">
+                    @endif
+                    <div class="carousel-caption d-none d-md-block">
+                      <p>{{$oferta->nombreDelPaquete}}</p>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Siguiente</span>
+                </a>
+              </div>
+            @else
+              <div class="marco">
+                <div class="imagen">
+                  <img src="imgDePaquetes/imagenFija.png">
+                </div>
+              </div>
+            @endif
 					</div>
-					<div class="text">
-          </div>
 					<div class="title">
 				    <a href="/catalogo/publico" class="boton">Ver todo</a>
 			    </div>
-				</div>
       </div>
     </section>
 
@@ -210,7 +250,7 @@
         </p>
 			</div>
       <div class="contenedor">
-          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="width:850px; heigh:850px;">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
               @foreach($fotos as $foto)
@@ -219,7 +259,7 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="archivosMultimedia/Portada1.png" class="d-block w-100" alt="...">
+                <img src="archivosMultimedia/imagenFija.jpeg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block"></div>
               </div>
               @foreach($fotos as $foto)

@@ -31,7 +31,7 @@
                             <th scope="col"><center>Descripción</center></th>
                             <th scope="col"><center>Costo</center></th>
                             <th scope="col"><center>Descuento</center></th>
-                            <th scope="col"><center>Acción a realizar</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </thead>
 
@@ -43,7 +43,7 @@
                             <th scope="col"><center>Descripción</center></th>
                             <th scope="col"><center>Costo</center></th>
                             <th scope="col"><center>Descuento</center></th>
-                            <th scope="col"><center>Acción a realizar</center></th>
+                            <th scope="col"><center>Acción a Realizar</center></th>
                         </tr>
                     </tfoot>
 
@@ -66,7 +66,6 @@
                 </table>
                 <script src="{{ asset('js/transacciones/transaccionesDePruebas.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <center><a href="/paquetes" class="btn btn-dark">Desplegar paquetes</a>    |    <a href="/catalogosAdmins" class="btn btn-dark">Ir al catálogo</a>    |    <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div>
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>

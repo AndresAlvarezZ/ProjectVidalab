@@ -12,8 +12,21 @@ class FacturasController extends Controller
 
   //CONSTRUCTOR
     public function __construct(){
-      $this->middleware('auth:web')->only('miExpediente');
-      $this->middleware('auth:admins')->only('verCompras','verComprasCanceladas','procesarCompra','actualizarFactura');
+      $this->middleware('auth:web')
+      ->only
+      (
+        'miExpediente'
+      );
+
+
+      $this->middleware('auth:admins')
+      ->only
+      (
+        'verCompras',
+        'verComprasCanceladas',
+        'procesarCompra',
+        'actualizarFactura'
+      );
     }
   //
 
@@ -31,6 +44,8 @@ class FacturasController extends Controller
       }
     }
   //
+
+
   //LISTAR RESGISTROS CANCELADOS
     public function verComprasCanceladas()
     {
@@ -73,6 +88,7 @@ class FacturasController extends Controller
   //
 
 
+  //FACTURAS DE COMPRAS DEL CLIENTE
     public function miExpediente()
     {
       $dato = auth()->user()->dniDelUsuario;

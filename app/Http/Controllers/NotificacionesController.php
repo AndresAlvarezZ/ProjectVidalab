@@ -67,9 +67,8 @@ class NotificacionesController extends Controller
 //
 
 
-
   //MOSTRAR NOTIFICACIÓN ESPECÍFICA PARA CLIENTES
-   public function NotificacionEspecifica()
+    public function NotificacionEspecifica()
     {
       $clientes = Clientes::all();
       $notificaciones = Notificaciones::orderBy('created_at', 'desc')->where('tipoDeNotificacion', '=', '1')->get();
@@ -192,7 +191,7 @@ class NotificacionesController extends Controller
            //Make sure we have a filepath
            if ($tmpFilePath != ""){
              //Setup our new file path
-             $newFilePath = "./archivosMultimedia/" . $_FILES['file']['name'][$i];
+             $newFilePath = "./archivosEnviados/" . $_FILES['file']['name'][$i];
              //Upload the file into the temp dir
              $nombre = $_FILES['file']['name'][$i];
              if(move_uploaded_file($tmpFilePath, $newFilePath)) {
@@ -258,7 +257,7 @@ class NotificacionesController extends Controller
            //Make sure we have a filepath
            if ($tmpFilePath != ""){
              //Setup our new file path
-             $newFilePath = "./archivosMultimedia/" . $_FILES['file']['name'][$i];
+             $newFilePath = "./archivosEnviados/" . $_FILES['file']['name'][$i];
              //Upload the file into the temp dir
              $nombre = $_FILES['file']['name'][$i];
              if(move_uploaded_file($tmpFilePath, $newFilePath)) {
@@ -311,7 +310,7 @@ class NotificacionesController extends Controller
            //Make sure we have a filepath
            if ($tmpFilePath != ""){
              //Setup our new file path
-             $newFilePath = "./archivosMultimedia/" . $_FILES['file']['name'][$i];
+             $newFilePath = "./archivosEnviados/" . $_FILES['file']['name'][$i];
              //Upload the file into the temp dir
              $nombre = $_FILES['file']['name'][$i];
              if(move_uploaded_file($tmpFilePath, $newFilePath)) {
@@ -371,7 +370,7 @@ class NotificacionesController extends Controller
            //Make sure we have a filepath
            if ($tmpFilePath != ""){
              //Setup our new file path
-             $newFilePath = "./archivosMultimedia/" . $_FILES['file']['name'][$i];
+             $newFilePath = "./archivosEnviados/" . $_FILES['file']['name'][$i];
              //Upload the file into the temp dir
              $nombre = $_FILES['file']['name'][$i];
              if(move_uploaded_file($tmpFilePath, $newFilePath)) {

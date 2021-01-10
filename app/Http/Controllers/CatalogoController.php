@@ -13,8 +13,18 @@ class CatalogoController extends Controller
   //PERMISOS
     public function __construct()
     {
-      //$this->middleware('auth:web')->only('index','carrito');
-      $this->middleware('auth:admins')->only('indexAdmins');
+      $this->middleware('auth:web')
+      ->only
+      (
+        'index',
+        'carrito'
+      );
+      
+      $this->middleware('auth:admins')
+      ->only
+      (
+        'indexAdmins'
+      );
     }
   //
 
@@ -22,7 +32,7 @@ class CatalogoController extends Controller
   //LISTAR REGISTROS AMBOS CATÁLOGOS: CLIENTES
     public function index(Prueba $nombre)
     {
-      $pruebas = Prueba::all();
+      $pruebas = Prueba::orderBy('nombreDelAnalisis', 'asc')->get();
       $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
       $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
       $identificadorDeAnalisis = 'Analisis';
@@ -138,7 +148,7 @@ class CatalogoController extends Controller
   //
 
 
-    //DATOS PARA EL CARRITO PUBLICO
+  //DATOS PARA EL CARRITO PUBLICO
     public function carritoPublico()
     {
       $usuario = 'user';

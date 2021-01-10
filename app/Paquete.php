@@ -6,22 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paquete extends Model
 {
-//ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
-  protected $primaryKey = 'codigoDelPaquete';
-  protected $keyType = 'string';
+  
+  //ESTABLECER LLAVE PRIMARIA DISTINTA AL ID POR DEFECTO
+    protected $primaryKey = 'codigoDelPaquete';
+    protected $keyType = 'string';
 
 
-//RELACIÓN
+  //RELACIÓN
 
 
 
-//ATRIBUTOS DE INGRESO MANUAL
+  //ATRIBUTOS DE INGRESO MANUAL
     protected $fillable =
     [
-        'codigoDelPaquete',
-        'nombreDelPaquete',
-        'imagenDelPaquete',
-        'descripcionDelPaquete',
-        'costoDelPaquete'
+      'codigoDelPaquete',
+      'nombreDelPaquete',
+      'imagenDelPaquete',
+      'descripcionDelPaquete',
+      'costoDelPaquete'
     ];
   }

@@ -22,6 +22,5 @@ class Aspecto extends Model
         'valores',
         'historia',
         'compromiso'
-
     ];
 }

@@ -15,7 +15,14 @@ class CitaController extends Controller
      */
         public function __construct()
         {
-            $this->middleware('auth:admins');
+            $this->middleware('auth:admins')
+            ->only
+            (
+                'index',
+                'guardar',
+                'actualizar',
+                'eliminar'
+            );
         }
     //
 
@@ -35,7 +42,7 @@ class CitaController extends Controller
 
 
     //GUARDAR REGISTROS
-        public function guardar (Request $request)
+        public function guardar(Request $request)
         {
             $cita = new Cita;
             $cita->idDeLaEmpresa = $request->input('idCitaDeEmpresa');
@@ -52,7 +59,7 @@ class CitaController extends Controller
 
 
     //ACTUALIZAR REGISTROS
-        public function actualizar (Request $request, $id)
+        public function actualizar(Request $request, $id)
         {
             $cita = Cita::find($id);
             $cita->numeroDeClientesPorAtender = $request->input('numeroDeClientesPorAtender3');
@@ -64,7 +71,7 @@ class CitaController extends Controller
 
 
     //ELIMINAR REGISTROS
-        public function eliminar ($id)
+        public function eliminar($id)
         {
             $cita = Cita::find($id);
             $cita->delete();

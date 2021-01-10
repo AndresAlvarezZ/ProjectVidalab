@@ -35,7 +35,7 @@
                             <th scope="col"><center>Correo Electrónico</center></th>
                             <th scope="col"><center>Sede<center></th>
                             <th scope="col"><center>Especialidades<center></th>
-                            <th scope="col"><center>Acción<center></th>
+                            <th scope="col"><center>Acción a Realizar<center></th>
                         </tr>
                     </thead>
 
@@ -47,7 +47,7 @@
                             <th scope="col"><center>Correo Electrónico</center></th>
                             <th scope="col"><center>Sede<center></th>
                             <th scope="col"><center>Especialidades<center></th>
-                            <th scope="col"><center>Acción<center></th>
+                            <th scope="col"><center>Acción a Realizar<center></th>
                         </tr>
                     </tfoot>
 
@@ -56,7 +56,12 @@
                         <tr>
                             <td><center>{{$especialista->id}}</center></td>
                             <td><center>{{$especialista->nombreDelEspecialista}} {{$especialista->segundoNombreDelEspecialista}} {{$especialista->primerApellidoDelEspecialista}} {{$especialista->segundoApellidoDelEspecialista}}</center></td>
-                            <td><center>{{$especialista->imagenDelEspecialista}}</center></td>
+                            @if($especialista->imagenDelEspecialista==null)
+                                <td><center>  <img src="/perfilesDeEspecialistas/imagenFija.jpg" style="heigh: 160px; width:160px;"> </center></td>
+                            @endif
+                            @if($especialista->imagenDelEspecialista!=null)
+                                <td><center>  <img src="/perfilesDeEspecialistas/{{$especialista->imagenDelEspecialista}}" style="heigh: 160px; width:160px;"> </center></td>
+                            @endif
                             <td><center>{{$especialista->correoDelEspecialista}}</center></td>
                             <td><center>{{$especialista->sedeDelEspecialista}}</center></td>
                             <td><center>{{$especialista->especialidadesDelEspecialista}}</center></td>
@@ -71,8 +76,6 @@
                 </table>
                 <script src="{{ asset('js/transacciones/transaccionesDeEspecialistas.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <br>
-            <center><a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div>
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>

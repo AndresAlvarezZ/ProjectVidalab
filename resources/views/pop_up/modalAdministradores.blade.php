@@ -137,11 +137,11 @@ modal-dialog modal-dialog-scrollable
 
                             <label for="nombre3" class="col-12 text-center">Nombre del administrador(a)</label>
                             <input type="text" class="form-control" name="nombreCompleto3" readonly="nombreCompleto3" id="nombreCompleto3" />
-
+                            <br>
 
                             <label for="telefono3" class="col-12 text-center">Número telefónico</label>
                             <input type="text" class="form-control" placeholder="Ingrese un número telefónico para contactar al administrador(a). Formato: 12345678" name="telefonoDelUsuarioAdministrador3" class="form-control @error('telefonoDelUsuarioAdministrador3') is-invalid @enderror" onkeypress="return soloNumeros(event);" required autocomplete="telefonoDelUsuarioAdministrador3" id="telefonoDelUsuarioAdministrador3" autofocus/>
-
+                            <br>
 
                             <label for="correo3" class="col-12 text-center">Correo electrónico</label>
                             <input type="email" class="form-control" onkeyup="this.value = this.value.toLowerCase();" placeholder="Ingrese un correo electrónico para contactar al administrador(a)" class="form-control @error('email3') is-invalid @enderror" name="email3" id="email3" required autocomplete="email3" autofocus/>

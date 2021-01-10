@@ -23,9 +23,10 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             
                             <div class="alert alert-warning" role="alert">
-                                    <center><b>Los campos que presentan un asterísco <b>(*)</b> estrictamente necesarios, de lo contrario el sistema le impedirá realizar el registro</b></center>
-                                </div>
-                                <br></br>
+                                <center><b>Los campos que presentan un asterísco <b>(*)</b> estrictamente necesarios, de lo contrario el sistema le impedirá realizar el registro.</b></center>
+                                En caso de no contar con alguno de los otros aspectos no requeridos, proceda a dejarlos con "N/A".
+                            </div>
+                            <br>
                             <div class="row">
                                 <div class="col">
                                     <label for="ubicacion1" class="col-12 text-center">Ubicación de Sedes VIDAlab *</label>
@@ -159,7 +160,7 @@ modal-dialog modal-dialog-scrollable
             <div class="modal-dialog modal-dialog-centered modal-ml">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title col-10 text-center col-10 text-center" id="labelAgregarImagenes">Agregando Imagen de perfil</h5>
+                        <h5 class="modal-title col-10 text-center col-10 text-center" id="labelAgregarImagenes">Agregar Imágenes de Fondo al Sitio Web</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -170,10 +171,10 @@ modal-dialog modal-dialog-scrollable
                         <div class="modal-body">
                             <div class="form-row">
                                 <div class="alert alert-info" role="alert">
-                                    <center><b>¡Su cambio será visible cuando presione el botón "Subir"!<br><br>
-                                    Asegurese que las imágenes no sean repetidas o contengan el mismo nombre<br>
-                                    Preferiblemente publique imágenes horizontales y alta calidad. Que el fondo para la 
-                                    sección Profesionales sea colores sólidos o degradados</b></center>
+                                    <b>¡Su cambio será visible cuando presione el botón "Subir"!<br><br>
+                                    Asegurese que las imágenes no sean repetidas o contengan el mismo nombre.<br>
+                                    Preferiblemente publique imágenes horizontales y de alta calidad. Que el fondo para la 
+                                    sección Profesionales sea colores sólidos o degradados</b>
                                 </div>
                                 <br></br>
                                 
@@ -245,6 +246,7 @@ modal-dialog modal-dialog-scrollable
         </div>
     <!--FIN MODAL AGREGAR -->
 
+    
 @foreach($aspectos as $aspecto)
     <!-- MODAL ubicacion-->
         <div class="modal fade" id="ubicacion2" tabindex="-1" aria-labelledby="ubicacion2" aria-hidden="true">
@@ -647,7 +649,7 @@ modal-dialog modal-dialog-scrollable
                             <div class="form-row">
                                 <input type="hidden" name="id" value="mision2">
                                 
-                                <textarea name="mision2" class="form-control" placeholder="Ingrese la misión de VIDAlab" id="mision2" rows="3">{{$aspecto->misión}}</textarea></br>
+                                <textarea name="mision2" class="form-control" placeholder="Ingrese la misión de VIDAlab" id="mision2" rows="3">{{$aspecto->mision}}</textarea></br>
                             </div>
                         </div>
                         <div class="modal-footer">

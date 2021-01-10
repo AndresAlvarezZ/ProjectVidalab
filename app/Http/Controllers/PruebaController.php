@@ -18,13 +18,21 @@ class PruebaController extends Controller
    */
         public function __construct()
         {
-            $this->middleware('auth:admins');
+            $this->middleware('auth:admins')
+            ->only
+            (
+                'index',
+                'guardar',
+                'importarRegistros',
+                'actualizar',
+                'eliminar'
+            );
         }
 
     //LISTAR REGISTROS
-        public function index ()
+        public function index()
         {
-            $pruebas = Prueba::orderBy('codigoDelAnalisis', 'asc')->get();
+            $pruebas = Prueba::orderBy('nombreDelAnalisis', 'asc')->get();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
             if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
             return view('pruebas.index',compact('pruebas', 'name'));
@@ -37,7 +45,7 @@ class PruebaController extends Controller
 
 
     //GUARDAR REGISTROS
-        public function guardar (Request $request)
+        public function guardar(Request $request)
         {
             $prueba = new Prueba;
 
@@ -64,7 +72,7 @@ class PruebaController extends Controller
 
 
     //ACTUALIZAR REGISTROS
-        public function actualizar (Request $request, $id)
+        public function actualizar(Request $request, $id)
         {
             $prueba = Prueba::find($id);
 
@@ -80,7 +88,7 @@ class PruebaController extends Controller
 
 
     //ELIMINAR REGISTROS
-        public function eliminar ($id)
+        public function eliminar($id)
         {
             $prueba = Prueba::find($id);
             $prueba->delete();

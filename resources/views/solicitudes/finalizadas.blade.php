@@ -20,8 +20,8 @@
                 <table id="registros" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th scope="col"><center>Factura#</center></th>
-                            <th scope="col"><center>Nombre del cliente</center></th>
+                            <th scope="col"><center>Factura #</center></th>
+                            <th scope="col"><center>Nombre del Cliente</center></th>
                             <th scope="col"><center>Domicilio</center></th>
                             <th scope="col"><center>Teléfono</center></th>
                             <th scope="col"><center>Análisis Solicitados</center></th>
@@ -31,8 +31,8 @@
 
                     <tfoot>
                         <tr>
-                            <th scope="col"><center>Factura#</center></th>
-                            <th scope="col"><center>Nombre del cliente</center></th>
+                            <th scope="col"><center>Factura #</center></th>
+                            <th scope="col"><center>Nombre del Cliente</center></th>
                             <th scope="col"><center>Domicilio</center></th>
                             <th scope="col"><center>Teléfono</center></th>
                             <th scope="col"><center>Análisis Solicitados</center></th>

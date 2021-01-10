@@ -18,14 +18,23 @@ class EmpresaController extends Controller
    */
       public function __construct()
       {
-        $this->middleware('auth:admins');
+        $this->middleware('auth:admins')
+        ->only
+        (
+          'index', 
+          'mostrar', 
+          'guardar', 
+          'importarRegistros', 
+          'actualizar', 
+          'eliminar'
+        );
       }
     //
 
   //LISTAR REGISTROS
-    public function index ()
+    public function index()
     {
-      $empresas = Empresa::all();
+      $empresas = Empresa::orderBy('nombreDeLaEmpresa', 'asc')->get();
       $citas = Cita::all();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
       if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
@@ -55,7 +64,7 @@ class EmpresaController extends Controller
 
 
   //GUARDAR REGISTROS
-    public function guardar (Request $request)
+    public function guardar(Request $request)
     {
       $empresa = new Empresa;
 
@@ -80,7 +89,7 @@ class EmpresaController extends Controller
 
 
   //ACTUALIZAR REGISTROS
-    public function actualizar (Request $request, $id)
+    public function actualizar(Request $request, $id)
     {
       $empresa = Empresa::find($id);
 
@@ -94,7 +103,7 @@ class EmpresaController extends Controller
 
 
   //ELIMINAR REGISTROS
-    public function eliminar ($id)
+    public function eliminar($id)
     {
       $empresa = Empresa::find($id);
       $empresa->delete();

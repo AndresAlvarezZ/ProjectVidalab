@@ -70,7 +70,6 @@
                 </table>
                 <script src="{{ asset('js/transacciones/administradores.js') }}?v=<?php echo(rand()); ?>"defer></script>
             </div>
-            <center><a href="/administradores/activos" class="btn btn-dark">Administradores Activos</a>    |   <a href="/homeAdmins" class="btn btn-dark">Ir al menú principal</a></center>
         </div> 
         @include('layouts.seccionesGenerales.jsDeTablas')
     </body>  
