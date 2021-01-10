@@ -8,12 +8,16 @@
     <link href="{{ asset('css/estiloDeSesion.css') }}?v=<?php echo(rand()); ?>" rel="stylesheet">
     <script src="{{ asset('js/cambiarNombre.js') }}?v=<?php echo(rand()); ?>"defer></script>
     <script src="{{ asset('js/validadoresDeTexto/caracteresPermitidos.js') }}?v=<?php echo(rand()); ?>"defer></script>
+
 </head>
 
 @section('content')
     <body background={{asset('wallpapers/Globos.jpg')}}>
         <div class="container-fluid">
-
+          @if (session('duplicado'))
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          <script src="{{ asset('js/duplicado.js') }}?v=<?php echo(rand()); ?>"defer></script>
+          @endif
             <div class="row">
                 <div class="col-sm">
                     <center>
