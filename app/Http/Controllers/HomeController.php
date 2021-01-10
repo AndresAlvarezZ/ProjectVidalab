@@ -9,6 +9,7 @@ use App\Aspecto;
 use App\Fondo;
 use App\Especialista;
 use App\Archivos;
+use DB;
 
 class HomeController extends Controller
 {
@@ -66,21 +67,17 @@ class HomeController extends Controller
               $fondosDisponibles = $fondo->id;
           }
 
-          $paquetes = Paquete::all();
-          $paquetesDisponibles = 0;
-          if(empty($paquetes))
+          $numeroDeOfertas = DB::table('paquetes')->count();
+          if($numeroDeOfertas >= 6)
           {
-              $paquetesDisponibles = 0;
-          }
-          else{
-              $paquetesDisponibles = 1;
+            $ultimasCincoOfertas = Paquete::latest()->take(6)->get();
           }
 
           $archivos = Archivos::all();
           $fotos = Archivos::where('tipoDeArchivo', 1)->get();
 
         if ($cliente!=null) {
-          return view('home', compact('fotos', 'paquetes', 'cliente','aspecto', 'fondo', 'fondosDisponibles', 'paquetesDisponibles', 'especialistas', 'aspectoDisponible', 'especialistaDisponible'));
+          return view('home', compact('fotos', 'paquetes', 'cliente','aspecto', 'fondo', 'fondosDisponibles', 'numeroDeOfertas', 'ultimasCincoOfertas', 'especialistas', 'aspectoDisponible', 'especialistaDisponible'));
         }
         if ($cliente==null) {
           return redirect('/afiliarme');

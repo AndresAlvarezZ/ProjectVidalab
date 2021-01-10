@@ -1,3 +1,9 @@
+.container-fluid, .jumbotron-fluid
+{
+    margin-top: 100px;
+}
+
+
 .tituloDeRegistro
 {
 	color: #111;

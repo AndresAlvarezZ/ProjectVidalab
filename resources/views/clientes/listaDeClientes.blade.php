@@ -7,12 +7,12 @@
 
     <body>
         @include('layouts.seccionesGenerales.css-jsDeModales')   
-        
+            <div class="container-fluid">
+
             <div class="title">
 				<h2 class="tituloDeRegistro"><span>R</span>egistro de <span>C</span>lientes <span>A</span>filiados</h2>
             </div>
             <div id="contenedor" class="shadow-lg p-3 mb-5 bg-white"></div>
-            <div class="container-fluid">
             <div class="card-body" text-center>
                 <table id="registros" class="table table-striped" style="width:100%">
                     <thead>

@@ -9,7 +9,7 @@
 
 @section('content')
     <body background={{asset('wallpapers/Globos.jpg')}}>
-        <div class="container-fluid">
+        <div class="container-fluid auth">
 
             <div class="row">
                 <div class="col-sm">

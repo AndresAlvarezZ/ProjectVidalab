@@ -8,6 +8,11 @@
 	scroll-behavior: smooth;
 }
 
+.galeria
+{
+	margin-top: 150px;
+}
+
 p
 {
 	font-size: 1.3em;
