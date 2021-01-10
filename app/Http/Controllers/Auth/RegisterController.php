@@ -71,4 +71,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    protected function duplicado(array $data){
+      $dni = User::Where('dniDelUsuario',$data['dniDelUsuario'])->get();
+      return $dni;
+    }
 }
