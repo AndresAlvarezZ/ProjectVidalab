@@ -31,7 +31,7 @@
 
                                         <div class="form-group col-md-12">
                                             <label for="email" class="col-md-12 col-form-label text-md-center">{{ __('Correo electrónico') }}</label>
-                                            <input id="email" placeholder="Ingrese su correo electrónico de acceso al sistema" type="email" onkeyup="this.value = this.value.toLowerCase();" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                                            <input id="email" placeholder="Ingrese su correo electrónico de acceso al sistema" type="email" onkeyup="this.value = this.value.toLowerCase();" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus readonly>
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">

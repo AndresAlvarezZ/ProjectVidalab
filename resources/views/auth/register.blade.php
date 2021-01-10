@@ -13,7 +13,7 @@
 
 @section('content')
     <body background={{asset('wallpapers/Globos.jpg')}}>
-        <div class="container-fluid">
+        <div class="container-fluid auth">
           @if (session('duplicado'))
           <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
           <script src="{{ asset('js/duplicado.js') }}?v=<?php echo(rand()); ?>"defer></script>
