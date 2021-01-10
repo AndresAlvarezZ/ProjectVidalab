@@ -1,3 +1,15 @@
+.navbar
+{
+	position:fixed;
+	z-index: 100;
+	width: 100%;
+}
+
+.profesionales, .container
+{
+    margin-top: 100px;
+}
+
 .logo
 {
 	color: #fff;

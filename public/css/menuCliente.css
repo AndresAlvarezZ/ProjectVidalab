@@ -4,6 +4,18 @@
 	font-family: 'Poppins', sans-serif;
 }
 
+.navbar
+{
+	position:fixed;
+	z-index: 100;
+	width: 100%;
+}
+
+.auth
+{
+	margin-top: 100px;
+}
+
 .logo
 {
 	color: #fff;

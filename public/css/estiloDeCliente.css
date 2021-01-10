@@ -353,27 +353,6 @@ section
 }
 
 
-.flotante
-{
-    display:scroll;
-    position:fixed;
-    bottom:100px;
-    right:40px;
-}
-
-.flotante span
-{
-	font-size: 3rem;
-	position: relative;  
-	color:  #119281;
-	text-decoration: none;
-}
-
-.flotante span:hover
-{	
-	text-decoration: none;
-	color: rgb(223, 89, 0);
-}
 
 @media (max-width: 991px)
 {

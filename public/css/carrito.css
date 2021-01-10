@@ -3,6 +3,11 @@ body{
 background-image: url("/imgHomeClientes/carrito.jpg");
 }
 
+.container
+{
+	margin-top: 150px;
+}
+
 h1
 {
 	text-align: center;

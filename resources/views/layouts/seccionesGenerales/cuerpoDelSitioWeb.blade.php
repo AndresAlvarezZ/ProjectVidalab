@@ -1,4 +1,3 @@
-<a class='flotante' href='#'><span class="icon-home"></span></a>
     @if($fondosDisponibles == 1)
       <section class="inicio" id="inicio" style= "background: url('/imgHomeClientes/{{$fondo->imagenDeBienvenida}}'); background-size: cover;">
     @else
