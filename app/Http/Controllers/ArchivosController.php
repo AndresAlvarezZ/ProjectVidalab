@@ -15,7 +15,7 @@ class ArchivosController extends Controller
       ->only
       (
         'galeriaDeFotos', 
-        'galeriaDeVideos',
+        'galeriaDeVideos'
       );
 
       $this->middleware('auth:admins')

@@ -60,19 +60,16 @@ Route::get('/', function()
         $fondosDisponibles = $idFondo->id;
     }
 
-    $paquetes = Paquete::all();
-    $paquetesDisponibles = 0;
-    if(empty($paquetes))
+    $numeroDeOfertas = DB::table('paquetes')->count();
+    if($numeroDeOfertas >= 6)
     {
-        $paquetesDisponibles = 0;
+      $ultimasCincoOfertas = Paquete::latest()->take(6)->get();
     }
-    else{
-        $paquetesDisponibles = 1;
-    }
+
 
     $archivos = Archivos::all();
     $fotos = Archivos::where('tipoDeArchivo', 1)->get();
-    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'paquetesDisponibles', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
+    return view('homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'numeroDeOfertas', 'ultimasCincoOfertas', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
 });
 
 Auth::routes();

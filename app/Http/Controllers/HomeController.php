@@ -127,10 +127,18 @@ class HomeController extends Controller
           $fondosDisponibles = $fondo->id;
       }
 
+
+      $numeroDeOfertas = DB::table('paquetes')->count();
+      if($numeroDeOfertas >= 6)
+      {
+        $ultimasCincoOfertas = Paquete::latest()->take(6)->get();
+      }
+
+
       $archivos = Archivos::all();
       $fotos = Archivos::where('tipoDeArchivo', 1)->get();
 
-      return view('/homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
+      return view('/homeGeneral', compact('fotos', 'aspecto', 'especialistas', 'fondo', 'numeroDeOfertas', 'ultimasCincoOfertas', 'fondosDisponibles', 'aspectoDisponible', 'especialistaDisponible'));
     }  
    //
 }

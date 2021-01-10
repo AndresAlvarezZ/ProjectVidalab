@@ -76,7 +76,7 @@ class AdministradorController extends Controller
       $administradores = Administrador::orderBy('primerApellidoAdministrador', 'asc')
                                         ->where('rol', '!=', 1)->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1 && auth()->administrador()->rol==1) {
       return view('administrador.listar', compact('superAdministradores', 'administradores', 'acceso', 'name'));
       }
       else{
@@ -94,7 +94,7 @@ class AdministradorController extends Controller
                                           ['estadoDelUsuarioAdministrador', '=', 1],
                                           ['rol', '!=', 1]])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1  && auth()->administrador()->rol==1) {
       return view('administrador.listarActivos', compact('administradores', 'acceso', 'name'));
       }
       else{
@@ -112,7 +112,7 @@ class AdministradorController extends Controller
                                         ['estadoDelUsuarioAdministrador', '=', 0],
                                         ['rol', '!=', 1]])->get();
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1  && auth()->administrador()->rol==1) {
       return view('administrador.listarInactivos', compact('administradores', 'acceso', 'name'));
       }
       else{

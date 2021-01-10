@@ -14,7 +14,7 @@
 				<h2>¡Opps {{$name}}, ACCESO DENEGADO!</h2>
 				<span class="icon-document-locked"></span>
 				<p>
-					Administración <span class="raiz">VIDA</span><span class="sufijo">lab</span> le comunica, que ha denegado su acceso al sistema <span class="raiz">HUMA</span><span class="sufijo">check</span>
+					Administración <span class="raiz">VIDA</span><span class="sufijo">lab</span> le comunica, que ha denegado su acceso al sistema o a esta sección del sistema <span class="raiz">HUMA</span><span class="sufijo">check</span>
 				</p>
 			</div>
 		</section>
