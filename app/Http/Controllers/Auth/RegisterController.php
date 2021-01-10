@@ -51,7 +51,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'dniDelUsuario' => ['required', 'integer'],
+            'dniDelUsuario' => ['required', 'integer', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -71,8 +71,5 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-    protected function duplicado(array $data){
-      $dni = User::Where('dniDelUsuario',$data['dniDelUsuario'])->get();
-      return $dni;
-    }
+  
 }
