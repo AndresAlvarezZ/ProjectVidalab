@@ -67,7 +67,10 @@ class CatalogoController extends Controller
   //LISTAR REGISTROS AMBOS CATÁLOGOS: PUBLICO
     public function catalogoPublico()
     {
-      $pruebas = Prueba::all();
+      /*$users = DB::table('users')
+      ->where('name', 'like', 'T%')
+      ->get();*/
+      $pruebas = Prueba::orderBy('nombreDelAnalisis', 'ASC')->get();
       $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
       $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
       $identificadorDeAnalisis = 'Analisis';
@@ -101,7 +104,7 @@ class CatalogoController extends Controller
   //LISTAR REGISTROS AMBOS CATÁLOGOS: ADMINISTRADORES
     public function indexAdmins(Prueba $nombre)
     {
-      $pruebas = Prueba::all();
+      $pruebas = Prueba::orderBy('nombreDelAnalisis', 'ASC')->get();
       $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
       $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
      

@@ -32,7 +32,7 @@ class PruebaController extends Controller
     //LISTAR REGISTROS
         public function index()
         {
-            $pruebas = Prueba::orderBy('nombreDelAnalisis', 'asc')->get();
+            $pruebas = Prueba::orderBy('nombreDelAnalisis', 'ASC')->get();
             $name = auth()->administrador()->nombreDelUsuarioAdministrador;
             if (auth()->administrador()->estadoDelUsuarioAdministrador==1) {
             return view('pruebas.index',compact('pruebas', 'name'));

@@ -41,13 +41,13 @@
 											<thead class="thead-dark">
 												<tr>
 													<th scope="col"><center>Nombre</center></th>
-													<th scope="col"><center>Acción a realizar</center></th>
+													<th scope="col"><center>Acción a Realizar</center></th>
 												</tr>
 											</thead>
 											<tfoot class="thead-dark">
 												</tr>
 													<th scope="col"><center>Nombre</center></th>
-													<th scope="col"><center>Acción a realizar</center></th>
+													<th scope="col"><center>Acción a Realizar</center></th>
 												</tr>
 											</tfoot>
 											<tbody>
@@ -61,7 +61,7 @@
 														<td><center>{{$prueba->nombreDelAnalisis}}</center></td>
 														<td><center>
 														<div class="title">
-															<button type="button" class="btn boton" data-toggle="modal" data-target="#{{$prueba->codigoDelAnalisis}}">Leer</button>
+															<button type="button" class="btn boton" data-toggle="modal" data-target="#{{$prueba->codigoDelAnalisis}}"><span class="icon-eye"></span></button>
 															<button id="carritoDeCompras" type="button" class="btn btn-primary" onclick="
 																AgregarCarrito('{{$prueba->codigoDelAnalisis}}',
 																'{{$prueba->nombreDelAnalisis}}',
