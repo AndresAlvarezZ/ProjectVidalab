@@ -37,7 +37,7 @@
 </li>
 
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-price-tags"></span>SERVICIOS</a>
+    <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="icon-price-tags"></span>Pedidos y Compras</a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/solicitudes"><span class="icon-location"> </span> Servicio a Domicilio</a>
         <a class="dropdown-item" href="/solicitudes/enEspera">- En Espera</a>
