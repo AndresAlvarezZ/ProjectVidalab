@@ -26,7 +26,6 @@
                 <tr>
                   <td><strong>Artículo</strong></td>
                   <td><strong>Precio</strong></td>
-                  <td><strong>Descuento</strong></td>
                 </tr>
 
               </table>
@@ -41,7 +40,7 @@
             </div>
           </div>
             <div class="card-foot">
-              <a type="button" class="btn botonCatalogo" href="/catalogos">Volver al catalogo</a>
+              <a type="button" class="btn botonCatalogo" href="/catalogo/publico">Volver al catalogo</a>
             </div>
         </div>
       </div>

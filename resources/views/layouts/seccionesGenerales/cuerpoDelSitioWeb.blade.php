@@ -186,7 +186,7 @@
 				</p>
 			</div>
 			<div class="contenedor">
-				
+
             @if($numeroDeOfertas >= 6)
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="width:850px; heigh:850px;">
                 <ol class="carousel-indicators">
@@ -233,9 +233,16 @@
               </div>
             @endif
 					</div>
-					<div class="title">
-				    <a href="/catalogo/publico" class="boton">Ver todo</a>
-			    </div>
+          @guest
+          <div class="title">
+            <a href="/catalogo/publico" class="boton">Ver todo</a>
+          </div>
+          @else
+          <div class="title">
+            <a href="/catalogos" class="boton">Ver todo</a>
+          </div>
+          @endguest
+
       </div>
     </section>
 

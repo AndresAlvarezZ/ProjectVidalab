@@ -12,7 +12,7 @@ function cargarCarrito()
     }
     finalizarInter.innerHTML = '';
     var total =0;
-    var descuentos =0;
+    var descuentos =0,ultimoDescuento =0;
     var descuento =0;
     var cantidad =0;
     finalizar.forEach(function(x,i){
@@ -36,8 +36,13 @@ function cargarCarrito()
           x.descuento=0;
         }
         descuento = Number(x.descuento)*(cantidad-1)
-        if (cantidad>1) {
-        descuentos = descuentos + Number(x.descuento)*(cantidad-1)
+        if (cantidad>1 && cantidad<=15) {
+          descuentos = descuentos + Number(x.descuento)*(cantidad-1)
+        }
+        if (contador<16) {
+          if (cantidad>15) {
+            descuentos = descuentos + Number(x.descuento)*(14)
+          }
         }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
         tdPrecio.innerHTML = '¢'+Number(x.costo);

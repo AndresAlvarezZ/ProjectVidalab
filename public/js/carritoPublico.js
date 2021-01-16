@@ -12,7 +12,7 @@ function cargarCarrito()
     }
     finalizarInter.innerHTML = '';
     var total =0;
-    var descuentos =0;
+    var descuentos =0,ultimoDescuento =0;
     var descuento =0;
     var cantidad =0;
     finalizar.forEach(function(x,i){
@@ -36,8 +36,13 @@ function cargarCarrito()
           x.descuento=0;
         }
         descuento = Number(x.descuento)*(cantidad-1)
-        if (cantidad>1) {
-        descuentos = descuentos + Number(x.descuento)*(cantidad-1)
+        if (cantidad>1 && cantidad<=15) {
+          descuentos = descuentos + Number(x.descuento)*(cantidad-1)
+        }
+        if (contador<16) {
+          if (cantidad>15) {
+            descuentos = descuentos + Number(x.descuento)*(14)
+          }
         }
         tdArticulo.innerHTML = "◙ "+ x.nombre;
         tdPrecio.innerHTML = '¢'+Number(x.costo);
@@ -47,7 +52,6 @@ function cargarCarrito()
         tdDescuento.id = 'tdProcesar'
         articulo.appendChild(tdArticulo);
         articulo.appendChild(tdPrecio);
-        articulo.appendChild(tdDescuento)
         articulos.appendChild(articulo);
         finalizarInter.appendChild(div);
 
@@ -81,6 +85,21 @@ function cargarCarrito()
     finalizarInter.appendChild(lbltotal);
     finalizarInter.appendChild(txtTotal);
     finalizarInter.appendChild(br);
+    var  btnFinalizar = document.createElement('button');
+    var btnSpan = document.createElement('span');
+    var link = document.createElement('a');
+    btnSpan.innerHTML = 'una vez finalizada la compra, debe presentarse al laboratorio';
+    btnSpan.className = 'tooltiptext';
+    btnFinalizar.type = 'submit';
+    btnFinalizar.name = 'FinalizarCompra';
+    btnFinalizar.textContent = 'Finalizar Compra';
+    btnFinalizar.id = 'borrarCarrito';
+    btnFinalizar.className = 'btn btn-primary';
+    link.textContent = 'Solicitar a domicilio';
+    link.href = '/compras/domicilio';
+    link.className = 'btn boton';
+      finalizarInter.appendChild(br2);
+          btnFinalizar.appendChild(btnSpan);
 }
 document.querySelector("#borrarCarrito").addEventListener('click', function()
 {

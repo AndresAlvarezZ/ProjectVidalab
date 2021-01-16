@@ -13,13 +13,14 @@ class CatalogoController extends Controller
   //PERMISOS
     public function __construct()
     {
+      $this->middleware('guest:web')->only('catalogoPublico');
       $this->middleware('auth:web')
       ->only
       (
         'index',
         'carrito'
       );
-      
+
       $this->middleware('auth:admins')
       ->only
       (
@@ -107,7 +108,7 @@ class CatalogoController extends Controller
       $pruebas = Prueba::orderBy('nombreDelAnalisis', 'ASC')->get();
       $paquetes = Paquete::orderBy('nombreDelPaquete', 'ASC')->get();
       $abecedario=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-     
+
       $idPrueba = Prueba::all();
           $pruebaDisponible = 0;
           if(empty($idPrueba))
@@ -129,7 +130,7 @@ class CatalogoController extends Controller
               $paqueteDisponible = '1';
           }
       $name = auth()->administrador()->nombreDelUsuarioAdministrador;
-      if (auth()->administrador()->estadoDelUsuarioAdministrador==1) 
+      if (auth()->administrador()->estadoDelUsuarioAdministrador==1)
       {
         return view('catalogo.indexAdmins', compact('abecedario', 'pruebas', 'paquetes','name', 'pruebaDisponible', 'paqueteDisponible'));
       }
@@ -139,7 +140,7 @@ class CatalogoController extends Controller
       }
     }
   //
-  
+
 
   //DATOS PARA EL CARRITO
     public function carrito()
