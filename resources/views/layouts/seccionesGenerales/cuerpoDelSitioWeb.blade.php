@@ -332,13 +332,13 @@
             Dato no disponible
           @endif
 					<br></br>
-          <span class="icon-instagram"> </span>
+         <!-- <span class="icon-instagram"> </span>
           @if($aspectoDisponible == 1)
             {{$aspecto->instagram}}
           @else
             Dato no disponible
           @endif
-					<br></br>
+					<br></br> -->
           <span class="icon-whatsapp"> </span>
           @if($aspectoDisponible == 1)
             {{$aspecto->whatsapp}}

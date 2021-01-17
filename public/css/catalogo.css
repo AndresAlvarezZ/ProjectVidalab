@@ -8,6 +8,12 @@
 	scroll-behavior: smooth;
 }
 
+
+.container-fluid
+{
+	margin-top: 100px;
+}
+
 p
 {
 	font-size: 1.3em;

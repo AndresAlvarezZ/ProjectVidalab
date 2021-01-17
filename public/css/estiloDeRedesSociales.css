@@ -1,6 +1,7 @@
 :root
 {
     --facebook: #4267B2;
+    --email: #f85151;
     --instagram: #C13584;
     --whatsapp: #25d366;
     --twitter: #1DA1F2;
@@ -72,4 +73,9 @@
 .redes-container ul li .twitter:hover
 {
     background: var(--twitter);
+}
+
+.redes-container ul li .email:hover
+{
+    background: var(--email);
 }

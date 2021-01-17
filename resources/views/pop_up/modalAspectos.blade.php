@@ -23,8 +23,8 @@ modal-dialog modal-dialog-scrollable
                             {{ csrf_field() }}
                             
                             <div class="alert alert-warning" role="alert">
-                                <center><b>Los campos que presentan un asterísco <b>(*)</b> estrictamente necesarios, de lo contrario el sistema le impedirá realizar el registro.</b></center>
-                                En caso de no contar con alguno de los otros aspectos no requeridos, proceda a dejarlos con "N/A".
+                                <center><b>Los campos que presentan un asterísco <b>(*)</b> estrictamente necesarios, de lo contrario el sistema le impedirá realizar el registro.</b><br>
+                                En caso de no contar con alguno de los otros aspectos no requeridos, proceda a dejarlos con "N/A".</center>
                             </div>
                             <br>
                             <div class="row">
@@ -66,8 +66,8 @@ modal-dialog modal-dialog-scrollable
                                     @enderror
                                 </div>
                                 <div class="col">
-                                    <label for="instagram1" class="col-12 text-center">Cuenta de Instagram *</label>
-                                    <input required type="text" class="form-control" placeholder="Ingrese la cuenta Instagram de VIDAlab" name="instagram1" id="instagram1" value="{{ old('instagram1') }}"/> </br>
+                                    <label for="instagram1" class="col-12 text-center">Cuenta de Instagram</label>
+                                    <input type="text" class="form-control" placeholder="Ingrese la cuenta Instagram de VIDAlab" name="instagram1" id="instagram1" value="N/A"/> </br>
                                     @error('instagram1')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror

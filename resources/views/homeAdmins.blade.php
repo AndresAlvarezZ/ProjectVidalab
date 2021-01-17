@@ -64,7 +64,7 @@
             <table id="registros" class="table table-striped" style="width:100%">
               <thead>
                 <tr>
-                  <th scope="col"><center>ID</center></th>
+                  <th scope="col"><center>Tarea #</center></th>
                   <th scope="col"><center>Tipo</center></th>
                   <th scope="col"><center>Tarea</center></th>
                   <th scope="col"><center>Acción</center></th> 
@@ -73,7 +73,7 @@
 
               <tfoot>
                 <tr>
-                  <th scope="col"><center>ID</center></th>
+                  <th scope="col"><center>Tarea #</center></th>
                   <th scope="col"><center>Tipo</center></th>
                   <th scope="col"><center>Tarea</center></th>
                   <th scope="col"><center>Acción</center></th>
