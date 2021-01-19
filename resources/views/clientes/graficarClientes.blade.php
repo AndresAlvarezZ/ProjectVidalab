@@ -25,6 +25,8 @@
 
     <script type="text/javascript">
         var clientes = <?php echo json_encode($datos)?>;
+        var fecha = new Date();
+        fecha = fecha.getFullYear();
         Highcharts.setOptions
         ({
             chart: 
@@ -118,7 +120,7 @@
             },
             title:
             {
-                text: 'VIDAlab: Disctribución de número de clientes registrados mensualmente en el sistema durante el año 2021',
+                text: 'VIDAlab: Distribución de número de clientes registrados mensualmente en el sistema durante el año '.concat(fecha),
             },
             subtitle:
             {

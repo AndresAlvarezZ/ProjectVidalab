@@ -290,13 +290,13 @@ modal-dialog modal-dialog-scrollable
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="editarForm" accept-charset="utf-8" enctype="multipart/form-data" method="post">
+                    <form id="telefonoForm" accept-charset="utf-8" enctype="multipart/form-data" method="post">
                       <div class="modal-body">
-                          {{ csrf_field() }}
-                          {{method_field('PUT')}}
+                            {{ csrf_field() }}
+                            {{method_field('PUT')}}
                             <div class="form-row">
                                 
-                                <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" name="telefono2" id="telefono2" value="{{$aspecto->telefono}}"/> </br>
+                                <input required type="text" class="form-control" placeholder="Ingrese el número telefónico de VIDAlab" name="telefono2" id="telefono2" onkeypress="return soloNumeros(event);" value="{{$aspecto->telefono}}"/> </br>
                                 @error('telefono2')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
