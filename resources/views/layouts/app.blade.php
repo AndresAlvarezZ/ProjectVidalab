@@ -45,15 +45,17 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle btnMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Sesión</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
-                                </li>
-                            @endif
+                            <a class="dropdown-item" bg-color="white" href="{{ route('login') }}"><b>{{ __('Iniciar Sesión') }}</b></a>
+        
+                        @if (Route::has('register'))
+                            <a class="dropdown-item" href="{{ route('register') }}"><b>{{ __('Registrarme') }}</b></a>
+                        @endif
+                        </div>
+                    </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
