@@ -40,7 +40,7 @@
             </div>
           </div>
             <div class="card-foot">
-              <a type="button" class="btn botonCatalogo" href="/catalogo/publico">Volver al catalogo</a>
+              <a type="button" class="btn botonCatalogo" href="/catalogos">Volver al catalogo</a>
             </div>
         </div>
       </div>
