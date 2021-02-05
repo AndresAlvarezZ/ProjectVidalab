@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Solicitudes;
+use App\Facturas;
 
 class SolicitudesController extends Controller
 {
@@ -15,7 +16,7 @@ class SolicitudesController extends Controller
     }
   //
 
-  
+
   //LISTAR TODOS LOS REGISTROS
     public function index()
     {
@@ -110,18 +111,38 @@ class SolicitudesController extends Controller
     {
       $solicitudes = Solicitudes::all();
       $llavePrimaria = 0;
+      $opcion = "Cancelado";
+      $estadoEntrante = $request->input('estado');
 
       foreach($solicitudes as $solicitud)
       {
         if($solicitud->idFactura == $id)
         {
           $llavePrimaria = $solicitud->idDeSolicitud;
-          $solicitud->estado = $request->input('estado');
+          $solicitud->estado = $estadoEntrante;
+          if ($estadoEntrante=="Finalizada") {
+            $this->buscandoMiFactura($id, $opcion);
+          }
           $solicitud->save();
           return $solicitud;
         }
       }
     }
-  //
+  //BUSCAR FACTURA
+  protected function buscandoMiFactura($miFactura,$buscandoEstado)
+  {
+  $factura = $this->Mifactura($miFactura);
+    $this->ActualizarLaFacturaEncontrada($factura,$buscandoEstado);
+  }
+  protected function ActualizarLaFacturaEncontrada($facturaEncontrada,$buscandoEstado)
+  {
+    $facturaEncontrada->condicionDeCompra = $buscandoEstado;
+    $facturaEncontrada->update();
+  }
+  protected function Mifactura($facturaUnica)
+  {
+    $facturaBuscada = Facturas::find($facturaUnica);
+    return $facturaBuscada;
+  }
 
 }

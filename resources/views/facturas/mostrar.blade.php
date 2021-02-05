@@ -21,6 +21,7 @@
               @php
               $fecha = date('d-m-Y', strtotime($factura->fecha))
               @endphp
+            <?php if ($factura->condicionDeCompra=="Cancelado"): ?>
               <tr>
                 <td id="factura"><strong>Factura #{{$indiceFactura}}</strong></td>
                 <td id="factura"></td>
@@ -67,6 +68,8 @@
                 <td id="sinRaya">{{$factura->total}}</td>
               </tr>
               <?php $indiceFactura++; ?>
+              
+            <?php endif; ?>
             <?php endforeach; ?>
           </table>
         </div>
