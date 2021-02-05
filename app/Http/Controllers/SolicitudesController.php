@@ -111,7 +111,7 @@ class SolicitudesController extends Controller
     {
       $solicitudes = Solicitudes::all();
       $llavePrimaria = 0;
-      $opcion = "Cancelado";
+      $opcion = "Finalizada";
       $estadoEntrante = $request->input('estado');
 
       foreach($solicitudes as $solicitud)
@@ -120,7 +120,7 @@ class SolicitudesController extends Controller
         {
           $llavePrimaria = $solicitud->idDeSolicitud;
           $solicitud->estado = $estadoEntrante;
-          if ($estadoEntrante=="Finalizada") {
+          if ($estadoEntrante==$opcion) {
             $this->buscandoMiFactura($id, $opcion);
           }
           $solicitud->save();
